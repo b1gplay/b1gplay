@@ -1,0 +1,7 @@
+*.pyc
+.coverage
+*.sqlite3
+
+bin/
+include/
+lib/
