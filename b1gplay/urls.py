@@ -15,9 +15,13 @@ from apps.sports.api.scout.scout_endpoint import scoutRouter
 from apps.sports.api.media.media_endpoint import mediaRouter
 from apps.sports.api.event.event_endpoint import eventRouter
 from apps.sports.api.achievement.achievement_endpoint import achievementRouter
+
 from apps.transfers.api.transfer.transfer_endpoint import transferRouter
 from apps.transfers.api.payment.payment_endpoint import paymentRouter
 
+from apps.users.api.account.account_endpoint import accountRouter
+from apps.users.api.education.education_endpoint import educationRouter
+from apps.users.api.address.address_endpoint import addressRouter
 
 
 urlpatterns = [
@@ -37,5 +41,9 @@ urlpatterns = [
 
     url(r'^api/', include(transferRouter.urls)),
     url(r'^api/', include(paymentRouter.urls)),
+
+    url(r'^api/', include(accountRouter.urls)),
+    url(r'^api/', include(addressRouter.urls)),
+    url(r'^api/', include(educationRouter.urls)),
 
 ]
