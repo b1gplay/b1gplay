@@ -23,6 +23,19 @@ from apps.users.api.account.account_endpoint import accountRouter
 from apps.users.api.education.education_endpoint import educationRouter
 from apps.users.api.address.address_endpoint import addressRouter
 
+from apps.messaging.api.message.message_endpoint import messageRouter
+from apps.messaging.api.photo.photo_endpoint import photoRouter
+from apps.messaging.api.video.video_endpoint import videoRouter
+from apps.messaging.api.album.album_endpoint import albumRouter
+from apps.messaging.api.post.post_endpoint import postRouter
+from apps.messaging.api.comment.comment_endpoint import commentRouter
+from apps.messaging.api.conversation.conversation_endpoint import conversationRouter
+from apps.messaging.api.conversation_reply.conversation_reply_endpoint import conversationReplyRouter
+from apps.messaging.api.link.link_endpoint import linkRouter
+from apps.messaging.api.notification.notification_endpoint import notificationRouter
+from apps.messaging.api.feed.feed_endpoint import feedRouter
+from apps.messaging.api.page.page_endpoint import pageRouter
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -45,5 +58,19 @@ urlpatterns = [
     url(r'^api/', include(accountRouter.urls)),
     url(r'^api/', include(addressRouter.urls)),
     url(r'^api/', include(educationRouter.urls)),
+
+    url(r'^api/', include(messageRouter.urls)),
+    url(r'^api/', include(photoRouter.urls)),
+    url(r'^api/', include(videoRouter.urls)),
+    url(r'^api/', include(albumRouter.urls)),
+    url(r'^api/', include(postRouter.urls)),
+    url(r'^api/', include(commentRouter.urls)),
+    url(r'^api/', include(conversationRouter.urls)),
+    url(r'^api/', include(conversationReplyRouter.urls)),
+    url(r'^api/', include(linkRouter.urls)),
+    url(r'^api/', include(notificationRouter.urls)),
+    url(r'^api/', include(feedRouter.urls)),
+    url(r'^api/', include(pageRouter.urls)),
+
 
 ]
