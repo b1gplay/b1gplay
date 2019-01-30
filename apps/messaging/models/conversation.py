@@ -1,8 +1,10 @@
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
+import uuid
 
 
 class Conversation(TimeStampedModel):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user1 = models.TextField()  # Link to user model
     user2 = models.TextField()   # Link to user model
     ip = models.GenericIPAddressField()

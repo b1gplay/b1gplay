@@ -1,8 +1,10 @@
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
+import uuid
 
 
 class Message(TimeStampedModel):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     message = models.TextField()
     sender = models.CharField(max_length=50)  # Link to User model
     recipient = models.CharField(max_length=50)  # Link to User model

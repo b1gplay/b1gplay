@@ -1,8 +1,10 @@
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
+import uuid
 
 
 class Photo(TimeStampedModel):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     album = models.CharField(max_length=50)  # Link to album model
     event = models.CharField(max_length=50)  # Link to event model
     caption = models.TextField()

@@ -1,8 +1,10 @@
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
+import uuid
 
 
 class Album(TimeStampedModel):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     # enum{cover, profile, mobile, wall, normal, album}
     albumType = models.CharField(max_length=50)
     name = models.CharField(max_length=50)  # Link to album model
