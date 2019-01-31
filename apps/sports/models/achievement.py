@@ -4,6 +4,9 @@ from django_countries.fields import CountryField
 import uuid
 
 class Achievement(TimeStampedModel):
+	"""
+	Something a player did that had a lasting impact for his/ her team
+	"""
 	id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 	title = models.CharField(max_length=100) 
 	publish_time = models.DateTimeField(blank=True, null=True)

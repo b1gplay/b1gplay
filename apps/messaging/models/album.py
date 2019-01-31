@@ -4,6 +4,9 @@ import uuid
 
 
 class Album(TimeStampedModel):
+    """
+    A collection of videos or images
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     # enum{cover, profile, mobile, wall, normal, album}
     albumType = models.CharField(max_length=50)

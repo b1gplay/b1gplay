@@ -4,6 +4,9 @@ import uuid
 
 
 class Conversation(TimeStampedModel):
+    """
+    A online discussion between two system users in realtime e.g agent and coach
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user1 = models.TextField()  # Link to user model
     user2 = models.TextField()   # Link to user model

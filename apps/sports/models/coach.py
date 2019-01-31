@@ -4,12 +4,15 @@ import uuid
 
 
 class Coach(TimeStampedModel):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=50)  # Link to User model
+	"""
+	A person who offers direction, instruction and training to a sports team or of individual sports people
+	"""
+	id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+	name = models.CharField(max_length=50)  # Link to User model
 
-    class Meta:
-        verbose_name = "Coach"
-        verbose_name_plural = "Coaches"
+	class Meta:
+		verbose_name = "Coach"
+		verbose_name_plural = "Coaches"
 
-    def __unicode__(self):
-        return '%s %s' % (self.name)
+	def __unicode__(self):
+		return '%s %s' % (self.name)

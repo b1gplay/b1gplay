@@ -5,6 +5,9 @@ import uuid
 
 
 class Account(TimeStampedModel):
+    """
+    Represents a user on the platform
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     # Chnage to one to one relationship with User model
     user = models.CharField(max_length=100)

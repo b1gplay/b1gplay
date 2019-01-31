@@ -7,6 +7,9 @@ from apps.sports.models.sport import Sport
 
 
 class Media(TimeStampedModel):
+    """
+        A person who writes about and analyses sports
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=50)  # Link to User model
     affiliate = models.CharField(max_length=100)

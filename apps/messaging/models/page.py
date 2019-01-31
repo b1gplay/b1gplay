@@ -4,6 +4,9 @@ import uuid
 
 
 class Page(TimeStampedModel):
+    """
+        A public profile specifically created for users such as players, coaches, teams, media.
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=50)
     description = models.TextField()

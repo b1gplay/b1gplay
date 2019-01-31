@@ -6,6 +6,9 @@ from apps.sports.models import Sport
 
 
 class Metric(TimeStampedModel):
+    """
+    Represents a way of measuring a players attributes on a given sport
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     sport = models.ForeignKey(Sport, on_delete=models.CASCADE)
     metric = models.CharField(max_length=50)
@@ -17,3 +20,5 @@ class Metric(TimeStampedModel):
 
     def __unicode__(self):
         return '%s' % (self.metric)
+
+  

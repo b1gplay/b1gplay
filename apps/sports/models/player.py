@@ -1,5 +1,6 @@
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
+from django.contrib.auth.models import User
 from django_countries.fields import CountryField
 import uuid
 
@@ -9,8 +10,11 @@ from apps.sports.models.scout import Scout
 
 
 class Player(TimeStampedModel):
+    """
+    A person who plays a sport
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=50)  # Link to User model
+    name = models.OneToOneField(User, on_delete=models.CASCADE)
     team = models.CharField(max_length=50)
     number = models.PositiveIntegerField()
     team = models.ForeignKey(Team, on_delete=models.CASCADE)

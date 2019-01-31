@@ -4,6 +4,9 @@ import uuid
 
 
 class Link(TimeStampedModel):
+    """
+    A feature that allows you to jump to a new location when you click or tap it
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.TextField(max_length=50, blank=True, null=True)
     link = models.URLField()
@@ -17,3 +20,5 @@ class Link(TimeStampedModel):
 
     def __unicode__(self):
         return '%s' % (self.description)
+
+

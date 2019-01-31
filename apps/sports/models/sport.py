@@ -4,14 +4,18 @@ import uuid
 
 
 class Sport(TimeStampedModel):
+    """
+    A competitive game played for fun or as a professional activity
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=50)
     description = models.TextField()
-    picture = models.CharField(max_length=200, null=True, blank=True)
+    picture = models.ImageField(
+        upload_to='assets/images/sports/', default='assets/images/sports/None/no-img.jpg')
 
     class Meta:
         verbose_name = "Sport"
         verbose_name_plural = "Sports"
 
-    def __unicode__(self):
-        return '%s %s' % (self.name, self.description)
+    def __str__(self):
+        return self.name

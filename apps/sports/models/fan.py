@@ -7,6 +7,9 @@ from apps.sports.models.team import Team
 
 
 class Fan(TimeStampedModel):
+    """
+        A person who admires and supports a person, sport, sports team
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=50)  # Link to User model
     sport_of_interest = models.ForeignKey(Sport, on_delete=models.CASCADE)

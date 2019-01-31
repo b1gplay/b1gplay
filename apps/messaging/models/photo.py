@@ -4,6 +4,9 @@ import uuid
 
 
 class Photo(TimeStampedModel):
+    """
+    An image uploaded by system user
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     album = models.CharField(max_length=50)  # Link to album model
     event = models.CharField(max_length=50)  # Link to event model

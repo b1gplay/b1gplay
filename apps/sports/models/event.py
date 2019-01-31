@@ -6,6 +6,9 @@ import pytz
 
 
 class Event(TimeStampedModel):
+    """
+    Sports contest happening at a particular time and place
+    """
 
     TIMEZONES = tuple(zip(pytz.all_timezones, pytz.all_timezones))
 

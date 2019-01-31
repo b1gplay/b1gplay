@@ -5,6 +5,12 @@ import uuid
 
 
 class Address(TimeStampedModel):
+    """
+    A collection of information used to give the location 
+    of a person in terms of political boundaries, 
+    along with other identifiers such as street names, 
+    buildings, house or apartment numbers.
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.CharField(max_length=50)  # Link to User model
     # E.g billing, delivery, residential or work

@@ -9,6 +9,10 @@ from apps.sports.models.sport import Sport
 
 
 class Rating(TimeStampedModel):
+    """
+    Ranking of players based on a comparative assessment 
+    of their quality, standard, or performance.
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     sport = models.ForeignKey(Sport, on_delete=models.CASCADE)
     metric = models.ForeignKey(Metric, on_delete=models.CASCADE)

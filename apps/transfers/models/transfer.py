@@ -9,6 +9,9 @@ from apps.sports.models.agent import Agent
 
 
 class Transfer(TimeStampedModel):
+    """
+        Action taken whenever a player under contract moves between clubs/ teams
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
     transferTo = models.ForeignKey(Team, on_delete=models.CASCADE)

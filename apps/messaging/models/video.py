@@ -4,6 +4,9 @@ import uuid
 
 
 class Video(TimeStampedModel):
+    """
+    Visual media uploaded by user
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     album = models.CharField(max_length=50)  # Link to album model
     event = models.CharField(max_length=50)  # Link to event model
@@ -23,3 +26,5 @@ class Video(TimeStampedModel):
 
     def __unicode__(self):
         return '%s' % (self.caption)
+
+

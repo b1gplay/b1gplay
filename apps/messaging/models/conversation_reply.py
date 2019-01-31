@@ -4,6 +4,9 @@ import uuid
 
 
 class ConversationReply(TimeStampedModel):
+    """
+    A reply to a message in an on-going conversation chat 
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.TextField()  # Link to user model
     reply = models.TextField()

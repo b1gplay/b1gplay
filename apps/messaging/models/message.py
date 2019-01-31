@@ -4,6 +4,9 @@ import uuid
 
 
 class Message(TimeStampedModel):
+    """
+            A communication in writing or media
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     message = models.TextField()
     sender = models.CharField(max_length=50)  # Link to User model

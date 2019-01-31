@@ -4,6 +4,9 @@ import uuid
 
 
 class Feed(TimeStampedModel):
+    """
+        A list of updates on your page that shows updates about those people who you are following
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     link = models.URLField()
 

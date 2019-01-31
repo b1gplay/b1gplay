@@ -7,6 +7,9 @@ from apps.transfers.models.transfer import Transfer
 
 
 class Payment(TimeStampedModel):
+    """
+        Monetary transaction accompanying a tranfer of a player between clubs/ teams 
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     amount = models.PositiveIntegerField(blank=True, null=True)
     status = models.CharField(max_length=50)

@@ -5,6 +5,9 @@ import uuid
 
 
 class Education(TimeStampedModel):
+    """
+    Formal training acquired by a sports person
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.CharField(max_length=100)  # Link to User model
     school = models.CharField(max_length=100)
