@@ -18,7 +18,5 @@ class Metric(TimeStampedModel):
         verbose_name = "Metric"
         verbose_name_plural = "Metrics"
 
-    def __unicode__(self):
-        return '%s' % (self.metric)
-
-  
+    def __str__(self):
+        return self.description

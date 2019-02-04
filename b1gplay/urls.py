@@ -23,6 +23,7 @@ from apps.users.api.account.account_endpoint import accountRouter
 from apps.users.api.education.education_endpoint import educationRouter
 from apps.users.api.address.address_endpoint import addressRouter
 from apps.users.api.profile.profile_endpoint import profileRouter
+from apps.users.api.user.user_endpoint import userRouter
 
 from apps.messaging.api.message.message_endpoint import messageRouter
 from apps.messaging.api.photo.photo_endpoint import photoRouter
@@ -60,6 +61,7 @@ urlpatterns = [
     url(r'^api/', include(addressRouter.urls)),
     url(r'^api/', include(educationRouter.urls)),
     url(r'^api/', include(profileRouter.urls)),
+    url(r'^api/', include(userRouter.urls)),
 
     url(r'^api/', include(messageRouter.urls)),
     url(r'^api/', include(photoRouter.urls)),

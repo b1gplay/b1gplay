@@ -50,6 +50,7 @@ PROJECT_APPS = [
 
 INSTALLED_APPS = PREREQUSITE_APPS + PROJECT_APPS
 
+AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -92,6 +93,13 @@ DATABASES = {
     }
 }
 
+# Setting globally the permission policy: for production use 'IsAuthenticated'
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        # For testing use 'AllowAny' option
+        'rest_framework.permissions.AllowAny',
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -130,3 +138,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Backend settings
+BACKEND_URL = '/api/'
