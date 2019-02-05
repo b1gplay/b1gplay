@@ -10,7 +10,7 @@ class Page(TimeStampedModel):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=50)
     description = models.TextField()
-    link = models.CharField(max_length=50)  # Link to link model
+    link = models.URLField()  # Link to link model
 
     class Meta:
         verbose_name = "Page"

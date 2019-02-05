@@ -1,7 +1,10 @@
+from django.conf import settings
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
 from django_countries.fields import CountryField
 import uuid
+
+from apps.users.models.profile import Profile
 
 
 class Account(TimeStampedModel):
@@ -9,8 +12,11 @@ class Account(TimeStampedModel):
     Represents a user on the platform
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    # Chnage to one to one relationship with User model
-    user = models.CharField(max_length=100)
+    # Change to one to one relationship with User model
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
     # type enum{player, team, media, admin, superuser}
     type = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)

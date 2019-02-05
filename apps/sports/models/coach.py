@@ -3,6 +3,8 @@ from django.db import models
 from django_extensions.db.models import TimeStampedModel
 import uuid
 
+from apps.users.models.profile import Profile
+
 
 class Coach(TimeStampedModel):
     """
@@ -10,7 +12,7 @@ class Coach(TimeStampedModel):
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.OneToOneField(
-        settings.AUTH_USER_MODEL,
+        Profile,
         on_delete=models.CASCADE
     )
 

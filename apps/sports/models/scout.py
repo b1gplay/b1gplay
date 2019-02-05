@@ -1,9 +1,11 @@
+from django.conf import settings
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
 from django_countries.fields import CountryField
 import uuid
 
 from apps.sports.models.sport import Sport
+from apps.users.models.profile import Profile
 
 
 class Scout(TimeStampedModel):
@@ -14,14 +16,20 @@ class Scout(TimeStampedModel):
     and also may help with contract negotiations.
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=50)  # Link to User model
+    name = models.OneToOneField(
+        Profile,
+        on_delete=models.CASCADE
+    )
     affiliate = models.CharField(max_length=100)
     country_of_residence = CountryField(blank_label='(select country)')
-    sport_of_interest = models.ForeignKey(Sport, on_delete=models.CASCADE)
+    sport_of_interest = models.ForeignKey(
+        Sport,
+        on_delete=models.CASCADE
+    )
 
     class Meta:
         verbose_name = "Scout"
         verbose_name_plural = "Scouts"
 
-    def __unicode__(self):
-        return '%s %s' % (self.name, self.sport_of_interest)
+    def __str__(self):
+        return self.name

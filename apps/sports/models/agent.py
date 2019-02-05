@@ -3,6 +3,7 @@ from django.db import models
 from django_extensions.db.models import TimeStampedModel
 from django_countries.fields import CountryField
 import uuid
+from apps.users.models.profile import Profile
 
 
 class Agent(TimeStampedModel):
@@ -11,7 +12,7 @@ class Agent(TimeStampedModel):
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.OneToOneField(
-        settings.AUTH_USER_MODEL,
+        Profile,
         on_delete=models.CASCADE
     )
     affiliate = models.CharField(max_length=100)
@@ -21,5 +22,5 @@ class Agent(TimeStampedModel):
         verbose_name = "Agent"
         verbose_name_plural = "Agents"
 
-    def __unicode__(self):
-        return '%s %s' % (self.name)
+    def __str__(self):
+        return self.name

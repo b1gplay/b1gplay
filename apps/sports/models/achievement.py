@@ -4,6 +4,9 @@ from django_countries.fields import CountryField
 import uuid
 
 
+from apps.sports.models.player import Player
+
+
 class Achievement(TimeStampedModel):
     """
     Something a player did that had a lasting impact for his/ her team
@@ -12,8 +15,12 @@ class Achievement(TimeStampedModel):
     title = models.CharField(max_length=100)
     publish_time = models.DateTimeField(blank=True, null=True)
     description = models.TextField(blank=True)
-    image = models.CharField(max_length=200)
-    url = models.URLField(max_length=200)
+    player = models.ForeignKey(Player, on_delete=models.CASCADE)
+    image = models.ImageField(
+        upload_to='assets/images/achievement/',
+        default='assets/images/achievement/None/no-img.jpg'
+    )
+    url = models.URLField(max_length=200, blank=True, null=True)
 
     class Meta:
         verbose_name = "Achievement"

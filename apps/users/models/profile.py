@@ -18,7 +18,8 @@ class Profile(TimeStampedModel):
         on_delete=models.CASCADE
     )
     bio = models.TextField(max_length=500, blank=True)
-    location = models.CharField(max_length=30, blank=True)
+    location = models.CharField(
+        max_length=30, blank=True)  # Link to location model
     birth_date = models.DateField(null=True, blank=True)
 
     avatar = models.URLField(blank=True, null=True)
@@ -28,6 +29,9 @@ class Profile(TimeStampedModel):
     skype = models.CharField(max_length=30, blank=True)
     facebook_id = models.CharField(max_length=30, blank=True)
     instagram_id = models.CharField(max_length=30, blank=True)
+
+    def __str__(self):
+        return self.user.get_full_name()
 
 
 @receiver(post_save, sender=User)

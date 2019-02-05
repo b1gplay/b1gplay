@@ -11,7 +11,9 @@ class Sport(TimeStampedModel):
     name = models.CharField(max_length=50)
     description = models.TextField()
     picture = models.ImageField(
-        upload_to='assets/images/sports/', default='assets/images/sports/None/no-img.jpg')
+        upload_to='assets/images/sports/',
+        default='assets/images/sports/None/no-img.jpg'
+    )
 
     class Meta:
         verbose_name = "Sport"

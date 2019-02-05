@@ -12,10 +12,13 @@ class Payment(TimeStampedModel):
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     amount = models.PositiveIntegerField(blank=True, null=True)
-    status = models.CharField(max_length=50)
+    status = models.CharField(max_length=50)  # Provide list of options
     transfer = models.ForeignKey(Transfer, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True, blank=True)
 
     class Meta:
         verbose_name = "Payment"
         verbose_name_plural = "Payments"
+
+    def __str__(self):
+        return self.status
