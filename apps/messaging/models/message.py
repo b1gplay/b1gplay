@@ -20,5 +20,5 @@ class Message(TimeStampedModel):
         verbose_name = "Message"
         verbose_name_plural = "Messages"
 
-    def __unicode__(self):
-        return '%s' % (self.message)
+    def __str__(self):
+        return self.message
