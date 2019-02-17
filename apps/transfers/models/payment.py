@@ -19,6 +19,7 @@ class Payment(TimeStampedModel):
     class Meta:
         verbose_name = "Payment"
         verbose_name_plural = "Payments"
+        db_table = 'payment'
 
     def __str__(self):
         return self.status

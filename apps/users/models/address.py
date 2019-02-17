@@ -44,3 +44,4 @@ class Address(TimeStampedModel):
     class Meta:
         verbose_name = "Address"
         verbose_name_plural = "Addresses"
+        db_table = 'address'

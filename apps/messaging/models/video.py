@@ -23,8 +23,7 @@ class Video(TimeStampedModel):
     class Meta:
         verbose_name = "Video"
         verbose_name_plural = "Videos"
+        db_table = 'video'
 
     def __unicode__(self):
         return '%s' % (self.caption)
-
-

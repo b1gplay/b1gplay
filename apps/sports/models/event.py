@@ -27,6 +27,7 @@ class Event(TimeStampedModel):
     class Meta:
         verbose_name = "Event"
         verbose_name_plural = "Events"
+        db_table = 'event'
 
     def __unicode__(self):
         return '%s %s' % (self.name)

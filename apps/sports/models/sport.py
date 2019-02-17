@@ -18,6 +18,7 @@ class Sport(TimeStampedModel):
     class Meta:
         verbose_name = "Sport"
         verbose_name_plural = "Sports"
+        db_table = 'sport'
 
     def __str__(self):
         return self.name

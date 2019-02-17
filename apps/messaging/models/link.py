@@ -22,6 +22,7 @@ class Link(TimeStampedModel):
     class Meta:
         verbose_name = "Link"
         verbose_name_plural = "Links"
+        db_table = 'link'
 
     def __unicode__(self):
         return '%s' % (self.description)

@@ -29,6 +29,7 @@ class Team(TimeStampedModel):
     class Meta:
         verbose_name = "Team"
         verbose_name_plural = "Teams"
+        db_table = 'team'
 
     def __str__(self):
         return self.name

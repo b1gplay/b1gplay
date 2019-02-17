@@ -18,8 +18,7 @@ class Notification(TimeStampedModel):
     class Meta:
         verbose_name = "Notification"
         verbose_name_plural = "Notifications"
+        db_table = 'notification'
 
     def __unicode__(self):
         return '%s' % (self.title)
-
-        

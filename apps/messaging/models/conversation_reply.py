@@ -15,8 +15,9 @@ class ConversationReply(TimeStampedModel):
     status = models.CharField(max_length=50)
 
     class Meta:
-        verbose_name = "Conversation"
-        verbose_name_plural = "Conversation"
+        verbose_name = "Conversation Reply"
+        verbose_name_plural = "Conversation Replies"
+        db_table = 'conversation_reply'
 
     def __unicode__(self):
         return '%s' % (self.ip)

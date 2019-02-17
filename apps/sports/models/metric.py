@@ -17,6 +17,7 @@ class Metric(TimeStampedModel):
     class Meta:
         verbose_name = "Metric"
         verbose_name_plural = "Metrics"
+        db_table = 'metric'
 
     def __str__(self):
         return self.description

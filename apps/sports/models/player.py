@@ -28,6 +28,7 @@ class Player(TimeStampedModel):
     class Meta:
         verbose_name = "Player"
         verbose_name_plural = "Players"
+        db_table = 'player'
 
     def __str__(self):
         return self.name

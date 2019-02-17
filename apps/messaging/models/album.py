@@ -24,6 +24,7 @@ class Album(TimeStampedModel):
     class Meta:
         verbose_name = "Album"
         verbose_name_plural = "Albums"
+        db_table = 'album'
 
     def __unicode__(self):
         return '%s' % (self.caption)

@@ -11,8 +11,9 @@ class Feed(TimeStampedModel):
     link = models.URLField()
 
     class Meta:
-        verbose_name = "Link"
-        verbose_name_plural = "Links"
+        verbose_name = "Feed"
+        verbose_name_plural = "Feeds"
+        db_table = 'feed'
 
     def __unicode__(self):
         return '%s' % (self.link)

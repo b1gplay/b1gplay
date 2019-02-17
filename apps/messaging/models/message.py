@@ -19,6 +19,7 @@ class Message(TimeStampedModel):
     class Meta:
         verbose_name = "Message"
         verbose_name_plural = "Messages"
+        db_table = 'message'
 
     def __str__(self):
         return self.message

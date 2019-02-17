@@ -30,6 +30,11 @@ class Profile(TimeStampedModel):
     facebook_id = models.CharField(max_length=30, blank=True)
     instagram_id = models.CharField(max_length=30, blank=True)
 
+    class Meta:
+        verbose_name = "Profile"
+        verbose_name_plural = "Profiles"
+        db_table = 'profile'
+
     def __str__(self):
         return self.user.get_full_name()
 

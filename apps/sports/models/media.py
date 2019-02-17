@@ -18,6 +18,7 @@ class Media(TimeStampedModel):
     class Meta:
         verbose_name = "Media"
         verbose_name_plural = "Media"
+        db_table = 'media'
 
     def __unicode__(self):
         return '%s %s' % (self.name, self.affiliate)

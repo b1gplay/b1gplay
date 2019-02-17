@@ -17,6 +17,7 @@ class Conversation(TimeStampedModel):
     class Meta:
         verbose_name = "Conversation"
         verbose_name_plural = "Conversation"
+        db_table = 'conversation'
 
     def __unicode__(self):
         return '%s' % (self.ip)

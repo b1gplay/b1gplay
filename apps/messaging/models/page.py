@@ -15,6 +15,7 @@ class Page(TimeStampedModel):
     class Meta:
         verbose_name = "Page"
         verbose_name_plural = "Pages"
+        db_table = 'page'
 
     def __unicode__(self):
         return '%s' % (self.description)

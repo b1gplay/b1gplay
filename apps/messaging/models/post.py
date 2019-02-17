@@ -22,6 +22,7 @@ class Post(TimeStampedModel):
     class Meta:
         verbose_name = "Post"
         verbose_name_plural = "Posts"
+        db_table = 'post'
 
     def __unicode__(self):
         return '%s' % (self.message)

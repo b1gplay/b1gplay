@@ -24,6 +24,7 @@ class Account(TimeStampedModel):
     class Meta:
         verbose_name = "Account"
         verbose_name_plural = "Accounts"
+        db_table = 'account'
 
     def __unicode__(self):
         return '%s %s' % (self.type, self.description)

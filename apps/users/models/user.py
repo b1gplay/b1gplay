@@ -14,5 +14,10 @@ class User(AbstractUser):
     REQUIRED_FIELDS = ['username', ]
     USERNAME_FIELD = 'email'
 
+    class Meta:
+        verbose_name = "User"
+        verbose_name_plural = "Users"
+        db_table = 'user'
+
     def __str__(self):
         return self.get_full_name()

@@ -30,6 +30,7 @@ class Scout(TimeStampedModel):
     class Meta:
         verbose_name = "Scout"
         verbose_name_plural = "Scouts"
+        db_table = 'scout'
 
     def __str__(self):
         return self.name

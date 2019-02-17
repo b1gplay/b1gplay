@@ -24,6 +24,7 @@ class Photo(TimeStampedModel):
     class Meta:
         verbose_name = "Photo"
         verbose_name_plural = "Photos"
+        db_table = 'photo'
 
     def __unicode__(self):
         return '%s' % (self.caption)

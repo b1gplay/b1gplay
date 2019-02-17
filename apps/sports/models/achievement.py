@@ -25,6 +25,7 @@ class Achievement(TimeStampedModel):
     class Meta:
         verbose_name = "Achievement"
         verbose_name_plural = "Achievements"
+        db_table = 'achievement'
 
     def __str__(self):
         return "{}".format(self.title)

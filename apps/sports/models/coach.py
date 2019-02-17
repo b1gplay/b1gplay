@@ -19,6 +19,7 @@ class Coach(TimeStampedModel):
     class Meta:
         verbose_name = "Coach"
         verbose_name_plural = "Coaches"
+        db_table = 'coach'
 
     def __str__(self):
         return self.name

@@ -28,6 +28,7 @@ class Rating(TimeStampedModel):
     class Meta:
         verbose_name = "Rating"
         verbose_name_plural = "Ratings"
+        db_table = 'rating'
 
     def __unicode__(self):
         return '%s' % (self.rating)

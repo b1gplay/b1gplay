@@ -24,6 +24,7 @@ class Transfer(TimeStampedModel):
     class Meta:
         verbose_name = "Transfer"
         verbose_name_plural = "Transfers"
+        db_table = 'transfer'
 
     def __str__(self):
         return str(self.player)

@@ -24,6 +24,7 @@ class Fan(TimeStampedModel):
     class Meta:
         verbose_name = "Fan"
         verbose_name_plural = "Fans"
+        db_table = 'fan'
 
     def __str__(self):
         return self.name

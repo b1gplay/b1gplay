@@ -21,6 +21,7 @@ class Agent(TimeStampedModel):
     class Meta:
         verbose_name = "Agent"
         verbose_name_plural = "Agents"
+        db_table = 'agent'
 
     def __str__(self):
         return self.name

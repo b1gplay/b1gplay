@@ -42,6 +42,7 @@ class Education(TimeStampedModel):
     class Meta:
         verbose_name = "Education Experience"
         verbose_name_plural = "Education Experiences"
+        db_table = 'education'
 
     def __str__(self):
         return self.school
