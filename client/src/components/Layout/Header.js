@@ -183,7 +183,7 @@ class Header extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar position="static" style={{ background: "#D23E56" }}>
+        <AppBar position="fixed" style={{ background: "#D23E56" }}>
           <Toolbar>
             <Typography
               className={classes.title}
@@ -224,9 +224,9 @@ class Header extends React.Component {
                       Home
                     </Button>
                   </Link>
-                  <Link to="/find-players" className={classes.link}>
+                  <Link to="/top-performers" className={classes.link}>
                     <Button color="inherit" className={classes.menuButton}>
-                      Find Players
+                      Top Performers
                     </Button>
                   </Link>
                   <Link to="/messages" className={classes.link}>

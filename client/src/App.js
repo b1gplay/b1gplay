@@ -1,7 +1,11 @@
 import React from "react";
 import { CssBaseline, withStyles } from "@material-ui/core";
 import { Switch, Route } from "react-router-dom";
-import Header from "./components/Header";
+import Header from "./components/Layout/Header";
+
+import MessageList from "./components/Messaging/MessageList";
+import ViewProfile from "./components/Profile/ViewProfile";
+import TopPerformers from "./components/TopPerformers/TopPerformers";
 
 const styles = theme => ({
   main: {
@@ -16,14 +20,16 @@ const App = ({ classes }) => (
   <React.Fragment>
     <CssBaseline />
     <Header />
-    <main className={classes.main}>
+    <main className={classes.main} style={{ background: "white" }}>
+      <br />
+      <br />
+      <br />
       <Switch>
-        <Route path="/find-players" />
-        <Route path="/" />
-        <Route path="/profile" />
-        <Route path="/messages" />
-        <Route path="/notifications" />
-        <Route path="/talent-suggestions" />
+        <Route path="/profile" component={ViewProfile} />
+        <Route path="/messages" component={MessageList} />
+        <Route path="/top-performers" component={TopPerformers} />
+        <Route path="/" component={MessageList} />
+        <Route path="/notifications" component={MessageList} />
       </Switch>
     </main>
   </React.Fragment>
