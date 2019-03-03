@@ -10,8 +10,7 @@ import Badge from "@material-ui/core/Badge";
 
 const styles = theme => ({
   root: {
-    width: "100%",
-    backgroundColor: "white"
+    width: "100%"
   },
   inline: {
     display: "inline"

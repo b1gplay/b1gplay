@@ -9,8 +9,7 @@ import Avatar from "@material-ui/core/Avatar";
 
 const styles = theme => ({
   root: {
-    width: "100%",
-    backgroundColor: "white"
+    width: "100%"
   },
   inline: {
     display: "inline"

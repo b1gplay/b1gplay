@@ -4,12 +4,17 @@ import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
+
+import { Switch, Route } from "react-router-dom";
 import ChatRoom from "../Messaging/ChatRoom";
 import Clipboard from "../Clipboard/Clipboard";
 import MyProfile from "../Profile/MyProfile";
 import CoverProfile from "../Profile/CoverProfile";
 import PersonalInfo from "../Profile/PersonalInfo";
 import PhotoVideoFeed from "../Profile/PhotoVideoFeed";
+
+import Followers from "../Profile/Followers";
+import Following from "../Profile/Following";
 
 const styles = theme => ({
   root: {
@@ -64,16 +69,11 @@ class ViewProfile extends React.Component {
             </div>
           </Grid>
           <Grid item xs={5} sm={5} style={{ height: "100vh" }}>
-            <div>
-              <Paper className={classes.root} elevation={0}>
-                <PhotoVideoFeed />
-                <PhotoVideoFeed />
-                <PhotoVideoFeed />
-                <PhotoVideoFeed />
-                <PhotoVideoFeed />
-                <PhotoVideoFeed />
-              </Paper>
-            </div>
+            <Switch>
+              <Route path="/profile/followers" component={Followers} />
+              <Route path="/profile/following" component={Following} />
+              <Route path="/profile" component={PhotoVideoFeed} />
+            </Switch>
           </Grid>
           <Grid item xs={2} sm={2} style={{ height: "100vh" }} />
           <Grid
@@ -88,9 +88,9 @@ class ViewProfile extends React.Component {
               align="center"
               style={{ fontWeight: "bold" }}
             >
-              CLIPBOARD
+              CHAT
             </Typography>
-            <Clipboard />
+            <ChatRoom />
             <br />
             <Typography
               variant="subtitle2"
@@ -98,9 +98,9 @@ class ViewProfile extends React.Component {
               align="center"
               style={{ fontWeight: "bold" }}
             >
-              CHAT
+              CLIPBOARD
             </Typography>
-            <ChatRoom />
+            <Clipboard />
           </Grid>
         </Grid>
       </div>

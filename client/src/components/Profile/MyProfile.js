@@ -29,6 +29,18 @@ function CoverProfile(props) {
           Otim Tony
         </Typography>
         <Typography
+          variant="subheading"
+          gutterBottom
+          align="center"
+          color="primary"
+        >
+          Ugandan
+        </Typography>
+
+        <Typography variant="body1" gutterBottom align="center" color="Primary">
+          <text style={{ color: "black" }}>Born on </text> 27th September, 1993
+        </Typography>
+        <Typography
           component="p"
           align="center"
           color="textSecondary"

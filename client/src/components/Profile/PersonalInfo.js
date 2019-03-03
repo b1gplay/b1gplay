@@ -39,9 +39,6 @@ function PersonalInfo(props) {
       <Typography variant="body1" gutterBottom align="left" color="Primary">
         <b style={{ color: "black" }}>Vertical Leap:</b> 90 cm
       </Typography>
-      <Typography variant="body1" gutterBottom align="left" color="Primary">
-        <b style={{ color: "black" }}>Date of Birth:</b> Point guard
-      </Typography>
 
       <br />
       <Typography variant="title" gutterBottom align="left">

@@ -21,7 +21,8 @@ const App = ({ classes }) => (
   <React.Fragment>
     <CssBaseline />
     <Header />
-    <main className={classes.main} style={{ background: "white" }}>
+    {/* ['#F0F0F0','#F5F5F5','#F8F8F8','#F5F5F5']  */}
+    <main className={classes.main} style={{ background: "#F5F5F5" }}>
       <br />
       <br />
       <br />
@@ -29,7 +30,7 @@ const App = ({ classes }) => (
         <Route path="/profile" component={ViewProfile} />
         <Route path="/messages" component={MessageList} />
         <Route path="/top-performers" component={TopPerformers} />
-        <Route path="/" component={MessageList} />
+        <Route path="/" />
         <Route path="/notifications" component={MessageList} />
         <Route path="/logout" component={SignOn} />
       </Switch>
