@@ -49,7 +49,7 @@ class ViewProfile extends React.Component {
         <CoverProfile />
         <br />
         <br />
-        <br />
+
         <Grid container spacing={24}>
           <Grid item xs={3} sm={3} style={{ height: "100vh" }}>
             <div>

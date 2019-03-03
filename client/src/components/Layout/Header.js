@@ -143,7 +143,9 @@ class Header extends React.Component {
       >
         <MenuItem onClick={this.handleMenuClose}>Profile</MenuItem>
         <MenuItem onClick={this.handleMenuClose}>Settings</MenuItem>
-        <MenuItem onClick={this.handleMenuClose}>Logout</MenuItem>
+        <Link to="/logout" className={classes.link}>
+          <MenuItem onClick={this.handleMenuClose}>Logout</MenuItem>
+        </Link>
       </Menu>
     );
 
@@ -190,6 +192,7 @@ class Header extends React.Component {
               variant="h6"
               color="inherit"
               noWrap
+              style={{ fontWeight: "bold" }}
             >
               b1gplay
             </Typography>

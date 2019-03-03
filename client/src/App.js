@@ -6,6 +6,7 @@ import Header from "./components/Layout/Header";
 import MessageList from "./components/Messaging/MessageList";
 import ViewProfile from "./components/Profile/ViewProfile";
 import TopPerformers from "./components/TopPerformers/TopPerformers";
+import SignOn from "./components/Authentication/SignOn";
 
 const styles = theme => ({
   main: {
@@ -30,6 +31,7 @@ const App = ({ classes }) => (
         <Route path="/top-performers" component={TopPerformers} />
         <Route path="/" component={MessageList} />
         <Route path="/notifications" component={MessageList} />
+        <Route path="/logout" component={SignOn} />
       </Switch>
     </main>
   </React.Fragment>
