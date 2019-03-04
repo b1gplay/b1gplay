@@ -2,8 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import red from "@material-ui/core/colors/red";
+//import red from "@material-ui/core/colors/red";
 
 import PlayerOfWeek from "../TopPerformers/PlayerOfWeek";
 import CoachRatings from "../TopPerformers/CoachRatings";
@@ -14,7 +13,7 @@ const styles = theme => ({});
 
 class TopPerformers extends React.Component {
   render() {
-    const { classes } = this.props;
+    //const { classes } = this.props;
 
     return (
       <div>

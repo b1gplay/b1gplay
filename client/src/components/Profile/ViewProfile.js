@@ -3,18 +3,16 @@ import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import ChatRoom from "../Messaging/ChatRoom";
 import Clipboard from "../Clipboard/Clipboard";
-import MyProfile from "../Profile/MyProfile";
 import CoverProfile from "../Profile/CoverProfile";
-import PersonalInfo from "../Profile/PersonalInfo";
-import PhotoVideoFeed from "../Profile/PhotoVideoFeed";
 
 import Followers from "../Profile/Followers";
 import Following from "../Profile/Following";
+import Timeline from "../Profile/Timeline";
+import PhotoVideoFeed from "../Profile/PhotoVideoFeed";
 
 const styles = theme => ({
   root: {
@@ -56,23 +54,17 @@ class ViewProfile extends React.Component {
         <br />
 
         <Grid container spacing={24}>
-          <Grid item xs={3} sm={3} style={{ height: "100vh" }}>
-            <div>
-              <MyProfile />
-            </div>
-            <br />
-            <br />
-            <div>
-              <Paper className={classes.root} elevation={1}>
-                <PersonalInfo />
-              </Paper>
-            </div>
-          </Grid>
-          <Grid item xs={5} sm={5} style={{ height: "100vh" }}>
+          <Grid item xs={8} sm={8} style={{ height: "100vh" }}>
             <Switch>
+              <Route path="/profile/timeline" component={Timeline} />
               <Route path="/profile/followers" component={Followers} />
               <Route path="/profile/following" component={Following} />
-              <Route path="/profile" component={PhotoVideoFeed} />
+              {/* Accessing profile link redirects to profile > timeline */}
+              <Route
+                exact
+                path="/profile"
+                render={() => <Redirect to="/profile/timeline" />}
+              />
             </Switch>
           </Grid>
           <Grid item xs={2} sm={2} style={{ height: "100vh" }} />

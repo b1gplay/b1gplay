@@ -1,45 +1,107 @@
 import React from "react";
-import Gallery from "react-photo-gallery";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
+import Avatar from "@material-ui/core/Avatar";
+import Card from "@material-ui/core/Card";
+import CardHeader from "@material-ui/core/CardHeader";
+import CardContent from "@material-ui/core/CardContent";
+import IconButton from "@material-ui/core/IconButton";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 
-export default class Followers extends React.Component {
-  render() {
-    return <Gallery photos={PHOTO_SET} />;
+const styles = theme => ({
+  root: {
+    padding: theme.spacing.unit * 2
+  },
+  avatar: {},
+  bigAvatar: {
+    width: 100,
+    height: 100
   }
+});
+
+function Followers(props) {
+  const { classes } = props;
+
+  return (
+    <div className={classes.root}>
+      <br />
+      <Typography variant="h5" component="h3" color="default" align="center">
+        Followers
+      </Typography>
+      <br />
+      <Grid container spacing={24}>
+        <Grid item xs={6} sm={6}>
+          <Card className={classes.card}>
+            <CardHeader
+              avatar={
+                <Avatar
+                  alt="Remy Sharp"
+                  src="/static/images/avatar/3.jpg"
+                  className={classes.bigAvatar}
+                />
+              }
+              action={
+                <IconButton>
+                  <MoreVertIcon />
+                </IconButton>
+              }
+              title="Otim Tony"
+              subheader="September 14, 2018"
+            />
+          </Card>
+        </Grid>
+        <Grid item xs={6} sm={6}>
+          <Card className={classes.card}>
+            <CardHeader
+              avatar={
+                <Avatar
+                  alt="Remy Sharp"
+                  src="/static/images/avatar/7.jpg"
+                  className={classes.bigAvatar}
+                />
+              }
+              action={
+                <IconButton>
+                  <MoreVertIcon />
+                </IconButton>
+              }
+              title="Diego Angemi"
+              subheader="September 14, 2016"
+            />
+          </Card>
+        </Grid>
+        <br />
+        <Grid item xs={6} sm={6}>
+          <Card className={classes.card}>
+            <CardHeader
+              avatar={
+                <Avatar
+                  alt="Remy Sharp"
+                  src="/static/images/avatar/4.jpg"
+                  className={classes.bigAvatar}
+                />
+              }
+              action={
+                <IconButton>
+                  <MoreVertIcon />
+                </IconButton>
+              }
+              title="Nathan Baleeta"
+              subheader="September 14, 2018"
+            />
+          </Card>
+        </Grid>
+        <Grid item xs={6} sm={6} />
+      </Grid>
+    </div>
+  );
 }
-const PHOTO_SET = [
-  {
-    src: "/static/images/bb.jpg",
-    width: 4,
-    height: 3
-  },
-  {
-    src: "/static/images/cc.jpg",
-    width: 1,
-    height: 1
-  },
-  {
-    src: "/static/images/cc.jpg",
-    width: 1,
-    height: 1
-  },
-  {
-    src: "/static/images/cc.jpg",
-    width: 1,
-    height: 1
-  },
-  {
-    src: "/static/images/cc.jpg",
-    width: 1,
-    height: 1
-  },
-  {
-    src: "/static/images/cc.jpg",
-    width: 1,
-    height: 1
-  },
-  {
-    src: "/static/images/cc.jpg",
-    width: 1,
-    height: 1
-  }
-];
+
+Followers.propTypes = {
+  classes: PropTypes.object.isRequired
+};
+
+export default withStyles(styles)(Followers);

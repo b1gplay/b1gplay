@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 
 const styles = {
   avatar: {
@@ -13,7 +11,7 @@ const styles = {
 };
 
 function PersonalInfo(props) {
-  const { classes } = props;
+  //const { classes } = props;
   return (
     <div>
       <Typography variant="title" gutterBottom align="left">

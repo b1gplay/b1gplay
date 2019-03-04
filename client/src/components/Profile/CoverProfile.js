@@ -7,6 +7,12 @@ import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
 import { Link } from "react-router-dom";
 
+import GroupIcon from "@material-ui/icons/Group";
+import PhotoCameraIcon from "@material-ui/icons/PhotoCamera";
+import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
+import TimelineIcon from "@material-ui/icons/Timeline";
+import AddIcon from "@material-ui/icons/Add";
+
 const styles = theme => ({
   root: {},
   bigAvatar: {
@@ -36,7 +42,7 @@ function CoverProfile(props) {
       <Paper className={classes.paperContainer} elevation={1}>
         <div
           style={{
-            paddingTop: "6.2%",
+            paddingTop: "6.5%",
             paddingLeft: "3%"
           }}
         >
@@ -55,9 +61,10 @@ function CoverProfile(props) {
 
       <Paper className={classes.root}>
         <Tabs indicatorColor="primary" textColor="secondary" centered>
-          <Link to="/profile/rated-players" className={classes.link}>
+          <Link to="/profile/timeline" className={classes.link}>
             <Tab
-              label="Rated Players"
+              label="Timeline"
+              icon={<TimelineIcon />}
               style={{
                 color: "#D23E56",
                 fontWeight: "bold",
@@ -70,6 +77,7 @@ function CoverProfile(props) {
           <Link to="/profile/following" className={classes.link}>
             <Tab
               label="Following"
+              icon={<GroupIcon />}
               style={{
                 color: "#D23E56",
                 fontWeight: "bold",
@@ -80,6 +88,7 @@ function CoverProfile(props) {
           <Link to="/profile/followers" className={classes.link}>
             <Tab
               label="Followers"
+              icon={<GroupIcon />}
               style={{
                 color: "#D23E56",
                 fontWeight: "bold",
@@ -90,6 +99,7 @@ function CoverProfile(props) {
           <Link to="/profile/photos" className={classes.link}>
             <Tab
               label="Photos"
+              icon={<PhotoCameraIcon />}
               style={{
                 color: "#D23E56",
                 fontWeight: "bold",
@@ -100,6 +110,7 @@ function CoverProfile(props) {
           <Link to="/profile/videos" className={classes.link}>
             <Tab
               label="Videos"
+              icon={<VideoLibraryIcon />}
               style={{
                 color: "#D23E56",
                 fontWeight: "bold",
@@ -110,6 +121,7 @@ function CoverProfile(props) {
           <Link to="/profile/compose" className={classes.link}>
             <Tab
               label="Compose"
+              icon={<AddIcon />}
               style={{
                 color: "#D23E56",
                 fontWeight: "bold",
