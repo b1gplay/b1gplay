@@ -7,6 +7,7 @@ import Paper from "@material-ui/core/Paper";
 import MyProfile from "../Profile/MyProfile";
 import PersonalInfo from "../Profile/PersonalInfo";
 import PhotoVideoFeed from "../Profile/PhotoVideoFeed";
+import TopFiveImages from "../Gallery/TopFiveImages";
 
 const styles = theme => ({
   root: {
@@ -30,6 +31,13 @@ function Timeline(props) {
           <div>
             <Paper className={classes.root} elevation={1}>
               <PersonalInfo />
+            </Paper>
+          </div>
+          <br />
+          <br />
+          <div>
+            <Paper className={classes.root} elevation={1}>
+              <TopFiveImages />
             </Paper>
           </div>
         </Grid>
