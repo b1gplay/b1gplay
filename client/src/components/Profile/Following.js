@@ -79,7 +79,7 @@ function Following(props) {
               avatar={
                 <Avatar
                   alt="Remy Sharp"
-                  src="/static/images/avatar/3.jpg"
+                  src="/static/images/avatar/1.jpg"
                   className={classes.bigAvatar}
                 />
               }
@@ -99,7 +99,7 @@ function Following(props) {
               avatar={
                 <Avatar
                   alt="Remy Sharp"
-                  src="/static/images/avatar/7.jpg"
+                  src="/static/images/avatar/4.jpg"
                   className={classes.bigAvatar}
                 />
               }

@@ -12,7 +12,8 @@ import CoverProfile from "../Profile/CoverProfile";
 import Followers from "../Profile/Followers";
 import Following from "../Profile/Following";
 import Timeline from "../Profile/Timeline";
-import PhotoVideoFeed from "../Profile/PhotoVideoFeed";
+import PhotoGallery from "../Gallery/PhotoGallery";
+import VideoGallery from "../Gallery/VideoGallery";
 
 const styles = theme => ({
   root: {
@@ -59,6 +60,8 @@ class ViewProfile extends React.Component {
               <Route path="/profile/timeline" component={Timeline} />
               <Route path="/profile/followers" component={Followers} />
               <Route path="/profile/following" component={Following} />
+              <Route path="/profile/photos" component={PhotoGallery} />
+              <Route path="/profile/videos" component={VideoGallery} />
               {/* Accessing profile link redirects to profile > timeline */}
               <Route
                 exact
