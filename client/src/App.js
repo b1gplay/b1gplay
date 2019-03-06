@@ -18,7 +18,7 @@ const styles = theme => ({
 });
 
 const App = ({ classes }) => (
-  <React.Fragment>
+  <>
     <CssBaseline />
     <Header />
     {/* ['#F0F0F0','#F5F5F5','#F8F8F8','#F5F5F5']  */}
@@ -35,7 +35,7 @@ const App = ({ classes }) => (
         <Route path="/logout" component={SignOn} />
       </Switch>
     </main>
-  </React.Fragment>
+  </>
 );
 
 export default withStyles(styles)(App);
