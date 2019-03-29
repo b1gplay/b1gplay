@@ -5,8 +5,15 @@ import Header from "./components/Layout/Header";
 
 import MessageList from "./components/Messaging/MessageList";
 import ViewProfile from "./components/Profile/ViewProfile";
+import Profile from "./components/NewProfile/Profile"
 import TopPerformers from "./components/TopPerformers/TopPerformers";
-import SignOn from "./components/Authentication/SignOn";
+// 
+import SignOn from "./components/NewAuthentication/SignOn";
+import Home from "./components/Home/Home";
+import Stars from "./components/Stars/Stars";
+import Followers from "./components/Followers/Followers";
+import Following from "./components/Following/Following";
+import PersonalRating from "./components/Ratings/PersonalRating";
 
 const styles = theme => ({
   main: {
@@ -27,10 +34,16 @@ const App = ({ classes }) => (
       <br />
       <br />
       <Switch>
+        <Route path="/personalrating" component={PersonalRating} />
+        <Route path="/myhome" component={Profile} />
+        <Route path="/log" component={SignOn} />
+        <Route path="/followers" component={Followers} />
+        <Route path="/following" component={Following} />
         <Route path="/profile" component={ViewProfile} />
+        <Route path="/stars" component={Stars} />
         <Route path="/messages" component={MessageList} />
         <Route path="/top-performers" component={TopPerformers} />
-        <Route path="/" />
+        <Route path="/" component={Home} />
         <Route path="/notifications" component={MessageList} />
         <Route path="/logout" component={SignOn} />
       </Switch>

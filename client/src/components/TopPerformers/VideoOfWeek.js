@@ -47,9 +47,9 @@ function VideoOfWeek(props) {
   const { classes } = props;
   return (
     <div>
-      <Typography variant="title" gutterBottom align="center" color="primary">
-        Video of the week
-      </Typography>
+            <Typography component="h3" variant="subtitle2" style={{ marginLeft: 20, marginTop: 5 }} gutterBottom align="center">
+              Video of the week
+          </Typography>
       <Card className={classes.card}>
         <ListItem alignItems="flex-start">
           <ListItemAvatar>

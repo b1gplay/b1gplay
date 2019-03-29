@@ -24,9 +24,6 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import Tooltip from '@material-ui/core/Tooltip';
-import LockIcon from "@material-ui/icons/Lock";
-
-import SignOn from "../NewAuthentication/SignOn";
 
 const styles = theme => ({
   root: {
@@ -153,10 +150,6 @@ class Header extends React.Component {
         <Link to="/logout" className={classes.link}>
           <MenuItem onClick={this.handleMenuClose}>Logout</MenuItem>
         </Link>
-        <Typography variant="title" gutterBottom style={{ fontSize: '13px', color: '#D23E56' }} align="center">
-          <Link to="/logon">Following</Link>
-        </Typography>
-
       </Menu>
     );
 
@@ -229,7 +222,7 @@ class Header extends React.Component {
                     className={classes.avatar}
                   />
 
-                  <Link to="/myhome" className={classes.link}>
+                  <Link to="/profile" className={classes.link}>
                     <Tooltip title="Profile">
                       <IconButton color="inherit">
                           <PersonIcon />
@@ -261,21 +254,12 @@ class Header extends React.Component {
                       </IconButton>
                     </Tooltip>
                   </Link>
-
                   <Link to="/notifications" className={classes.link}>
                     <Tooltip title="Notifications">
                       <IconButton color="inherit">
                         <Badge badgeContent={17} color="primary">
                           <NotificationsIcon />
                         </Badge>
-                      </IconButton>
-                    </Tooltip>
-                  </Link>
-
-                  <Link to="/logout" className={classes.link}>
-                    <Tooltip title="Messages">
-                      <IconButton color="inherit">
-                        <LockIcon />
                       </IconButton>
                     </Tooltip>
                   </Link>

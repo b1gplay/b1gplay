@@ -5,13 +5,16 @@ import Paper from "@material-ui/core/Paper";
 import Avatar from "@material-ui/core/Avatar";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
-import { Link } from "react-router-dom";
 
 import GroupIcon from "@material-ui/icons/Group";
 import PhotoCameraIcon from "@material-ui/icons/PhotoCamera";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
+import PermMediaIcon from "@material-ui/icons/PermMedia";
 import TimelineIcon from "@material-ui/icons/Timeline";
 import AddIcon from "@material-ui/icons/Add";
+import Typography from "@material-ui/core/Typography";
+import { Link as RouterLink } from 'react-router-dom'
+import Link from '@material-ui/core/Link';
 
 const styles = theme => ({
   root: {},
@@ -23,7 +26,7 @@ const styles = theme => ({
   },
   paperContainer: {
     width: "100%",
-    height: 250,
+    height: 220,
     marginTop: -40,
     backgroundImage: `url(${"/static/images/ll.jpg"})`
   },
@@ -33,7 +36,7 @@ const styles = theme => ({
   }
 });
 
-function CoverProfile(props) {
+function Cover(props) {
   const { classes } = props;
 
   return (
@@ -43,16 +46,16 @@ function CoverProfile(props) {
         <div
           style={{
             paddingTop: "6.5%",
-            paddingLeft: "3%"
+            paddingLeft: "7%"
           }}
         >
           <Avatar
             alt="Remy Sharp"
             src="/static/images/avatar/7.jpg"
             style={{
-              margin: 10,
-              width: 170,
-              height: 170,
+              marginTop: 110,
+              width: 130,
+              height: 130,
               border: "5px solid white"
             }}
           />
@@ -60,52 +63,18 @@ function CoverProfile(props) {
       </Paper>
 
       <Paper className={classes.root}>
-        <Tabs indicatorColor="primary" textColor="secondary" centered>
-          <Link to="/profile/timeline" className={classes.link}>
-            <Tab
-              label="Timeline"
-              icon={<TimelineIcon />}
-              style={{
-                color: "#D23E56",
-                fontWeight: "bold",
-                borderLeft: "1px solid #d4d4d4",
-                borderRight: "1px solid #d4d4d4"
-              }}
-            />
-          </Link>
+        <Tabs indicatorColor="primary" textColor="secondary" >
 
-          <Link to="/profile/following" className={classes.link}>
-            <Tab
-              label="Following"
-              icon={<GroupIcon />}
-              style={{
-                color: "#D23E56",
-                fontWeight: "bold",
-                borderRight: "1px solid #d4d4d4"
-              }}
-            />
-          </Link>
-
-          <Link to="/profile/followers" className={classes.link}>
-            <Tab
-              label="Followers"
-              icon={<GroupIcon />}
-              style={{
-                color: "#D23E56",
-                fontWeight: "bold",
-                borderRight: "1px solid #d4d4d4"
-              }}
-            />
-          </Link>
-
-          <Link to="/profile/photos" className={classes.link}>
+          <Link to="/profile/photos" className={classes.link} style={{ marginLeft: "280px" }}>
             <Tab
               label="Photos"
               icon={<PhotoCameraIcon />}
               style={{
                 color: "#D23E56",
                 fontWeight: "bold",
-                borderRight: "1px solid #d4d4d4"
+                borderLeft: "1px solid #d4d4d4",
+                borderRight: "1px solid #d4d4d4",
+                width: "175px",
               }}
             />
           </Link>
@@ -117,18 +86,20 @@ function CoverProfile(props) {
               style={{
                 color: "#D23E56",
                 fontWeight: "bold",
-                borderRight: "1px solid #d4d4d4"
+                borderRight: "1px solid #d4d4d4",
+                width: "175px",
               }}
             />
           </Link>
+
           <Link to="/profile/compose" className={classes.link}>
             <Tab
-              label="Compose"
-              icon={<AddIcon />}
+              label="Media"
+              icon={<PermMediaIcon />}
               style={{
                 color: "#D23E56",
                 fontWeight: "bold",
-                borderRight: "1px solid #d4d4d4"
+                width: "175px",
               }}
             />
           </Link>
@@ -138,8 +109,8 @@ function CoverProfile(props) {
   );
 }
 
-CoverProfile.propTypes = {
+Cover.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(CoverProfile);
+export default withStyles(styles)(Cover);

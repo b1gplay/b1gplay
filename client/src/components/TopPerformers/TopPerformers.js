@@ -8,6 +8,7 @@ import PlayerOfWeek from "../TopPerformers/PlayerOfWeek";
 import CoachRatings from "../TopPerformers/CoachRatings";
 import PictureOfWeek from "../TopPerformers/PictureOfWeek";
 import VideoOfWeek from "../TopPerformers/VideoOfWeek";
+import AgeFilter from "../TopPerformers/AgeFilter"
 
 const styles = theme => ({});
 
@@ -19,19 +20,18 @@ class TopPerformers extends React.Component {
       <div>
         <Grid container spacing={24}>
           <Grid item xs={3} sm={3} style={{ height: "100vh" }}>
-            <PlayerOfWeek />
           </Grid>
           <Grid item xs={9} sm={9}>
+            <AgeFilter />
             <CoachRatings />
-            <br />
-            <br />
-            <br />
-            <br />
             <Grid container spacing={24}>
-              <Grid item xs={6} sm={6} style={{ height: "100vh" }}>
+              <Grid item xs={4} sm={4} style={{ height: "100vh" }}>
+                <PlayerOfWeek />
+              </Grid>
+              <Grid item xs={4} sm={4} style={{ height: "100vh" }}>
                 <PictureOfWeek />
               </Grid>
-              <Grid item xs={6} sm={6}>
+              <Grid item xs={4} sm={4}>
                 <VideoOfWeek />
               </Grid>
             </Grid>
