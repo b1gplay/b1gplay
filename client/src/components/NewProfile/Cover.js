@@ -5,7 +5,8 @@ import Paper from "@material-ui/core/Paper";
 import Avatar from "@material-ui/core/Avatar";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
-
+import Button from '@material-ui/core/Button';
+import Post from './Post';
 import GroupIcon from "@material-ui/icons/Group";
 import PhotoCameraIcon from "@material-ui/icons/PhotoCamera";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
@@ -92,17 +93,7 @@ function Cover(props) {
             />
           </Link>
 
-          <Link to="/profile/compose" className={classes.link}>
-            <Tab
-              label="Media"
-              icon={<PermMediaIcon />}
-              style={{
-                color: "#D23E56",
-                fontWeight: "bold",
-                width: "175px",
-              }}
-            />
-          </Link>
+          < Post />
         </Tabs>
       </Paper>
     </div>

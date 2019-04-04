@@ -32,9 +32,6 @@ function MyProfile(props) {
             Uganda
         </Typography>
         <Typography component="p" align="left">
-            Date Of Birth: 12/02/1996
-        </Typography>
-        <Typography component="p" align="left">
             Am the best Point Guard. I make CP3 look like a clown
         </Typography>
         <hr/>
@@ -69,6 +66,9 @@ function MyProfile(props) {
             <Typography variant="button" gutterBottom align="left">
                 Personal Info
                 <hr/>
+            </Typography>
+            <Typography component="p" align="left">
+                Date Of Birth: 12/02/1996
             </Typography>
             <Typography component="p" align="left">
                 Position: Point Guard

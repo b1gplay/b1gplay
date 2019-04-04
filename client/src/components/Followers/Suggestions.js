@@ -40,7 +40,7 @@ function Suggestions(props) {
       <Card className={classes.card}>
         <CardActionArea>
           <Typography component="h5" variant="subtitle2" style={{ marginLeft: 20, marginTop: 5 }}>
-              Who to Follow
+              People you may know
           </Typography>
           <Grid container spacing={24}>
             <Grid item xs={6} sm={2}>
@@ -74,10 +74,7 @@ function Suggestions(props) {
           </Button>
         </CardActionArea>
         <hr/>
-        <CardActionArea>
-          <Typography component="h5" variant="subtitle2" style={{ marginLeft: 20, marginTop: 5 }}>
-              Who to Follow
-          </Typography>
+        <CardActionArea style={{ marginBottom: "10px" }}>
           <Grid container spacing={24}>
             <Grid item xs={6} sm={2}>
               <Avatar
@@ -109,7 +106,6 @@ function Suggestions(props) {
             </Typography>
           </Button>
         </CardActionArea>
-        <hr/>
       </Card>
     </div>
   );

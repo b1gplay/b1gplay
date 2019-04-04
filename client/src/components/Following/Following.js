@@ -41,9 +41,6 @@ function Following(props) {
     <div className={classes.root}>
       <Grid container spacing={24}>
         <Grid item xs={3} sm={3}>
-          < Suggestions />
-        </Grid> 
-        <Grid item xs={3} sm={3}>
           <Card className={classes.card}>
             <CardActionArea>
               <CardMedia
@@ -153,6 +150,9 @@ function Following(props) {
               </Typography>
             </CardActionArea>
           </Card>
+        </Grid>
+        <Grid item xs={3} sm={3}>
+          < Suggestions />
         </Grid>
       </Grid>
     </div>

@@ -57,7 +57,7 @@ class Feed extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Grid item xs={12} >
+      <Grid item xs={12} style={{ marginTop: "5px" }}>
         <Card className={classes.card}>
           <CardHeader
             avatar={
