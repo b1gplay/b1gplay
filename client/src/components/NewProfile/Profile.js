@@ -43,7 +43,6 @@ class Profile extends React.Component {
               <Grid container spacing={24}>
                 < MyProfile />
                 <Grid item xs={8}>
-                  < Post />
                   < Feed />
                 </Grid>
               </Grid>
