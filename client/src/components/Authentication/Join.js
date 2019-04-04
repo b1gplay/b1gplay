@@ -7,7 +7,6 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import Radio from "@material-ui/core/Radio";
 
@@ -16,36 +15,39 @@ import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 
 const styles = theme => ({
-  root: {
-    flexGrow: 1
-  },
   paper: {
     padding: theme.spacing.unit * 2,
     textAlign: "center",
     color: theme.palette.text.secondary
   },
-  container: {
-    display: "flex",
-    flexWrap: "wrap"
-  },
-  paperContainer: {
-    width: "100%",
-    height: "100%",
-    marginTop: -40,
-    backgroundImage: `url(${"/static/images/s.jpg"})`
+
+  gridContainer: {
+    marginTop: -20,
+    marginLeft: -24,
+    marginRight: -70,
+    //marginRight: "auto",
+    //marginLeft: "auto",
+    height: "auto",
+    backgroundSize: "100vw 100vh",
+    minHeight: "100%",
+    minWidth: "100%",
+    backgroundRepeat: "no-repeat",
+    backgroundImage: `url(${"/static/images/s.jpg"})`,
+    zIndex: 1000,
+    position: "fixed"
   }
 });
 
-function FullWidthGrid(props) {
+function Join(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.paperContainer}>
-      <Grid container spacing={24} style={{ marginTop: 30 }}>
+    <div>
+      <Grid container spacing={24} className={classes.gridContainer}>
         <Grid item xs={6} sm={1} />
         <Grid item xs={6} sm={6}>
           <Grid container spacing={24}>
-            <Grid item xs={12} sm={12}>
+            <Grid item xs={12} sm={12} style={{ marginTop: 30 }}>
               <Typography variant="h4" style={{ color: "#ffffff" }}>
                 Where sports and society meet
               </Typography>
@@ -62,9 +64,11 @@ function FullWidthGrid(props) {
         </Grid>
         <Grid item xs={6} sm={1} />
         <Grid item xs={6} sm={4}>
-          <Paper className={classes.paper} style={{ marginBottom: "150px" }}>
+          <br />
+          <br />
+          <Paper className={classes.paper} style={{ marginRight: 80 }}>
             <Grid container spacing={24}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={6} sm={6}>
                 <TextField
                   id="outlined-uncontrolled"
                   label="First name"
@@ -74,7 +78,7 @@ function FullWidthGrid(props) {
                   margin="dense"
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={6} sm={6}>
                 <TextField
                   id="outlined-uncontrolled"
                   label="Last name"
@@ -135,10 +139,18 @@ function FullWidthGrid(props) {
               />
             </Grid>
 
-            <Grid item xs={12} sm={12}>
+            <Grid item xs={6} sm={6}>
               <FormControl component="fieldset" className={classes.formControl}>
-                <FormLabel component="legend">Gender</FormLabel>
-                <RadioGroup aria-label="Gender" name="gender1">
+                <FormLabel component="legend" align="left">
+                  Gender
+                </FormLabel>
+                <RadioGroup
+                  aria-label="Gender"
+                  name="gender1"
+                  className={classes.group}
+                  //value={this.state.value}
+                  //onChange={this.handleChange}
+                >
                   <FormControlLabel
                     value="female"
                     control={<Radio />}
@@ -170,8 +182,8 @@ function FullWidthGrid(props) {
   );
 }
 
-FullWidthGrid.propTypes = {
+Join.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(FullWidthGrid);
+export default withStyles(styles)(Join);
