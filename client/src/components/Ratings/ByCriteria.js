@@ -1,73 +1,83 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from '@material-ui/core/Button';
-import { render } from 'react-dom';
-import Highcharts from 'highcharts';
-import HighchartsReact from 'highcharts-react-official';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import NativeSelect from '@material-ui/core/NativeSelect';
-import Input from '@material-ui/core/Input';
-import FormHelperText from '@material-ui/core/FormHelperText';
+import Button from "@material-ui/core/Button";
+import { render } from "react-dom";
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
+import NativeSelect from "@material-ui/core/NativeSelect";
+import Input from "@material-ui/core/Input";
+import FormHelperText from "@material-ui/core/FormHelperText";
 
 const options = {
-        credits: {
-          enabled: false
-        },
-        chart: {
-            type: 'column'
-        },
-        title: {
-            text: 'Ratings by criteria'
-        },
-        xAxis: {
-            categories: ['Criteria']
-        },
-        yAxis: {
-            label: 'Raters'
-        },
-        series: [{
-            name: 'Rebounding',
-            data: [5.23]
-        }, {
-            name: 'Defence',
-            data: [6.23]
-        }, {
-            name: 'Scoring',
-            data: [7.45]
-        }, {
-            name: 'Leadership',
-            data: [7.84]
-        },{
-            name: 'Discipline',
-            data: [4.85]
-        },{
-            name: 'Basketball IQ',
-            data: [8.23]
-        }, {
-            name: 'Energy',
-            data: [6.45]
-        }, {
-            name: 'Determination',
-            data: [2.84]
-        },{
-            name: 'Cluth',
-            data: [1.85]
-        }
-        , {
-            name: 'Pro Potential',
-            data: [9.23]
-        }]
-}
+  credits: {
+    enabled: false
+  },
+  chart: {
+    type: "column"
+  },
+  title: {
+    text: "Ratings by criteria"
+  },
+  xAxis: {
+    categories: ["Criteria"]
+  },
+  yAxis: {
+    label: "Raters"
+  },
+  series: [
+    {
+      name: "Rebounding",
+      data: [5.23]
+    },
+    {
+      name: "Defence",
+      data: [6.23]
+    },
+    {
+      name: "Scoring",
+      data: [7.45]
+    },
+    {
+      name: "Leadership",
+      data: [7.84]
+    },
+    {
+      name: "Discipline",
+      data: [4.85]
+    },
+    {
+      name: "Basketball IQ",
+      data: [8.23]
+    },
+    {
+      name: "Energy",
+      data: [6.45]
+    },
+    {
+      name: "Determination",
+      data: [2.84]
+    },
+    {
+      name: "Cluth",
+      data: [1.85]
+    },
+    {
+      name: "Pro Potential",
+      data: [9.23]
+    }
+  ]
+};
 
 const styles = theme => ({
   bigAvatar: {
@@ -87,7 +97,7 @@ const styles = theme => ({
   },
   avatar: {
     margin: 10
-  },
+  }
 });
 
 function ByCriteria(props) {
@@ -101,7 +111,10 @@ function ByCriteria(props) {
         </Grid>
         <Grid item xs={3}>
           <FormControl className={classes.formControl}>
-            <NativeSelect defaultValue={30} input={<Input name="name" id="uncontrolled-native" />}>
+            <NativeSelect
+              defaultValue={30}
+              input={<Input name="name" id="uncontrolled-native" />}
+            >
               <option value="" />
               <option value={10}>All</option>
               <option value={10}>Coaches</option>
@@ -115,10 +128,7 @@ function ByCriteria(props) {
       </Grid>
       <Card className={classes.card}>
         <CardActionArea>
-          <HighchartsReact
-            highcharts={Highcharts}
-            options={options}
-          />
+          <HighchartsReact highcharts={Highcharts} options={options} />
         </CardActionArea>
       </Card>
     </div>
@@ -126,7 +136,7 @@ function ByCriteria(props) {
 }
 
 ByCriteria.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(ByCriteria);
