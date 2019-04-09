@@ -15,9 +15,11 @@ import Stars from "./components/Stars/Stars";
 import NewStars from "./components/NewStars/NewStars";
 import NewStars1 from "./components/NewStars/NewStars1";
 import Followers from "./components/Followers/Followers";
+import NewFollowers from "./components/NewFollowers/NewFollowers";
 import Following from "./components/Following/Following";
 import NewFollowing from "./components/NewFollowing/NewFollowing";
 import PersonalRating from "./components/Ratings/PersonalRating";
+import NewPersonalRatings from "./components/NewRatings/NewPersonalRating";
 
 const styles = theme => ({
   main: {
@@ -39,10 +41,12 @@ const App = ({ classes }) => (
       <br />
       <Switch>
         <Route path="/personalrating" component={PersonalRating} />
+        <Route path="/personalrating1" component={NewPersonalRatings} />
         <Route path="/myhome" component={Profile} />
         <Route path="/log" component={SignOn} />
         <Route path="/join" component={Join} />
         <Route path="/followers" component={Followers} />
+        <Route path="/followers1" component={NewFollowers} />
         <Route path="/following" component={Following} />
         <Route path="/following1" component={NewFollowing} />
         <Route path="/profile" component={ViewProfile} />

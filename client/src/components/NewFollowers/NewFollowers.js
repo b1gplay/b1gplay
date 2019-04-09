@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 
-import OneFollowing from "./OneFollowing";
+import OneFollower from "./OneFollower";
 import Suggestions from "./Suggestions";
 
 const styles = theme => ({
@@ -27,7 +27,7 @@ const styles = theme => ({
   }
 });
 
-function Following(props) {
+function Follower(props) {
   const { classes } = props;
 
   return (
@@ -38,13 +38,13 @@ function Following(props) {
       <br />
       <Grid container spacing={24}>
         <Grid item xs={3} sm={3}>
-          <OneFollowing />
+          <OneFollower />
         </Grid>
         <Grid item xs={3} sm={3}>
-          <OneFollowing />
+          <OneFollower />
         </Grid>
         <Grid item xs={3} sm={3}>
-          <OneFollowing />
+          <OneFollower />
         </Grid>
         <Grid item xs={3} sm={3}>
           <Suggestions />
@@ -54,8 +54,8 @@ function Following(props) {
   );
 }
 
-Following.propTypes = {
+Follower.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Following);
+export default withStyles(styles)(Follower);

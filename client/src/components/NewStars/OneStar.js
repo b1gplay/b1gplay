@@ -11,11 +11,11 @@ import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import red from "@material-ui/core/colors/red";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
 import Button from "@material-ui/core/Button";
+import Badge from "@material-ui/core/Badge";
 
-import MoreVertIcon from "@material-ui/icons/MoreVert";
+import Fab from "@material-ui/core/Fab";
+import Icon from "@material-ui/core/Icon";
 
 const styles = theme => ({
   card: {
@@ -43,6 +43,9 @@ const styles = theme => ({
   },
   button: {
     margin: theme.spacing.unit
+  },
+  fab: {
+    margin: theme.spacing.unit
   }
 });
 
@@ -67,14 +70,9 @@ class OneStar extends React.Component {
             />
           }
           action={
-            <Button
-              size="small"
-              variant="contained"
-              color="secondary"
-              className={classes.button}
-            >
-              Follow
-            </Button>
+            <Fab color="secondary" aria-label="Edit" className={classes.fab}>
+              <Icon>34</Icon>
+            </Fab>
           }
           title="Otim Tony"
           subheader="@otim.tony"
