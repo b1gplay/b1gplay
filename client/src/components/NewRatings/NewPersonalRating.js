@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
@@ -36,6 +35,11 @@ function PersonalRatings(props) {
 
   return (
     <div className={classes.root}>
+      <br />
+      <br />
+      <Typography variant="h4" gutterBottom align="center">
+        Ratings
+      </Typography>
       <Grid container spacing={24}>
         <Grid item xs={3} sm={3}>
           <ByRaters />
@@ -50,27 +54,27 @@ function PersonalRatings(props) {
           <ByCriteria />
         </Grid>
       </Grid>
-      <br />
       <br />
       <br />
       <br />
       <Typography variant="h4" gutterBottom align="center">
-        Stars
+        More Ratings
       </Typography>
       <Grid container spacing={24}>
         <Grid item xs={3} sm={3}>
-          <OneStar />
+          <ByRaters />
         </Grid>
         <Grid item xs={3} sm={3}>
-          <OneStar />
+          <ByCriteria />
         </Grid>
         <Grid item xs={3} sm={3}>
-          <OneStar />
+          <ByRaters />
         </Grid>
         <Grid item xs={3} sm={3}>
-          <OneStar />
+          <ByCriteria />
         </Grid>
       </Grid>
+      <br />
     </div>
   );
 }

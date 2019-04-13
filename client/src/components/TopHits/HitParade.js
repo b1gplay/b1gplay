@@ -2,10 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-
 import Typography from "@material-ui/core/Typography";
 
-import OneStar from "./OneStar";
+import PictureOfWeek from "./PictureOfWeek";
+import VideoOfWeek from "./VideoOfWeek";
+import GeneralFilter from "./GeneralFilter";
 
 const styles = theme => ({
   root: {
@@ -25,45 +26,34 @@ function NewStars(props) {
     <div className={classes.root}>
       <br />
       <Typography variant="h5" component="h3" color="default" align="center">
-        Top male Point Guards from Uganda
+        Hit Parade
       </Typography>
       <br />
       <Grid container spacing={24}>
-        <Grid item xs={3} sm={3}>
-          <OneStar />
+        <Grid item xs={6} sm={6}>
+          <PictureOfWeek />
+        </Grid>
+        <Grid item xs={6} sm={6}>
+          <VideoOfWeek />
+        </Grid>
+      </Grid>
+
+      <Grid container spacing={24}>
+        <Grid item xs={12} sm={12}>
+          <br />
+          <GeneralFilter />
         </Grid>
         <Grid item xs={3} sm={3}>
-          <OneStar />
+          <PictureOfWeek />
         </Grid>
         <Grid item xs={3} sm={3}>
-          <OneStar />
+          <PictureOfWeek />
         </Grid>
         <Grid item xs={3} sm={3}>
-          <OneStar />
+          <PictureOfWeek />
         </Grid>
         <Grid item xs={3} sm={3}>
-          <OneStar />
-        </Grid>
-        <Grid item xs={3} sm={3}>
-          <OneStar />
-        </Grid>
-        <Grid item xs={3} sm={3}>
-          <OneStar />
-        </Grid>
-        <Grid item xs={3} sm={3}>
-          <OneStar />
-        </Grid>
-        <Grid item xs={3} sm={3}>
-          <OneStar />
-        </Grid>
-        <Grid item xs={3} sm={3}>
-          <OneStar />
-        </Grid>
-        <Grid item xs={3} sm={3}>
-          <OneStar />
-        </Grid>
-        <Grid item xs={3} sm={3}>
-          <OneStar />
+          <VideoOfWeek />
         </Grid>
       </Grid>
     </div>

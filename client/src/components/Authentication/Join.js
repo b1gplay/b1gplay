@@ -75,7 +75,6 @@ function Join(props) {
                   className={classes.textField}
                   margin="normal"
                   variant="outlined"
-                  margin="dense"
                 />
               </Grid>
               <Grid item xs={6} sm={6}>
@@ -85,7 +84,6 @@ function Join(props) {
                   className={classes.textField}
                   margin="normal"
                   variant="outlined"
-                  margin="dense"
                 />
               </Grid>
             </Grid>
@@ -97,7 +95,6 @@ function Join(props) {
                 margin="normal"
                 variant="outlined"
                 fullWidth
-                margin="dense"
               />
             </Grid>
             <Grid item xs={12} sm={12}>
@@ -108,7 +105,6 @@ function Join(props) {
                 margin="normal"
                 variant="outlined"
                 fullWidth
-                margin="dense"
               />
             </Grid>
             <Grid item xs={12} sm={12}>
@@ -119,7 +115,6 @@ function Join(props) {
                 margin="normal"
                 variant="outlined"
                 fullWidth
-                margin="dense"
               />
             </Grid>
 

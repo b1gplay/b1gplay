@@ -21,12 +21,9 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import Tooltip from '@material-ui/core/Tooltip';
+import Tooltip from "@material-ui/core/Tooltip";
 import LockIcon from "@material-ui/icons/Lock";
-
-import SignOn from "../NewAuthentication/SignOn";
 
 const styles = theme => ({
   root: {
@@ -153,10 +150,14 @@ class Header extends React.Component {
         <Link to="/logout" className={classes.link}>
           <MenuItem onClick={this.handleMenuClose}>Logout</MenuItem>
         </Link>
-        <Typography variant="title" gutterBottom style={{ fontSize: '13px', color: '#D23E56' }} align="center">
+        <Typography
+          variant="title"
+          gutterBottom
+          style={{ fontSize: "13px", color: "#D23E56" }}
+          align="center"
+        >
           <Link to="/logon">Following</Link>
         </Typography>
-
       </Menu>
     );
 
@@ -200,10 +201,10 @@ class Header extends React.Component {
           <Toolbar>
             <Typography
               className={classes.title}
-              variant="h6"
+              variant="h4"
               color="inherit"
               noWrap
-              style={{ fontWeight: "bold" }}
+              //style={{ fontWeight: "bold" }}
             >
               b1gplay
             </Typography>
@@ -232,20 +233,29 @@ class Header extends React.Component {
                   <Link to="/myhome" className={classes.link}>
                     <Tooltip title="Profile">
                       <IconButton color="inherit">
-                          <PersonIcon />
+                        <PersonIcon />
                       </IconButton>
                     </Tooltip>
                   </Link>
-
+                  {/* 
                   <Link to="/" className={classes.link}>
                     <Tooltip title="Home">
                       <IconButton color="inherit">
-                          <HomeIcon />
+                        <HomeIcon />
                       </IconButton>
                     </Tooltip>
                   </Link>
-                  <Link to="/top-performers" className={classes.link}>
+                  
+                   <Link to="/top-performers" className={classes.link}>
                     <Tooltip title="Top Performers">
+                      <IconButton color="inherit">
+                        <PollIcon />
+                      </IconButton>
+                    </Tooltip>
+                  </Link>*/}
+
+                  <Link to="/data-analytics" className={classes.link}>
+                    <Tooltip title="Data analytics">
                       <IconButton color="inherit">
                         <PollIcon />
                       </IconButton>

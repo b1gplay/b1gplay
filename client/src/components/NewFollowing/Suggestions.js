@@ -9,6 +9,8 @@ import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
 import ButtonBase from "@material-ui/core/ButtonBase";
 
+import Avatar from "@material-ui/core/Avatar";
+
 const styles = theme => ({
   root: {
     flexGrow: 1
@@ -27,6 +29,10 @@ const styles = theme => ({
     display: "block",
     maxWidth: "100%",
     maxHeight: "100%"
+  },
+  bigAvatar: {
+    width: 60,
+    height: 60
   }
 });
 
@@ -39,10 +45,10 @@ function Followers(props) {
         <Grid container spacing={16}>
           <Grid item>
             <ButtonBase className={classes.image}>
-              <img
-                className={classes.img}
-                alt="complex"
-                src="/static/images/avatar/7.jpg"
+              <Avatar
+                alt="Remy Sharp"
+                src="/static/images/avatar/3.jpg"
+                className={classes.bigAvatar}
               />
             </ButtonBase>
           </Grid>
@@ -58,8 +64,8 @@ function Followers(props) {
             <Grid item>
               <Button
                 size="small"
-                variant="outlined"
-                color="inherit"
+                variant="contained"
+                color="secondary"
                 className={classes.button}
               >
                 Follow
@@ -73,10 +79,10 @@ function Followers(props) {
         <Grid container spacing={16}>
           <Grid item>
             <ButtonBase className={classes.image}>
-              <img
-                className={classes.img}
-                alt="complex"
-                src="/static/images/avatar/7.jpg"
+              <Avatar
+                alt="Remy Sharp"
+                src="/static/images/avatar/3.jpg"
+                className={classes.bigAvatar}
               />
             </ButtonBase>
           </Grid>
@@ -92,8 +98,8 @@ function Followers(props) {
             <Grid item>
               <Button
                 size="small"
-                variant="outlined"
-                color="inherit"
+                variant="contained"
+                color="secondary"
                 className={classes.button}
               >
                 Follow
@@ -107,10 +113,10 @@ function Followers(props) {
         <Grid container spacing={16}>
           <Grid item>
             <ButtonBase className={classes.image}>
-              <img
-                className={classes.img}
-                alt="complex"
-                src="/static/images/avatar/7.jpg"
+              <Avatar
+                alt="Remy Sharp"
+                src="/static/images/avatar/3.jpg"
+                className={classes.bigAvatar}
               />
             </ButtonBase>
           </Grid>
@@ -126,8 +132,8 @@ function Followers(props) {
             <Grid item>
               <Button
                 size="small"
-                variant="outlined"
-                color="inherit"
+                variant="contained"
+                color="secondary"
                 className={classes.button}
               >
                 Follow

@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
+
 import Button from "@material-ui/core/Button";
 import Radio from "@material-ui/core/Radio";
 
@@ -71,7 +71,6 @@ function FullWidthGrid(props) {
                   className={classes.textField}
                   margin="normal"
                   variant="outlined"
-                  margin="dense"
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -81,7 +80,6 @@ function FullWidthGrid(props) {
                   className={classes.textField}
                   margin="normal"
                   variant="outlined"
-                  margin="dense"
                 />
               </Grid>
             </Grid>
@@ -93,7 +91,6 @@ function FullWidthGrid(props) {
                 margin="normal"
                 variant="outlined"
                 fullWidth
-                margin="dense"
               />
             </Grid>
             <Grid item xs={12} sm={12}>
@@ -104,7 +101,6 @@ function FullWidthGrid(props) {
                 margin="normal"
                 variant="outlined"
                 fullWidth
-                margin="dense"
               />
             </Grid>
             <Grid item xs={12} sm={12}>
@@ -115,7 +111,6 @@ function FullWidthGrid(props) {
                 margin="normal"
                 variant="outlined"
                 fullWidth
-                margin="dense"
               />
             </Grid>
 

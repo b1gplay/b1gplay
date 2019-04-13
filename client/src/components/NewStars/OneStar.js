@@ -8,14 +8,10 @@ import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
-import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import red from "@material-ui/core/colors/red";
-import Button from "@material-ui/core/Button";
-import Badge from "@material-ui/core/Badge";
 
 import Fab from "@material-ui/core/Fab";
-import Icon from "@material-ui/core/Icon";
 
 const styles = theme => ({
   card: {
@@ -70,8 +66,10 @@ class OneStar extends React.Component {
             />
           }
           action={
-            <Fab color="secondary" aria-label="Edit" className={classes.fab}>
-              <Icon>34</Icon>
+            <Fab color="secondary" className={classes.fab}>
+              <Typography variant="h5" gutterBottom color="inherit">
+                34
+              </Typography>
             </Fab>
           }
           title="Otim Tony"
