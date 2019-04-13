@@ -47,9 +47,15 @@ function VideoOfWeek(props) {
   const { classes } = props;
   return (
     <div>
-            <Typography component="h3" variant="subtitle2" style={{ marginLeft: 20, marginTop: 5 }} gutterBottom align="center">
-              Video of the week
-          </Typography>
+      <Typography
+        component="h3"
+        variant="subtitle2"
+        style={{ marginLeft: 20, marginTop: 5 }}
+        gutterBottom
+        align="center"
+      >
+        Video of the week
+      </Typography>
       <Card className={classes.card}>
         <ListItem alignItems="flex-start">
           <ListItemAvatar>
@@ -111,34 +117,14 @@ function VideoOfWeek(props) {
                 gutterBottom
                 color="primary"
                 align="right"
-                style={{ textTransform: "capitalize", padding: "14px" }}
+                style={{ textTransform: "capitalize", padding: "10px" }}
               >
                 18 Comments
               </Typography>
             </Grid>
           </Grid>
         </CardActions>
-        <CardContent>
-          <Grid container spacing={0}>
-            <Grid item xs={2} sm={2}>
-              <Avatar
-                alt="Remy Sharp"
-                src="/static/images/avatar/3.jpg"
-                className={classes.avatar}
-              />
-            </Grid>
-            <Grid item xs={10} sm={10}>
-              <TextField
-                id="outlined-bare"
-                className={classes.textField}
-                placeholder="Leave a comment..."
-                margin="normal"
-                fullWidth
-                variant="outlined"
-              />
-            </Grid>
-          </Grid>
-        </CardContent>
+        <CardContent />
       </Card>
     </div>
   );
