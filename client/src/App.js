@@ -60,7 +60,7 @@ const App = ({ classes }) => (
         <Route path="/stars2" component={NewStars1} />
         <Route path="/messages" component={MessageList} />
         <Route path="/top-performers" component={TopPerformers} />
-        <Route path="/" component={Home} />
+        <Route path="/" component={Profile} />
         <Route path="/notifications" component={MessageList} />
         <Route path="/logout" component={SignOn} />
       </Switch>
