@@ -5,6 +5,7 @@ import Header from "./components/Layout/Header";
 
 import MessageList from "./components/Messaging/MessageList";
 import ViewProfile from "./components/Profile/ViewProfile";
+import ProfilePage from "./components/Profile/ProfilePage";
 import Profile from "./components/NewProfile/Profile";
 import TopPerformers from "./components/TopPerformers/TopPerformers";
 
@@ -20,8 +21,9 @@ import NewFollowing from "./components/NewFollowing/NewFollowing";
 import PersonalRating from "./components/Ratings/PersonalRating";
 import NewPersonalRatings from "./components/NewRatings/NewPersonalRating";
 
-import Tab from "./components/Tab/Tab";
-import Tab1 from "./components/Tab/Tab1";
+import PersonalRatings from "./components/PersonalRatings/PersonalRatings";
+
+import Tab1 from "./components/PersonalRatings/Tab1";
 
 const styles = theme => ({
   main: {
@@ -42,7 +44,8 @@ const App = ({ classes }) => (
       <br />
       <br />
       <Switch>
-        <Route path="/personalrating2" component={Tab} />
+        <Route path="/profile1" component={ProfilePage} />
+        <Route path="/personal-ratings" component={PersonalRatings} />
         <Route path="/personalrating" component={PersonalRating} />
         <Route path="/personalrating1" component={NewPersonalRatings} />
         <Route path="/myhome" component={Profile} />
@@ -61,6 +64,7 @@ const App = ({ classes }) => (
         <Route path="/messages" component={MessageList} />
         <Route path="/top-performers" component={TopPerformers} />
         <Route path="/" component={Profile} />
+
         <Route path="/notifications" component={MessageList} />
         <Route path="/logout" component={SignOn} />
       </Switch>

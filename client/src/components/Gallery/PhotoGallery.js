@@ -17,8 +17,7 @@ const styles = theme => ({
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-around",
-    overflow: "hidden",
-    backgroundColor: theme.palette.background.paper
+    overflow: "hidden"
   },
   gridList: {
     width: "100%",
@@ -176,6 +175,7 @@ function PhotoGallery(props) {
       <br />
       <br />
       <br />
+
       <GridList cellHeight={160} className={classes.gridList} cols={10}>
         {tileData.map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1}>

@@ -6,11 +6,7 @@ import Grid from "@material-ui/core/Grid";
 
 import { Switch, Route, Redirect } from "react-router-dom";
 import ChatRoom from "../Messaging/ChatRoom";
-import Clipboard from "../Clipboard/Clipboard";
-import CoverProfile from "../Profile/CoverProfile";
 
-import Followers from "../Profile/Followers";
-import Following from "../Profile/Following";
 import Timeline from "../Profile/Timeline";
 import PhotoGallery from "../Gallery/PhotoGallery";
 import VideoGallery from "../Gallery/VideoGallery";
@@ -50,16 +46,11 @@ class ViewProfile extends React.Component {
 
     return (
       <div>
-        <CoverProfile />
-        <br />
-        <br />
-
         <Grid container spacing={24}>
           <Grid item xs={8} sm={8} style={{ height: "100vh" }}>
             <Switch>
               <Route path="/profile/timeline" component={Timeline} />
-              <Route path="/profile/followers" component={Followers} />
-              <Route path="/profile/following" component={Following} />
+
               <Route path="/profile/photos" component={PhotoGallery} />
               <Route path="/profile/videos" component={VideoGallery} />
               {/* Accessing profile link redirects to profile > timeline */}
@@ -87,15 +78,6 @@ class ViewProfile extends React.Component {
             </Typography>
             <ChatRoom />
             <br />
-            <Typography
-              variant="subtitle2"
-              gutterBottom
-              align="center"
-              style={{ fontWeight: "bold" }}
-            >
-              CLIPBOARD
-            </Typography>
-            <Clipboard />
           </Grid>
         </Grid>
       </div>

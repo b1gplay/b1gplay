@@ -40,7 +40,7 @@ function MyProfile(props) {
             style={{ fontSize: "13px", color: "#D23E56" }}
             align="center"
           >
-            <Link to="/personalrating2">Ratings</Link>
+            <Link to="/personal-ratings">Ratings</Link>
           </Typography>
           <Typography component="p" align="center">
             56.3

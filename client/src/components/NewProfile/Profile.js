@@ -20,7 +20,7 @@ const styles = theme => ({
   }
 });
 
-class Profile extends React.Component {
+class ProfilePage extends React.Component {
   render() {
     const { classes } = this.props;
     return (
@@ -45,8 +45,8 @@ class Profile extends React.Component {
   }
 }
 
-Profile.propTypes = {
+ProfilePage.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Profile);
+export default withStyles(styles)(ProfilePage);

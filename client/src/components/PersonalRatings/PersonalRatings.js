@@ -5,7 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import PollIcon from "@material-ui/icons/Poll";
-import FavoriteIcon from "@material-ui/icons/Favorite";
+import StarIcon from "@material-ui/icons/Star";
 import Typography from "@material-ui/core/Typography";
 import NewStars1 from "../NewStars/NewStars1";
 import NewPersonalRating from "../NewRatings/NewPersonalRating";
@@ -46,13 +46,11 @@ class IconLabelTabs extends React.Component {
     return (
       <div>
         <br />
-        <br />
-        <Typography variant="headline" align="center" color="inherit">
-          Personal Ratings
-        </Typography>
-        <br />
         <Paper square className={classes.root}>
           <br />
+          <Typography variant="headline" align="center" color="inherit">
+            Personal Ratings
+          </Typography>
           <Tabs
             value={this.state.value}
             onChange={this.handleChange}
@@ -61,7 +59,7 @@ class IconLabelTabs extends React.Component {
             textColor="secondary"
           >
             <Tab icon={<PollIcon />} label="RATINGS" />
-            <Tab icon={<FavoriteIcon />} label="STARS" />
+            <Tab icon={<StarIcon />} label="STARS" />
           </Tabs>
           {value === 0 && (
             <TabContainer>

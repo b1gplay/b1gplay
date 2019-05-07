@@ -10,15 +10,14 @@ import image from "../Gallery/bb.jpg";
 import image1 from "../Gallery/cc.jpg";
 import image2 from "../Gallery/dd.jpg";
 import image3 from "../Gallery/ee.jpg";
-import image4 from "../Gallery/ff.jpg";
 
 const styles = theme => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-around",
-    overflow: "hidden",
-    backgroundColor: theme.palette.background.paper
+    overflow: "hidden"
+    //backgroundColor: theme.palette.background.paper
   },
   gridList: {
     width: "100%",
@@ -50,16 +49,10 @@ const tileData = [
     title: "Image",
     author: "author",
     cols: 2
-  },
-  {
-    img: image4,
-    title: "Image",
-    author: "author",
-    cols: 2
   }
 ];
 
-function TopFiveImages(props) {
+function TopFourVideos(props) {
   const { classes } = props;
 
   return (
@@ -67,12 +60,12 @@ function TopFiveImages(props) {
       <br />
       <br />
 
-      <Typography variant="h5" component="h3" color="default" align="center">
-        Top 5 images
+      <Typography variant="title" gutterBottom align="center">
+        Top 4 videos
       </Typography>
       <br />
       <br />
-      <br />
+
       <GridList cellHeight={140} className={classes.gridList} cols={4}>
         {tileData.map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1}>
@@ -84,8 +77,8 @@ function TopFiveImages(props) {
   );
 }
 
-TopFiveImages.propTypes = {
+TopFourVideos.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(TopFiveImages);
+export default withStyles(styles)(TopFourVideos);
