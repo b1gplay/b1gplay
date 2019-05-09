@@ -12,7 +12,7 @@ import TopFourVideos from "../Gallery/TopFourVideos";
 
 const styles = theme => ({
   root: {
-    padding: theme.spacing.unit * 2
+    //padding: theme.spacing.unit * 2
   }
 });
 
@@ -30,9 +30,7 @@ function Timeline(props) {
           <br />
 
           <div>
-            <Paper className={classes.root} elevation={1}>
-              <PersonalInfo />
-            </Paper>
+            <PersonalInfo />
           </div>
           <br />
 

@@ -3,13 +3,12 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 
 import Grid from "@material-ui/core/Grid";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Timeline from "./Timeline";
 import CoverProfile from "./CoverProfile";
 import PhotoGallery from "../Gallery/PhotoGallery";
 import VideoGallery from "../Gallery/VideoGallery";
-import MyProfile from "./MyProfile";
-import PhotoVideoFeed from "./PhotoVideoFeed";
+
 import Rating from "./Rating";
 import OnlineChats from "./OnlineChats";
 
@@ -36,7 +35,7 @@ class Profile extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Grid container spacing={24}>
+        <Grid container spacing={40}>
           <Grid item xs={8}>
             <CoverProfile />
 
@@ -46,8 +45,8 @@ class Profile extends React.Component {
               <Route path="/profile1" component={Timeline} />
             </Switch>
           </Grid>
-          <Grid item xs={1} />
-          <Grid item xs={3} className={classes.ratingChatColumn}>
+          {/* <Grid item xs={1} /> */}
+          <Grid item xs={4} className={classes.ratingChatColumn}>
             <Rating />
             <OnlineChats />
           </Grid>

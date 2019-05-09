@@ -18,7 +18,7 @@ const styles = theme => ({
   },
   paperContainer: {
     width: "100%",
-    height: 300,
+    height: 330,
     marginTop: -59,
     backgroundImage: `url(${"/static/images/dd.jpg"})`
   },
@@ -37,7 +37,7 @@ function CoverProfile(props) {
         <div
           style={{
             paddingLeft: "3%",
-            paddingTop: "15%"
+            paddingTop: "17%"
           }}
         >
           <Avatar
@@ -81,8 +81,6 @@ function CoverProfile(props) {
           <Post />
         </Tabs>
       </Paper>
-      <br />
-      <br />
       <br />
     </div>
   );
