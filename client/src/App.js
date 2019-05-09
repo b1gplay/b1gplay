@@ -62,6 +62,7 @@ const App = ({ classes }) => (
 
         <Route path="/stars2" component={NewStars1} />
         <Route path="/messages" component={MessageList} />
+
         <Route path="/top-performers" component={TopPerformers} />
         <Route path="/" component={Profile} />
 

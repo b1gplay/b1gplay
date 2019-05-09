@@ -13,6 +13,18 @@ import Rating from "./Rating";
 import OnlineChats from "./OnlineChats";
 
 const styles = theme => ({
+  "@global": {
+    "*::-webkit-scrollbar": {
+      width: "0.6em"
+    },
+    "*::-webkit-scrollbar-track": {
+      "-webkit-box-shadow": "inset 0 0 6px rgba(0,0,0,0.00)"
+    },
+    "*::-webkit-scrollbar-thumb": {
+      backgroundColor: "rgba(0,0,0,.3)",
+      outline: "1px solid slategrey"
+    }
+  },
   root: {
     flexGrow: 1
   },
