@@ -38,9 +38,7 @@ const styles = theme => ({
     width: 60,
     height: 60
   },
-  searchBox: {
-    padding: theme.spacing.unit * 2
-  },
+
   message: {
     borderTop: "1px solid #d4d4d4"
     /* "&:hover": {
@@ -51,10 +49,11 @@ const styles = theme => ({
 
   // Overiding CSS with classnames for ListItemText Implementation
   primary: {
-    fontSize: "20px"
+    fontSize: "18px",
+    fontWeight: "bold"
   },
   secondary: {
-    fontSize: "18px"
+    fontSize: "16px"
   }
 });
 
@@ -64,28 +63,10 @@ function Messaging(props) {
     <div>
       <Paper className={classes.root}>
         <br />
-        <Typography variant="title" gutterBottom align="center">
-          Messenger
+        <Typography variant="subheading" gutterBottom align="center">
+          Notifications
         </Typography>
 
-        <Grid container className={classes.searchBox}>
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            style={{
-              paddingLeft: "10px"
-            }}
-          >
-            <TextField
-              id="outlined-bare"
-              defaultValue="Search person..."
-              margin="normal"
-              fullWidth
-              variant="outlined"
-            />
-          </Grid>
-        </Grid>
         <div className={classes.messageScroll}>
           <List>
             <ListItem button className={classes.message}>
@@ -160,52 +141,6 @@ function Messaging(props) {
               />
               <Badge className={classes.margin} color="primary" variant="dot" />
             </ListItem>
-            <ListItem button className={classes.message}>
-              <ListItemAvatar>
-                <Avatar
-                  className={classes.avatar}
-                  alt="Trial"
-                  src={`/static/images/avatar/7.jpg`}
-                />
-              </ListItemAvatar>
-              <ListItemText
-                classes={{
-                  primary: classes.primary,
-                  secondary: classes.secondary
-                }}
-                primary="Phillip Bosco"
-                secondary={
-                  <React.Fragment>
-                    {"  Wish I could come, but I'm out of town this…"}
-                  </React.Fragment>
-                }
-              />
-              <Badge className={classes.margin} color="primary" variant="dot" />
-            </ListItem>
-
-            <ListItem button className={classes.message}>
-              <ListItemAvatar>
-                <Avatar
-                  className={classes.avatar}
-                  alt="Trial"
-                  src={`/static/images/avatar/7.jpg`}
-                />
-              </ListItemAvatar>
-              <ListItemText
-                classes={{
-                  primary: classes.primary,
-                  secondary: classes.secondary
-                }}
-                primary="Phillip Bosco"
-                secondary={
-                  <React.Fragment>
-                    {"  Wish I could come, but I'm out of town this…"}
-                  </React.Fragment>
-                }
-              />
-              <Badge className={classes.margin} color="primary" variant="dot" />
-            </ListItem>
-
             <ListItem button className={classes.message}>
               <ListItemAvatar>
                 <Avatar

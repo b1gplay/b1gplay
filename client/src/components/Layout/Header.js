@@ -24,6 +24,8 @@ import Avatar from "@material-ui/core/Avatar";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import Tooltip from "@material-ui/core/Tooltip";
 
+import NotificationList from "../Notifications/NotificationList";
+
 const styles = theme => ({
   root: {
     width: "100%"
@@ -104,8 +106,14 @@ const styles = theme => ({
     [theme.breakpoints.up("md")]: {
       display: "none"
     }
+  },
+
+  customWidth: {
+    maxWidth: 500
   }
 });
+
+const alerts = "<NotificationList/>";
 
 class Header extends React.Component {
   state = {
@@ -256,7 +264,10 @@ class Header extends React.Component {
                   </Link>
 
                   <Link to="/notifications" className={classes.link}>
-                    <Tooltip title="Notifications">
+                    <Tooltip
+                      title={<NotificationList />}
+                      classes={{ tooltip: classes.customWidth }}
+                    >
                       <IconButton color="inherit">
                         <Badge badgeContent={17} color="primary">
                           <NotificationsIcon />

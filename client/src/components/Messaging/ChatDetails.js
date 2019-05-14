@@ -39,18 +39,18 @@ const styles = theme => ({
   }
 });
 
-function Messaging(props) {
+function ChatDetails(props) {
   const { classes } = props;
   return (
     <div>
       <div align="left">
-        {" "}
         <Paper className={classes.root2} elevation={1}>
           <Typography
             variant="subheading"
             gutterBottom
             align="right"
             style={{
+              fontSize: "18px",
               color: "black"
             }}
           >
@@ -70,6 +70,7 @@ function Messaging(props) {
             gutterBottom
             align="left"
             style={{
+              fontSize: "18px",
               color: "white"
             }}
           >
@@ -88,6 +89,7 @@ function Messaging(props) {
             gutterBottom
             align="left"
             style={{
+              fontSize: "18px",
               color: "white"
             }}
           >
@@ -108,6 +110,7 @@ function Messaging(props) {
             gutterBottom
             align="right"
             style={{
+              fontSize: "18px",
               color: "black"
             }}
           >
@@ -126,6 +129,7 @@ function Messaging(props) {
             gutterBottom
             align="left"
             style={{
+              fontSize: "18px",
               color: "white"
             }}
           >
@@ -140,8 +144,8 @@ function Messaging(props) {
   );
 }
 
-Messaging.propTypes = {
+ChatDetails.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Messaging);
+export default withStyles(styles)(ChatDetails);

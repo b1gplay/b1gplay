@@ -1,13 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles, withTheme } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
 import red from "@material-ui/core/colors/red";
 import ChatConversations from "../Messaging/ChatConversations";
 import ChatDetails from "../Messaging/ChatDetails";
 
 const styles = theme => ({
+  root: {
+    maxWidth: "60%",
+    display: "inline-block",
+    borderRadius: 8,
+    background: "white",
+
+    ...theme.mixins.gutters(),
+    paddingTop: theme.spacing.unit * 1,
+    paddingBottom: theme.spacing.unit * 1
+  },
   card: {
     maxWidth: 400
   },
@@ -39,7 +48,7 @@ const styles = theme => ({
 
 class MessageList extends React.Component {
   render() {
-    //const { classes } = this.props;
+    const { classes } = this.props;
 
     return (
       <div>
@@ -62,7 +71,6 @@ class MessageList extends React.Component {
             sm={8}
             style={{
               marginLeft: "34%"
-              //position: "fixed"
             }}
           >
             <ChatDetails />
