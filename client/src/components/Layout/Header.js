@@ -202,7 +202,7 @@ class Header extends React.Component {
           <Toolbar>
             <Avatar
               alt="Remy Sharp"
-              src="/static/images/logo/5.jpeg"
+              src="/static/images/logo/logo.png"
               className={classes.avatar}
             />
             <Typography
