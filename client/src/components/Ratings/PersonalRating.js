@@ -1,18 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from '@material-ui/core/Button';
-import RatingsDetails from './RatingsDetails';
-import ByCriteria from './ByCriteria';
-import ByRaters from './ByRaters';
+import Button from "@material-ui/core/Button";
+import ByCriteria from "./ByCriteria";
+import ByRaters from "./ByRaters";
 
 const styles = theme => ({
   bigAvatar: {
@@ -32,7 +29,7 @@ const styles = theme => ({
   },
   avatar: {
     margin: 10
-  },
+  }
 });
 
 function PersonalRatings(props) {
@@ -42,11 +39,11 @@ function PersonalRatings(props) {
     <div className={classes.root}>
       <Grid container spacing={24}>
         <Grid item xs={6} sm={6}>
-          < ByRaters />
+          <ByRaters />
           <div style={{ marginTop: "10px" }}>
-          < ByCriteria />
+            <ByCriteria />
           </div>
-        </Grid> 
+        </Grid>
         <Grid item xs={3} sm={3}>
           <Card className={classes.card}>
             <CardActionArea>
@@ -55,12 +52,26 @@ function PersonalRatings(props) {
                 image="/static/images/bb.jpg"
                 title="Contemplative Reptile"
               />
-              <Button variant="contained" color="secondary" className={classes.button} style={{ marginLeft: 200, marginTop: -130, borderRadius: 200 }}>
-                <Typography component="h5" variant="h4" style={{ color: "#ffffff" }}>
-                56
+              <Button
+                variant="contained"
+                color="secondary"
+                className={classes.button}
+                style={{ marginLeft: 200, marginTop: -130, borderRadius: 200 }}
+              >
+                <Typography
+                  component="h5"
+                  variant="h4"
+                  style={{ color: "#ffffff" }}
+                >
+                  56
                 </Typography>
               </Button>
-              <Button variant="contained" color="secondary" className={classes.button} style={{ marginLeft: 200, marginTop: 10 }}>
+              <Button
+                variant="contained"
+                color="secondary"
+                className={classes.button}
+                style={{ marginLeft: 200, marginTop: 10 }}
+              >
                 <Typography variant="caption" style={{ color: "#ffffff" }}>
                   Follow
                 </Typography>
@@ -69,24 +80,38 @@ function PersonalRatings(props) {
                 alt="Remy Sharp"
                 src="/static/images/avatar/7.jpg"
                 style={{
-                marginLeft: 20,
-                marginTop: -80,
-                width: 70,
-                height: 70,
-                border: "5px solid red"
+                  marginLeft: 20,
+                  marginTop: -80,
+                  width: 70,
+                  height: 70,
+                  border: "5px solid red"
                 }}
               />
-              <Typography component="h5" variant="subtitle2" style={{ marginLeft: 20 }}>
+              <Typography
+                component="h5"
+                variant="subtitle2"
+                style={{ marginLeft: 20 }}
+              >
                 Otim Tony (Player)
               </Typography>
               <Typography variant="caption" style={{ marginLeft: 20 }}>
                 @otim_tony
               </Typography>
-              <hr/>
-              <Typography component="h5" variant="subtitle2" gutterBottom style={{ marginLeft: 20 }}>
+              <hr />
+              <Typography
+                component="h5"
+                variant="subtitle2"
+                gutterBottom
+                style={{ marginLeft: 20 }}
+              >
                 Affiliate: Milwaukee Bucks
               </Typography>
-              <Typography component="h5" variant="subtitle2" gutterBottom style={{ marginLeft: 20 }}>
+              <Typography
+                component="h5"
+                variant="subtitle2"
+                gutterBottom
+                style={{ marginLeft: 20 }}
+              >
                 Position: Point Guard
               </Typography>
             </CardActionArea>
@@ -100,12 +125,26 @@ function PersonalRatings(props) {
                 image="/static/images/bb.jpg"
                 title="Contemplative Reptile"
               />
-              <Button variant="contained" color="secondary" className={classes.button} style={{ marginLeft: 200, marginTop: -130, borderRadius: 200 }}>
-                <Typography component="h5" variant="h4" style={{ color: "#ffffff" }}>
-                56
+              <Button
+                variant="contained"
+                color="secondary"
+                className={classes.button}
+                style={{ marginLeft: 200, marginTop: -130, borderRadius: 200 }}
+              >
+                <Typography
+                  component="h5"
+                  variant="h4"
+                  style={{ color: "#ffffff" }}
+                >
+                  56
                 </Typography>
               </Button>
-              <Button variant="contained" color="secondary" className={classes.button} style={{ marginLeft: 200, marginTop: 10 }}>
+              <Button
+                variant="contained"
+                color="secondary"
+                className={classes.button}
+                style={{ marginLeft: 200, marginTop: 10 }}
+              >
                 <Typography variant="caption" style={{ color: "#ffffff" }}>
                   Follow
                 </Typography>
@@ -114,24 +153,38 @@ function PersonalRatings(props) {
                 alt="Remy Sharp"
                 src="/static/images/avatar/7.jpg"
                 style={{
-                marginLeft: 20,
-                marginTop: -80,
-                width: 70,
-                height: 70,
-                border: "5px solid red"
+                  marginLeft: 20,
+                  marginTop: -80,
+                  width: 70,
+                  height: 70,
+                  border: "5px solid red"
                 }}
               />
-              <Typography component="h5" variant="subtitle2" style={{ marginLeft: 20 }}>
+              <Typography
+                component="h5"
+                variant="subtitle2"
+                style={{ marginLeft: 20 }}
+              >
                 Otim Tony (Player)
               </Typography>
               <Typography variant="caption" style={{ marginLeft: 20 }}>
                 @otim_tony
               </Typography>
-              <hr/>
-              <Typography component="h5" variant="subtitle2" gutterBottom style={{ marginLeft: 20 }}>
+              <hr />
+              <Typography
+                component="h5"
+                variant="subtitle2"
+                gutterBottom
+                style={{ marginLeft: 20 }}
+              >
                 Affiliate: Milwaukee Bucks
               </Typography>
-              <Typography component="h5" variant="subtitle2" gutterBottom style={{ marginLeft: 20 }}>
+              <Typography
+                component="h5"
+                variant="subtitle2"
+                gutterBottom
+                style={{ marginLeft: 20 }}
+              >
                 Position: Point Guard
               </Typography>
             </CardActionArea>
@@ -143,7 +196,7 @@ function PersonalRatings(props) {
 }
 
 PersonalRatings.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(PersonalRatings);

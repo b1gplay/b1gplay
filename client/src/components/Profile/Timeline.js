@@ -7,11 +7,12 @@ import Paper from "@material-ui/core/Paper";
 import MyProfile from "../Profile/MyProfile";
 import PersonalInfo from "../Profile/PersonalInfo";
 import PhotoVideoFeed from "../Profile/PhotoVideoFeed";
-import TopFiveImages from "../Gallery/TopFiveImages";
+import TopFourImages from "../Gallery/TopFourImages";
+import TopFourVideos from "../Gallery/TopFourVideos";
 
 const styles = theme => ({
   root: {
-    padding: theme.spacing.unit * 2
+    //padding: theme.spacing.unit * 2
   }
 });
 
@@ -20,28 +21,30 @@ function Timeline(props) {
 
   return (
     <div className={classes.root}>
-      <br />
       <Grid container spacing={24}>
+        <Grid item xs={12} sm={12} />
         <Grid item xs={5} sm={5}>
           <div>
             <MyProfile />
           </div>
           <br />
-          <br />
+
           <div>
-            <Paper className={classes.root} elevation={1}>
-              <PersonalInfo />
-            </Paper>
+            <PersonalInfo />
           </div>
           <br />
-          <br />
+
           <div>
-            <Paper className={classes.root} elevation={1}>
-              <TopFiveImages />
-            </Paper>
+            <br />
+            <TopFourImages />
+            <br />
+            <br />
+            <TopFourVideos />
           </div>
         </Grid>
         <Grid item xs={7} sm={7}>
+          <PhotoVideoFeed />
+          <br />
           <PhotoVideoFeed />
         </Grid>
       </Grid>

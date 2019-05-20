@@ -5,16 +5,11 @@ import Paper from "@material-ui/core/Paper";
 import Avatar from "@material-ui/core/Avatar";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
-
-import GroupIcon from "@material-ui/icons/Group";
+import Post from "./Post";
 import PhotoCameraIcon from "@material-ui/icons/PhotoCamera";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
-import PermMediaIcon from "@material-ui/icons/PermMedia";
-import TimelineIcon from "@material-ui/icons/Timeline";
-import AddIcon from "@material-ui/icons/Add";
-import Typography from "@material-ui/core/Typography";
-import { Link as RouterLink } from 'react-router-dom'
-import Link from '@material-ui/core/Link';
+
+import Link from "@material-ui/core/Link";
 
 const styles = theme => ({
   root: {},
@@ -63,9 +58,12 @@ function Cover(props) {
       </Paper>
 
       <Paper className={classes.root}>
-        <Tabs indicatorColor="primary" textColor="secondary" >
-
-          <Link to="/profile/photos" className={classes.link} style={{ marginLeft: "280px" }}>
+        <Tabs indicatorColor="primary" textColor="secondary">
+          <Link
+            to="/profile/photos"
+            className={classes.link}
+            style={{ marginLeft: "280px" }}
+          >
             <Tab
               label="Photos"
               icon={<PhotoCameraIcon />}
@@ -74,11 +72,11 @@ function Cover(props) {
                 fontWeight: "bold",
                 borderLeft: "1px solid #d4d4d4",
                 borderRight: "1px solid #d4d4d4",
-                width: "175px",
+                width: "175px"
               }}
             />
           </Link>
-          
+
           <Link to="/profile/videos" className={classes.link}>
             <Tab
               label="Videos"
@@ -87,22 +85,12 @@ function Cover(props) {
                 color: "#D23E56",
                 fontWeight: "bold",
                 borderRight: "1px solid #d4d4d4",
-                width: "175px",
+                width: "175px"
               }}
             />
           </Link>
 
-          <Link to="/profile/compose" className={classes.link}>
-            <Tab
-              label="Media"
-              icon={<PermMediaIcon />}
-              style={{
-                color: "#D23E56",
-                fontWeight: "bold",
-                width: "175px",
-              }}
-            />
-          </Link>
+          <Post />
         </Tabs>
       </Paper>
     </div>

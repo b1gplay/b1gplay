@@ -1,65 +1,52 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import Cover from './Cover';
-import MyProfile from './MyProfile';
-import Typography from "@material-ui/core/Typography";
-import Post from './Post';
-import Feed from './Feed';
-import Rating from './Rating';
-import OnlineChats from './OnlineChats';
-import Followers from "./Followers";
-import Following from "./Following";
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
 
-import { Switch, Route, Redirect } from "react-router-dom";
-import ChatRoom from "../Messaging/ChatRoom";
-import Clipboard from "../Clipboard/Clipboard";
-
-import PhotoGallery from "../Gallery/PhotoGallery";
-import VideoGallery from "../Gallery/VideoGallery";
-
+import Grid from "@material-ui/core/Grid";
+import Cover from "./Cover";
+import MyProfile from "./MyProfile";
+import Feed from "./Feed";
+import Rating from "./Rating";
+import OnlineChats from "./OnlineChats";
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   paper: {
     padding: theme.spacing.unit * 2,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
+    textAlign: "center",
+    color: theme.palette.text.secondary
+  }
 });
 
-class Profile extends React.Component {
+class ProfilePage extends React.Component {
   render() {
     const { classes } = this.props;
-      return (
-        <div className={classes.root}>
-          <Grid container spacing={24}>
-            <Grid item xs={8}>
-              < Cover />
-              <Grid container spacing={24}>
-                < MyProfile />
-                <Grid item xs={8}>
-                  < Post />
-                  < Feed />
-                </Grid>
+    return (
+      <div className={classes.root}>
+        <Grid container spacing={24}>
+          <Grid item xs={8}>
+            <Cover />
+            <Grid container spacing={24}>
+              <MyProfile />
+              <Grid item xs={8}>
+                <Feed />
               </Grid>
             </Grid>
-            <Grid item xs={4}>
-              < Rating />
-              < OnlineChats />
-            </Grid>
           </Grid>
-        </div>
+          <Grid item xs={4}>
+            <Rating />
+            <OnlineChats />
+          </Grid>
+        </Grid>
+      </div>
     );
   }
 }
 
-Profile.propTypes = {
-  classes: PropTypes.object.isRequired,
+ProfilePage.propTypes = {
+  classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Profile);
+export default withStyles(styles)(ProfilePage);

@@ -4,29 +4,27 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import InputBase from "@material-ui/core/InputBase";
+//import InputBase from "@material-ui/core/InputBase";
 import Badge from "@material-ui/core/Badge";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import { fade } from "@material-ui/core/styles/colorManipulator";
 import { withStyles } from "@material-ui/core/styles";
-import SearchIcon from "@material-ui/icons/Search";
+//import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MailIcon from "@material-ui/icons/Mail";
 import PollIcon from "@material-ui/icons/Poll";
 import PersonIcon from "@material-ui/icons/Person";
-import HomeIcon from "@material-ui/icons/Home";
+
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import Tooltip from '@material-ui/core/Tooltip';
-import LockIcon from "@material-ui/icons/Lock";
+import Tooltip from "@material-ui/core/Tooltip";
 
-import SignOn from "../NewAuthentication/SignOn";
+import NotificationList from "../Notifications/NotificationList";
 
 const styles = theme => ({
   root: {
@@ -108,8 +106,14 @@ const styles = theme => ({
     [theme.breakpoints.up("md")]: {
       display: "none"
     }
+  },
+
+  customWidth: {
+    maxWidth: 500
   }
 });
+
+const alerts = "<NotificationList/>";
 
 class Header extends React.Component {
   state = {
@@ -148,15 +152,13 @@ class Header extends React.Component {
         open={isMenuOpen}
         onClose={this.handleMenuClose}
       >
-        <MenuItem onClick={this.handleMenuClose}>Profile</MenuItem>
-        <MenuItem onClick={this.handleMenuClose}>Settings</MenuItem>
+        <Link to="/settings" className={classes.link}>
+          <MenuItem onClick={this.handleMenuClose}>Settings</MenuItem>
+        </Link>
+
         <Link to="/logout" className={classes.link}>
           <MenuItem onClick={this.handleMenuClose}>Logout</MenuItem>
         </Link>
-        <Typography variant="title" gutterBottom style={{ fontSize: '13px', color: '#D23E56' }} align="center">
-          <Link to="/logon">Following</Link>
-        </Typography>
-
       </Menu>
     );
 
@@ -198,16 +200,21 @@ class Header extends React.Component {
       <div className={classes.root}>
         <AppBar position="fixed" style={{ background: "#D23E56" }}>
           <Toolbar>
+            <Avatar
+              alt="Remy Sharp"
+              src="/static/images/logo/logo.png"
+              className={classes.avatar}
+            />
             <Typography
               className={classes.title}
-              variant="h6"
+              variant="h4"
               color="inherit"
               noWrap
-              style={{ fontWeight: "bold" }}
+              //style={{ fontWeight: "bold" }}
             >
               b1gplay
             </Typography>
-            <div className={classes.search}>
+            {/*    <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
@@ -218,7 +225,8 @@ class Header extends React.Component {
                   input: classes.inputInput
                 }}
               />
-            </div>
+            </div>*/}
+
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               <div>
@@ -229,23 +237,16 @@ class Header extends React.Component {
                     className={classes.avatar}
                   />
 
-                  <Link to="/myhome" className={classes.link}>
+                  <Link to="/" className={classes.link}>
                     <Tooltip title="Profile">
                       <IconButton color="inherit">
-                          <PersonIcon />
+                        <PersonIcon />
                       </IconButton>
                     </Tooltip>
                   </Link>
 
-                  <Link to="/" className={classes.link}>
-                    <Tooltip title="Home">
-                      <IconButton color="inherit">
-                          <HomeIcon />
-                      </IconButton>
-                    </Tooltip>
-                  </Link>
-                  <Link to="/top-performers" className={classes.link}>
-                    <Tooltip title="Top Performers">
+                  <Link to="/data-analytics" className={classes.link}>
+                    <Tooltip title="Data analytics">
                       <IconButton color="inherit">
                         <PollIcon />
                       </IconButton>
@@ -263,19 +264,14 @@ class Header extends React.Component {
                   </Link>
 
                   <Link to="/notifications" className={classes.link}>
-                    <Tooltip title="Notifications">
+                    <Tooltip
+                      title={<NotificationList />}
+                      classes={{ tooltip: classes.customWidth }}
+                    >
                       <IconButton color="inherit">
                         <Badge badgeContent={17} color="primary">
                           <NotificationsIcon />
                         </Badge>
-                      </IconButton>
-                    </Tooltip>
-                  </Link>
-
-                  <Link to="/logout" className={classes.link}>
-                    <Tooltip title="Messages">
-                      <IconButton color="inherit">
-                        <LockIcon />
                       </IconButton>
                     </Tooltip>
                   </Link>

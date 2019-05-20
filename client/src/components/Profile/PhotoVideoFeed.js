@@ -1,233 +1,190 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-import Avatar from "@material-ui/core/Avatar";
-
-import TextField from "@material-ui/core/TextField";
-
+import classnames from "classnames";
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
+import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import CardActions from "@material-ui/core/CardActions";
+import Collapse from "@material-ui/core/Collapse";
+import Avatar from "@material-ui/core/Avatar";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import red from "@material-ui/core/colors/red";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import ShareIcon from "@material-ui/icons/Share";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Grid from "@material-ui/core/Grid";
+import Comment from "./Comment";
 
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-
-const styles = {
-  avatar: {
-    margin: 10,
-    border: "2px solid black"
-  },
-  mediumAvatar: {
-    margin: 10,
-    width: 20,
-    height: 20
-  },
-  bigAvatar: {
-    margin: 10,
-    width: 120,
-    height: 120,
-    border: "3px solid black"
+const styles = theme => ({
+  card: {
+    maxWidth: "100%"
   },
   media: {
-    height: 290
+    height: 0,
+    paddingTop: "56.25%" // 16:9
+  },
+  actions: {
+    display: "flex"
+  },
+  expand: {
+    transform: "rotate(0deg)",
+    marginLeft: "auto",
+    transition: theme.transitions.create("transform", {
+      duration: theme.transitions.duration.shortest
+    })
+  },
+  expandOpen: {
+    transform: "rotate(180deg)"
   }
-};
+});
 
-function PhotoVideoFeed(props) {
-  const { classes } = props;
-  return (
-    <div>
-      <Card className={classes.card}>
-        <ListItem alignItems="flex-start">
-          <ListItemAvatar>
-            <Avatar
-              alt="Remy Sharp"
-              src="/static/images/avatar/2.jpg"
-              className={classes.avatar}
-            />
-          </ListItemAvatar>
-          <ListItemText
-            primary="Otim Tony"
-            secondary={
-              <React.Fragment>
-                <Typography
-                  component="span"
-                  className={classes.inline}
-                  color="textPrimary"
-                />
-                {" Do you have Paris recommendations? Have you ever…"}
-              </React.Fragment>
+class PhotoVideoFeed extends React.Component {
+  state = { expanded: false };
+
+  handleExpandClick = () => {
+    this.setState(state => ({ expanded: !state.expanded }));
+  };
+
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <Grid item xs={12} style={{ marginTop: "5px" }}>
+        <Card className={classes.card}>
+          <CardHeader
+            avatar={
+              <Avatar
+                alt="Remy Sharp"
+                src="/static/images/avatar/7.jpg"
+                className={classes.avatar}
+                style={{ marginLeft: "4px", marginRight: "4px" }}
+              />
             }
+            action={
+              <IconButton>
+                <MoreVertIcon />
+              </IconButton>
+            }
+            title="Otim Tony"
+            subheader="September 14, 2016"
           />
-        </ListItem>
-
-        <CardActionArea>
           <CardMedia
             className={classes.media}
             image="/static/images/bb.jpg"
-            title="Contemplative Reptile"
+            title="Paella dish"
           />
-        </CardActionArea>
-        <CardActions>
-          <Grid container spacing={0}>
-            <Grid item xs={6} sm={6}>
-              <ListItem>
-                <ListItemAvatar>
-                  <Avatar
-                    alt="Remy Sharp"
-                    src="/static/images/fist.jpg"
-                    className={classes.mediumAvatar}
-                  />
-                </ListItemAvatar>
-                <ListItemText
-                  secondary={
-                    <React.Fragment>
-                      <Typography
-                        component="span"
-                        className={classes.inline}
-                        color="textPrimary"
-                      />
-                      {" 3 bumps"}
-                    </React.Fragment>
-                  }
+          <CardContent>
+            <Typography variant="subtitle1" gutterBottom align="left">
+              This impressive paella is a perfect party dish and a fun meal to
+              cook together with your guests. Add 1 cup of frozen peas along
+              with the mussels, if you like.
+            </Typography>
+          </CardContent>
+          <Grid item xs={12} style={{ marginBottom: "5px" }}>
+            <Grid container spacing={24}>
+              <Grid item xs={1}>
+                <Avatar
+                  alt="Remy Sharp"
+                  src="/static/images/fist.jpg"
+                  className={classes.avatar}
+                  style={{ marginLeft: "10px", marginRight: "10px" }}
                 />
-              </ListItem>
-            </Grid>
-            <Grid item xs={6} sm={6}>
-              <Typography
-                variant="body2"
-                gutterBottom
-                color="primary"
-                align="right"
-                style={{ textTransform: "capitalize", padding: "14px" }}
-              >
-                18 Comments
-              </Typography>
+              </Grid>
+              <Grid item xs={4}>
+                <Typography
+                  paragraph
+                  style={{ marginLeft: "10px", marginTop: "10px" }}
+                >
+                  Fists
+                </Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography
+                  paragraph
+                  style={{ marginLeft: "10px", marginTop: "10px" }}
+                  align="right"
+                >
+                  4 Comments
+                </Typography>
+              </Grid>
             </Grid>
           </Grid>
-        </CardActions>
-        <CardContent>
-          <Grid container spacing={0}>
-            <Grid item xs={2} sm={2}>
+          <Comment />
+          <br />
+        </Card>
+        <br />
+        <Card className={classes.card}>
+          <CardHeader
+            avatar={
               <Avatar
                 alt="Remy Sharp"
                 src="/static/images/avatar/3.jpg"
                 className={classes.avatar}
+                style={{ marginLeft: "4px", marginRight: "4px" }}
               />
-            </Grid>
-            <Grid item xs={10} sm={10}>
-              <TextField
-                id="outlined-bare"
-                className={classes.textField}
-                placeholder="Leave a comment..."
-                margin="normal"
-                fullWidth
-                variant="outlined"
-              />
-            </Grid>
-          </Grid>
-        </CardContent>
-      </Card>
-
-      <br />
-      <Card className={classes.card}>
-        <ListItem alignItems="flex-start">
-          <ListItemAvatar>
-            <Avatar
-              alt="Remy Sharp"
-              src="/static/images/avatar/2.jpg"
-              className={classes.avatar}
-            />
-          </ListItemAvatar>
-          <ListItemText
-            primary="Otim Tony"
-            secondary={
-              <React.Fragment>
-                <Typography
-                  component="span"
-                  className={classes.inline}
-                  color="textPrimary"
-                />
-                {" Do you have Paris recommendations? Have you ever…"}
-              </React.Fragment>
             }
+            action={
+              <IconButton>
+                <MoreVertIcon />
+              </IconButton>
+            }
+            title="Otim Tony"
+            subheader="September 14, 2016"
           />
-        </ListItem>
-
-        <CardActionArea>
           <CardMedia
             className={classes.media}
-            image="/static/images/cc.jpg"
-            title="Contemplative Reptile"
+            image="/static/images/bb.jpg"
+            title="Paella dish"
           />
-        </CardActionArea>
-        <CardActions>
-          <Grid container spacing={0}>
-            <Grid item xs={6} sm={6}>
-              <ListItem>
-                <ListItemAvatar>
-                  <Avatar
-                    alt="Remy Sharp"
-                    src="/static/images/fist.jpg"
-                    className={classes.mediumAvatar}
-                  />
-                </ListItemAvatar>
-                <ListItemText
-                  secondary={
-                    <React.Fragment>
-                      <Typography
-                        component="span"
-                        className={classes.inline}
-                        color="textPrimary"
-                      />
-                      {" 3 bumps"}
-                    </React.Fragment>
-                  }
+          <CardContent>
+            <Typography variant="subtitle1" gutterBottom align="left">
+              This impressive paella is a perfect party dish and a fun meal to
+              cook together with your guests. Add 1 cup of frozen peas along
+              with the mussels, if you like.
+            </Typography>
+          </CardContent>
+          <Grid item xs={12} style={{ marginBottom: "5px" }}>
+            <Grid container spacing={24}>
+              <Grid item xs={1}>
+                <Avatar
+                  alt="Remy Sharp"
+                  src="/static/images/fist.jpg"
+                  className={classes.avatar}
+                  style={{
+                    marginLeft: "10px",
+                    marginRight: "10px"
+                  }}
                 />
-              </ListItem>
-            </Grid>
-            <Grid item xs={6} sm={6}>
-              <Typography
-                variant="body2"
-                gutterBottom
-                color="primary"
-                align="right"
-                style={{ textTransform: "capitalize", padding: "14px" }}
-              >
-                18 Comments
-              </Typography>
-            </Grid>
-          </Grid>
-        </CardActions>
-        <CardContent>
-          <Grid container spacing={0}>
-            <Grid item xs={2} sm={2}>
-              <Avatar
-                alt="Remy Sharp"
-                src="/static/images/avatar/3.jpg"
-                className={classes.avatar}
-              />
-            </Grid>
-            <Grid item xs={10} sm={10}>
-              <TextField
-                id="outlined-bare"
-                className={classes.textField}
-                placeholder="Leave a comment..."
-                margin="normal"
-                fullWidth
-                variant="outlined"
-              />
+              </Grid>
+              <Grid item xs={4}>
+                <Typography
+                  paragraph
+                  style={{ marginLeft: "10px", marginTop: "10px" }}
+                >
+                  Fists
+                </Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography
+                  paragraph
+                  style={{ marginLeft: "10px", marginTop: "10px" }}
+                  align="right"
+                >
+                  4 Comments
+                </Typography>
+              </Grid>
             </Grid>
           </Grid>
-        </CardContent>
-      </Card>
-    </div>
-  );
+          <Comment />
+          <br />
+        </Card>
+      </Grid>
+    );
+  }
 }
 
 PhotoVideoFeed.propTypes = {
