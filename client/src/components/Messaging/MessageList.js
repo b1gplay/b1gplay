@@ -2,65 +2,29 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import red from "@material-ui/core/colors/red";
-import ChatConversations from "../Messaging/ChatConversations";
-import ChatDetails from "../Messaging/ChatDetails";
+//import Typography from "@material-ui/core/Typography";
 
-const styles = theme => ({
-  root: {
-    maxWidth: "60%",
-    display: "inline-block",
-    borderRadius: 8,
-    background: "white",
+import ChatDetails from "./ChatDetails";
+import ChatConversations from "./ChatConversations";
 
-    ...theme.mixins.gutters(),
-    paddingTop: theme.spacing.unit * 1,
-    paddingBottom: theme.spacing.unit * 1
-  },
-  card: {
-    maxWidth: 400
-  },
-  media: {
-    height: 0,
-    paddingTop: "56.25%" // 16:9
-  },
-  actions: {
-    display: "flex"
-  },
-  expand: {
-    transform: "rotate(0deg)",
-    marginLeft: "auto",
-    transition: theme.transitions.create("transform", {
-      duration: theme.transitions.duration.shortest
-    })
-  },
-  expandOpen: {
-    transform: "rotate(180deg)"
-  },
-  avatar: {
-    backgroundColor: red[500]
-  },
-  textField: {
-    padding: "8px",
-    borderRadius: "20px"
-  }
-});
+const styles = theme => ({});
 
-class MessageList extends React.Component {
+class ClientDetails1 extends React.Component {
   render() {
-    const { classes } = this.props;
+    //const { classes } = this.props;
 
     return (
       <div>
-        <Grid container spacing={0}>
+        <Grid container spacing={24}>
           <Grid
             item
             xs={4}
             sm={4}
             style={{
               marginTop: "-1%",
-              marginLeft: "-2%",
-              position: "fixed"
+              marginLeft: "-2%"
+
+              //backgroundColor: "white"
             }}
           >
             <ChatConversations />
@@ -70,12 +34,9 @@ class MessageList extends React.Component {
             xs={8}
             sm={8}
             style={{
-              marginLeft: "34%"
+              marginLeft: "1%"
             }}
           >
-            <ChatDetails />
-            <ChatDetails />
-            <ChatDetails />
             <ChatDetails />
           </Grid>
         </Grid>
@@ -84,8 +45,8 @@ class MessageList extends React.Component {
   }
 }
 
-MessageList.propTypes = {
+ClientDetails1.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(MessageList);
+export default withStyles(styles)(ClientDetails1);

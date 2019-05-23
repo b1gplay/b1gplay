@@ -4,13 +4,13 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-//import InputBase from "@material-ui/core/InputBase";
+import InputBase from "@material-ui/core/InputBase";
 import Badge from "@material-ui/core/Badge";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import { fade } from "@material-ui/core/styles/colorManipulator";
 import { withStyles } from "@material-ui/core/styles";
-//import SearchIcon from "@material-ui/icons/Search";
+import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MailIcon from "@material-ui/icons/Mail";
 import PollIcon from "@material-ui/icons/Poll";
@@ -56,14 +56,14 @@ const styles = theme => ({
     position: "relative",
     borderRadius: theme.shape.borderRadius,
     backgroundColor: "white",
-    "&:hover": {
+    /* "&:hover": {
       backgroundColor: fade(theme.palette.common.white, 0.75)
-    },
+    }, */
     marginRight: theme.spacing.unit * 2,
     marginLeft: 0,
     width: "100%",
     [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing.unit * 3,
+      marginLeft: theme.spacing.unit * 8,
       width: "auto"
     }
   },
@@ -91,8 +91,8 @@ const styles = theme => ({
     paddingLeft: theme.spacing.unit * 10,
     transition: theme.transitions.create("width"),
     width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: 200
+    [theme.breakpoints.up("lg")]: {
+      width: 490
     }
   },
   sectionDesktop: {
@@ -214,7 +214,7 @@ class Header extends React.Component {
             >
               b1gplay
             </Typography>
-            {/*    <div className={classes.search}>
+            <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
@@ -225,7 +225,7 @@ class Header extends React.Component {
                   input: classes.inputInput
                 }}
               />
-            </div>*/}
+            </div>
 
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
