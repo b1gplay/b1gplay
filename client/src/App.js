@@ -44,6 +44,10 @@ const App = ({ classes }) => (
       <br />
       <br />
       <Switch>
+        <Route path="/following" component={NewFollowing} />
+        <Route path="/followers" component={NewFollowers} />
+        <Route path="/data-analytics" component={Tab1} />
+        <Route path="/messages" component={MessageList} />
         <Route path="/personal-ratings" component={PersonalRatings} />
         <Route path="/" component={ProfilePage} />
         <Route path="/personal-ratings" component={PersonalRatings} />
@@ -52,17 +56,14 @@ const App = ({ classes }) => (
         <Route path="/myhome" component={Profile} />
         <Route path="/log" component={SignOn} />
         <Route path="/join" component={Join} />
-        <Route path="/followers" component={Followers} />
-        <Route path="/followers1" component={NewFollowers} />
-        <Route path="/following" component={Following} />
-        <Route path="/following1" component={NewFollowing} />
+        <Route path="/followers1" component={Followers} />
+
+        <Route path="/following1" component={Following} />
+
         <Route path="/profile" component={ViewProfile} />
         <Route path="/stars" component={Stars} />
 
-        <Route path="/data-analytics" component={Tab1} />
-
         <Route path="/stars2" component={NewStars1} />
-        <Route path="/messages" component={MessageList} />
 
         <Route path="/top-performers" component={TopPerformers} />
         {/* <Route path="/" component={Profile} /> */}

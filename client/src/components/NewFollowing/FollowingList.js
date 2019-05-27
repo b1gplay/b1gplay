@@ -2,67 +2,68 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-
 import Typography from "@material-ui/core/Typography";
 
-import OneStar from "./OneStar";
+import OneFollowing from "./OneFollowing";
+import Suggestions from "./Suggestions";
 
 const styles = theme => ({
-  root: {
-    padding: theme.spacing.unit * 2
-  },
-  avatar: {},
   bigAvatar: {
-    width: 100,
+    margin: 10,
+    width: 160,
+    height: 160,
+    border: "3px solid black"
+  },
+  media: {
     height: 100
+  },
+  margin: {
+    margin: theme.spacing.unit * 3
+  },
+  padding: {
+    padding: `0 ${theme.spacing.unit * 2}px`
+  },
+  avatar: {
+    margin: 10
   }
 });
 
-function NewStars(props) {
+function FollowingList(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <div>
       <br />
-      <Typography variant="h5" component="h3" color="default" align="center">
-        Top male Point Guards from Uganda
+
+      <Typography variant="headline" gutterBottom align="center">
+        <b>Following</b>
       </Typography>
-      <br />
       <Grid container spacing={24}>
         <Grid item xs={4} sm={4}>
-          <OneStar />
+          <OneFollowing />
         </Grid>
         <Grid item xs={4} sm={4}>
-          <OneStar />
+          <OneFollowing />
         </Grid>
         <Grid item xs={4} sm={4}>
-          <OneStar />
+          <OneFollowing />
         </Grid>
         <Grid item xs={4} sm={4}>
-          <OneStar />
+          <OneFollowing />
         </Grid>
         <Grid item xs={4} sm={4}>
-          <OneStar />
+          <OneFollowing />
         </Grid>
         <Grid item xs={4} sm={4}>
-          <OneStar />
-        </Grid>
-        <Grid item xs={4} sm={4}>
-          <OneStar />
-        </Grid>
-        <Grid item xs={4} sm={4}>
-          <OneStar />
-        </Grid>
-        <Grid item xs={4} sm={4}>
-          <OneStar />
+          <OneFollowing />
         </Grid>
       </Grid>
     </div>
   );
 }
 
-NewStars.propTypes = {
+FollowingList.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(NewStars);
+export default withStyles(styles)(FollowingList);

@@ -31,7 +31,7 @@ function PersonalInfo(props) {
           </Grid>
           <Grid item xs={5} sm={5}>
             <Typography
-              variant="body1"
+              variant="subheading"
               gutterBottom
               align="left"
               style={{
@@ -41,7 +41,7 @@ function PersonalInfo(props) {
               Date of birth:
             </Typography>
             <Typography
-              variant="body1"
+              variant="subheading"
               gutterBottom
               align="left"
               style={{
@@ -51,7 +51,7 @@ function PersonalInfo(props) {
               Position:
             </Typography>
             <Typography
-              variant="body1"
+              variant="subheading"
               gutterBottom
               align="left"
               style={{
@@ -61,7 +61,7 @@ function PersonalInfo(props) {
               Height:
             </Typography>
             <Typography
-              variant="body1"
+              variant="subheading"
               gutterBottom
               align="left"
               style={{
@@ -71,7 +71,7 @@ function PersonalInfo(props) {
               Weight:
             </Typography>
             <Typography
-              variant="body1"
+              variant="subheading"
               gutterBottom
               align="left"
               style={{
@@ -81,7 +81,7 @@ function PersonalInfo(props) {
               Wingspan:
             </Typography>
             <Typography
-              variant="body1"
+              variant="subheading"
               gutterBottom
               align="left"
               style={{
@@ -91,7 +91,7 @@ function PersonalInfo(props) {
               Vertical leap:
             </Typography>
             <Typography
-              variant="body1"
+              variant="subheading"
               gutterBottom
               align="left"
               style={{
@@ -101,7 +101,7 @@ function PersonalInfo(props) {
               Time to run 40m:
             </Typography>
             <Typography
-              variant="body1"
+              variant="subheading"
               gutterBottom
               align="left"
               style={{
@@ -112,29 +112,29 @@ function PersonalInfo(props) {
             </Typography>
           </Grid>
           <Grid item xs={7} sm={7}>
-            <Typography variant="body1" gutterBottom align="left">
+            <Typography variant="subheading" gutterBottom align="left">
               12th Dec, 1997
             </Typography>
-            <Typography variant="body1" gutterBottom align="left">
+            <Typography variant="subheading" gutterBottom align="left">
               Point Guard
             </Typography>
-            <Typography variant="body1" gutterBottom align="left">
+            <Typography variant="subheading" gutterBottom align="left">
               6'4"
             </Typography>
-            <Typography variant="body1" gutterBottom align="left">
+            <Typography variant="subheading" gutterBottom align="left">
               342lbs
             </Typography>
-            <Typography variant="body1" gutterBottom align="left">
+            <Typography variant="subheading" gutterBottom align="left">
               2m
             </Typography>
-            <Typography variant="body1" gutterBottom align="left">
+            <Typography variant="subheading" gutterBottom align="left">
               3m
             </Typography>
-            <Typography variant="body1" gutterBottom align="left">
+            <Typography variant="subheading" gutterBottom align="left">
               4.5 Seconds
             </Typography>
-            <Typography variant="body1" gutterBottom align="left">
-              10.5Seconds
+            <Typography variant="subheading" gutterBottom align="left">
+              10.5 Seconds
             </Typography>
           </Grid>
           <Grid item xs={12} sm={12}>
@@ -144,7 +144,7 @@ function PersonalInfo(props) {
           </Grid>
           <Grid item xs={5} sm={5}>
             <Typography
-              variant="body1"
+              variant="subheading"
               gutterBottom
               align="left"
               style={{
@@ -154,7 +154,7 @@ function PersonalInfo(props) {
               Club:
             </Typography>
             <Typography
-              variant="body1"
+              variant="subheading"
               gutterBottom
               align="left"
               style={{
@@ -165,10 +165,10 @@ function PersonalInfo(props) {
             </Typography>
           </Grid>
           <Grid item xs={7} sm={7}>
-            <Typography variant="body1" gutterBottom align="left">
+            <Typography variant="subheading" gutterBottom align="left">
               Tigerhead Power
             </Typography>
-            <Typography variant="body1" gutterBottom align="left">
+            <Typography variant="subheading" gutterBottom align="left">
               Uganda
             </Typography>
           </Grid>

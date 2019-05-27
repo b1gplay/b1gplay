@@ -34,6 +34,10 @@ const styles = theme => ({
   expandOpen: {
     transform: "rotate(180deg)"
   },
+  bigAvatar: {
+    width: 60,
+    height: 60
+  },
   avatar: {
     backgroundColor: red[500]
   },
@@ -42,6 +46,14 @@ const styles = theme => ({
   },
   fab: {
     margin: theme.spacing.unit
+  },
+
+  // Overiding CSS with classnames for CardHeader Implementation
+  title: {
+    fontSize: "18px"
+  },
+  subheader: {
+    fontSize: "16px"
   }
 });
 
@@ -58,6 +70,10 @@ class OneStar extends React.Component {
     return (
       <Card className={classes.card}>
         <CardHeader
+          classes={{
+            title: classes.title,
+            subheader: classes.subheader
+          }}
           avatar={
             <Avatar
               alt="Remy Sharp"
@@ -83,66 +99,66 @@ class OneStar extends React.Component {
         <CardContent>
           <Grid container spacing={24}>
             <Grid item xs={6} sm={6}>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 <b>Date of birth:</b>
               </Typography>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 <b> Nationality:</b>
               </Typography>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 <b> Club:</b>
               </Typography>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 <b> Country:</b>
               </Typography>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 <b> Position:</b>
               </Typography>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 <b> Height:</b>
               </Typography>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 <b> Wingspan:</b>
               </Typography>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 <b> Vertical leap:</b>
               </Typography>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 <b> Time to run 40m:</b>
               </Typography>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 <b> Time to run 100m:</b>
               </Typography>
             </Grid>
             <Grid item xs={6} sm={6}>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 12th Dec, 1997
               </Typography>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 Ugandan
               </Typography>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 Tigerhead
               </Typography>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 Uganda
               </Typography>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 Point guard
               </Typography>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 6'4"
               </Typography>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 3m
               </Typography>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 3m
               </Typography>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 4.5 Seconds
               </Typography>
-              <Typography variant="body1" gutterBottom align="left">
+              <Typography variant="subheading" gutterBottom align="left">
                 10.5 Seconds
               </Typography>
             </Grid>

@@ -44,16 +44,16 @@ const ratingBy = [
 
 const sortedBy = [
   {
-    value: "Highest To Lowest Rating",
-    label: "Highest To Lowest Rating"
+    value: "Highest To Lowest",
+    label: "Highest To Lowest"
   },
   {
-    value: "Lowest To Highest Rating",
-    label: "Lowest To Highest Rating"
+    value: "Lowest To Highest",
+    label: "Lowest To Highest"
   },
   {
-    value: "Newest To Oldest Rating",
-    label: "Newest To Oldest Rating"
+    value: "Newest To Oldest",
+    label: "Newest To Oldest"
   },
   {
     value: "Oldest To Newest Rating",

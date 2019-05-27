@@ -100,7 +100,7 @@ const styles = theme => ({
   }
 });
 
-function Suggestions(props) {
+function LoanList(props) {
   const { classes } = props;
 
   return (
@@ -432,8 +432,8 @@ function Suggestions(props) {
   );
 }
 
-Suggestions.propTypes = {
+LoanList.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Suggestions);
+export default withStyles(styles)(LoanList);

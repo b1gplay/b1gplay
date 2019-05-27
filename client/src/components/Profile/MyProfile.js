@@ -41,7 +41,7 @@ function CoverProfile(props) {
           Ugandan
         </Typography>
 
-        <Typography component="p" align="center">
+        <Typography component="p" align="center" variant="subheading">
           Am the best Point Guard. I make CP3 look like a clown
         </Typography>
 
@@ -66,7 +66,7 @@ function CoverProfile(props) {
             </Grid>
 
             <Grid item xs={4} sm={4}>
-              <Link to="/following1" className={classes.link}>
+              <Link to="/following" className={classes.link}>
                 <Typography variant="title" gutterBottom align="center">
                   Following
                 </Typography>
@@ -81,7 +81,7 @@ function CoverProfile(props) {
               </Link>
             </Grid>
             <Grid item xs={4} sm={4}>
-              <Link to="/followers1" className={classes.link}>
+              <Link to="/followers" className={classes.link}>
                 <Typography variant="title" gutterBottom align="center">
                   Followers
                 </Typography>

@@ -72,10 +72,10 @@ class IconLabelTabs extends React.Component {
               <Grid container spacing={24}>
                 <Grid
                   item
-                  xs={2}
-                  sm={2}
+                  xs={3}
+                  sm={3}
                   style={{
-                    position: "fixed",
+                    //position: "fixed",
                     margin: 0
                   }}
                 >
@@ -83,11 +83,13 @@ class IconLabelTabs extends React.Component {
                 </Grid>
                 <Grid
                   item
-                  xs={10}
-                  sm={10}
-                  style={{
-                    marginLeft: "16%"
-                  }}
+                  xs={9}
+                  sm={9}
+                  style={
+                    {
+                      //marginLeft: "16%"
+                    }
+                  }
                 >
                   <NewStars1 />
                 </Grid>

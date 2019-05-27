@@ -1,20 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import classnames from "classnames";
+
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
-import CardActions from "@material-ui/core/CardActions";
-import Collapse from "@material-ui/core/Collapse";
+
 import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import red from "@material-ui/core/colors/red";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Grid from "@material-ui/core/Grid";
 import Comment from "./Comment";
@@ -39,6 +35,18 @@ const styles = theme => ({
   },
   expandOpen: {
     transform: "rotate(180deg)"
+  },
+  bigAvatar: {
+    width: 60,
+    height: 60
+  },
+
+  // Overiding CSS with classnames for CardHeader Implementation
+  title: {
+    fontSize: "18px"
+  },
+  subheader: {
+    fontSize: "16px"
   }
 });
 
@@ -56,11 +64,15 @@ class PhotoVideoFeed extends React.Component {
       <Grid item xs={12} style={{ marginTop: "5px" }}>
         <Card className={classes.card}>
           <CardHeader
+            classes={{
+              title: classes.title,
+              subheader: classes.subheader
+            }}
             avatar={
               <Avatar
                 alt="Remy Sharp"
                 src="/static/images/avatar/7.jpg"
-                className={classes.avatar}
+                className={classes.bigAvatar}
                 style={{ marginLeft: "4px", marginRight: "4px" }}
               />
             }
@@ -90,7 +102,7 @@ class PhotoVideoFeed extends React.Component {
                 <Avatar
                   alt="Remy Sharp"
                   src="/static/images/fist.jpg"
-                  className={classes.avatar}
+                  //className={classes.avatar}
                   style={{ marginLeft: "10px", marginRight: "10px" }}
                 />
               </Grid>
@@ -119,11 +131,15 @@ class PhotoVideoFeed extends React.Component {
         <br />
         <Card className={classes.card}>
           <CardHeader
+            classes={{
+              title: classes.title,
+              subheader: classes.subheader
+            }}
             avatar={
               <Avatar
                 alt="Remy Sharp"
                 src="/static/images/avatar/3.jpg"
-                className={classes.avatar}
+                className={classes.bigAvatar}
                 style={{ marginLeft: "4px", marginRight: "4px" }}
               />
             }
