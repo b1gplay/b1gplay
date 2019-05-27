@@ -90,6 +90,26 @@ function PersonalInfo(props) {
             >
               Vertical leap:
             </Typography>
+            <Typography
+              variant="body1"
+              gutterBottom
+              align="left"
+              style={{
+                fontWeight: "bold"
+              }}
+            >
+              Time to run 40m:
+            </Typography>
+            <Typography
+              variant="body1"
+              gutterBottom
+              align="left"
+              style={{
+                fontWeight: "bold"
+              }}
+            >
+              Time to run 100m:
+            </Typography>
           </Grid>
           <Grid item xs={7} sm={7}>
             <Typography variant="body1" gutterBottom align="left">
@@ -109,6 +129,12 @@ function PersonalInfo(props) {
             </Typography>
             <Typography variant="body1" gutterBottom align="left">
               3m
+            </Typography>
+            <Typography variant="body1" gutterBottom align="left">
+              4.5 Seconds
+            </Typography>
+            <Typography variant="body1" gutterBottom align="left">
+              10.5Seconds
             </Typography>
           </Grid>
           <Grid item xs={12} sm={12}>

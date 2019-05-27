@@ -44,7 +44,8 @@ const App = ({ classes }) => (
       <br />
       <br />
       <Switch>
-        <Route path="/profile1" component={ProfilePage} />
+        <Route path="/personal-ratings" component={PersonalRatings} />
+        <Route path="/" component={ProfilePage} />
         <Route path="/personal-ratings" component={PersonalRatings} />
         <Route path="/personalrating" component={PersonalRating} />
         <Route path="/personalrating1" component={NewPersonalRatings} />
@@ -64,7 +65,7 @@ const App = ({ classes }) => (
         <Route path="/messages" component={MessageList} />
 
         <Route path="/top-performers" component={TopPerformers} />
-        <Route path="/" component={Profile} />
+        {/* <Route path="/" component={Profile} /> */}
 
         <Route path="/notifications" component={MessageList} />
         <Route path="/logout" component={SignOn} />

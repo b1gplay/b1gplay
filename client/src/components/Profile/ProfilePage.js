@@ -52,9 +52,9 @@ class Profile extends React.Component {
             <CoverProfile />
 
             <Switch>
-              <Route path="/profile1/videos" component={VideoGallery} />
-              <Route path="/profile1/photos" component={PhotoGallery} />
-              <Route path="/profile1" component={Timeline} />
+              <Route path="/videos" component={VideoGallery} />
+              <Route path="/photos" component={PhotoGallery} />
+              <Route path="/" component={Timeline} />
             </Switch>
           </Grid>
           {/* <Grid item xs={1} /> */}

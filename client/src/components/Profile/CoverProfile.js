@@ -55,7 +55,7 @@ function CoverProfile(props) {
 
       <Paper className={classes.root}>
         <Tabs indicatorColor="primary" textColor="secondary" centered>
-          <Link to="/profile1/photos" className={classes.link}>
+          <Link to="/photos" className={classes.link}>
             <Tab
               label="Photos"
               //icon={<PhotoCameraIcon />}
@@ -67,7 +67,7 @@ function CoverProfile(props) {
             />
           </Link>
 
-          <Link to="/profile1/videos" className={classes.link}>
+          <Link to="/videos" className={classes.link}>
             <Tab
               label="Videos"
               //icon={<VideoLibraryIcon />}
