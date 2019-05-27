@@ -98,29 +98,6 @@ function ByCriteria(props) {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={24}>
-        <Grid item xs={9}>
-          <Typography variant="h6" gutterBottom>
-            Select Criteria
-          </Typography>
-        </Grid>
-        <Grid item xs={3}>
-          <FormControl className={classes.formControl}>
-            <NativeSelect
-              defaultValue={30}
-              input={<Input name="name" id="uncontrolled-native" />}
-            >
-              <option value="" />
-              <option value={10}>All</option>
-              <option value={10}>Coaches</option>
-              <option value={20}>Agents</option>
-              <option value={30}>Media</option>
-              <option value={10}>Fans</option>
-              <option value={20}>Own</option>
-            </NativeSelect>
-          </FormControl>
-        </Grid>
-      </Grid>
       <Card className={classes.card}>
         <CardActionArea>
           <HighchartsReact highcharts={Highcharts} options={options} />

@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
+
 import MenuItem from "@material-ui/core/MenuItem";
 
 const styles = theme => ({
@@ -22,12 +21,12 @@ const ratingBy = [
     label: "All"
   },
   {
-    value: "Coaches",
-    label: "Coaches"
+    value: "Coach",
+    label: "Coach"
   },
   {
-    value: "Players",
-    label: "Players"
+    value: "Player",
+    label: "Player"
   },
   {
     value: "Media",
@@ -38,8 +37,8 @@ const ratingBy = [
     label: "Fans"
   },
   {
-    value: "Agents",
-    label: "Agents"
+    value: "Agent",
+    label: "Agent"
   }
 ];
 
@@ -68,14 +67,16 @@ function AgencyFilter(props) {
   return (
     <div>
       <form>
+        <br />
+        <br />
         <Grid container spacing={24}>
           <Grid item xs={12} sm={12}>
-            <Typography variant="headline" align="center" color="inherit">
+            <Typography variant="headline" align="left" color="inherit">
               Filter:
             </Typography>
           </Grid>
 
-          <Grid item xs={3} sm={3}>
+          <Grid item xs={12} sm={12}>
             <TextField
               id="ratedBy"
               select
@@ -84,7 +85,9 @@ function AgencyFilter(props) {
               //onChange={event => this.handleActivation(event)}
               label="Rated by:"
               fullWidth
-              helperText="Please select filter"
+              margin="normal"
+              variant="outlined"
+              //helperText="Please select filter"
               InputLabelProps={{
                 shrink: true
               }}
@@ -98,7 +101,7 @@ function AgencyFilter(props) {
           </Grid>
 
           <br />
-          <Grid item xs={3} sm={3}>
+          <Grid item xs={12} sm={12}>
             <TextField
               id="sortedBy"
               select
@@ -107,51 +110,9 @@ function AgencyFilter(props) {
               //onChange={this.onChange}
               label="Sorted by:"
               fullWidth
-              helperText="Please select sorter"
-              InputLabelProps={{
-                shrink: true
-              }}
-            >
-              {sortedBy.map(option => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Grid>
-
-          <Grid item xs={3} sm={3}>
-            <TextField
-              id="ratedBy"
-              select
-              name="ratedBy"
-              //value={this.state.advanceType}
-              //onChange={event => this.handleActivation(event)}
-              label="Rated by:"
-              fullWidth
-              helperText="Please select filter"
-              InputLabelProps={{
-                shrink: true
-              }}
-            >
-              {ratingBy.map(option => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Grid>
-
-          <Grid item xs={3} sm={3}>
-            <TextField
-              id="sortedBy"
-              select
-              name="sortedBy"
-              //value={this.state.paymentMode}
-              //onChange={this.onChange}
-              label="Sorted by:"
-              fullWidth
-              helperText="Please select sorter"
+              margin="normal"
+              variant="outlined"
+              //helperText="Please select sorter"
               InputLabelProps={{
                 shrink: true
               }}

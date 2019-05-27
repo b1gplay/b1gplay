@@ -6,10 +6,23 @@ import Typography from "@material-ui/core/Typography";
 
 import ByCriteria from "./ByCriteria";
 import ByRaters from "./ByRaters";
+import RatersPieChart from "./RatersPieChart";
 
 import OneStar from "../NewStars/OneStar";
 
 const styles = theme => ({
+  "@global": {
+    "*::-webkit-scrollbar": {
+      width: "0.6em"
+    },
+    "*::-webkit-scrollbar-track": {
+      "-webkit-box-shadow": "inset 0 0 6px rgba(0,0,0,0.00)"
+    },
+    "*::-webkit-scrollbar-thumb": {
+      backgroundColor: "rgba(0,0,0,.3)",
+      outline: "1px solid slategrey"
+    }
+  },
   bigAvatar: {
     margin: 10,
     width: 160,
@@ -37,41 +50,55 @@ function PersonalRatings(props) {
     <div className={classes.root}>
       <br />
       <br />
-      <Typography variant="h4" gutterBottom align="center">
-        Ratings
-      </Typography>
+
       <Grid container spacing={24}>
         <Grid item xs={3} sm={3}>
           <ByRaters />
         </Grid>
         <Grid item xs={3} sm={3}>
-          <ByCriteria />
+          <ByRaters />
         </Grid>
         <Grid item xs={3} sm={3}>
           <ByRaters />
         </Grid>
         <Grid item xs={3} sm={3}>
-          <ByCriteria />
+          <ByRaters />
         </Grid>
       </Grid>
       <br />
       <br />
       <br />
-      <Typography variant="h4" gutterBottom align="center">
-        More Ratings
-      </Typography>
+
       <Grid container spacing={24}>
         <Grid item xs={3} sm={3}>
           <ByRaters />
         </Grid>
         <Grid item xs={3} sm={3}>
-          <ByCriteria />
+          <ByRaters />
+        </Grid>
+        <Grid item xs={3} sm={3}>
+          <ByRaters />
+        </Grid>
+        <Grid item xs={3} sm={3}>
+          <ByRaters />
+        </Grid>
+      </Grid>
+      <br />
+      <br />
+      <br />
+
+      <Grid container spacing={24}>
+        <Grid item xs={3} sm={3}>
+          <ByRaters />
         </Grid>
         <Grid item xs={3} sm={3}>
           <ByRaters />
         </Grid>
         <Grid item xs={3} sm={3}>
           <ByCriteria />
+        </Grid>
+        <Grid item xs={3} sm={3}>
+          <RatersPieChart />
         </Grid>
       </Grid>
       <br />

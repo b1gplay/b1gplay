@@ -11,6 +11,8 @@ import NewStars1 from "../NewStars/NewStars1";
 import NewPersonalRating from "../NewRatings/NewPersonalRating";
 import Filter from "../NewRatings/Filter";
 
+import Grid from "@material-ui/core/Grid";
+
 function TabContainer(props) {
   return (
     <Typography component="div" style={{ padding: 8 * 3 }}>
@@ -45,10 +47,9 @@ class IconLabelTabs extends React.Component {
 
     return (
       <div>
-        <br />
         <Paper square className={classes.root}>
           <br />
-          <Typography variant="headline" align="center" color="inherit">
+          <Typography variant="display1" align="center" color="inherit">
             Personal Ratings
           </Typography>
           <Tabs
@@ -58,8 +59,8 @@ class IconLabelTabs extends React.Component {
             indicatorColor="secondary"
             textColor="secondary"
           >
-            <Tab icon={<PollIcon />} label="RATINGS" />
-            <Tab icon={<StarIcon />} label="STARS" />
+            <Tab icon={<PollIcon />} label="GRAPHICAL RATINGS" />
+            <Tab icon={<StarIcon />} label="RATINGS" />
           </Tabs>
           {value === 0 && (
             <TabContainer>
@@ -68,8 +69,29 @@ class IconLabelTabs extends React.Component {
           )}
           {value === 1 && (
             <TabContainer>
-              <Filter />
-              <NewStars1 />
+              <Grid container spacing={24}>
+                <Grid
+                  item
+                  xs={2}
+                  sm={2}
+                  style={{
+                    position: "fixed",
+                    margin: 0
+                  }}
+                >
+                  <Filter />
+                </Grid>
+                <Grid
+                  item
+                  xs={10}
+                  sm={10}
+                  style={{
+                    marginLeft: "16%"
+                  }}
+                >
+                  <NewStars1 />
+                </Grid>
+              </Grid>
             </TabContainer>
           )}
         </Paper>

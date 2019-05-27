@@ -82,33 +82,39 @@ class OneStar extends React.Component {
         />
         <CardContent>
           <Grid container spacing={24}>
-            <Grid item xs={5} sm={5}>
+            <Grid item xs={6} sm={6}>
               <Typography variant="body1" gutterBottom align="left">
-                Date of birth:
+                <b>Date of birth:</b>
               </Typography>
               <Typography variant="body1" gutterBottom align="left">
-                Nationality:
+                <b> Nationality:</b>
               </Typography>
               <Typography variant="body1" gutterBottom align="left">
-                Club:
+                <b> Club:</b>
               </Typography>
               <Typography variant="body1" gutterBottom align="left">
-                Country:
+                <b> Country:</b>
               </Typography>
               <Typography variant="body1" gutterBottom align="left">
-                Position:
+                <b> Position:</b>
               </Typography>
               <Typography variant="body1" gutterBottom align="left">
-                Height:
+                <b> Height:</b>
               </Typography>
               <Typography variant="body1" gutterBottom align="left">
-                Wingspan:
+                <b> Wingspan:</b>
               </Typography>
               <Typography variant="body1" gutterBottom align="left">
-                Vertical leap:
+                <b> Vertical leap:</b>
+              </Typography>
+              <Typography variant="body1" gutterBottom align="left">
+                <b> Time to run 40m:</b>
+              </Typography>
+              <Typography variant="body1" gutterBottom align="left">
+                <b> Time to run 100m:</b>
               </Typography>
             </Grid>
-            <Grid item xs={7} sm={7}>
+            <Grid item xs={6} sm={6}>
               <Typography variant="body1" gutterBottom align="left">
                 12th Dec, 1997
               </Typography>
@@ -132,6 +138,12 @@ class OneStar extends React.Component {
               </Typography>
               <Typography variant="body1" gutterBottom align="left">
                 3m
+              </Typography>
+              <Typography variant="body1" gutterBottom align="left">
+                4.5 Seconds
+              </Typography>
+              <Typography variant="body1" gutterBottom align="left">
+                10.5 Seconds
               </Typography>
             </Grid>
           </Grid>
