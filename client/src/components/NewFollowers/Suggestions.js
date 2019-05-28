@@ -62,7 +62,7 @@ const styles = theme => ({
   },
   root: {
     width: "100%",
-    maxWidth: 562,
+    maxWidth: 462,
     backgroundColor: theme.palette.background.paper,
     position: "fixed",
     overflow: "auto",
@@ -111,7 +111,7 @@ function Suggestions(props) {
           borderRight: "1px solid #d4d4d4",
           position: "fixed",
           width: "100%",
-          maxWidth: 562
+          maxWidth: 462
         }}
       >
         <br />

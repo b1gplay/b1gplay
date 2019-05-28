@@ -56,8 +56,8 @@ const sortedBy = [
     label: "Newest To Oldest"
   },
   {
-    value: "Oldest To Newest Rating",
-    label: "Oldest To Newest Rating"
+    value: "Oldest To Newest",
+    label: "Oldest To Newest"
   }
 ];
 

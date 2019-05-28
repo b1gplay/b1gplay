@@ -5,18 +5,15 @@ import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import Grid from "@material-ui/core/Grid";
 
-import TextField from "@material-ui/core/TextField";
+import IconButton from "@material-ui/core/IconButton";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-
+import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import Comment from "./Comment";
 
 const styles = theme => ({
   avatar: {
@@ -29,10 +26,8 @@ const styles = theme => ({
     height: 20
   },
   bigAvatar: {
-    margin: 10,
-    width: 120,
-    height: 120,
-    border: "3px solid black"
+    width: 60,
+    height: 60
   },
   media: {
     height: 359
@@ -42,99 +37,101 @@ const styles = theme => ({
   },
   padding: {
     padding: `0 ${theme.spacing.unit * 2}px`
+  },
+  // Overiding CSS with classnames for CardHeader Implementation
+  title: {
+    fontSize: "18px"
+  },
+  subheader: {
+    fontSize: "16px"
   }
 });
-function PlayerOfWeek(props) {
+function PictureOfWeek(props) {
   const { classes } = props;
   return (
     <div>
       <Typography
         component="h3"
-        variant="subtitle2"
+        variant="title"
         style={{ marginLeft: 20, marginTop: 5 }}
         gutterBottom
         align="center"
       >
         Picture of the week
       </Typography>
-
       <Card className={classes.card}>
-        <ListItem alignItems="flex-start">
-          <ListItemAvatar>
+        <CardHeader
+          classes={{
+            title: classes.title,
+            subheader: classes.subheader
+          }}
+          avatar={
             <Avatar
               alt="Remy Sharp"
-              src="/static/images/avatar/2.jpg"
-              className={classes.avatar}
+              src="/static/images/avatar/7.jpg"
+              className={classes.bigAvatar}
+              style={{ marginLeft: "4px", marginRight: "4px" }}
             />
-          </ListItemAvatar>
-          <ListItemText
-            primary="Otim Tony"
-            secondary={
-              <React.Fragment>
-                <Typography
-                  component="span"
-                  className={classes.inline}
-                  color="textPrimary"
-                />
-                {"Tigerhead Power"}
-              </React.Fragment>
-            }
-          />
-        </ListItem>
-
-        <CardActionArea>
-          <CardMedia
-            className={classes.media}
-            image="/static/images/bb.jpg"
-            title="Point guard"
-          />
-        </CardActionArea>
-        <CardActions>
-          <Grid container spacing={0}>
-            <Grid item xs={6} sm={6}>
-              <ListItem>
-                <ListItemAvatar>
-                  <Avatar
-                    alt="Remy Sharp"
-                    src="/static/images/fist.jpg"
-                    className={classes.mediumAvatar}
-                  />
-                </ListItemAvatar>
-                <ListItemText
-                  secondary={
-                    <React.Fragment>
-                      <Typography
-                        component="span"
-                        className={classes.inline}
-                        color="textPrimary"
-                      />
-                      {" 3 bumps"}
-                    </React.Fragment>
-                  }
-                />
-              </ListItem>
+          }
+          action={
+            <IconButton>
+              <MoreVertIcon />
+            </IconButton>
+          }
+          title="Otim Tony"
+          subheader="September 14, 2016"
+        />
+        <CardMedia
+          className={classes.media}
+          image="/static/images/bb.jpg"
+          title="Paella dish"
+        />
+        <CardContent>
+          <Typography variant="subtitle1" gutterBottom align="left">
+            This impressive paella is a perfect party dish and a fun meal to
+            cook together with your guests. Add 1 cup of frozen peas along with
+            the mussels, if you like.
+          </Typography>
+        </CardContent>
+        <Grid item xs={12} style={{ marginBottom: "5px" }}>
+          <Grid container spacing={24}>
+            <Grid item xs={1}>
+              <Avatar
+                alt="Remy Sharp"
+                src="/static/images/fist.jpg"
+                //className={classes.avatar}
+                style={{ marginLeft: "10px", marginRight: "10px" }}
+              />
             </Grid>
-            <Grid item xs={6} sm={6}>
+            <Grid item xs={4}>
               <Typography
-                variant="body2"
-                gutterBottom
-                color="primary"
-                align="right"
-                style={{ textTransform: "capitalize", padding: "14px" }}
+                paragraph
+                style={{ marginLeft: "10px", marginTop: "10px" }}
               >
-                18 Comments
+                Fists
+              </Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <Typography
+                paragraph
+                style={{ marginLeft: "10px", marginTop: "10px" }}
+                align="right"
+              >
+                4 Comments
               </Typography>
             </Grid>
           </Grid>
-        </CardActions>
-        <CardContent />
+        </Grid>
+        <Comment />
+        <br />
       </Card>
+      <br />
     </div>
   );
 }
 
-PlayerOfWeek.propTypes = {
+PictureOfWeek.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(PlayerOfWeek);
+export default withStyles(styles)(PictureOfWeek);

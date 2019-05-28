@@ -1426,6 +1426,11 @@ atob@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
 
+autobind-decorator@^1.3.4:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/autobind-decorator/-/autobind-decorator-1.4.3.tgz#4c96ffa77b10622ede24f110f5dbbf56691417d1"
+  integrity sha1-TJb/p3sQYi7eJPEQ9du/VmkUF9E=
+
 autoprefixer@^9.4.2:
   version "9.4.9"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.4.9.tgz#0d3eb86bc1d1228551abcf55220d6fd246b6cb31"
@@ -4081,6 +4086,11 @@ hex-color-regex@^1.1.0:
 highcharts-react-official@^2.1.3:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/highcharts-react-official/-/highcharts-react-official-2.1.3.tgz#cddb8f3663abcb1a4649df536c3c1c5c7247b26d"
+
+highcharts@^7.1.0:
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-7.1.1.tgz#8c4433e39d5e7dbdc064685d9548181a35e12c19"
+  integrity sha512-BQtWDQmH4AweQNFLGJCHBQwv9tj9kyp35bp2FFpmNBm7LOecCQdLjvZNgUKvCsKzBzJJIywcwWu4QEcAkPGCjg==
 
 history@^4.7.2:
   version "4.7.2"
@@ -7346,6 +7356,14 @@ react-event-listener@^0.6.2:
     "@babel/runtime" "^7.2.0"
     prop-types "^15.6.0"
     warning "^4.0.1"
+
+react-input-range@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/react-input-range/-/react-input-range-1.3.0.tgz#f96d001631ab817417f1e26d8f9f9684b4827f59"
+  integrity sha1-+W0AFjGrgXQX8eJtj5+WhLSCf1k=
+  dependencies:
+    autobind-decorator "^1.3.4"
+    prop-types "^15.5.8"
 
 react-is@^16.6.3, react-is@^16.7.0, react-is@^16.8.1:
   version "16.8.3"

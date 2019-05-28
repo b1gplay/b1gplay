@@ -6,7 +6,6 @@ import Typography from "@material-ui/core/Typography";
 
 import PictureOfWeek from "./PictureOfWeek";
 import VideoOfWeek from "./VideoOfWeek";
-import GeneralFilter from "./GeneralFilter";
 
 const styles = theme => ({
   root: {
@@ -34,25 +33,6 @@ function NewStars(props) {
           <PictureOfWeek />
         </Grid>
         <Grid item xs={6} sm={6}>
-          <VideoOfWeek />
-        </Grid>
-      </Grid>
-
-      <Grid container spacing={24}>
-        <Grid item xs={12} sm={12}>
-          <br />
-          <GeneralFilter />
-        </Grid>
-        <Grid item xs={3} sm={3}>
-          <PictureOfWeek />
-        </Grid>
-        <Grid item xs={3} sm={3}>
-          <PictureOfWeek />
-        </Grid>
-        <Grid item xs={3} sm={3}>
-          <PictureOfWeek />
-        </Grid>
-        <Grid item xs={3} sm={3}>
           <VideoOfWeek />
         </Grid>
       </Grid>

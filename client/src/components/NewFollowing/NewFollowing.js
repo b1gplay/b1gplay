@@ -18,8 +18,8 @@ class ClientDetails1 extends React.Component {
         <Grid container spacing={24}>
           <Grid
             item
-            xs={4}
-            sm={4}
+            xs={3}
+            sm={3}
             style={{
               marginTop: "-1%",
               marginLeft: "-2%"
@@ -32,13 +32,11 @@ class ClientDetails1 extends React.Component {
           </Grid>
           <Grid
             item
-            xs={8}
-            sm={8}
-            style={
-              {
-                //marginLeft: "1%"
-              }
-            }
+            xs={9}
+            sm={9}
+            style={{
+              marginLeft: "28%"
+            }}
           >
             <FollowingList />
           </Grid>

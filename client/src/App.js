@@ -1,7 +1,10 @@
 import React from "react";
 import { CssBaseline, withStyles } from "@material-ui/core";
 import { Switch, Route } from "react-router-dom";
+
 import Header from "./components/Layout/Header";
+
+import Analytics from "./components/Analytics/Analytics";
 
 import MessageList from "./components/Messaging/MessageList";
 import ViewProfile from "./components/Profile/ViewProfile";
@@ -19,11 +22,9 @@ import NewFollowers from "./components/NewFollowers/NewFollowers";
 import Following from "./components/Following/Following";
 import NewFollowing from "./components/NewFollowing/NewFollowing";
 import PersonalRating from "./components/Ratings/PersonalRating";
-import NewPersonalRatings from "./components/NewRatings/NewPersonalRating";
-
 import PersonalRatings from "./components/PersonalRatings/PersonalRatings";
 
-import Tab1 from "./components/PersonalRatings/Tab1";
+import NewPersonalRatings from "./components/NewRatings/NewPersonalRating";
 
 const styles = theme => ({
   main: {
@@ -44,9 +45,10 @@ const App = ({ classes }) => (
       <br />
       <br />
       <Switch>
+        <Route path="/data-analytics" component={Analytics} />
         <Route path="/following" component={NewFollowing} />
         <Route path="/followers" component={NewFollowers} />
-        <Route path="/data-analytics" component={Tab1} />
+        {/* <Route path="/data-analytics" component={Tab1} /> */}
         <Route path="/messages" component={MessageList} />
         <Route path="/personal-ratings" component={PersonalRatings} />
         <Route path="/" component={ProfilePage} />

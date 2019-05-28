@@ -34,11 +34,9 @@ class NewFollowers extends React.Component {
             item
             xs={8}
             sm={8}
-            style={
-              {
-                //marginLeft: "1%"
-              }
-            }
+            style={{
+              marginLeft: "28%"
+            }}
           >
             <FollowerList />
           </Grid>

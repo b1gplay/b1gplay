@@ -3,12 +3,8 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 
-import PlayerOfWeek from "../TopPerformers/PlayerOfWeek";
-import CoachRatings from "../TopPerformers/CoachRatings";
-import PictureOfWeek from "../TopPerformers/PictureOfWeek";
-import VideoOfWeek from "../TopPerformers/VideoOfWeek";
-import AgeFilter from "../TopPerformers/AgeFilter";
-import GeneralFilter from "../TopPerformers/GeneralFilter";
+import Performers from "./Performers";
+import Filter from "./Filter";
 
 const styles = theme => ({});
 
@@ -19,23 +15,28 @@ class TopPerformers extends React.Component {
     return (
       <div>
         <Grid container spacing={24}>
-          <Grid item xs={3} sm={3} style={{ height: "100vh" }}>
-            <GeneralFilter />
+          <Grid
+            item
+            xs={3}
+            sm={3}
+            style={{
+              //position: "fixed",
+              margin: 0
+            }}
+          >
+            <Filter />
           </Grid>
-          <Grid item xs={9} sm={9}>
-            <AgeFilter />
-            <CoachRatings />
-            <Grid container spacing={24}>
-              <Grid item xs={4} sm={4} style={{ height: "100vh" }}>
-                <PlayerOfWeek />
-              </Grid>
-              <Grid item xs={4} sm={4} style={{ height: "100vh" }}>
-                <PictureOfWeek />
-              </Grid>
-              <Grid item xs={4} sm={4}>
-                <VideoOfWeek />
-              </Grid>
-            </Grid>
+          <Grid
+            item
+            xs={9}
+            sm={9}
+            style={
+              {
+                //marginLeft: "16%"
+              }
+            }
+          >
+            <Performers />
           </Grid>
         </Grid>
       </div>

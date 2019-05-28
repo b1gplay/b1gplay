@@ -4,6 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
+
 import MenuItem from "@material-ui/core/MenuItem";
 
 const styles = theme => ({
@@ -20,12 +21,12 @@ const ratingBy = [
     label: "All"
   },
   {
-    value: "Coaches",
-    label: "Coaches"
+    value: "Coach",
+    label: "Coach"
   },
   {
-    value: "Players",
-    label: "Players"
+    value: "Player",
+    label: "Player"
   },
   {
     value: "Media",
@@ -36,27 +37,57 @@ const ratingBy = [
     label: "Fans"
   },
   {
-    value: "Agents",
-    label: "Agents"
+    value: "Agent",
+    label: "Agent"
   }
 ];
 
 const sortedBy = [
   {
-    value: "Highest To Lowest Rating",
-    label: "Highest To Lowest Rating"
+    value: "Highest To Lowest",
+    label: "Highest To Lowest"
   },
   {
-    value: "Lowest To Highest Rating",
-    label: "Lowest To Highest Rating"
+    value: "Lowest To Highest",
+    label: "Lowest To Highest"
   },
   {
-    value: "Newest To Oldest Rating",
-    label: "Newest To Oldest Rating"
+    value: "Newest To Oldest",
+    label: "Newest To Oldest"
   },
   {
-    value: "Oldest To Newest Rating",
-    label: "Oldest To Newest Rating"
+    value: "Oldest To Newest",
+    label: "Oldest To Newest"
+  }
+];
+
+const countries = [
+  {
+    value: "Uganda",
+    label: "Uganda"
+  },
+  {
+    value: "Kenya",
+    label: "Kenya"
+  },
+  {
+    value: "Tanzania",
+    label: "Tanzania"
+  }
+];
+
+const positions = [
+  {
+    value: "Rebounder",
+    label: "Rebounder"
+  },
+  {
+    value: "Scorer",
+    label: "Scorer"
+  },
+  {
+    value: "Defender",
+    label: "Defender"
   }
 ];
 
@@ -66,23 +97,27 @@ function AgencyFilter(props) {
   return (
     <div>
       <form>
+        <br />
+        <br />
         <Grid container spacing={24}>
           <Grid item xs={12} sm={12}>
-            <Typography variant="headline" align="center" color="inherit">
+            <Typography variant="headline" align="left" color="inherit">
               Filter:
             </Typography>
           </Grid>
 
-          <Grid item xs={3} sm={3}>
+          <Grid item xs={12} sm={12}>
             <TextField
               id="ratedBy"
               select
               name="ratedBy"
               //value={this.state.advanceType}
               //onChange={event => this.handleActivation(event)}
-              label="Sex:"
+              label="Rated by:"
               fullWidth
-              helperText="Please select filter"
+              margin="normal"
+              variant="outlined"
+              //helperText="Please select filter"
               InputLabelProps={{
                 shrink: true
               }}
@@ -93,68 +128,67 @@ function AgencyFilter(props) {
                 </MenuItem>
               ))}
             </TextField>
-          </Grid>
 
-          <br />
-          <Grid item xs={3} sm={3}>
             <TextField
-              id="sortedBy"
+              id="country"
               select
-              name="sortedBy"
-              //value={this.state.paymentMode}
-              //onChange={this.onChange}
+              name="country"
+              //value={this.state.advanceType}
+              //onChange={event => this.handleActivation(event)}
               label="Country:"
               fullWidth
-              helperText="Please select sorter"
+              margin="normal"
+              variant="outlined"
+              //helperText="Please select filter"
               InputLabelProps={{
                 shrink: true
               }}
             >
-              {sortedBy.map(option => (
+              {countries.map(option => (
                 <MenuItem key={option.value} value={option.value}>
                   {option.label}
                 </MenuItem>
               ))}
             </TextField>
-          </Grid>
 
-          <Grid item xs={3} sm={3}>
-            <TextField
-              id="ratedBy"
-              select
-              name="ratedBy"
-              //value={this.state.advanceType}
-              //onChange={event => this.handleActivation(event)}
-              label="Age:"
-              fullWidth
-              helperText="Please select filter"
-              InputLabelProps={{
-                shrink: true
-              }}
-            >
-              {ratingBy.map(option => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Grid>
-
-          <Grid item xs={3} sm={3}>
             <TextField
               id="sortedBy"
               select
               name="sortedBy"
               //value={this.state.paymentMode}
               //onChange={this.onChange}
-              label="Position:"
+              label="Sorted by:"
               fullWidth
-              helperText="Please select sorter"
+              margin="normal"
+              variant="outlined"
+              //helperText="Please select sorter"
               InputLabelProps={{
                 shrink: true
               }}
             >
               {sortedBy.map(option => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
+
+            <TextField
+              id="position"
+              select
+              name="position"
+              //value={this.state.paymentMode}
+              //onChange={this.onChange}
+              label="Positions:"
+              fullWidth
+              margin="normal"
+              variant="outlined"
+              //helperText="Please select sorter"
+              InputLabelProps={{
+                shrink: true
+              }}
+            >
+              {positions.map(option => (
                 <MenuItem key={option.value} value={option.value}>
                   {option.label}
                 </MenuItem>
