@@ -78,20 +78,28 @@ const countries = [
 
 const positions = [
   {
-    value: "Rebounder",
-    label: "Rebounder"
+    value: "Point guard",
+    label: "Point guard"
   },
   {
-    value: "Scorer",
-    label: "Scorer"
+    value: "Shooting guard",
+    label: "Shooting guard"
   },
   {
-    value: "Defender",
-    label: "Defender"
+    value: "Small guard",
+    label: "Small guard"
+  },
+  {
+    value: "Power forward",
+    label: "Power forward"
+  },
+  {
+    value: "Center",
+    label: "Center"
   }
 ];
 
-function AgencyFilter(props) {
+function Filter(props) {
   const { classes } = props;
 
   return (
@@ -204,8 +212,8 @@ function AgencyFilter(props) {
   );
 }
 
-AgencyFilter.propTypes = {
+Filter.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(AgencyFilter);
+export default withStyles(styles)(Filter);

@@ -1,128 +1,238 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import Avatar from '@material-ui/core/Avatar';
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import 'typeface-roboto';
-import { Link } from 'react-router-dom';
+
+import Divider from "@material-ui/core/Divider";
+import Button from "@material-ui/core/Button";
+import ButtonBase from "@material-ui/core/ButtonBase";
+
+import Avatar from "@material-ui/core/Avatar";
+
+import Fab from "@material-ui/core/Fab";
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   paper: {
     padding: theme.spacing.unit * 2,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
+    margin: "auto",
+    maxWidth: 500
+  },
+  image: {
+    width: 60,
+    height: 60
+  },
+  img: {
+    margin: "auto",
+    display: "block",
+    maxWidth: "100%",
+    maxHeight: "100%"
   },
   bigAvatar: {
-    marginLeft: 10,
-    marginRight: 10,
     width: 60,
-    height: 60,
+    height: 60
   },
+  fab: {
+    margin: theme.spacing.unit
+  },
+  text: {
+    fontWeight: "bold"
+  }
 });
 
 function Female(props) {
   const { classes } = props;
 
   return (
-	<Grid item xs={3}>
-	  <Typography variant="h6" gutterBottom>
-	    Female
-	  </Typography>
+    <div className={classes.root}>
+      <br />
+      <br />
+      <br />
+      <br />
 
-      <Paper className={classes.paper}>
-      	<Grid container spacing={24}>
-          
-      	  <Grid item xs={6}>
-      			<Typography component="p" align="left">
-      			  Point Guard
-      			</Typography>
-            <Link to="/stars">
-            <Paper className={classes.paper}>
-      		    <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.bigAvatar} />
-      			  <Typography variant="subtitle2" gutterBottom color="#D23E56">
-      			    Aliyah Naki
-      			  </Typography>
-      			  <Typography variant="button" gutterBottom align="center">
-      			    89.65
-      			  </Typography>
-            </Paper>
-            </Link>
+      <Typography
+        variant="h5"
+        component="h3"
+        color="default"
+        align="center"
+        className={classes.text}
+      >
+        Females
+      </Typography>
+      <Paper className={classes.paper} elevation="0">
+        <Grid container spacing={16}>
+          <Grid item>
+            <ButtonBase className={classes.image}>
+              <Avatar
+                alt="Remy Sharp"
+                src="/static/images/avatar/3.jpg"
+                className={classes.bigAvatar}
+              />
+            </ButtonBase>
           </Grid>
-          <Grid item xs={6}>
-          	<Typography component="p" align="left">
-			  Shooting Guard
-			</Typography>
-            <Paper className={classes.paper}>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.bigAvatar} />
-              <Typography variant="subtitle2" gutterBottom>
-			    Aliyah Naki
-			  </Typography>
-			  <Typography variant="button" gutterBottom align="center">
-			    89.65
-			  </Typography>
-            </Paper>
+          <Grid item xs={12} sm container>
+            <Grid item xs container direction="column" spacing={16}>
+              <Grid item xs>
+                <Typography gutterBottom variant="h6" className={classes.text}>
+                  Nathan Baleeta
+                </Typography>
+                <Typography gutterBottom variant="subheading">
+                  Point guard
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid item>
+              <Fab color="secondary" className={classes.fab}>
+                <Typography variant="h5" gutterBottom color="inherit">
+                  34
+                </Typography>
+              </Fab>
+            </Grid>
           </Grid>
-      	</Grid>
-      	<Grid container spacing={24}>
-      	  <Grid item xs={6}>
-      	  	<Typography component="p" align="left">
-			  Power Forward
-			</Typography>
-            <Paper className={classes.paper}>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.bigAvatar} />
-              <Typography variant="subtitle2" gutterBottom>
-			    Aliyah Naki
-			  </Typography>
-			  <Typography variant="button" gutterBottom align="center">
-			    89.65
-			  </Typography>
-            </Paper>
+        </Grid>
+        <br />
+        {/*  <Divider /> */}
+
+        <Grid container spacing={16}>
+          <Grid item>
+            <ButtonBase className={classes.image}>
+              <Avatar
+                alt="Remy Sharp"
+                src="/static/images/avatar/3.jpg"
+                className={classes.bigAvatar}
+              />
+            </ButtonBase>
           </Grid>
-          <Grid item xs={6}>
-          	<Typography component="p" align="left">
-			  Small Forward
-			</Typography>
-            <Paper className={classes.paper}>
-      		  <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.bigAvatar} />
-      		  <Typography variant="subtitle2" gutterBottom>
-			    Aliyah Naki
-			  </Typography>
-			  <Typography variant="button" gutterBottom align="center">
-			    89.65
-			  </Typography>
-            </Paper>
+          <Grid item xs={12} sm container>
+            <Grid item xs container direction="column" spacing={16}>
+              <Grid item xs>
+                <Typography gutterBottom variant="h6" className={classes.text}>
+                  Nathan Baleeta
+                </Typography>
+                <Typography gutterBottom variant="subheading">
+                  Shooting guard
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid item>
+              <Fab color="secondary" className={classes.fab}>
+                <Typography variant="h5" gutterBottom color="inherit">
+                  34
+                </Typography>
+              </Fab>
+            </Grid>
           </Grid>
-      	</Grid>
-      	<Grid container spacing={24}>
-      	  <Grid item xs={6}>
-      	  	<Typography component="p" align="left">
-			  Center Forward
-			</Typography>
-      	    <Paper className={classes.paper}>
-      		  <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.bigAvatar} />
-      		  <Typography variant="subtitle2" gutterBottom>
-			    Aliyah Naki
-			  </Typography>
-			  <Typography variant="button" gutterBottom align="center">
-			    89.65
-			  </Typography>
-      	    </Paper>
+        </Grid>
+        <br />
+        {/*  <Divider /> */}
+
+        <Grid container spacing={16}>
+          <Grid item>
+            <ButtonBase className={classes.image}>
+              <Avatar
+                alt="Remy Sharp"
+                src="/static/images/avatar/3.jpg"
+                className={classes.bigAvatar}
+              />
+            </ButtonBase>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm container>
+            <Grid item xs container direction="column" spacing={16}>
+              <Grid item xs>
+                <Typography gutterBottom variant="h6" className={classes.text}>
+                  Nathan Baleeta
+                </Typography>
+                <Typography gutterBottom variant="subheading">
+                  Power forward
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid item>
+              <Fab color="secondary" className={classes.fab}>
+                <Typography variant="h5" gutterBottom color="inherit">
+                  34
+                </Typography>
+              </Fab>
+            </Grid>
           </Grid>
-      	</Grid>
+        </Grid>
+        <br />
+        {/*  <Divider /> */}
+
+        <Grid container spacing={16}>
+          <Grid item>
+            <ButtonBase className={classes.image}>
+              <Avatar
+                alt="Remy Sharp"
+                src="/static/images/avatar/3.jpg"
+                className={classes.bigAvatar}
+              />
+            </ButtonBase>
+          </Grid>
+          <Grid item xs={12} sm container>
+            <Grid item xs container direction="column" spacing={16}>
+              <Grid item xs>
+                <Typography gutterBottom variant="h6" className={classes.text}>
+                  Nathan Baleeta
+                </Typography>
+                <Typography gutterBottom variant="subheading">
+                  Small forward
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid item>
+              <Fab color="secondary" className={classes.fab}>
+                <Typography variant="h6" gutterBottom color="inherit">
+                  34
+                </Typography>
+              </Fab>
+            </Grid>
+          </Grid>
+        </Grid>
+        <br />
+        {/*  <Divider /> */}
+
+        <Grid container spacing={16}>
+          <Grid item>
+            <ButtonBase className={classes.image}>
+              <Avatar
+                alt="Remy Sharp"
+                src="/static/images/avatar/3.jpg"
+                className={classes.bigAvatar}
+              />
+            </ButtonBase>
+          </Grid>
+          <Grid item xs={12} sm container>
+            <Grid item xs container direction="column" spacing={16}>
+              <Grid item xs>
+                <Typography gutterBottom variant="h6" className={classes.text}>
+                  Nathan Baleeta
+                </Typography>
+                <Typography gutterBottom variant="subheading">
+                  Center forward
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid item>
+              <Fab color="secondary" className={classes.fab}>
+                <Typography variant="h6" gutterBottom color="inherit">
+                  34
+                </Typography>
+              </Fab>
+            </Grid>
+          </Grid>
+        </Grid>
       </Paper>
-    </Grid>
+    </div>
   );
 }
 
 Female.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(Female);

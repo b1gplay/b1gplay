@@ -45,6 +45,8 @@ const App = ({ classes }) => (
       <br />
       <br />
       <Switch>
+        <Route path="/log" component={SignOn} />
+        <Route path="/join" component={Join} />
         <Route path="/data-analytics" component={Analytics} />
         <Route path="/following" component={NewFollowing} />
         <Route path="/followers" component={NewFollowers} />
@@ -56,8 +58,7 @@ const App = ({ classes }) => (
         <Route path="/personalrating" component={PersonalRating} />
         <Route path="/personalrating1" component={NewPersonalRatings} />
         <Route path="/myhome" component={Profile} />
-        <Route path="/log" component={SignOn} />
-        <Route path="/join" component={Join} />
+
         <Route path="/followers1" component={Followers} />
 
         <Route path="/following1" component={Following} />

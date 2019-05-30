@@ -1,36 +1,35 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
+
+import TextField from "@material-ui/core/TextField";
+import MenuItem from "@material-ui/core/MenuItem";
+
+const countries = [
+  {
+    value: "Uganda",
+    label: "Uganda"
+  },
+  {
+    value: "Kenya",
+    label: "Kenya"
+  },
+  {
+    value: "Tanzania",
+    label: "Tanzania"
+  }
+];
 
 const styles = theme => ({
   root: {
     display: "flex",
     flexWrap: "wrap"
-  },
-  formControl: {
-    margin: theme.spacing.unit,
-    minWidth: 120
-  },
-  selectEmpty: {
-    marginTop: theme.spacing.unit * 2
   }
 });
 
 class CountryFilter extends React.Component {
-  state = {
-    country: "",
-    name: "Uganda",
-    labelWidth: 0
-  };
-
-  handleChange = name => event => {
-    this.setState({ [name]: event.target.value });
-  };
+  state = {};
 
   render() {
     const { classes } = this.props;
@@ -38,29 +37,35 @@ class CountryFilter extends React.Component {
     return (
       <div className={classes.root}>
         <Grid container spacing={24}>
-          <Grid item xs={9}>
-            <Typography variant="h6" gutterBottom>
+          <Grid item xs={8}>
+            {/*  <Typography variant="h6" gutterBottom>
               Select Country
-            </Typography>
+            </Typography> */}
           </Grid>
-          <Grid item xs={3}>
-            <FormControl className={classes.formControl}>
-              <InputLabel htmlFor="country-native-simple">Country</InputLabel>
-              <Select
-                native
-                value={this.state.country}
-                onChange={this.handleChange("country")}
-                inputProps={{
-                  name: "country",
-                  id: "country-native-simple"
-                }}
-              >
-                <option value="" />
-                <option value={10}>Uganda</option>
-                <option value={20}>Kenya</option>
-                <option value={30}>Tanzania</option>
-              </Select>
-            </FormControl>
+          <Grid item xs={4}>
+            <br />
+
+            <TextField
+              id="country"
+              select
+              name="country"
+              //value={this.state.advanceType}
+              //onChange={event => this.handleActivation(event)}
+              label="Select country:"
+              fullWidth
+              margin="normal"
+              variant="outlined"
+              //helperText="Please select filter"
+              InputLabelProps={{
+                shrink: true
+              }}
+            >
+              {countries.map(option => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
           </Grid>
         </Grid>
       </div>

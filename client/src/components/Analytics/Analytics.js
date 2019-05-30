@@ -8,7 +8,6 @@ import Tab from "@material-ui/core/Tab";
 import PollIcon from "@material-ui/icons/Poll";
 import StarIcon from "@material-ui/icons/Star";
 import GroupIcon from "@material-ui/icons/Group";
-import FavoriteIcon from "@material-ui/icons/Favorite";
 
 import Typography from "@material-ui/core/Typography";
 
