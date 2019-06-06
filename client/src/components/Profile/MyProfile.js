@@ -50,7 +50,16 @@ function CoverProfile(props) {
           <Grid container spacing={24}>
             <Grid item xs={4} sm={4}>
               <Link to="/personal-ratings" className={classes.link}>
-                <Typography variant="title" gutterBottom align="center">
+                <Typography
+                  variant="subheading"
+                  gutterBottom
+                  align="center"
+                  style={{
+                    color: "#D23E56",
+                    textTransform: "uppercase",
+                    fontWeight: "bold"
+                  }}
+                >
                   Ratings
                 </Typography>
 
@@ -67,7 +76,16 @@ function CoverProfile(props) {
 
             <Grid item xs={4} sm={4}>
               <Link to="/following" className={classes.link}>
-                <Typography variant="title" gutterBottom align="center">
+                <Typography
+                  variant="subheading"
+                  gutterBottom
+                  align="center"
+                  style={{
+                    color: "#D23E56",
+                    textTransform: "uppercase",
+                    fontWeight: "bold"
+                  }}
+                >
                   Following
                 </Typography>
                 <Typography
@@ -82,7 +100,16 @@ function CoverProfile(props) {
             </Grid>
             <Grid item xs={4} sm={4}>
               <Link to="/followers" className={classes.link}>
-                <Typography variant="title" gutterBottom align="center">
+                <Typography
+                  variant="subheading"
+                  gutterBottom
+                  align="center"
+                  style={{
+                    color: "#D23E56",
+                    textTransform: "uppercase",
+                    fontWeight: "bold"
+                  }}
+                >
                   Followers
                 </Typography>
                 <Typography

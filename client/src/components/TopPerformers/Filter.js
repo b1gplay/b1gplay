@@ -42,7 +42,7 @@ const ratingBy = [
   }
 ];
 
-const sortedBy = [
+/* const sortedBy = [
   {
     value: "Highest To Lowest",
     label: "Highest To Lowest"
@@ -59,7 +59,7 @@ const sortedBy = [
     value: "Oldest To Newest",
     label: "Oldest To Newest"
   }
-];
+]; */
 
 const countries = [
   {
@@ -100,7 +100,7 @@ const positions = [
 ];
 
 function Filter(props) {
-  const { classes } = props;
+  //const { classes } = props;
 
   return (
     <div>
@@ -159,7 +159,7 @@ function Filter(props) {
               ))}
             </TextField>
 
-            <TextField
+            {/*       <TextField
               id="sortedBy"
               select
               name="sortedBy"
@@ -179,7 +179,7 @@ function Filter(props) {
                   {option.label}
                 </MenuItem>
               ))}
-            </TextField>
+            </TextField> */}
 
             <TextField
               id="position"

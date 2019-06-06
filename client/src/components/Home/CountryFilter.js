@@ -37,12 +37,7 @@ class CountryFilter extends React.Component {
     return (
       <div className={classes.root}>
         <Grid container spacing={24}>
-          <Grid item xs={8}>
-            {/*  <Typography variant="h6" gutterBottom>
-              Select Country
-            </Typography> */}
-          </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12}>
             <br />
 
             <TextField

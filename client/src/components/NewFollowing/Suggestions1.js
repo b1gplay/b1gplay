@@ -46,6 +46,17 @@ const filterBy = [
   }
 ];
 
+const sortedBy = [
+  {
+    value: "Newest To Oldest",
+    label: "Newest To Oldest"
+  },
+  {
+    value: "Oldest To Newest",
+    label: "Oldest To Newest"
+  }
+];
+
 const styles = theme => ({
   //Style the scrollbar
   "@global": {
@@ -115,25 +126,24 @@ function LoanList(props) {
         }}
       >
         <br />
-        <Typography
-          variant="headline"
-          gutterBottom
-          align="center"
-          style={{
-            color: "black"
-          }}
-        >
-          Suggestions
-        </Typography>
-
         <Grid container spacing={24}>
+          <Grid item xs={12} sm={12}>
+            <Typography
+              variant="headline"
+              align="center"
+              color="inherit"
+              //style={{ paddingLeft: 30 }}
+            >
+              Filter:
+            </Typography>
+          </Grid>
           <Grid item xs={12} sm={12} style={{ padding: 30 }}>
             <TextField
-              id="filterBy"
+              id="category"
               select
-              name="filterBy"
+              name="category"
               style={{ margin: 8, fontSize: "18px" }}
-              label="Rated by:"
+              label="Category:"
               fullWidth
               margin="normal"
               variant="outlined"
@@ -147,8 +157,43 @@ function LoanList(props) {
                 </MenuItem>
               ))}
             </TextField>
+            <br />
+            <br />
+            <TextField
+              id="sortedBy"
+              select
+              name="sortedBy"
+              style={{ margin: 8, fontSize: "18px" }}
+              //value={this.state.paymentMode}
+              //onChange={this.onChange}
+              label="Sorted by:"
+              fullWidth
+              margin="normal"
+              variant="outlined"
+              //helperText="Please select sorter"
+              InputLabelProps={{
+                shrink: true
+              }}
+            >
+              {sortedBy.map(option => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
           </Grid>
         </Grid>
+
+        <Typography
+          variant="headline"
+          gutterBottom
+          align="center"
+          style={{
+            color: "black"
+          }}
+        >
+          Suggestions
+        </Typography>
 
         <List className={classes.root}>
           <ListItem button className={classes.message}>

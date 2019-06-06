@@ -60,7 +60,7 @@ function CoverProfile(props) {
               label="Photos"
               //icon={<PhotoCameraIcon />}
               style={{
-                color: "#D23E56",
+                color: "black",
                 fontWeight: "bold",
                 borderRight: "1px solid #d4d4d4"
               }}
@@ -72,7 +72,7 @@ function CoverProfile(props) {
               label="Videos"
               //icon={<VideoLibraryIcon />}
               style={{
-                color: "#D23E56",
+                color: "black",
                 fontWeight: "bold",
                 borderRight: "1px solid #d4d4d4"
               }}

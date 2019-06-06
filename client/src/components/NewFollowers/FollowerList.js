@@ -34,8 +34,13 @@ function FollowingList(props) {
     <div>
       <br />
 
-      <Typography variant="headline" gutterBottom align="center">
-        <b>Followers</b>
+      <Typography
+        variant="display1"
+        gutterBottom
+        align="center"
+        style={{ color: "black" }}
+      >
+        Followers
       </Typography>
       <Grid container spacing={24}>
         <Grid item xs={4} sm={4}>

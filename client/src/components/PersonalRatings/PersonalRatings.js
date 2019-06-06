@@ -7,6 +7,7 @@ import Tab from "@material-ui/core/Tab";
 import PollIcon from "@material-ui/icons/Poll";
 import StarIcon from "@material-ui/icons/Star";
 import Typography from "@material-ui/core/Typography";
+
 import NewStars1 from "../NewStars/NewStars1";
 import NewPersonalRating from "../NewRatings/NewPersonalRating";
 import Filter from "../NewRatings/Filter";
@@ -72,8 +73,8 @@ class IconLabelTabs extends React.Component {
             indicatorColor="secondary"
             textColor="secondary"
           >
-            <Tab icon={<PollIcon />} label="GRAPHICAL RATINGS" />
-            <Tab icon={<StarIcon />} label="RATINGS" />
+            <Tab icon={<PollIcon />} label="GRAPHIC ANALYSIS" />
+            <Tab icon={<StarIcon />} label="INDIVIDUAL RATINGS" />
           </Tabs>
           {value === 0 && (
             <TabContainer>

@@ -16,7 +16,7 @@ function Map(props) {
 
   return (
     <Grid item xs={12}>
-      <div style={{ width: 819, height: 420 }}>
+      <div style={{ width: 819, height: 410 }}>
         <VectorMap
           map={"world_mill"}
           backgroundColor="#3b96ce"

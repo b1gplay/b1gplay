@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "react-dom";
+//import { render } from "react-dom";
 // Import Highcharts
 import Highcharts from "highcharts/highstock";
 import Card from "@material-ui/core/Card";
@@ -36,61 +36,58 @@ const options = {
   title: {
     text: "Raters breakdown"
   },
-	plotOptions: {
-	  pie: {
-	  	dataLabels: {
-	  		format: '{point.name}: {point.percentage:.1f} %'
-	  	},
-	  }
-	},
-  series: [{
-		  name: 'Percentage',
-		  colorByPoint: true,
-	      data: [
-	        {
-	          name: 'Coaches',
-	          y: 30,
-	          color: '#3498db'
-	        },
-	        {
-	          name: 'Players',
-	          y: 30,
-	          color: '#9b59b6'
-	        },
-	        {
-	          name: 'Media',
-	          y: 20,
-	          color: '#2ecc71'
-	        },
-	        {
-	          name: 'Fan',
-	          y: 10,
-	          color: '#f1c40f'
-	        },
-	        {
-	          name: 'Agents',
-	          y: 10,
-	          color: '#990000'
-	        }
-	      ]
-	    }]
+  plotOptions: {
+    pie: {
+      dataLabels: {
+        format: "{point.name}: {point.percentage:.1f} %"
+      }
+    }
+  },
+  series: [
+    {
+      name: "Percentage",
+      colorByPoint: true,
+      data: [
+        {
+          name: "Coaches",
+          y: 30,
+          color: "#3498db"
+        },
+        {
+          name: "Players",
+          y: 30,
+          color: "#9b59b6"
+        },
+        {
+          name: "Media",
+          y: 20,
+          color: "#2ecc71"
+        },
+        {
+          name: "Fan",
+          y: 10,
+          color: "#f1c40f"
+        },
+        {
+          name: "Agents",
+          y: 10,
+          color: "#990000"
+        }
+      ]
+    }
+  ]
 };
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
-	<div>
-      <Card>
-        <CardActionArea>
-        	<PieChart highcharts={Highcharts} options={options} />
-        </CardActionArea>
-      </Card>
-    </div>
-
+      <div>
+        <Card>
+          <CardActionArea>
+            <PieChart highcharts={Highcharts} options={options} />
+          </CardActionArea>
+        </Card>
+      </div>
     );
   }
 }

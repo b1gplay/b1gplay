@@ -50,15 +50,10 @@ function PictureOfWeek(props) {
   const { classes } = props;
   return (
     <div>
-      <Typography
-        component="h3"
-        variant="title"
-        style={{ marginLeft: 20, marginTop: 5 }}
-        gutterBottom
-        align="center"
-      >
+      <Typography variant="h5" component="h3" color="default" align="center">
         Picture of the week
       </Typography>
+      <br />
       <Card className={classes.card}>
         <CardHeader
           classes={{

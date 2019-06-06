@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 
-import Typography from "@material-ui/core/Typography";
-
 import OneStar from "./OneStar";
 
 const styles = theme => ({
@@ -24,9 +22,7 @@ function NewStars(props) {
   return (
     <div className={classes.root}>
       <br />
-      <Typography variant="h5" component="h3" color="default" align="center">
-        Top male Point Guards from Uganda
-      </Typography>
+
       <br />
       <Grid container spacing={24}>
         <Grid item xs={4} sm={4}>

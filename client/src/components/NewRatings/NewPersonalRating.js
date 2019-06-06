@@ -2,13 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
 
 import ByCriteria from "./ByCriteria";
 import ByRaters from "./ByRaters";
 import RatersPieChart from "./RatersPieChart";
-
-import OneStar from "../NewStars/OneStar";
 
 const styles = theme => ({
   "@global": {

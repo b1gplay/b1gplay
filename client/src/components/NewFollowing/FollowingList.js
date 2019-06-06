@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 import OneFollowing from "./OneFollowing";
-import Suggestions from "./Suggestions";
+//import Suggestions from "./Suggestions";
 
 const styles = theme => ({
   bigAvatar: {
@@ -29,14 +29,19 @@ const styles = theme => ({
 });
 
 function FollowingList(props) {
-  const { classes } = props;
+  //const { classes } = props;
 
   return (
     <div>
       <br />
 
-      <Typography variant="headline" gutterBottom align="center">
-        <b>Following</b>
+      <Typography
+        variant="display1"
+        gutterBottom
+        align="center"
+        style={{ color: "black" }}
+      >
+        Following
       </Typography>
       <Grid container spacing={24}>
         <Grid item xs={4} sm={4}>

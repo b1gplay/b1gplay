@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "staging": "b1gplay",
+    "default": "b1gplay"
+  }
+}

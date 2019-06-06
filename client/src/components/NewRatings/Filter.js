@@ -62,7 +62,7 @@ const sortedBy = [
 ];
 
 function AgencyFilter(props) {
-  const { classes } = props;
+  //const { classes } = props;
 
   return (
     <div>

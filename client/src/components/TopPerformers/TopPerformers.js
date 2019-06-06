@@ -6,7 +6,21 @@ import Grid from "@material-ui/core/Grid";
 import Performers from "./Performers";
 import Filter from "./Filter";
 
-const styles = theme => ({});
+const styles = theme => ({
+  // Styled scrollbar
+  "@global": {
+    "*::-webkit-scrollbar": {
+      width: "0.6em"
+    },
+    "*::-webkit-scrollbar-track": {
+      "-webkit-box-shadow": "inset 0 0 6px rgba(0,0,0,0.00)"
+    },
+    "*::-webkit-scrollbar-thumb": {
+      backgroundColor: "rgba(0,0,0,.3)",
+      outline: "1px solid slategrey"
+    }
+  }
+});
 
 class TopPerformers extends React.Component {
   render() {

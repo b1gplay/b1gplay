@@ -57,7 +57,7 @@ class Post extends React.Component {
           onClick={this.handleClickOpen}
           label="Post"
           style={{
-            color: "#D23E56",
+            color: "black",
             fontWeight: "bold",
             borderRight: "1px solid #d4d4d4",
             width: "175px"

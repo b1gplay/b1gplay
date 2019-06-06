@@ -12,9 +12,9 @@ import ProfilePage from "./components/Profile/ProfilePage";
 import Profile from "./components/NewProfile/Profile";
 import TopPerformers from "./components/TopPerformers/TopPerformers";
 
-import SignOn from "./components/NewAuthentication/SignOn";
-import Join from "./components/Authentication/Join";
-import Home from "./components/Home/Home";
+import Login from "./components/Authentication/Login";
+import SignUp from "./components/Authentication/SignUp";
+//import Home from "./components/Home/Home";
 import Stars from "./components/Stars/Stars";
 import NewStars1 from "./components/NewStars/NewStars1";
 import Followers from "./components/Followers/Followers";
@@ -45,8 +45,9 @@ const App = ({ classes }) => (
       <br />
       <br />
       <Switch>
-        <Route path="/log" component={SignOn} />
-        <Route path="/join" component={Join} />
+        <Route path="/sign-up" component={SignUp} />
+        <Route path="/login" component={Login} />
+
         <Route path="/data-analytics" component={Analytics} />
         <Route path="/following" component={NewFollowing} />
         <Route path="/followers" component={NewFollowers} />
@@ -72,7 +73,6 @@ const App = ({ classes }) => (
         {/* <Route path="/" component={Profile} /> */}
 
         <Route path="/notifications" component={MessageList} />
-        <Route path="/logout" component={SignOn} />
       </Switch>
     </main>
   </React.Fragment>

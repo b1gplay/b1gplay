@@ -113,7 +113,7 @@ const styles = theme => ({
   }
 });
 
-const alerts = "<NotificationList/>";
+//const alerts = "<NotificationList/>";
 
 class Header extends React.Component {
   state = {

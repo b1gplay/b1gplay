@@ -5,8 +5,8 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 
-import Divider from "@material-ui/core/Divider";
-import Button from "@material-ui/core/Button";
+//import Divider from "@material-ui/core/Divider";
+//import Button from "@material-ui/core/Button";
 import ButtonBase from "@material-ui/core/ButtonBase";
 
 import Avatar from "@material-ui/core/Avatar";
@@ -49,11 +49,6 @@ function Male(props) {
 
   return (
     <div className={classes.root}>
-      <br />
-      <br />
-      <br />
-      <br />
-
       <Typography
         variant="h5"
         component="h3"
@@ -147,7 +142,7 @@ function Male(props) {
                   Nathan Baleeta
                 </Typography>
                 <Typography gutterBottom variant="subheading">
-                  Power forward
+                  Small forward
                 </Typography>
               </Grid>
             </Grid>
@@ -180,7 +175,7 @@ function Male(props) {
                   Nathan Baleeta
                 </Typography>
                 <Typography gutterBottom variant="subheading">
-                  Small forward
+                  Power forward
                 </Typography>
               </Grid>
             </Grid>
