@@ -34,7 +34,7 @@ const styles = theme => ({
     overflowY: "scroll"
   },
   avatar: {
-    margin: 10,
+    margin: 4,
     width: 60,
     height: 60
   },
@@ -49,11 +49,11 @@ const styles = theme => ({
 
   // Overiding CSS with classnames for ListItemText Implementation
   primary: {
-    fontSize: "18px",
+    fontSize: "17px",
     fontWeight: "bold"
   },
   secondary: {
-    fontSize: "16px"
+    fontSize: "15px"
   }
 });
 
@@ -61,13 +61,17 @@ function Messaging(props) {
   const { classes } = props;
   return (
     <div>
-      <Paper className={classes.root}>
-        <br />
-        <Typography variant="subheading" gutterBottom align="center">
-          Notifications
-        </Typography>
-
+      <br />
+      <Paper className={classes.root} elevation={0}>
         <div className={classes.messageScroll}>
+          <Typography
+            variant="subheading"
+            gutterBottom
+            align="center"
+            style={{ fontWeight: "bold" }}
+          >
+            Notifications
+          </Typography>
           <List>
             <ListItem button className={classes.message}>
               <ListItemAvatar>

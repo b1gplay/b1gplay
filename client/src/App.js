@@ -45,6 +45,8 @@ const App = ({ classes }) => (
       <br />
       <br />
       <Switch>
+        <Route path="/notifications" />
+
         <Route path="/sign-up" component={SignUp} />
         <Route path="/login" component={Login} />
 
@@ -72,7 +74,7 @@ const App = ({ classes }) => (
         <Route path="/top-performers" component={TopPerformers} />
         {/* <Route path="/" component={Profile} /> */}
 
-        <Route path="/notifications" component={MessageList} />
+        <Route path="/notifications" />
       </Switch>
     </main>
   </React.Fragment>

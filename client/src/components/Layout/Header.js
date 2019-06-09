@@ -25,6 +25,7 @@ import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import Tooltip from "@material-ui/core/Tooltip";
 
 import NotificationList from "../Notifications/NotificationList";
+import Popover from "../Notifications/popover";
 
 const styles = theme => ({
   root: {
@@ -263,17 +264,8 @@ class Header extends React.Component {
                     </Tooltip>
                   </Link>
 
-                  <Link to="/notifications" className={classes.link}>
-                    <Tooltip
-                      title={<NotificationList />}
-                      classes={{ tooltip: classes.customWidth }}
-                    >
-                      <IconButton color="inherit">
-                        <Badge badgeContent={17} color="primary">
-                          <NotificationsIcon />
-                        </Badge>
-                      </IconButton>
-                    </Tooltip>
+                  <Link to="#" className={classes.link}>
+                    <Popover />
                   </Link>
                 </Grid>
               </div>

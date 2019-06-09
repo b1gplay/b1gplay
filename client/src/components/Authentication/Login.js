@@ -68,22 +68,22 @@ function Login(props) {
           <Paper
             className={classes.paper}
             style={{
-              backgroundColor: "#D23E56",
-              color: "white",
               marginRight: 80,
               marginTop: 40
             }}
           >
             <Grid container spacing={24} />
-            <br /> <br /> <br /> <br />
+            <br /> <br />
             <Grid item xs={12} sm={12}>
               <Typography
-                variant="h4"
-                style={{
-                  color: "white"
-                }}
+                variant="h5"
+                style={
+                  {
+                    //color: "white"
+                  }
+                }
               >
-                Login!
+                Login
               </Typography>
             </Grid>
             <Grid item xs={12} sm={12}>
@@ -92,7 +92,7 @@ function Login(props) {
                 label="Email"
                 className={classes.textField}
                 margin="normal"
-                variant="filled"
+                variant="outlined"
                 fullWidth
                 style={{
                   backgroundColor: "white",
@@ -107,7 +107,7 @@ function Login(props) {
                 className={classes.textField}
                 type="password"
                 margin="normal"
-                variant="filled"
+                variant="outlined"
                 fullWidth
                 style={{
                   backgroundColor: "white",
@@ -119,7 +119,7 @@ function Login(props) {
             <Button
               variant="contained"
               size="large"
-              color="default"
+              color="secondary"
               fullWidth
               className={classes.button}
               style={{ marginTop: "5px" }}
