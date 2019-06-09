@@ -9,8 +9,8 @@ const styles = theme => ({
   root: {
     maxWidth: "60%",
     display: "inline-block",
-    borderRadius: 8,
-    background: "#D23E56",
+    borderRadius: 28,
+    background: "dodgerblue",
 
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 1,
@@ -19,8 +19,8 @@ const styles = theme => ({
   root2: {
     maxWidth: "60%",
     display: "inline-block",
-    borderRadius: 8,
-    background: "white",
+    borderRadius: 28,
+    background: "#E8E8E8",
 
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 1,
@@ -42,7 +42,11 @@ const styles = theme => ({
 function ChatDetails(props) {
   const { classes } = props;
   return (
-    <div>
+    <div
+      style={{
+        marginLeft: "1%"
+      }}
+    >
       <div align="left">
         <Paper className={classes.root2} elevation={1}>
           <Typography
@@ -50,7 +54,7 @@ function ChatDetails(props) {
             gutterBottom
             align="right"
             style={{
-              fontSize: "18px",
+              fontSize: "16px",
               color: "black"
             }}
           >
@@ -70,7 +74,7 @@ function ChatDetails(props) {
             gutterBottom
             align="left"
             style={{
-              fontSize: "18px",
+              fontSize: "16px",
               color: "white"
             }}
           >
@@ -89,14 +93,13 @@ function ChatDetails(props) {
             gutterBottom
             align="left"
             style={{
-              fontSize: "18px",
+              fontSize: "16px",
               color: "white"
             }}
           >
             Paper can be used to build surface or other elements for your
             application. Paper can be used to build surface or other elements
-            for your application. Paper can be used to build surface or other
-            elements for your application.
+            for your application. Paper can be used ...
           </Typography>
         </Paper>
         <br />
@@ -110,7 +113,7 @@ function ChatDetails(props) {
             gutterBottom
             align="right"
             style={{
-              fontSize: "18px",
+              fontSize: "16px",
               color: "black"
             }}
           >
@@ -129,7 +132,101 @@ function ChatDetails(props) {
             gutterBottom
             align="left"
             style={{
-              fontSize: "18px",
+              fontSize: "16px",
+              color: "white"
+            }}
+          >
+            Paper can be used to build surface or other elements for your
+            application.
+          </Typography>
+        </Paper>
+        <br />
+        <br />
+      </div>
+      <div align="left">
+        <Paper className={classes.root2} elevation={1}>
+          <Typography
+            variant="subheading"
+            gutterBottom
+            align="right"
+            style={{
+              fontSize: "16px",
+              color: "black"
+            }}
+          >
+            Paper can be used to build surface or other elements for your
+            application.
+          </Typography>
+        </Paper>
+        <br />
+        <br />
+      </div>
+      <div align="left">
+        <Paper className={classes.root2} elevation={1}>
+          <Typography
+            variant="subheading"
+            gutterBottom
+            align="left"
+            style={{
+              fontSize: "16px",
+              color: "black"
+            }}
+          >
+            Paper can be used to build surface or other elements for your
+            application. Paper can be used to build surface or other elements
+            for your application.
+          </Typography>
+        </Paper>
+        <br />
+        <br />
+      </div>
+      <div align="right">
+        {" "}
+        <Paper className={classes.root} elevation={1}>
+          <Typography
+            variant="subheading"
+            gutterBottom
+            align="left"
+            style={{
+              fontSize: "16px",
+              color: "white"
+            }}
+          >
+            Paper can be used to build surface or other elements for your
+            application.
+          </Typography>
+        </Paper>
+        <br />
+        <br />
+      </div>
+      <div align="left">
+        <Paper className={classes.root2} elevation={1}>
+          <Typography
+            variant="subheading"
+            gutterBottom
+            align="left"
+            style={{
+              fontSize: "16px",
+              color: "black"
+            }}
+          >
+            Paper can be used to build surface or other elements for your
+            application. Paper can be used to build surface or other elements
+            for your application.
+          </Typography>
+        </Paper>
+        <br />
+        <br />
+      </div>
+      <div align="right">
+        {" "}
+        <Paper className={classes.root} elevation={1}>
+          <Typography
+            variant="subheading"
+            gutterBottom
+            align="left"
+            style={{
+              fontSize: "16px",
               color: "white"
             }}
           >

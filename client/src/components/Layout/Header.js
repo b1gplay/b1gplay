@@ -24,7 +24,7 @@ import Avatar from "@material-ui/core/Avatar";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import Tooltip from "@material-ui/core/Tooltip";
 
-import NotificationList from "../Notifications/NotificationList";
+//import NotificationList from "../Notifications/NotificationList";
 import Popover from "../Notifications/popover";
 
 const styles = theme => ({

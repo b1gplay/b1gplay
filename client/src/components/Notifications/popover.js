@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
 import Popover from "@material-ui/core/Popover";
 
 import IconButton from "@material-ui/core/IconButton";
@@ -15,7 +14,7 @@ import NotificationList from "../Notifications/NotificationList";
 const styles = theme => ({});
 
 function PopoverPopupState(props) {
-  const { classes } = props;
+  //const { classes } = props;
 
   return (
     <PopupState variant="popover" popupId="demo-popup-popover">

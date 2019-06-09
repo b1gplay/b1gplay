@@ -6,15 +6,20 @@ import Grid from "@material-ui/core/Grid";
 
 import ChatDetails from "./ChatDetails";
 import ChatConversations from "./ChatConversations";
+import InputBox from "./InputBox";
 
 const styles = theme => ({});
 
-class ClientDetails1 extends React.Component {
+class MessageList extends React.Component {
   render() {
     //const { classes } = this.props;
 
     return (
-      <div>
+      <div
+        style={{
+          background: "white"
+        }}
+      >
         <Grid container spacing={24}>
           <Grid
             item
@@ -34,10 +39,11 @@ class ClientDetails1 extends React.Component {
             xs={8}
             sm={8}
             style={{
-              marginLeft: "1%"
+              background: "white"
             }}
           >
             <ChatDetails />
+            <InputBox />
           </Grid>
         </Grid>
       </div>
@@ -45,8 +51,8 @@ class ClientDetails1 extends React.Component {
   }
 }
 
-ClientDetails1.propTypes = {
+MessageList.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(ClientDetails1);
+export default withStyles(styles)(MessageList);
