@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 
-import MyProfile from "../Profile/MyProfile";
+//import MyProfile from "../Profile/MyProfile";
 import PersonalInfo from "../Profile/PersonalInfo";
 import PhotoVideoFeed from "../Profile/PhotoVideoFeed";
 import TopFourImages from "../Gallery/TopFourImages";
@@ -23,10 +23,7 @@ function Timeline(props) {
       <Grid container spacing={24}>
         <Grid item xs={12} sm={12} />
         <Grid item xs={5} sm={5}>
-          <div>
-            <MyProfile />
-          </div>
-          <br />
+          <div>{/*    <MyProfile /> */}</div>
 
           <div>
             <PersonalInfo />

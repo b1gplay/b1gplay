@@ -10,7 +10,8 @@ import PhotoGallery from "../Gallery/PhotoGallery";
 import VideoGallery from "../Gallery/VideoGallery";
 
 import Rating from "./Rating";
-import OnlineChats from "./OnlineChats";
+
+import MyProfile from "./MyProfile";
 
 import Header from "../Layout/Header";
 
@@ -35,7 +36,7 @@ const styles = theme => ({
     textAlign: "center",
     color: theme.palette.text.secondary
   },
-  ratingChatColumn: {
+  ratingColumn: {
     position: "fixed",
     top: "8%",
     bottom: 0,
@@ -61,9 +62,11 @@ class Profile extends React.Component {
             </Switch>
           </Grid>
           {/* <Grid item xs={1} /> */}
-          <Grid item lg={4} className={classes.ratingChatColumn}>
+          <Grid item lg={4} className={classes.ratingColumn}>
+            <MyProfile />
+            <br />
             <Rating />
-            <OnlineChats />
+            {/*   <OnlineChats /> */}
           </Grid>
         </Grid>
       </div>

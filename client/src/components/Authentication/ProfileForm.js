@@ -99,16 +99,6 @@ function ProfileForm(props) {
               fullWidth
             />
           </Grid>
-          <Grid item xs={12} sm={12}>
-            <TextField
-              id="outlined-uncontrolled"
-              label="Present club/ Affiliation"
-              className={classes.textField}
-              margin="normal"
-              variant="outlined"
-              fullWidth
-            />
-          </Grid>
         </Grid>
       </Grid>
     </div>

@@ -7,6 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 
 import Header1 from "../Layout/Header1";
 
@@ -36,6 +37,10 @@ const styles = theme => ({
     backgroundImage: `url(${"/static/images/s.jpg"})`,
     zIndex: 1000,
     position: "fixed"
+  },
+  link: {
+    textDecoration: "none",
+    color: "white"
   }
 });
 
@@ -119,16 +124,17 @@ function Login(props) {
               />
             </Grid>
             <br /> <br /> <br />
-            <Button
-              variant="contained"
-              size="large"
-              color="secondary"
-              fullWidth
-              className={classes.button}
-              style={{ marginTop: "5px" }}
-            >
-              Login
-            </Button>
+            <Link to="/" className={classes.link}>
+              <Button
+                variant="contained"
+                size="large"
+                color="secondary"
+                fullWidth
+                className={classes.button}
+              >
+                Login
+              </Button>
+            </Link>
             <br /> <br /> <br /> <br />
             <br /> <br /> <br /> <br />
           </Paper>

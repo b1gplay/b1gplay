@@ -6,6 +6,7 @@ import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import { Link } from "react-router-dom";
 
 import ProfileForm from "./ProfileForm";
 import AccountForm from "./AccountForm";
@@ -22,6 +23,10 @@ const styles = theme => ({
   button: {
     marginTop: theme.spacing.unit * 3,
     marginLeft: theme.spacing.unit
+  },
+  link: {
+    textDecoration: "none",
+    color: "dodgerblue"
   }
 });
 
@@ -84,12 +89,18 @@ class SignUpWizard extends React.Component {
           {activeStep === steps.length ? (
             <React.Fragment>
               <Typography variant="h5" gutterBottom>
-                Thank you for your registering as an Individual.
+                Thank you for your registering.
               </Typography>
               <Typography variant="subtitle1">
-                Your Individual number is #2001539. We have emailed the details
-                to the contact person.
+                Your account is ready, we have emailed the details to your email
+                given.
               </Typography>
+              <br />
+              <Link to="/" className={classes.link}>
+                <Typography variant="h5" gutterBottom>
+                  Login
+                </Typography>
+              </Link>
             </React.Fragment>
           ) : (
             <React.Fragment>
@@ -107,7 +118,7 @@ class SignUpWizard extends React.Component {
                 )}
                 <Button
                   variant="contained"
-                  color="primary"
+                  color="secondary"
                   fullWidth
                   onClick={this.handleNext}
                   className={classes.button}

@@ -26,7 +26,9 @@ class SportsForm extends React.Component {
 
   showPlayerFormHidden() {
     this.setState({
-      playerFormHidden: false
+      playerFormHidden: false,
+      mediaFormHidden: true,
+      commonFormHidden: true
     });
   }
 
@@ -38,13 +40,15 @@ class SportsForm extends React.Component {
 
   hideCommonFormHidden() {
     this.setState({
-      commonFormHidden: false
+      commonFormHidden: true
     });
   }
 
   showCommonFormHidden() {
     this.setState({
-      commonFormHidden: true
+      commonFormHidden: false,
+      mediaFormHidden: true,
+      playerFormHidden: true
     });
   }
 
@@ -56,7 +60,9 @@ class SportsForm extends React.Component {
 
   showMediaFormHidden() {
     this.setState({
-      mediaFormHidden: true
+      mediaFormHidden: false,
+      playerFormHidden: true,
+      commonFormHidden: true
     });
   }
 
@@ -83,7 +89,7 @@ class SportsForm extends React.Component {
               }}
             >
               <MenuList>
-                <MenuItem onClick={this.hidePlayerFormHidden.bind(this)}>
+                <MenuItem onClick={this.showCommonFormHidden.bind(this)}>
                   Coach
                 </MenuItem>
 
@@ -91,15 +97,15 @@ class SportsForm extends React.Component {
                   Player
                 </MenuItem>
 
-                <MenuItem onClick={this.hidePlayerFormHidden.bind(this)}>
+                <MenuItem onClick={this.showMediaFormHidden.bind(this)}>
                   Media
                 </MenuItem>
 
-                <MenuItem onClick={this.hidePlayerFormHidden.bind(this)}>
+                <MenuItem onClick={this.showCommonFormHidden.bind(this)}>
                   Fan
                 </MenuItem>
 
-                <MenuItem onClick={this.hidePlayerFormHidden.bind(this)}>
+                <MenuItem onClick={this.showCommonFormHidden.bind(this)}>
                   Agent
                 </MenuItem>
               </MenuList>
@@ -180,10 +186,52 @@ class SportsForm extends React.Component {
                     fullWidth
                   />
                 </Grid>
+                <Grid item xs={12} sm={12}>
+                  <TextField
+                    id="outlined-uncontrolled"
+                    label="Present club/ Affiliation"
+                    className={classes.textField}
+                    margin="normal"
+                    variant="outlined"
+                    fullWidth
+                  />
+                </Grid>
               </Grid>
             </div>
           )}
         </Grid>
+        {!this.state.mediaFormHidden && (
+          <div className="modal">
+            <Grid container spacing={0}>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  id="outlined-uncontrolled"
+                  label="Media House"
+                  className={classes.textField}
+                  margin="normal"
+                  variant="outlined"
+                  fullWidth
+                />
+              </Grid>
+            </Grid>
+          </div>
+        )}
+        {!this.state.commonFormHidden && (
+          <div className="modal">
+            <Grid container spacing={0}>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  id="outlined-uncontrolled"
+                  label="Present club/ Affiliation"
+                  className={classes.textField}
+                  margin="normal"
+                  variant="outlined"
+                  fullWidth
+                />
+              </Grid>
+            </Grid>
+          </div>
+        )}
       </div>
     );
   }

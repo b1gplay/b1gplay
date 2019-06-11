@@ -246,6 +246,7 @@ class Header extends React.Component {
                       </Button>
                     </Tooltip>
                   </Link>
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 </Grid>
               </div>
             </div>
