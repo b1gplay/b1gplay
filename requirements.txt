@@ -1,3 +1,12 @@
-# This file is here because many Platforms as a Service look for
-#	requirements.txt in the root directory of a project.
--r requirements/base.txt
+Django==2.1.9
+django-countries==5.3.2
+django-extensions==2.1.4
+djangorestframework==3.9.1
+ez-setup==0.9
+factory-boy==2.11.1
+Faker==1.0.2
+Pillow==5.4.1
+python-dateutil==2.7.5
+pytz==2018.9
+six==1.12.0
+text-unidecode==1.2
