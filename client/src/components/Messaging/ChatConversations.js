@@ -31,7 +31,7 @@ const styles = theme => ({
   },
   root: {
     width: "100%",
-    maxWidth: 562,
+    maxWidth: 602,
     backgroundColor: theme.palette.background.paper,
     position: "fixed",
     overflow: "auto",

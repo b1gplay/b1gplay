@@ -49,34 +49,16 @@ function PersonalRatings(props) {
       <br />
 
       <Grid container spacing={24}>
-        <Grid item xs={3} sm={3}>
+        <Grid item lg={3} xs={12} sm={6}>
           <ByRaters />
         </Grid>
-        <Grid item xs={3} sm={3}>
+        <Grid item lg={3} xs={12} sm={6}>
           <ByRaters />
         </Grid>
-        <Grid item xs={3} sm={3}>
+        <Grid item lg={3} xs={12} sm={6}>
           <ByRaters />
         </Grid>
-        <Grid item xs={3} sm={3}>
-          <ByRaters />
-        </Grid>
-      </Grid>
-      <br />
-      <br />
-      <br />
-
-      <Grid container spacing={24}>
-        <Grid item xs={3} sm={3}>
-          <ByRaters />
-        </Grid>
-        <Grid item xs={3} sm={3}>
-          <ByRaters />
-        </Grid>
-        <Grid item xs={3} sm={3}>
-          <ByRaters />
-        </Grid>
-        <Grid item xs={3} sm={3}>
+        <Grid item lg={3} xs={12} sm={6}>
           <ByRaters />
         </Grid>
       </Grid>
@@ -85,16 +67,34 @@ function PersonalRatings(props) {
       <br />
 
       <Grid container spacing={24}>
-        <Grid item xs={3} sm={3}>
+        <Grid item lg={3} xs={12} sm={6}>
           <ByRaters />
         </Grid>
-        <Grid item xs={3} sm={3}>
+        <Grid item lg={3} xs={12} sm={6}>
           <ByRaters />
         </Grid>
-        <Grid item xs={3} sm={3}>
+        <Grid item lg={3} xs={12} sm={6}>
+          <ByRaters />
+        </Grid>
+        <Grid item lg={3} xs={12} sm={6}>
+          <ByRaters />
+        </Grid>
+      </Grid>
+      <br />
+      <br />
+      <br />
+
+      <Grid container spacing={24}>
+        <Grid item lg={3} xs={12} sm={6}>
+          <ByRaters />
+        </Grid>
+        <Grid item lg={3} xs={12} sm={6}>
+          <ByRaters />
+        </Grid>
+        <Grid item lg={3} xs={12} sm={6}>
           <ByCriteria />
         </Grid>
-        <Grid item xs={3} sm={3}>
+        <Grid item lg={3} xs={12} sm={6}>
           <RatersPieChart />
         </Grid>
       </Grid>

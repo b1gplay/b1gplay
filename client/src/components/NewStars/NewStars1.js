@@ -22,34 +22,34 @@ function NewStars(props) {
   return (
     <div className={classes.root}>
       <br />
-
       <br />
+
       <Grid container spacing={24}>
-        <Grid item xs={4} sm={4}>
+        <Grid item lg={4} xs={12} sm={12}>
           <OneStar />
         </Grid>
-        <Grid item xs={4} sm={4}>
+        <Grid item lg={4} xs={12}>
           <OneStar />
         </Grid>
-        <Grid item xs={4} sm={4}>
+        <Grid item lg={4} xs={12}>
           <OneStar />
         </Grid>
-        <Grid item xs={4} sm={4}>
+        <Grid item lg={4} xs={12}>
           <OneStar />
         </Grid>
-        <Grid item xs={4} sm={4}>
+        <Grid item lg={4} xs={12}>
           <OneStar />
         </Grid>
-        <Grid item xs={4} sm={4}>
+        <Grid item lg={4} xs={12}>
           <OneStar />
         </Grid>
-        <Grid item xs={4} sm={4}>
+        <Grid item lg={4} xs={12}>
           <OneStar />
         </Grid>
-        <Grid item xs={4} sm={4}>
+        <Grid item lg={4} xs={12}>
           <OneStar />
         </Grid>
-        <Grid item xs={4} sm={4}>
+        <Grid item lg={4} xs={12}>
           <OneStar />
         </Grid>
       </Grid>

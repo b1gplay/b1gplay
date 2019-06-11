@@ -7,6 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 import SignUpWizard from "./SignUpWizard";
+import Header1 from "../Layout/Header1";
 
 const styles = theme => ({
   paper: {
@@ -42,6 +43,7 @@ function Login(props) {
 
   return (
     <div>
+      <Header1 />
       <Grid container spacing={24} className={classes.gridContainer}>
         <Grid item xs={6} sm={1} />
         <Grid item xs={6} sm={6}>

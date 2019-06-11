@@ -8,6 +8,8 @@ import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
+import Header1 from "../Layout/Header1";
+
 const styles = theme => ({
   paper: {
     padding: theme.spacing.unit * 2,
@@ -42,6 +44,7 @@ function Login(props) {
 
   return (
     <div>
+      <Header1 />
       <Grid container spacing={24} className={classes.gridContainer}>
         <Grid item xs={6} sm={1} />
         <Grid item xs={6} sm={6}>

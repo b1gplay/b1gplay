@@ -7,12 +7,13 @@ import Tab from "@material-ui/core/Tab";
 import PollIcon from "@material-ui/icons/Poll";
 import StarIcon from "@material-ui/icons/Star";
 import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
 
 import NewStars1 from "../NewStars/NewStars1";
 import NewPersonalRating from "../NewRatings/NewPersonalRating";
 import Filter from "../NewRatings/Filter";
 
-import Grid from "@material-ui/core/Grid";
+import Header from "../Layout/Header";
 
 function TabContainer(props) {
   return (
@@ -61,6 +62,7 @@ class IconLabelTabs extends React.Component {
 
     return (
       <div>
+        <Header />
         <Paper square className={classes.root}>
           <br />
           <Typography variant="display1" align="center" color="inherit">
@@ -86,8 +88,8 @@ class IconLabelTabs extends React.Component {
               <Grid container spacing={24}>
                 <Grid
                   item
-                  xs={3}
-                  sm={3}
+                  lg={3}
+                  xs={12}
                   style={{
                     //position: "fixed",
                     margin: 0
@@ -97,8 +99,9 @@ class IconLabelTabs extends React.Component {
                 </Grid>
                 <Grid
                   item
-                  xs={9}
-                  sm={9}
+                  lg={9}
+                  sm={12}
+                  xs={12}
                   style={
                     {
                       //marginLeft: "16%"

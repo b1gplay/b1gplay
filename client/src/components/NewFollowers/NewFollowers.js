@@ -7,6 +7,8 @@ import Grid from "@material-ui/core/Grid";
 import FollowerList from "./FollowerList";
 import Suggestions from "./Suggestions";
 
+import Header from "../Layout/Header";
+
 const styles = theme => ({});
 
 class NewFollowers extends React.Component {
@@ -15,6 +17,7 @@ class NewFollowers extends React.Component {
 
     return (
       <div>
+        <Header />
         <Grid container spacing={24}>
           <Grid
             item

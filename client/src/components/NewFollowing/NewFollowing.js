@@ -7,6 +7,8 @@ import Grid from "@material-ui/core/Grid";
 import FollowingList from "./FollowingList";
 import Suggestions1 from "./Suggestions1";
 
+import Header from "../Layout/Header";
+
 const styles = theme => ({});
 
 class ClientDetails1 extends React.Component {
@@ -15,6 +17,7 @@ class ClientDetails1 extends React.Component {
 
     return (
       <div>
+        <Header />
         <Grid container spacing={24}>
           <Grid
             item

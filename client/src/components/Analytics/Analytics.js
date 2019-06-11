@@ -17,6 +17,8 @@ import Home from "../Home/Home";
 
 import HitParade from "../TopHits/HitParade";
 
+import Header from "../Layout/Header";
+
 function TabContainer(props) {
   return (
     <Typography component="div" style={{ padding: 8 * 3 }}>
@@ -51,6 +53,7 @@ class Analytics extends React.Component {
 
     return (
       <div>
+        <Header />
         <Paper square className={classes.root}>
           <br />
           <Typography variant="display1" align="center" color="inherit">

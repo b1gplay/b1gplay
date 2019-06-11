@@ -48,7 +48,7 @@ function CoverProfile(props) {
         <div>
           <br />
           <Grid container spacing={24}>
-            <Grid item xs={4} sm={4}>
+            <Grid item lg={4} xs={12} sm={12}>
               <Link to="/personal-ratings" className={classes.link}>
                 <Typography
                   variant="subheading"

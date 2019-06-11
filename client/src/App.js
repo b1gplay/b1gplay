@@ -2,7 +2,8 @@ import React from "react";
 import { CssBaseline, withStyles } from "@material-ui/core";
 import { Switch, Route } from "react-router-dom";
 
-import Header from "./components/Layout/Header";
+//import Header from "./components/Layout/Header";
+//import Header1 from "./components/Layout/Header1";
 
 import Analytics from "./components/Analytics/Analytics";
 
@@ -38,26 +39,26 @@ const styles = theme => ({
 const App = ({ classes }) => (
   <React.Fragment>
     <CssBaseline />
-    <Header />
-    {/* ['#F0F0F0','#F5F5F5','#F8F8F8','#F5F5F5']  */}
+
     <main className={classes.main} style={{ background: "#F5F5F5" }}>
+      {/* <Header1 /> */}
       <br />
       <br />
       <br />
+
       <Switch>
-        <Route path="/notifications" />
+        <Route path="/data-analytics" component={Analytics} />
+        <Route path="/messages" component={MessageList} />
+        <Route path="/following" component={NewFollowing} />
+        <Route path="/followers" component={NewFollowers} />
+        <Route path="/personal-ratings" component={PersonalRatings} />
 
         <Route path="/sign-up" component={SignUp} />
         <Route path="/login" component={Login} />
-
-        <Route path="/data-analytics" component={Analytics} />
-        <Route path="/following" component={NewFollowing} />
-        <Route path="/followers" component={NewFollowers} />
-        {/* <Route path="/data-analytics" component={Tab1} /> */}
-        <Route path="/messages" component={MessageList} />
-        <Route path="/personal-ratings" component={PersonalRatings} />
         <Route path="/" component={ProfilePage} />
-        <Route path="/personal-ratings" component={PersonalRatings} />
+
+        <Route path="/notifications" />
+
         <Route path="/personalrating" component={PersonalRating} />
         <Route path="/personalrating1" component={NewPersonalRatings} />
         <Route path="/myhome" component={Profile} />

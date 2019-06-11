@@ -8,6 +8,8 @@ import ChatDetails from "./ChatDetails";
 import ChatConversations from "./ChatConversations";
 import InputBox from "./InputBox";
 
+import Header from "../Layout/Header";
+
 const styles = theme => ({});
 
 class MessageList extends React.Component {
@@ -20,6 +22,7 @@ class MessageList extends React.Component {
           background: "white"
         }}
       >
+        <Header />
         <Grid container spacing={24}>
           <Grid
             item

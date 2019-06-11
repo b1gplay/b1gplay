@@ -11,7 +11,7 @@ import Typography from "@material-ui/core/Typography";
 //import TextField from "@material-ui/core/TextField";
 import Paper from "@material-ui/core/Paper";
 import Avatar from "@material-ui/core/Avatar";
-import Badge from "@material-ui/core/Badge";
+//import Badge from "@material-ui/core/Badge";
 
 const styles = theme => ({
   "@global": {
@@ -53,7 +53,8 @@ const styles = theme => ({
     fontWeight: "bold"
   },
   secondary: {
-    fontSize: "15px"
+    fontSize: "15px",
+    color: "black"
   }
 });
 
@@ -86,19 +87,19 @@ function Messaging(props) {
                   primary: classes.primary,
                   secondary: classes.secondary
                 }}
-                primary="Nathan Baleeta"
+                primary=""
                 secondary={
                   <React.Fragment>
-                    {"  I'll be in your neighborhood doing errands this…"}
+                    <b>Peter Moses</b> {" followed you"}
                   </React.Fragment>
                 }
               />
 
-              <Badge
+              {/* <Badge
                 className={classes.margin}
                 color="secondary"
                 variant="dot"
-              />
+              /> */}
             </ListItem>
             <ListItem button className={classes.message}>
               <ListItemAvatar>
@@ -113,59 +114,14 @@ function Messaging(props) {
                   primary: classes.primary,
                   secondary: classes.secondary
                 }}
-                primary="Phillip Bosco"
+                primary=""
                 secondary={
                   <React.Fragment>
-                    {"  Wish I could come, but I'm out of town this…"}
+                    <b>Philip Bosco</b> {" rated you"}
                   </React.Fragment>
                 }
               />
-              <Badge className={classes.margin} color="primary" variant="dot" />
-            </ListItem>
-
-            <ListItem button className={classes.message}>
-              <ListItemAvatar>
-                <Avatar
-                  className={classes.avatar}
-                  alt="Trial"
-                  src={`/static/images/avatar/7.jpg`}
-                />
-              </ListItemAvatar>
-              <ListItemText
-                classes={{
-                  primary: classes.primary,
-                  secondary: classes.secondary
-                }}
-                primary="Phillip Bosco"
-                secondary={
-                  <React.Fragment>
-                    {"  Wish I could come, but I'm out of town this…"}
-                  </React.Fragment>
-                }
-              />
-              <Badge className={classes.margin} color="primary" variant="dot" />
-            </ListItem>
-            <ListItem button className={classes.message}>
-              <ListItemAvatar>
-                <Avatar
-                  className={classes.avatar}
-                  alt="Trial"
-                  src={`/static/images/avatar/7.jpg`}
-                />
-              </ListItemAvatar>
-              <ListItemText
-                classes={{
-                  primary: classes.primary,
-                  secondary: classes.secondary
-                }}
-                primary="Phillip Bosco"
-                secondary={
-                  <React.Fragment>
-                    {"  Wish I could come, but I'm out of town this…"}
-                  </React.Fragment>
-                }
-              />
-              <Badge className={classes.margin} color="primary" variant="dot" />
+              {/*               <Badge className={classes.margin} color="primary" variant="dot" /> */}
             </ListItem>
 
             <ListItem button className={classes.message}>
@@ -181,14 +137,36 @@ function Messaging(props) {
                   primary: classes.primary,
                   secondary: classes.secondary
                 }}
-                primary="Phillip Bosco"
+                primary=""
                 secondary={
                   <React.Fragment>
-                    {"  Wish I could come, but I'm out of town this…"}
+                    <b>Otim Tony</b> {" posted a photo"}
                   </React.Fragment>
                 }
               />
-              <Badge className={classes.margin} color="primary" variant="dot" />
+              {/*         <Badge className={classes.margin} color="primary" variant="dot" /> */}
+            </ListItem>
+            <ListItem button className={classes.message}>
+              <ListItemAvatar>
+                <Avatar
+                  className={classes.avatar}
+                  alt="Trial"
+                  src={`/static/images/avatar/7.jpg`}
+                />
+              </ListItemAvatar>
+              <ListItemText
+                classes={{
+                  primary: classes.primary,
+                  secondary: classes.secondary
+                }}
+                primary=""
+                secondary={
+                  <React.Fragment>
+                    <b>Bright Wallace</b> {" uploaded a video"}
+                  </React.Fragment>
+                }
+              />
+              {/*  <Badge className={classes.margin} color="primary" variant="dot" /> */}
             </ListItem>
 
             <ListItem button className={classes.message}>
@@ -204,14 +182,37 @@ function Messaging(props) {
                   primary: classes.primary,
                   secondary: classes.secondary
                 }}
-                primary="Phillip Bosco"
+                primary=""
                 secondary={
                   <React.Fragment>
-                    {"  Wish I could come, but I'm out of town this…"}
+                    <b>Nathan Baleeta</b> {" is requesting to follow you"}
+                  </React.Fragment>
+                }
+              />{" "}
+              {/* <Badge className={classes.margin} color="primary" variant="dot" /> */}
+            </ListItem>
+
+            <ListItem button className={classes.message}>
+              <ListItemAvatar>
+                <Avatar
+                  className={classes.avatar}
+                  alt="Trial"
+                  src={`/static/images/avatar/7.jpg`}
+                />
+              </ListItemAvatar>
+              <ListItemText
+                classes={{
+                  primary: classes.primary,
+                  secondary: classes.secondary
+                }}
+                primary=""
+                secondary={
+                  <React.Fragment>
+                    <b>You</b> {" rated Nicholas Peters"}
                   </React.Fragment>
                 }
               />
-              <Badge className={classes.margin} color="primary" variant="dot" />
+              {/* <Badge className={classes.margin} color="primary" variant="dot" /> */}
             </ListItem>
           </List>
         </div>

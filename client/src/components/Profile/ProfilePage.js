@@ -12,6 +12,8 @@ import VideoGallery from "../Gallery/VideoGallery";
 import Rating from "./Rating";
 import OnlineChats from "./OnlineChats";
 
+import Header from "../Layout/Header";
+
 const styles = theme => ({
   "@global": {
     "*::-webkit-scrollbar": {
@@ -47,8 +49,9 @@ class Profile extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
+        <Header />
         <Grid container spacing={40}>
-          <Grid item xs={8}>
+          <Grid item lg={8} xs={12}>
             <CoverProfile />
 
             <Switch>
@@ -58,7 +61,7 @@ class Profile extends React.Component {
             </Switch>
           </Grid>
           {/* <Grid item xs={1} /> */}
-          <Grid item xs={4} className={classes.ratingChatColumn}>
+          <Grid item lg={4} className={classes.ratingChatColumn}>
             <Rating />
             <OnlineChats />
           </Grid>
