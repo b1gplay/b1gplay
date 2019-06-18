@@ -7,7 +7,6 @@ import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 
 import Avatar from "@material-ui/core/Avatar";
-import PhotoCameraIcon from "@material-ui/icons/PhotoCamera";
 
 const styles = theme => ({
   container: {
@@ -35,7 +34,7 @@ function Comment(props) {
   const { classes } = props;
 
   return (
-    <Grid item xs={12} style={{ marginBottom: "5px" }}>
+    <Grid item xs={12} style={{ margin: 20 }}>
       <Grid container spacing={24}>
         <Grid item xs={1}>
           <Avatar
@@ -45,27 +44,23 @@ function Comment(props) {
             style={{ marginLeft: "10px", marginRight: "10px" }}
           />
         </Grid>
-        <Grid item xs={10}>
+        <Grid item xs={11}>
           <form
             className={classes.container}
             noValidate
             autoComplete="off"
-            style={{ marginTop: "-20px" }}
+            style={{ marginTop: "-20px", marginRight: "10px" }}
           >
             <TextField
               id="outlined-dense"
-              label="What's on your mind?"
+              label="Leave a comment..."
               className={classNames(classes.textField, classes.dense)}
               margin="dense"
               variant="outlined"
               fullWidth
+              style={{ background: "#F5F5F5" }}
             />
           </form>
-        </Grid>
-        <Grid item xs={1}>
-          <PhotoCameraIcon
-            style={{ marginLeft: "-30px", width: "40px", height: "40px" }}
-          />
         </Grid>
       </Grid>
     </Grid>

@@ -13,7 +13,10 @@ import Typography from "@material-ui/core/Typography";
 
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Grid from "@material-ui/core/Grid";
+import { Divider } from "@material-ui/core";
+
 import Comment from "./Comment";
+import FeedActionBar from "./FeedActionBar";
 
 const styles = theme => ({
   card: {
@@ -61,7 +64,7 @@ class PhotoVideoFeed extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Grid item xs={12} style={{ marginTop: "5px" }}>
+      <Grid item xs={12}>
         <Card className={classes.card}>
           <CardHeader
             classes={{
@@ -96,13 +99,13 @@ class PhotoVideoFeed extends React.Component {
               with the mussels, if you like.
             </Typography>
           </CardContent>
-          <Grid item xs={12} style={{ marginBottom: "5px" }}>
+          {/*  <Grid item xs={12} style={{ marginBottom: "5px" }}>
             <Grid container spacing={24}>
               <Grid item xs={1}>
                 <Avatar
                   alt="Remy Sharp"
                   src="/static/images/fist.jpg"
-                  //className={classes.avatar}
+                  
                   style={{ marginLeft: "10px", marginRight: "10px" }}
                 />
               </Grid>
@@ -124,79 +127,11 @@ class PhotoVideoFeed extends React.Component {
                 </Typography>
               </Grid>
             </Grid>
-          </Grid>
+          </Grid> */}
+          <Divider />
+          <FeedActionBar />
+          <Divider />
           <Comment />
-          <br />
-        </Card>
-        <br />
-        <Card className={classes.card}>
-          <CardHeader
-            classes={{
-              title: classes.title,
-              subheader: classes.subheader
-            }}
-            avatar={
-              <Avatar
-                alt="Remy Sharp"
-                src="/static/images/avatar/3.jpg"
-                className={classes.bigAvatar}
-                style={{ marginLeft: "4px", marginRight: "4px" }}
-              />
-            }
-            action={
-              <IconButton>
-                <MoreVertIcon />
-              </IconButton>
-            }
-            title="Otim Tony"
-            subheader="September 14, 2016"
-          />
-          <CardMedia
-            className={classes.media}
-            image="/static/images/bb.jpg"
-            title="Paella dish"
-          />
-          <CardContent>
-            <Typography variant="subtitle1" gutterBottom align="left">
-              This impressive paella is a perfect party dish and a fun meal to
-              cook together with your guests. Add 1 cup of frozen peas along
-              with the mussels, if you like.
-            </Typography>
-          </CardContent>
-          <Grid item xs={12} style={{ marginBottom: "5px" }}>
-            <Grid container spacing={24}>
-              <Grid item xs={1}>
-                <Avatar
-                  alt="Remy Sharp"
-                  src="/static/images/fist.jpg"
-                  className={classes.avatar}
-                  style={{
-                    marginLeft: "10px",
-                    marginRight: "10px"
-                  }}
-                />
-              </Grid>
-              <Grid item xs={4}>
-                <Typography
-                  paragraph
-                  style={{ marginLeft: "10px", marginTop: "10px" }}
-                >
-                  Fists
-                </Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography
-                  paragraph
-                  style={{ marginLeft: "10px", marginTop: "10px" }}
-                  align="right"
-                >
-                  4 Comments
-                </Typography>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Comment />
-          <br />
         </Card>
       </Grid>
     );

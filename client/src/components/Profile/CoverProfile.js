@@ -20,7 +20,7 @@ const styles = theme => ({
     width: "100%",
     height: 330,
     marginTop: -59,
-    backgroundImage: `url(${"/static/images/dd.jpg"})`
+    backgroundImage: `url(${"/static/images/cover.jpg"})`
   },
   link: {
     textDecoration: "none",
@@ -42,7 +42,7 @@ function CoverProfile(props) {
         >
           <Avatar
             alt="Remy Sharp"
-            src="/static/images/avatar/7.jpg"
+            src="/static/images/avatar/avatar.png"
             style={{
               //margin: 10,
               width: 170,

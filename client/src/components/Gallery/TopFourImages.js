@@ -7,9 +7,9 @@ import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 
 import image from "../Gallery/bb.jpg";
-import image1 from "../Gallery/cc.jpg";
-import image2 from "../Gallery/dd.jpg";
-import image3 from "../Gallery/ee.jpg";
+import image1 from "../Gallery/bb.jpg";
+import image2 from "../Gallery/bb.jpg";
+import image3 from "../Gallery/bb.jpg";
 
 const styles = theme => ({
   root: {
