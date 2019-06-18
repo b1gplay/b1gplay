@@ -40,8 +40,6 @@ function Timeline(props) {
         </Grid>
         <Grid item xs={7} sm={7}>
           <PhotoVideoFeed />
-          <br />
-          <PhotoVideoFeed />
         </Grid>
       </Grid>
     </div>

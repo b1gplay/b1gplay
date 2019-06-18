@@ -40,7 +40,10 @@ const styles = theme => ({
 
 class Post extends React.Component {
   state = {
-    open: false
+    open: false,
+
+    images: [],
+    videos: []
   };
 
   handleClickOpen = () => {

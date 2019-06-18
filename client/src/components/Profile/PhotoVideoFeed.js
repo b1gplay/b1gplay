@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 
@@ -17,6 +17,11 @@ import { Divider } from "@material-ui/core";
 
 import Comment from "./Comment";
 import FeedActionBar from "./FeedActionBar";
+
+import { connect } from "react-redux";
+import { getPosts } from "../../actions/posts";
+
+import moment from "moment";
 
 const styles = theme => ({
   card: {
@@ -53,8 +58,12 @@ const styles = theme => ({
   }
 });
 
-class PhotoVideoFeed extends React.Component {
+class PhotoVideoFeed extends Component {
   state = { expanded: false };
+
+  componentDidMount() {
+    this.props.getPosts();
+  }
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
@@ -64,82 +73,65 @@ class PhotoVideoFeed extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Grid item xs={12}>
-        <Card className={classes.card}>
-          <CardHeader
-            classes={{
-              title: classes.title,
-              subheader: classes.subheader
-            }}
-            avatar={
-              <Avatar
-                alt="Remy Sharp"
-                src="/static/images/avatar/7.jpg"
-                className={classes.bigAvatar}
-                style={{ marginLeft: "4px", marginRight: "4px" }}
+      <Fragment>
+        {this.props.posts.map(post => (
+          <Grid item xs={11}>
+            <Card className={classes.card} key={post.id}>
+              <CardHeader
+                classes={{
+                  title: classes.title,
+                  subheader: classes.subheader
+                }}
+                avatar={
+                  <Avatar
+                    alt="Remy Sharp"
+                    src="/static/images/avatar/7.jpg"
+                    className={classes.bigAvatar}
+                    style={{ marginLeft: "4px", marginRight: "4px" }}
+                  />
+                }
+                action={
+                  <IconButton>
+                    <MoreVertIcon />
+                  </IconButton>
+                }
+                title="Otim Tony"
+                subheader={moment(`${post.created}`).fromNow()}
               />
-            }
-            action={
-              <IconButton>
-                <MoreVertIcon />
-              </IconButton>
-            }
-            title="Otim Tony"
-            subheader="September 14, 2016"
-          />
-          <CardMedia
-            className={classes.media}
-            image="/static/images/bb.jpg"
-            title="Paella dish"
-          />
-          <CardContent>
-            <Typography variant="subtitle1" gutterBottom align="left">
-              This impressive paella is a perfect party dish and a fun meal to
-              cook together with your guests. Add 1 cup of frozen peas along
-              with the mussels, if you like.
-            </Typography>
-          </CardContent>
-          {/*  <Grid item xs={12} style={{ marginBottom: "5px" }}>
-            <Grid container spacing={24}>
-              <Grid item xs={1}>
-                <Avatar
-                  alt="Remy Sharp"
-                  src="/static/images/fist.jpg"
-                  
-                  style={{ marginLeft: "10px", marginRight: "10px" }}
-                />
-              </Grid>
-              <Grid item xs={4}>
-                <Typography
-                  paragraph
-                  style={{ marginLeft: "10px", marginTop: "10px" }}
-                >
-                  Fists
+              <CardMedia
+                className={classes.media}
+                image={post.photo}
+                title="Paella dish"
+              />
+              <CardContent>
+                <Typography variant="subtitle1" gutterBottom align="left">
+                  {post.message}
                 </Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography
-                  paragraph
-                  style={{ marginLeft: "10px", marginTop: "10px" }}
-                  align="right"
-                >
-                  4 Comments
-                </Typography>
-              </Grid>
-            </Grid>
-          </Grid> */}
-          <Divider />
-          <FeedActionBar />
-          <Divider />
-          <Comment />
-        </Card>
-      </Grid>
+              </CardContent>
+
+              <Divider />
+              <FeedActionBar />
+              <Divider />
+              <Comment />
+            </Card>
+            <br />
+          </Grid>
+        ))}
+      </Fragment>
     );
   }
 }
 
 PhotoVideoFeed.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  posts: PropTypes.array.isRequired
 };
 
-export default withStyles(styles)(PhotoVideoFeed);
+const mapStateToProps = state => ({
+  posts: state.posts.posts
+});
+
+export default connect(
+  mapStateToProps,
+  { getPosts }
+)(withStyles(styles)(PhotoVideoFeed));
