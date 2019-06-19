@@ -11,7 +11,9 @@ import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 
-import MoreVertIcon from "@material-ui/icons/MoreVert";
+import DeleteIcon from "@material-ui/icons/Delete";
+//import MoreVertIcon from "@material-ui/icons/MoreVert";
+//import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import Grid from "@material-ui/core/Grid";
 import { Divider } from "@material-ui/core";
 
@@ -19,7 +21,7 @@ import Comment from "./Comment";
 import FeedActionBar from "./FeedActionBar";
 
 import { connect } from "react-redux";
-import { getPosts } from "../../actions/posts";
+import { getPosts, deletePost } from "../../actions/posts";
 
 import moment from "moment";
 
@@ -48,6 +50,9 @@ const styles = theme => ({
     width: 60,
     height: 60
   },
+  link: {
+    textDecoration: "none"
+  },
 
   // Overiding CSS with classnames for CardHeader Implementation
   title: {
@@ -59,25 +64,35 @@ const styles = theme => ({
 });
 
 class PhotoVideoFeed extends Component {
-  state = { expanded: false };
+  state = { expanded: false, anchorEl: null };
 
   componentDidMount() {
     this.props.getPosts();
   }
+  handlePostMenuOpen = event => {
+    this.setState({ anchorEl: event.currentTarget });
+  };
+
+  handleMenuClose = () => {
+    this.setState({ anchorEl: null });
+  };
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
 
   render() {
+    //const { anchorEl } = this.state;
     const { classes } = this.props;
+    //const isMenuOpen = Boolean(anchorEl);
 
     return (
       <Fragment>
         {this.props.posts.map(post => (
-          <Grid item xs={11}>
-            <Card className={classes.card} key={post.id}>
+          <Grid item xs={12}>
+            <Card className={classes.card}>
               <CardHeader
+                style={{ borderBottom: "1px solid #d4d4d4" }}
                 classes={{
                   title: classes.title,
                   subheader: classes.subheader
@@ -85,20 +100,23 @@ class PhotoVideoFeed extends Component {
                 avatar={
                   <Avatar
                     alt="Remy Sharp"
-                    src="/static/images/avatar/7.jpg"
+                    src="/static/images/avatar/avatar.png"
                     className={classes.bigAvatar}
                     style={{ marginLeft: "4px", marginRight: "4px" }}
                   />
                 }
                 action={
-                  <IconButton>
-                    <MoreVertIcon />
+                  <IconButton
+                    onClick={this.props.deletePost.bind(this, post.id)}
+                  >
+                    <DeleteIcon />
                   </IconButton>
                 }
                 title="Otim Tony"
                 subheader={moment(`${post.created}`).fromNow()}
               />
               <CardMedia
+                style={{ borderBottom: "1px solid #d4d4d4" }}
                 className={classes.media}
                 image={post.photo}
                 title="Paella dish"
@@ -124,7 +142,9 @@ class PhotoVideoFeed extends Component {
 
 PhotoVideoFeed.propTypes = {
   classes: PropTypes.object.isRequired,
-  posts: PropTypes.array.isRequired
+  posts: PropTypes.array.isRequired,
+  getPosts: PropTypes.func.isRequired,
+  deletePost: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -133,5 +153,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getPosts }
+  { getPosts, deletePost }
 )(withStyles(styles)(PhotoVideoFeed));

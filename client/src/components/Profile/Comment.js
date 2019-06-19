@@ -39,7 +39,7 @@ function Comment(props) {
         <Grid item xs={1}>
           <Avatar
             alt="Remy Sharp"
-            src="/static/images/avatar/3.jpg"
+            src="/static/images/avatar/avatar.png"
             className={classes.avatar}
             style={{ marginLeft: "10px", marginRight: "10px" }}
           />
