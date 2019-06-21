@@ -13,6 +13,13 @@ import Grid from "@material-ui/core/Grid";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 
+import { DropzoneArea } from "material-ui-dropzone";
+
+import API from "../../utils/APIUtils";
+
+import { connect } from "react-redux";
+import { addPost, getPosts } from "../../actions/posts";
+
 const styles = theme => ({
   container: {
     display: "flex",
@@ -42,8 +49,48 @@ class Post extends React.Component {
   state = {
     open: false,
 
-    images: [],
-    videos: []
+    message: "",
+    photo: []
+  };
+
+  handleImageChange(e) {
+    e.preventDefault();
+    let file = e.target.files[0];
+    this.setState({
+      photo: file
+    });
+  }
+
+  onChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  onSubmit = event => {
+    event.preventDefault();
+
+    // get our form data out of state
+    const formData = new FormData();
+    formData.append("message", this.state.message);
+    formData.append("photo", this.state.photo);
+
+    formData.forEach((value, key) => {
+      console.log("key %s: value %s", key, value);
+    });
+
+    const config = {
+      headers: {
+        "content-type": "multipart/form-data"
+      }
+    };
+    API.post("posts/", formData, config)
+      .then(resp => {
+        this.setState({
+          message: "",
+          photo: null
+        });
+        this.props.getPosts();
+      })
+      .catch(error => {});
   };
 
   handleClickOpen = () => {
@@ -54,12 +101,9 @@ class Post extends React.Component {
     this.setState({ open: false });
   };
 
-  handleUpload = () => {
-    alert("Hi");
-  };
-
   render() {
     const { classes } = this.props;
+    const { message } = this.state;
 
     return (
       <div>
@@ -90,7 +134,6 @@ class Post extends React.Component {
             }}
           >
             <Typography
-              //component="h4"
               variant="title"
               align="left"
               style={{ color: "black", fontWeight: "bold" }}
@@ -99,62 +142,49 @@ class Post extends React.Component {
             </Typography>
           </DialogTitle>
           <DialogContent>
-            <Grid container spacing={0}>
-              <Grid item lg={12}>
-                <br />
-                <TextField
-                  margin="dense"
-                  id="outlined-dense"
-                  label="What's on your mind?"
-                  fullWidth
-                  variant="outlined"
-                  multiline={true}
-                  rows={3}
-                  rowsMax={10}
-                />
-                <br /> <br />
-              </Grid>
-
-              <Grid item lg={12}>
-                <input
-                  accept="image/*"
-                  className={classes.input}
-                  style={{ display: "none" }}
-                  id="raised-button-file"
-                  multiple
-                  type="file"
-                />
-                <label htmlFor="raised-button-file">
-                  <Chip
-                    icon={<AddAPhotoIcon />}
-                    label="Photo/ Video"
-                    //onClick={this.handleUpload}
-                    className={classes.chip}
-                    color="primary"
+            <form onSubmit={this.onSubmit}>
+              <Grid container spacing={0}>
+                <Grid item lg={12}>
+                  <br />
+                  <TextField
+                    required
+                    id="outlined-dense"
+                    name="message"
+                    onChange={this.onChange}
+                    value={message}
+                    label="What's on your mind?"
+                    margin="dense"
+                    fullWidth
+                    variant="outlined"
+                    multiline={true}
+                    rows={3}
+                    rowsMax={10}
                   />
-                  {/*  <Button
-                    variant="raised"
-                    component="span"
-                    color="primary"
+                  <br /> <br />
+                </Grid>
+
+                <Grid item lg={12}>
+                  <input
+                    type="file"
+                    onChange={e => this.handleImageChange(e)}
+                  />
+                </Grid>
+
+                <Grid item lg={12}>
+                  <br />
+
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    color="secondary"
+                    fullWidth
                     className={classes.button}
                   >
-                    <AddAPhotoIcon />   Photo/ Video
-                  </Button> */}
-                </label>
+                    Share
+                  </Button>
+                </Grid>
               </Grid>
-
-              <Grid item lg={12}>
-                <br />
-
-                <Button
-                  variant="contained"
-                  fullWidth
-                  className={classes.button}
-                >
-                  Share
-                </Button>
-              </Grid>
-            </Grid>
+            </form>
           </DialogContent>
         </Dialog>
       </div>
@@ -163,7 +193,11 @@ class Post extends React.Component {
 }
 
 Post.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  addPost: PropTypes.func.isRequired
 };
 
-export default withStyles(styles)(Post);
+export default connect(
+  null,
+  { addPost, getPosts }
+)(withStyles(styles)(Post));

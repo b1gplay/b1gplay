@@ -4,7 +4,7 @@ import API from "../utils/APIUtils";
 
 // GET POSTS
 export const getPosts = () => dispatch => {
-  API.get("posts")
+  API.get("posts/")
     .then(res => {
       dispatch({
         type: GET_POSTS,
@@ -18,7 +18,6 @@ export const getPosts = () => dispatch => {
 export const deletePost = id => dispatch => {
   API.delete(`posts/${id}`)
     .then(res => {
-      console.log(id);
       dispatch({
         type: DELETE_POST,
         payload: id
@@ -29,7 +28,12 @@ export const deletePost = id => dispatch => {
 
 // ADD POSTS
 export const addPost = post => dispatch => {
-  API.post("posts", post)
+  const config = {
+    headers: {
+      "content-type": "multipart/form-data"
+    }
+  };
+  API.post("posts/", { post }, config)
     .then(res => {
       dispatch({
         type: ADD_POST,

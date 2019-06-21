@@ -64,31 +64,17 @@ const styles = theme => ({
 });
 
 class PhotoVideoFeed extends Component {
-  state = { expanded: false, anchorEl: null };
+  state = { expanded: false };
 
   componentDidMount() {
     this.props.getPosts();
   }
-  handlePostMenuOpen = event => {
-    this.setState({ anchorEl: event.currentTarget });
-  };
-
-  handleMenuClose = () => {
-    this.setState({ anchorEl: null });
-  };
-
-  handleExpandClick = () => {
-    this.setState(state => ({ expanded: !state.expanded }));
-  };
 
   render() {
-    //const { anchorEl } = this.state;
     const { classes } = this.props;
-    //const isMenuOpen = Boolean(anchorEl);
-
     return (
       <Fragment>
-        {this.props.posts.map(post => (
+        {this.props.posts.reverse().map(post => (
           <Grid item xs={12}>
             <Card className={classes.card}>
               <CardHeader

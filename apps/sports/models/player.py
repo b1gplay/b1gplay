@@ -18,12 +18,15 @@ class Player(TimeStampedModel):
         Profile,
         on_delete=models.CASCADE
     )
-    number = models.PositiveIntegerField()
-    nationality = CountryField(blank_label='(select country)')
+    position = models.PositiveIntegerField()
+    club = models.CharField(max_length=150, blank=True, null=True)
     country_of_residence = CountryField(blank_label='(select country)')
     weight = models.PositiveIntegerField()
     height = models.PositiveIntegerField()
-    team = models.ForeignKey(Team, on_delete=models.CASCADE)
+    wingspan = models.PositiveIntegerField()
+    vertical_leap = models.PositiveIntegerField()
+    time_to_run_40m = models.PositiveIntegerField()
+    time_to_run_100m = models.PositiveIntegerField()
 
     class Meta:
         verbose_name = "Player"
