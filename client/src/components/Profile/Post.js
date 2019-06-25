@@ -3,9 +3,9 @@ import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import AddAPhotoIcon from "@material-ui/icons/AddAPhoto";
+//import AddAPhotoIcon from "@material-ui/icons/AddAPhoto";
 import Button from "@material-ui/core/Button";
-import Chip from "@material-ui/core/Chip";
+//import Chip from "@material-ui/core/Chip";
 import { Typography } from "@material-ui/core";
 
 import Tab from "@material-ui/core/Tab";
@@ -13,7 +13,7 @@ import Grid from "@material-ui/core/Grid";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 
-import { DropzoneArea } from "material-ui-dropzone";
+//import { DropzoneArea } from "material-ui-dropzone";
 
 import API from "../../utils/APIUtils";
 

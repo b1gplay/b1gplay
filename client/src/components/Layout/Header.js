@@ -211,7 +211,7 @@ class Header extends React.Component {
               variant="h4"
               color="inherit"
               noWrap
-              //style={{ fontWeight: "bold" }}
+              style={{ fontStyle: "italic" }}
             >
               b1gplay
             </Typography>

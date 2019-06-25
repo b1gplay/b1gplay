@@ -67,7 +67,11 @@ function CoverProfile(props) {
                   variant="title"
                   gutterBottom
                   align="center"
-                  color="Primary"
+                  //color="Primary"
+                  style={{
+                    color: "black",
+                    fontWeight: "bold"
+                  }}
                 >
                   700
                 </Typography>
@@ -92,7 +96,11 @@ function CoverProfile(props) {
                   variant="title"
                   gutterBottom
                   align="center"
-                  color="Primary"
+                  //color="Primary"
+                  style={{
+                    color: "black",
+                    fontWeight: "bold"
+                  }}
                 >
                   190
                 </Typography>
@@ -116,7 +124,11 @@ function CoverProfile(props) {
                   variant="title"
                   gutterBottom
                   align="center"
-                  color="Primary"
+                  //color="Primary"
+                  style={{
+                    color: "black",
+                    fontWeight: "bold"
+                  }}
                 >
                   243
                 </Typography>

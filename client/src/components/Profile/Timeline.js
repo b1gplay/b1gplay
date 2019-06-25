@@ -6,8 +6,8 @@ import Grid from "@material-ui/core/Grid";
 //import MyProfile from "../Profile/MyProfile";
 import PersonalInfo from "../Profile/PersonalInfo";
 import PhotoVideoFeed from "../Profile/PhotoVideoFeed";
-import TopFourImages from "../Gallery/TopFourImages";
-import TopFourVideos from "../Gallery/TopFourVideos";
+//import TopFourImages from "../Gallery/TopFourImages";
+//import TopFourVideos from "../Gallery/TopFourVideos";
 
 const styles = theme => ({
   root: {
@@ -32,10 +32,10 @@ function Timeline(props) {
 
           <div>
             <br />
-            <TopFourImages />
+            {/*  <TopFourImages /> */}
             <br />
             <br />
-            <TopFourVideos />
+            {/*   <TopFourVideos /> */}
           </div>
         </Grid>
         <Grid item xs={7} sm={7}>

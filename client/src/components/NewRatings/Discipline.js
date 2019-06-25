@@ -1,16 +1,10 @@
 import React from "react";
+import Highcharts from "highcharts";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-//import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
-//import FormControl from "@material-ui/core/FormControl";
-//import NativeSelect from "@material-ui/core/NativeSelect";
-//import Input from "@material-ui/core/Input";
-
-//import Typography from "@material-ui/core/Typography";
 
 const options = {
   credits: {
@@ -20,54 +14,35 @@ const options = {
     type: "column"
   },
   title: {
-    text: "Ratings by criteria"
+    text: "Discipline"
   },
   xAxis: {
-    categories: ["Criteria"]
-  },
-  yAxis: {
-    label: "Raters"
+    categories: ["Raters"]
   },
   series: [
     {
-      name: "Rebounding",
-      data: [5.23]
+      name: "All",
+      data: [54.23]
     },
     {
-      name: "Defence",
-      data: [6.23]
+      name: "Coaches",
+      data: [86.23]
     },
     {
-      name: "Scoring",
-      data: [7.45]
+      name: "Players",
+      data: [67.45]
     },
     {
-      name: "Leadership",
-      data: [7.84]
+      name: "Fans",
+      data: [77.84]
     },
     {
-      name: "Discipline",
-      data: [4.85]
+      name: "Media",
+      data: [40.85]
     },
     {
-      name: "Basketball IQ",
-      data: [8.23]
-    },
-    {
-      name: "Energy",
-      data: [6.45]
-    },
-    {
-      name: "Determination",
-      data: [2.84]
-    },
-    {
-      name: "Cluth",
-      data: [1.85]
-    },
-    {
-      name: "Pro Potential",
-      data: [9.23]
+      name: "Own",
+      data: [78.23]
     }
   ]
 };
@@ -93,7 +68,7 @@ const styles = theme => ({
   }
 });
 
-function ByCriteria(props) {
+function Discipline(props) {
   const { classes } = props;
 
   return (
@@ -107,8 +82,8 @@ function ByCriteria(props) {
   );
 }
 
-ByCriteria.propTypes = {
+Discipline.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(ByCriteria);
+export default withStyles(styles)(Discipline);

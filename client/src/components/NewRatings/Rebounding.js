@@ -68,7 +68,7 @@ const styles = theme => ({
   }
 });
 
-function ByRaters(props) {
+function Rebounding(props) {
   const { classes } = props;
 
   return (
@@ -82,8 +82,8 @@ function ByRaters(props) {
   );
 }
 
-ByRaters.propTypes = {
+Rebounding.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(ByRaters);
+export default withStyles(styles)(Rebounding);

@@ -3,8 +3,18 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 
-import ByCriteria from "./ByCriteria";
-import ByRaters from "./ByRaters";
+import Rebounding from "./Rebounding";
+import Defence from "./Defence";
+import Scoring from "./Scoring";
+import Leadership from "./Leadership";
+import Discipline from "./Discipline";
+import BasketballIQ from "./BasketballIQ";
+import Energy from "./Energy";
+import Determination from "./Determination";
+import Clutch from "./Clutch";
+import Propotential from "./Propotential";
+import Total from "./Total";
+
 import RatersPieChart from "./RatersPieChart";
 
 const styles = theme => ({
@@ -50,34 +60,16 @@ function PersonalRatings(props) {
 
       <Grid container spacing={24}>
         <Grid item lg={3} xs={12} sm={6}>
-          <ByRaters />
+          <Rebounding />
         </Grid>
         <Grid item lg={3} xs={12} sm={6}>
-          <ByRaters />
+          <Defence />
         </Grid>
         <Grid item lg={3} xs={12} sm={6}>
-          <ByRaters />
+          <Scoring />
         </Grid>
         <Grid item lg={3} xs={12} sm={6}>
-          <ByRaters />
-        </Grid>
-      </Grid>
-      <br />
-      <br />
-      <br />
-
-      <Grid container spacing={24}>
-        <Grid item lg={3} xs={12} sm={6}>
-          <ByRaters />
-        </Grid>
-        <Grid item lg={3} xs={12} sm={6}>
-          <ByRaters />
-        </Grid>
-        <Grid item lg={3} xs={12} sm={6}>
-          <ByRaters />
-        </Grid>
-        <Grid item lg={3} xs={12} sm={6}>
-          <ByRaters />
+          <Leadership />
         </Grid>
       </Grid>
       <br />
@@ -86,13 +78,31 @@ function PersonalRatings(props) {
 
       <Grid container spacing={24}>
         <Grid item lg={3} xs={12} sm={6}>
-          <ByRaters />
+          <Discipline />
         </Grid>
         <Grid item lg={3} xs={12} sm={6}>
-          <ByRaters />
+          <BasketballIQ />
         </Grid>
         <Grid item lg={3} xs={12} sm={6}>
-          <ByCriteria />
+          <Energy />
+        </Grid>
+        <Grid item lg={3} xs={12} sm={6}>
+          <Determination />
+        </Grid>
+      </Grid>
+      <br />
+      <br />
+      <br />
+
+      <Grid container spacing={24}>
+        <Grid item lg={3} xs={12} sm={6}>
+          <Clutch />
+        </Grid>
+        <Grid item lg={3} xs={12} sm={6}>
+          <Propotential />
+        </Grid>
+        <Grid item lg={3} xs={12} sm={6}>
+          <Total />
         </Grid>
         <Grid item lg={3} xs={12} sm={6}>
           <RatersPieChart />
