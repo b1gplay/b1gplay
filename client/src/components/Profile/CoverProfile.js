@@ -25,6 +25,22 @@ const styles = theme => ({
   link: {
     textDecoration: "none",
     color: "white"
+  },
+  /*  bigProfileAvatar: {
+    width: 170,
+    height: 170,
+    border: "5px solid white"
+  }, */
+  bigProfileAvatar: {
+    width: 170,
+    height: 170,
+    border: "5px solid white"
+    /* "&:hover": {
+      position: "relative",
+      paddingBottom: "4%",
+      backgroundColor: "#000000",
+      opacity: 0.3
+    } */
   }
 });
 
@@ -43,12 +59,7 @@ function CoverProfile(props) {
           <Avatar
             alt="Remy Sharp"
             src="/static/images/avatar/avatar.png"
-            style={{
-              //margin: 10,
-              width: 170,
-              height: 170,
-              border: "5px solid white"
-            }}
+            className={classes.bigProfileAvatar}
           />
         </div>
       </Paper>
