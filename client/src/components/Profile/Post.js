@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -45,7 +45,7 @@ const styles = theme => ({
   }
 });
 
-class Post extends React.Component {
+class Post extends Component {
   state = {
     open: false,
 
