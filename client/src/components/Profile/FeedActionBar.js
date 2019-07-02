@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 
@@ -6,9 +6,14 @@ import Grid from "@material-ui/core/Grid";
 
 //import Avatar from "@material-ui/core/Avatar";
 
-import Typography from "@material-ui/core/Typography";
+import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
+import ThumbUpIcon from "@material-ui/icons/ThumbUp";
+import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 
-import { Link } from "react-router-dom";
+import { Divider } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
+
+import Comment from "./Comment";
 
 const styles = theme => ({
   container: {
@@ -29,94 +34,85 @@ const styles = theme => ({
     padding: theme.spacing.unit * 2,
     textAlign: "center",
     color: theme.palette.text.secondary
-  },
-  link: {
-    textDecoration: "none",
-    color: "white"
   }
 });
 
-function FeedActionBar(props) {
-  const { classes } = props;
+class FeedActionBar extends Component {
+  state = { fist: false, isHidden: false };
 
-  return (
-    <Grid container spacing={24} style={{ margin: 0 }}>
-      <Grid item xs={4} sm={4}>
-        <Link to="/following" className={classes.link}>
-          <Typography
-            variant="subheading"
-            gutterBottom
-            align="center"
-            style={{
-              color: "#D23E56",
-              textTransform: "uppercase",
-              fontWeight: "bold"
-            }}
-          >
-            Fists
-          </Typography>
-          <Typography
-            variant="title"
-            gutterBottom
-            align="center"
-            color="Primary"
-          >
-            190
-          </Typography>
-        </Link>
-      </Grid>
+  componentDidMount() {}
 
-      <Grid item xs={4} sm={4}>
-        <Link to="/following" className={classes.link}>
-          <Typography
-            variant="subheading"
-            gutterBottom
-            align="center"
-            style={{
-              color: "#D23E56",
-              textTransform: "uppercase",
-              fontWeight: "bold"
-            }}
-          >
-            Comments
-          </Typography>
+  handleLike = () => {
+    this.setState({ fist: !this.state.fist });
+  };
 
-          <Typography
-            variant="title"
-            gutterBottom
-            align="center"
-            color="Primary"
-          >
-            190
-          </Typography>
-        </Link>
-      </Grid>
-      <Grid item xs={4} sm={4}>
-        <Link to="/followers" className={classes.link}>
-          <Typography
-            variant="subheading"
-            gutterBottom
-            align="center"
-            style={{
-              color: "#D23E56",
-              textTransform: "uppercase",
-              fontWeight: "bold"
-            }}
-          >
-            Shares
-          </Typography>
-          <Typography
-            variant="title"
-            gutterBottom
-            align="center"
-            color="Primary"
-          >
-            243
-          </Typography>
-        </Link>
-      </Grid>
-    </Grid>
-  );
+  handleComment = () => {
+    this.setState({ isHidden: !this.state.isHidden });
+  };
+  render() {
+    const fistBump = (
+      <div>
+        <ThumbUpIcon />
+      </div>
+    );
+
+    const unfistBump = (
+      <div>
+        <ThumbDownIcon />
+      </div>
+    );
+
+    //const { classes } = this.props;
+    const { fist, isHidden } = this.state;
+
+    return (
+      <Fragment>
+        <Divider />
+        <Grid container spacing={24} style={{ padding: 20 }}>
+          <Grid item xs={6} sm={6}>
+            <Button
+              variant="contained"
+              size="small"
+              color="secondary"
+              fullWidth
+              style={{
+                textTransform: "capitalize",
+                fontWeight: "bold",
+                fontSize: "18px",
+                padding: 4
+              }}
+              onClick={this.handleLike}
+            >
+              {!fist ? fistBump : unfistBump}
+            </Button>
+          </Grid>
+          <Grid item xs={6} sm={6}>
+            <Button
+              variant="contained"
+              size="small"
+              color="default"
+              fullWidth
+              style={{
+                border: "1px solid darkblue",
+                textTransform: "capitalize",
+                fontWeight: "bold",
+                fontSize: "18px",
+                color: "darkblue",
+                backgroundColor: "white",
+                padding: 8
+              }}
+              onClick={this.handleComment}
+            >
+              <ChatBubbleOutlineIcon />
+            </Button>
+          </Grid>
+        </Grid>
+        <Divider />
+        {!isHidden ? null : <Comment />}
+        <Divider />
+      </Fragment>
+    );
+  }
 }
 
 FeedActionBar.propTypes = {

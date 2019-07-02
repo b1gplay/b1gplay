@@ -28,7 +28,7 @@ class RatingForm extends Component {
 
   onSliderChangeRebounding = (event, newValue) => {
     this.setState({
-      rebounding: Number(newValue)
+      rebounding: Number(newValue * 0.1)
     });
   };
 
@@ -98,9 +98,9 @@ class RatingForm extends Component {
       this.setState({
         [event.target.name]: 0
       });
-    } else if (event.target.name > 100) {
+    } else if (event.target.name > 10) {
       this.setState({
-        [event.target.name]: 100
+        [event.target.name]: 10
       });
     }
   };
@@ -135,8 +135,7 @@ class RatingForm extends Component {
       energy,
       determination,
       clutch,
-      proPotential,
-      total
+      proPotential
     } = this.state;
 
     return (
@@ -174,9 +173,9 @@ class RatingForm extends Component {
                         onChange={this.handleInputChange}
                         onBlur={this.handleBlur}
                         inputProps={{
-                          step: 0.0001,
+                          step: 0.1,
                           min: 0,
-                          max: 100,
+                          max: 10,
                           type: "number",
                           "aria-labelledby": "input-slider"
                         }}

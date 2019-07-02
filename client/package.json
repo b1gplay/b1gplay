@@ -13,6 +13,7 @@
     "material-ui-popup-state": "^1.4.0",
     "material-ui-rating": "^3.0.1",
     "material-ui-textfield-icon": "^0.2.7",
+    "mdbreact": "^4.17.0",
     "moment": "^2.24.0",
     "react": "^16.8.3",
     "react-country-region-selector": "^1.4.3",

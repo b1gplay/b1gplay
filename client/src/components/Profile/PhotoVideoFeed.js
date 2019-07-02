@@ -15,9 +15,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 //import MoreVertIcon from "@material-ui/icons/MoreVert";
 //import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import Grid from "@material-ui/core/Grid";
-import { Divider } from "@material-ui/core";
 
-import Comment from "./Comment";
 import FeedActionBar from "./FeedActionBar";
 
 import { connect } from "react-redux";
@@ -72,6 +70,7 @@ class PhotoVideoFeed extends Component {
 
   render() {
     const { classes } = this.props;
+
     return (
       <Fragment>
         {this.props.posts.reverse().map(post => (
@@ -113,10 +112,7 @@ class PhotoVideoFeed extends Component {
                 </Typography>
               </CardContent>
 
-              <Divider />
               <FeedActionBar />
-              <Divider />
-              <Comment />
             </Card>
             <br />
           </Grid>
