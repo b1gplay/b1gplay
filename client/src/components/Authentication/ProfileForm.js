@@ -1,17 +1,17 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-
 import Grid from "@material-ui/core/Grid";
 
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-
 import Radio from "@material-ui/core/Radio";
-
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
+
+import Select from "react-select";
+import countryList from "react-select-country-list";
 
 import { connect } from "react-redux";
 import { updateField } from "../../actions/wizard";
@@ -21,20 +21,40 @@ const styles = theme => ({
     margin: theme.spacing.unit,
     minWidth: "100%",
     maxWidth: "auto"
+  },
+  selectField: {
+    margin: theme.spacing.unit * 3,
+    width: "100%",
+    textAlign: "left",
+    fontFamily: "Arial",
+    color: "black",
+    marginLeft: 0,
+    lineHeight: "40px"
   }
 });
 
 class ProfileForm extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+
+    this.options = countryList().getData();
+
+    this.state = {
+      options: this.options
+    };
+  }
+
+  countrySelector = country => {
+    this.props.updateField("country", country);
+  };
 
   onChange = e => {
-    //const val = e.target.value;
     this.props.updateField(e.target.name, e.target.value);
   };
 
   render() {
     const { classes } = this.props;
-    //const { message } = this.state;
+    //const { country } = this.state;
 
     return (
       <Fragment>
@@ -74,18 +94,18 @@ class ProfileForm extends Component {
                 </FormLabel>
                 <RadioGroup
                   aria-label="Gender"
-                  name="gender1"
                   className={classes.group}
-                  //value={this.state.value}
-                  //onChange={this.handleChange}
+                  name="gender"
+                  value={this.props.wizard.gender}
+                  onChange={this.onChange}
                 >
                   <FormControlLabel
-                    value="male"
+                    value="Male"
                     control={<Radio />}
                     label="Male"
                   />
                   <FormControlLabel
-                    value="female"
+                    value="Female"
                     control={<Radio />}
                     label="Female"
                   />
@@ -109,17 +129,13 @@ class ProfileForm extends Component {
                 onChange={this.onChange}
               />
             </Grid>
+
             <Grid item xs={12} sm={12}>
-              <TextField
-                id="outlined-uncontrolled"
-                label="Country of residence"
-                className={classes.textField}
-                margin="normal"
-                variant="outlined"
-                fullWidth
-                name="country"
+              <Select
+                className={classes.selectField}
+                options={this.state.options}
+                onChange={this.countrySelector}
                 value={this.props.wizard.country}
-                onChange={this.onChange}
               />
             </Grid>
           </Grid>
@@ -137,6 +153,7 @@ ProfileForm.propTypes = {
 const mapStateToProps = state => ({
   wizard: state.wizard
 });
+
 export default connect(
   mapStateToProps,
   { updateField }

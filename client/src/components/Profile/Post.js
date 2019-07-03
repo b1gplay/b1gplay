@@ -19,6 +19,7 @@ import API from "../../utils/APIUtils";
 
 import { connect } from "react-redux";
 import { addPost, getPosts } from "../../actions/posts";
+import { createMessage, returnErrors } from "../../actions/messages";
 
 const styles = theme => ({
   container: {
@@ -84,13 +85,16 @@ class Post extends Component {
     };
     API.post("posts/", formData, config)
       .then(resp => {
+        this.props.createMessage({ addPost: "Post Added" });
         this.setState({
           message: "",
           photo: null
         });
         this.props.getPosts();
       })
-      .catch(error => {});
+      .catch(err =>
+        this.props.returnErrors(err.response.data, err.response.status)
+      );
   };
 
   handleClickOpen = () => {
@@ -199,5 +203,5 @@ Post.propTypes = {
 
 export default connect(
   null,
-  { addPost, getPosts }
+  { addPost, getPosts, createMessage, returnErrors }
 )(withStyles(styles)(Post));

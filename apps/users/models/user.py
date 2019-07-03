@@ -8,16 +8,17 @@ class User(AbstractUser):
         Person with an account on the system
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    username = models.CharField(blank=True, null=True, max_length=150)
-    email = models.EmailField(unique=True)
+    username = models.CharField(unique=True, max_length=150)
+    #email = models.EmailField(unique=True)
 
-    REQUIRED_FIELDS = ['username', ]
-    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = [ 'password' ]
+    USERNAME_FIELD = 'username'
 
     class Meta:
         verbose_name = "User"
         verbose_name_plural = "Users"
         db_table = 'user'
 
-    def __str__(self):
-        return self.get_full_name()
+
+
+    

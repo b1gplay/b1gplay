@@ -11,3 +11,9 @@ export const DELETE_POST = "DELETE_POST";
 
 // Wizard
 export const UPDATE_FIELD = "UPDATE_FIELD";
+
+// Messages
+export const CREATE_MESSAGE = "CREATE_MESSAGE";
+
+// Errors
+export const GET_ERRORS = "GET_ERRORS";

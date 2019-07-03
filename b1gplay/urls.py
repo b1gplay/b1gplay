@@ -3,12 +3,14 @@ from django.urls import path
 from django.conf.urls import url, include
 from rest_framework import routers
 
+from knox import views as knox_views
+
 from django.conf import settings
 from django.conf.urls.static import static
 
 from apps.sports.api.sport.sport_endpoint import sportRouter
 from apps.sports.api.metric.metric_endpoint import metricRouter
-from apps.sports.api.rating.rating_endpoint import ratingRouter
+from apps.sports.api.basketball_ratings.basketball_ratings_endpoint import basketballRatingsRouter
 from apps.sports.api.player.player_endpoint import playerRouter
 from apps.sports.api.coach.coach_endpoint import coachRouter
 from apps.sports.api.team.team_endpoint import teamRouter
@@ -22,11 +24,11 @@ from apps.sports.api.achievement.achievement_endpoint import achievementRouter
 from apps.transfers.api.transfer.transfer_endpoint import transferRouter
 from apps.transfers.api.payment.payment_endpoint import paymentRouter
 
+from apps.users.api.user.user_endpoint import UserAPI, LoginAPI, RegisterAPI
 from apps.users.api.account.account_endpoint import accountRouter
 from apps.users.api.education.education_endpoint import educationRouter
 from apps.users.api.address.address_endpoint import addressRouter
 from apps.users.api.profile.profile_endpoint import profileRouter
-from apps.users.api.user.user_endpoint import userRouter
 
 from apps.messaging.api.message.message_endpoint import messageRouter
 from apps.messaging.api.photo.photo_endpoint import photoRouter
@@ -46,7 +48,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^api/', include(sportRouter.urls)),
     url(r'^api/', include(metricRouter.urls)),
-    url(r'^api/', include(ratingRouter.urls)),
+    url(r'^api/', include(basketballRatingsRouter.urls)),
     url(r'^api/', include(playerRouter.urls)),
     url(r'^api/', include(coachRouter.urls)),
     url(r'^api/', include(teamRouter.urls)),
@@ -64,8 +66,7 @@ urlpatterns = [
     url(r'^api/', include(addressRouter.urls)),
     url(r'^api/', include(educationRouter.urls)),
     url(r'^api/', include(profileRouter.urls)),
-    url(r'^api/', include(userRouter.urls)),
-
+    
     url(r'^api/', include(messageRouter.urls)),
     url(r'^api/', include(photoRouter.urls)),
     url(r'^api/', include(videoRouter.urls)),
@@ -78,6 +79,17 @@ urlpatterns = [
     url(r'^api/', include(notificationRouter.urls)),
     url(r'^api/', include(feedRouter.urls)),
     url(r'^api/', include(pageRouter.urls)),
+
+    path('api/auth/', include('knox.urls')),
+    path('api/auth/register', RegisterAPI.as_view()),
+    path('api/auth/login', LoginAPI.as_view()),
+    path('api/auth/user', UserAPI.as_view()),
+    
+
+
+	
+
+
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

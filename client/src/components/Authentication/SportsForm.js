@@ -6,6 +6,9 @@ import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
 
+import { connect } from "react-redux";
+import { updateField } from "../../actions/wizard";
+
 const styles = theme => ({
   formControl: {
     margin: theme.spacing.unit,
@@ -23,6 +26,10 @@ class SportsForm extends React.Component {
       commonFormHidden: true
     };
   }
+
+  onChange = e => {
+    this.props.updateField(e.target.name, e.target.value);
+  };
 
   showPlayerFormHidden() {
     this.setState({
@@ -75,18 +82,19 @@ class SportsForm extends React.Component {
           <Grid item xs={12} sm={12}>
             <TextField
               required
-              id="ratedBy"
+              id="accountType"
               select
-              name="ratedBy"
-              //value={this.state.advanceType}
               label="Account type"
               fullWidth
               margin="normal"
               variant="outlined"
-              //helperText="Please select filter"
+              helperText="Please select account type"
               InputLabelProps={{
                 shrink: true
               }}
+              name="accountType"
+              value={this.props.wizard.accountType}
+              onChange={this.onChange}
             >
               <MenuList>
                 <MenuItem onClick={this.showCommonFormHidden.bind(this)}>
@@ -123,6 +131,9 @@ class SportsForm extends React.Component {
                     margin="normal"
                     variant="outlined"
                     fullWidth
+                    name="position"
+                    value={this.props.wizard.position}
+                    onChange={this.onChange}
                   />
                 </Grid>
                 <Grid item xs={6} sm={6}>
@@ -135,6 +146,9 @@ class SportsForm extends React.Component {
                     margin="normal"
                     variant="outlined"
                     fullWidth
+                    name="height"
+                    value={this.props.wizard.height}
+                    onChange={this.onChange}
                   />
                 </Grid>
 
@@ -148,6 +162,9 @@ class SportsForm extends React.Component {
                     margin="normal"
                     variant="outlined"
                     fullWidth
+                    name="wingspan"
+                    value={this.props.wizard.wingspan}
+                    onChange={this.onChange}
                   />
                 </Grid>
                 <Grid item xs={6} sm={6}>
@@ -160,6 +177,9 @@ class SportsForm extends React.Component {
                     margin="normal"
                     variant="outlined"
                     fullWidth
+                    name="verticalLeap"
+                    value={this.props.wizard.verticalLeap}
+                    onChange={this.onChange}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -172,6 +192,9 @@ class SportsForm extends React.Component {
                     margin="normal"
                     variant="outlined"
                     fullWidth
+                    name="time40m"
+                    value={this.props.wizard.time40m}
+                    onChange={this.onChange}
                   />
                 </Grid>
                 <Grid item xs={6} sm={6}>
@@ -184,6 +207,9 @@ class SportsForm extends React.Component {
                     margin="normal"
                     variant="outlined"
                     fullWidth
+                    name="time100m"
+                    value={this.props.wizard.time100m}
+                    onChange={this.onChange}
                   />
                 </Grid>
                 <Grid item xs={12} sm={12}>
@@ -194,6 +220,9 @@ class SportsForm extends React.Component {
                     margin="normal"
                     variant="outlined"
                     fullWidth
+                    name="presentClub"
+                    value={this.props.wizard.presentClub}
+                    onChange={this.onChange}
                   />
                 </Grid>
               </Grid>
@@ -211,6 +240,9 @@ class SportsForm extends React.Component {
                   margin="normal"
                   variant="outlined"
                   fullWidth
+                  name="mediaHouse"
+                  value={this.props.wizard.mediaHouse}
+                  onChange={this.onChange}
                 />
               </Grid>
             </Grid>
@@ -227,6 +259,9 @@ class SportsForm extends React.Component {
                   margin="normal"
                   variant="outlined"
                   fullWidth
+                  name="affiliation"
+                  value={this.props.wizard.affiliation}
+                  onChange={this.onChange}
                 />
               </Grid>
             </Grid>
@@ -238,7 +273,15 @@ class SportsForm extends React.Component {
 }
 
 SportsForm.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  updateField: PropTypes.func.isRequired
 };
 
-export default withStyles(styles)(SportsForm);
+const mapStateToProps = state => ({
+  wizard: state.wizard
+});
+
+export default connect(
+  mapStateToProps,
+  { updateField }
+)(withStyles(styles)(SportsForm));

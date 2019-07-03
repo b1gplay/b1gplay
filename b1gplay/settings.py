@@ -41,6 +41,7 @@ PREREQUSITE_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'knox',
 
 ]
 
@@ -102,12 +103,16 @@ DATABASES = {
 }
 
 # Setting globally the permission policy: for production use 'IsAuthenticated'
+# For testing use 'AllowAny' option
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        # For testing use 'AllowAny' option
         'rest_framework.permissions.AllowAny',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'knox.auth.TokenAuthentication',
     )
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators

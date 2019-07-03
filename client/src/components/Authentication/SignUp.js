@@ -64,7 +64,7 @@ function Login(props) {
           </Grid>
         </Grid>
         <Grid item xs={6} sm={1} />
-        <Grid item xs={6} sm={4}>
+        <Grid item lg={4} sm={12}>
           <br /> <br /> <br />
           <Paper
             className={classes.paper}
