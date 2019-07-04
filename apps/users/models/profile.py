@@ -17,19 +17,37 @@ class Profile(TimeStampedModel):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
     )
-    bio = models.TextField(max_length=500, blank=True)
-    location = models.CharField(
-        max_length=30, blank=True)  # Link to location model
+    
+    # Bio data for all account types signing up
+    firstname = models.CharField(max_length=30, blank=True)  
+    lastname = models.CharField(max_length=30, blank=True)  
+    gender = models.CharField(max_length=6, blank=True)  
     birth_date = models.DateField(null=True, blank=True)
+    residence_country = models.CharField(max_length=100, blank=True)
 
+    # type enum{player, team, media, coach, fan, admin, superuser}
+    account_type = models.CharField(max_length=20, blank=True)
+
+    # general info concerning either player, team, media, coach or fan... 
+    affiliation = models.CharField(max_length=100, blank=True)
+    media_house = models.CharField(max_length=100, blank=True)
+ 
+    # Player details
+    position = models.CharField(max_length=100, blank=True)
+    height = models.DecimalField(max_digits=3,decimal_places=2, null=True)
+    wingspan = models.DecimalField(max_digits=3,decimal_places=2, null=True)
+    vertical_leap = models.DecimalField(max_digits=3,decimal_places=2, null=True)
+    time_to_run_40m = models.DecimalField(max_digits=4,decimal_places=2, null=True)
+    time_to_run_100m = models.DecimalField(max_digits=4,decimal_places=2, null=True)
+    
+    
+    # Media related details for given account 
+    bio = models.TextField(max_length=500, blank=True)
     avatar = models.URLField(blank=True, null=True)
     profile_photo = models.URLField(blank=True, null=True)
     cover_photo = models.URLField(blank=True, null=True)
 
-    skype = models.CharField(max_length=30, blank=True)
-    facebook_id = models.CharField(max_length=30, blank=True)
-    instagram_id = models.CharField(max_length=30, blank=True)
-
+    
     class Meta:
         verbose_name = "Profile"
         verbose_name_plural = "Profiles"

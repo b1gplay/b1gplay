@@ -25,7 +25,6 @@ from apps.transfers.api.transfer.transfer_endpoint import transferRouter
 from apps.transfers.api.payment.payment_endpoint import paymentRouter
 
 from apps.users.api.user.user_endpoint import UserAPI, LoginAPI, RegisterAPI
-from apps.users.api.account.account_endpoint import accountRouter
 from apps.users.api.education.education_endpoint import educationRouter
 from apps.users.api.address.address_endpoint import addressRouter
 from apps.users.api.profile.profile_endpoint import profileRouter
@@ -62,7 +61,6 @@ urlpatterns = [
     url(r'^api/', include(transferRouter.urls)),
     url(r'^api/', include(paymentRouter.urls)),
 
-    url(r'^api/', include(accountRouter.urls)),
     url(r'^api/', include(addressRouter.urls)),
     url(r'^api/', include(educationRouter.urls)),
     url(r'^api/', include(profileRouter.urls)),
