@@ -17,24 +17,24 @@ from django.contrib.auth import authenticate
 class UserSerialiser(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id',  'username' )
+        fields = ('id',  'email' )
         
 # Register serializer
 class RegisterSerialiser(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id',  'username', 'password')
+        fields = ('id',  'email', 'password')
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
         user = User.objects.create_user(
-            validated_data['username'], validated_data['password'])
+            validated_data['email'], validated_data['password'])
 
         return user
 
 # Login Serializer
 class LoginSerialiser(serializers.Serializer):
-  username = serializers.CharField()
+  email = serializers.CharField()
   password = serializers.CharField()
 
   def validate(self, data):
@@ -52,10 +52,9 @@ class RegisterAPI(generics.GenericAPIView):
     serializer = self.get_serializer(data=request.data)
     serializer.is_valid(raise_exception=True)
     user = serializer.save()
-    #_, token = AuthToken.objects.create(user)
     return Response({
       "user": UserSerialiser(user, context=self.get_serializer_context()).data,
-      "token": AuthToken.objects.create(user)[1]
+      "token": AuthToken.objects.create(user)[1] 
     })
 
 # Login API
@@ -68,7 +67,7 @@ class LoginAPI(generics.GenericAPIView):
     user = serializer.validated_data
     return Response({
       "user": UserSerialiser(user, context=self.get_serializer_context()).data,
-      "token": AuthToken.objects.create(user)
+      "token": AuthToken.objects.create(user)[1]
     })
     
 # Get User API

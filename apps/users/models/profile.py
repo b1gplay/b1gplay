@@ -14,7 +14,7 @@ class Profile(TimeStampedModel):
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.OneToOneField(
-        settings.AUTH_USER_MODEL,
+        User,
         on_delete=models.CASCADE
     )
     
@@ -57,12 +57,12 @@ class Profile(TimeStampedModel):
         return self.user.get_full_name()
 
 
-@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+@receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
 
 
-@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+@receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
