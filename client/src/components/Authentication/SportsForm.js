@@ -92,9 +92,9 @@ class SportsForm extends React.Component {
             name="mediaHouse"
             value={this.props.wizard.mediaHouse}
             onChange={this.onChange}
-            InputLabelProps={{
+            /*  InputLabelProps={{
               shrink: true
-            }}
+            }} */
           />
         </Grid>
       </Grid>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
@@ -38,50 +38,57 @@ const styles = theme => ({
   }
 });
 
-function Login(props) {
-  const { classes } = props;
+class SignUp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-  return (
-    <div>
-      <Header1 />
-      <Grid container spacing={24} className={classes.gridContainer}>
-        <Grid item xs={6} sm={1} />
-        <Grid item xs={6} sm={6}>
-          <Grid container spacing={24}>
-            <Grid item xs={12} sm={12} style={{ marginTop: 30 }}>
-              <Typography variant="h4" style={{ color: "#ffffff" }}>
-                Where sports and society meet
-              </Typography>
-              <Typography
-                variant="body2"
-                gutterBottom
-                style={{ fontSize: "17px", color: "#ffffff" }}
-              >
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout.
-              </Typography>
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <Fragment>
+        <Header1 />
+        <Grid container spacing={24} className={classes.gridContainer}>
+          <Grid item xs={6} sm={1} />
+          <Grid item xs={6} sm={6}>
+            <Grid container spacing={24}>
+              <Grid item xs={12} sm={12} style={{ marginTop: 30 }}>
+                <Typography variant="h4" style={{ color: "#ffffff" }}>
+                  Where sports and society meet
+                </Typography>
+                <Typography
+                  variant="body2"
+                  gutterBottom
+                  style={{ fontSize: "17px", color: "#ffffff" }}
+                >
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                </Typography>
+              </Grid>
             </Grid>
           </Grid>
+          <Grid item xs={6} sm={1} />
+          <Grid item lg={4} sm={12}>
+            <br /> <br /> <br />
+            <Paper
+              className={classes.paper}
+              style={{
+                marginRight: 80
+              }}
+            >
+              <SignUpWizard />
+            </Paper>
+          </Grid>
         </Grid>
-        <Grid item xs={6} sm={1} />
-        <Grid item lg={4} sm={12}>
-          <br /> <br /> <br />
-          <Paper
-            className={classes.paper}
-            style={{
-              marginRight: 80
-            }}
-          >
-            <SignUpWizard />
-          </Paper>
-        </Grid>
-      </Grid>
-    </div>
-  );
+      </Fragment>
+    );
+  }
 }
 
-Login.propTypes = {
+SignUp.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Login);
+export default withStyles(styles)(SignUp);

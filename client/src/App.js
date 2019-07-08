@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
 import { CssBaseline, withStyles } from "@material-ui/core";
 import { Switch, Route } from "react-router-dom";
 
@@ -27,6 +28,11 @@ import PersonalRatings from "./components/PersonalRatings/PersonalRatings";
 
 import NewPersonalRatings from "./components/NewRatings/NewPersonalRating";
 
+import PrivateRoute from "./components/common/PrivateRoute";
+
+import store from "./store";
+import { loadUser } from "./actions/auth";
+
 const styles = theme => ({
   main: {
     padding: 3 * theme.spacing.unit,
@@ -36,49 +42,68 @@ const styles = theme => ({
   }
 });
 
-const App = ({ classes }) => (
-  <React.Fragment>
-    <CssBaseline />
+class App extends Component {
+  state = {};
 
-    <main className={classes.main} style={{ background: "#F5F5F5" }}>
-      {/* <Header1 /> */}
-      <br />
-      <br />
-      <br />
+  componentDidMount() {
+    store.dispatch(loadUser);
+  }
 
-      <Switch>
-        <Route path="/data-analytics" component={Analytics} />
-        <Route path="/messages" component={MessageList} />
-        <Route path="/following" component={NewFollowing} />
-        <Route path="/followers" component={NewFollowers} />
-        <Route path="/personal-ratings" component={PersonalRatings} />
+  render() {
+    const { classes } = this.props;
 
-        <Route path="/sign-up" component={SignUp} />
-        <Route path="/login" component={Login} />
-        <Route path="/" component={ProfilePage} />
+    return (
+      <Fragment>
+        <CssBaseline />
 
-        <Route path="/notifications" />
+        <main className={classes.main} style={{ background: "#F5F5F5" }}>
+          {/* <Header1 /> */}
+          <br />
+          <br />
+          <br />
 
-        <Route path="/personalrating" component={PersonalRating} />
-        <Route path="/personalrating1" component={NewPersonalRatings} />
-        <Route path="/myhome" component={Profile} />
+          <Switch>
+            <PrivateRoute path="/data-analytics" component={Analytics} />
+            <PrivateRoute path="/messages" component={MessageList} />
+            <PrivateRoute path="/following" component={NewFollowing} />
+            <PrivateRoute path="/followers" component={NewFollowers} />
+            <PrivateRoute
+              path="/personal-ratings"
+              component={PersonalRatings}
+            />
 
-        <Route path="/followers1" component={Followers} />
+            <Route path="/sign-up" component={SignUp} />
+            <Route path="/login" component={Login} />
+            <PrivateRoute path="/" component={ProfilePage} />
 
-        <Route path="/following1" component={Following} />
+            <Route path="/notifications" />
 
-        <Route path="/profile" component={ViewProfile} />
-        <Route path="/stars" component={Stars} />
+            <Route path="/personalrating" component={PersonalRating} />
+            <Route path="/personalrating1" component={NewPersonalRatings} />
+            <Route path="/myhome" component={Profile} />
 
-        <Route path="/stars2" component={NewStars1} />
+            <Route path="/followers1" component={Followers} />
 
-        <Route path="/top-performers" component={TopPerformers} />
-        {/* <Route path="/" component={Profile} /> */}
+            <Route path="/following1" component={Following} />
 
-        <Route path="/notifications" />
-      </Switch>
-    </main>
-  </React.Fragment>
-);
+            <Route path="/profile" component={ViewProfile} />
+            <Route path="/stars" component={Stars} />
+
+            <Route path="/stars2" component={NewStars1} />
+
+            <Route path="/top-performers" component={TopPerformers} />
+            {/* <Route path="/" component={Profile} /> */}
+
+            <Route path="/notifications" />
+          </Switch>
+        </main>
+      </Fragment>
+    );
+  }
+}
+
+App.propTypes = {
+  classes: PropTypes.object.isRequired
+};
 
 export default withStyles(styles)(App);
