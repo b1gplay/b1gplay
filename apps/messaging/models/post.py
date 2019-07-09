@@ -1,8 +1,9 @@
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
-from django.contrib.auth.models import User
 from django.conf import settings
 import uuid
+
+from apps.users.models.user import User
 
 
 class Post(TimeStampedModel):
@@ -12,7 +13,7 @@ class Post(TimeStampedModel):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     message = models.TextField()
     photo = models.ImageField(upload_to='posts')
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL,
+    owner = models.ForeignKey(User,
                               related_name='posts',
                               on_delete=models.CASCADE,
                               null=True)

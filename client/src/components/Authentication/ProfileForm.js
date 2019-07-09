@@ -62,7 +62,7 @@ class ProfileForm extends Component {
           <Grid item xs={12} sm={12}>
             <Grid item xs={12} sm={12}>
               <TextField
-                id="outlined-uncontrolled"
+                id="firstname"
                 margin="normal"
                 variant="outlined"
                 fullWidth
@@ -75,7 +75,7 @@ class ProfileForm extends Component {
             </Grid>
             <Grid item xs={12} sm={12}>
               <TextField
-                id="outlined-uncontrolled"
+                id="lastname"
                 label="Lastname"
                 className={classes.textField}
                 margin="normal"

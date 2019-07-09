@@ -5,6 +5,7 @@ Django==2.1.10
 django-cors-headers==3.0.2
 django-countries==5.3.2
 django-extensions==2.1.4
+django-filter==2.1.0
 django-rest-knox==4.1.0
 djangorestframework==3.9.1
 ez-setup==0.9

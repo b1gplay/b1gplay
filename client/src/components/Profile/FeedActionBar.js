@@ -6,7 +6,7 @@ import Grid from "@material-ui/core/Grid";
 
 //import Avatar from "@material-ui/core/Avatar";
 
-import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
+//import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 
@@ -103,7 +103,15 @@ class FeedActionBar extends Component {
               }}
               onClick={this.handleComment}
             >
-              <ChatBubbleOutlineIcon />
+              {/* <ChatBubbleOutlineIcon /> */}
+              <img
+                src="static/images/chat.png"
+                style={{
+                  width: "20px",
+                  height: "20px"
+                }}
+                alt="text"
+              />
             </Button>
           </Grid>
         </Grid>

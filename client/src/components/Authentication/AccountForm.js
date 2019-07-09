@@ -35,7 +35,7 @@ class AccountForm extends Component {
             <Grid item xs={12} sm={12}>
               <TextField
                 required
-                id="outlined-uncontrolled"
+                id="email"
                 label="Email"
                 className={classes.textField}
                 margin="normal"
@@ -49,22 +49,22 @@ class AccountForm extends Component {
             <Grid item xs={12} sm={12}>
               <TextField
                 required
-                id="outlined-uncontrolled"
+                id="password"
                 label="Password"
                 type="password"
                 className={classes.textField}
                 margin="normal"
                 variant="outlined"
                 fullWidth
-                name="password1"
-                value={this.props.wizard.password1}
+                name="password"
+                value={this.props.wizard.password}
                 onChange={this.onChange}
               />
             </Grid>
             <Grid item xs={12} sm={12}>
               <TextField
                 required
-                id="outlined-uncontrolled"
+                id="password2"
                 label="Confirm Password"
                 type="password"
                 className={classes.textField}

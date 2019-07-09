@@ -24,12 +24,12 @@ class PostViewSet(ModelViewSet):
     #serializer_class = PostSerialiser
 
     # def get_queryset(self):
-    #    return self.request.user.posts.all()
+    # return self.request.user.posts.all()
 
     # def perform_create(self, serializer):
     #    serializer.save(owner=self.request.user)
 
 
 postRouter = DefaultRouter()
-postRouter.register(r'posts', PostViewSet, 'posts')
-# postRouter.register(r'posts', PostViewSet, basename='Post')
+#postRouter.register(r'posts', PostViewSet, 'posts')
+postRouter.register(r'posts', PostViewSet, basename='Post')

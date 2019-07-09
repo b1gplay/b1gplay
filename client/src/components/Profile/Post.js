@@ -73,10 +73,13 @@ class Post extends Component {
     const formData = new FormData();
     formData.append("message", this.state.message);
     formData.append("photo", this.state.photo);
+    formData.append("owner", this.props.userID);
 
-    formData.forEach((value, key) => {
+    //console.log(this.props.userID);
+
+    /* formData.forEach((value, key) => {
       console.log("key %s: value %s", key, value);
-    });
+    }); */
 
     const config = {
       headers: {
@@ -198,10 +201,18 @@ class Post extends Component {
 
 Post.propTypes = {
   classes: PropTypes.object.isRequired,
-  addPost: PropTypes.func.isRequired
+  addPost: PropTypes.func.isRequired,
+  getPost: PropTypes.func.isRequired,
+  createMessage: PropTypes.func.isRequired,
+  returnErrors: PropTypes.func.isRequired
 };
 
+const mapStateToProps = state => ({
+  wizard: state.wizard,
+  isAuthenticated: state.auth.isAuthenticated,
+  userID: state.auth.user.id
+});
 export default connect(
-  null,
+  mapStateToProps,
   { addPost, getPosts, createMessage, returnErrors }
 )(withStyles(styles)(Post));

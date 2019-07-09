@@ -16,6 +16,7 @@ class ProfileViewSet(ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerialiser
     permission_class = [DjangoModelPermissions]
+    filterset_fields = ('user', )
 
 
 profileRouter = DefaultRouter()

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Stepper from "@material-ui/core/Stepper";
@@ -6,11 +6,15 @@ import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import ProfileForm from "./ProfileForm";
 import AccountForm from "./AccountForm";
 import SportsForm from "./SportsForm";
+
+import { connect } from "react-redux";
+import { register } from "../../actions/auth";
+import { createMessage } from "../../actions/messages";
 
 const styles = theme => ({
   stepper: {
@@ -46,9 +50,41 @@ function getStepContent(step) {
   }
 }
 
-class SignUpWizard extends React.Component {
+class SignUpWizard extends Component {
   state = {
     activeStep: 0
+  };
+
+  onSubmit = event => {
+    event.preventDefault();
+
+    // Extract values from external state
+    const email = this.props.wizard.email;
+    const password = this.props.wizard.password;
+    const password2 = this.props.wizard.password2;
+
+    const firstname = this.props.wizard.firstname;
+    const lastname = this.props.wizard.lastname;
+    const gender = this.props.wizard.gender;
+    const birthday = this.props.wizard.birthday;
+    const country = this.props.wizard.country.label;
+    const accountType = this.props.wizard.accountType;
+
+    if (password !== password2) {
+      this.props.createMessage({ passwordNotMatch: "Passwords do not match" });
+    } else {
+      const newUser = {
+        email,
+        password,
+        firstname,
+        lastname,
+        gender,
+        birthday,
+        country,
+        accountType
+      };
+      this.props.register(newUser);
+    }
   };
 
   handleNext = () => {
@@ -73,8 +109,37 @@ class SignUpWizard extends React.Component {
     const { classes } = this.props;
     const { activeStep } = this.state;
 
+    if (this.props.isAuthenticated) {
+      return <Redirect to="/" />;
+    }
+
+    const nextButton = (
+      <Button
+        variant="contained"
+        color="secondary"
+        fullWidth
+        onClick={this.handleNext}
+        className={classes.button}
+      >
+        Next
+      </Button>
+    );
+
+    const registerButton = (
+      <Button
+        type="submit"
+        variant="contained"
+        color="secondary"
+        fullWidth
+        onClick={this.onSubmit}
+        className={classes.button}
+      >
+        Register User
+      </Button>
+    );
+
     return (
-      <React.Fragment>
+      <Fragment>
         <Typography component="h1" variant="h5" align="center">
           Sign Up
         </Typography>
@@ -85,9 +150,9 @@ class SignUpWizard extends React.Component {
             </Step>
           ))}
         </Stepper>
-        <React.Fragment>
+        <Fragment>
           {activeStep === steps.length ? (
-            <React.Fragment>
+            <Fragment>
               <Typography variant="h5" gutterBottom>
                 Thank you for your registering.
               </Typography>
@@ -101,9 +166,9 @@ class SignUpWizard extends React.Component {
                   Login
                 </Typography>
               </Link>
-            </React.Fragment>
+            </Fragment>
           ) : (
-            <React.Fragment>
+            <Fragment>
               {getStepContent(activeStep)}
               <div className={classes.buttons}>
                 {activeStep !== 0 && (
@@ -116,26 +181,29 @@ class SignUpWizard extends React.Component {
                     Back
                   </Button>
                 )}
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  fullWidth
-                  onClick={this.handleNext}
-                  className={classes.button}
-                >
-                  {activeStep === steps.length - 1 ? "Register User" : "Next"}
-                </Button>
+
+                {activeStep === steps.length - 1 ? registerButton : nextButton}
               </div>
-            </React.Fragment>
+            </Fragment>
           )}
-        </React.Fragment>
-      </React.Fragment>
+        </Fragment>
+      </Fragment>
     );
   }
 }
 
 SignUpWizard.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  register: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool
 };
 
-export default withStyles(styles)(SignUpWizard);
+const mapStateToProps = state => ({
+  wizard: state.wizard,
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(
+  mapStateToProps,
+  { register, createMessage }
+)(withStyles(styles)(SignUpWizard));
