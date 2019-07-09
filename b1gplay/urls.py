@@ -64,7 +64,7 @@ urlpatterns = [
     url(r'^api/', include(addressRouter.urls)),
     url(r'^api/', include(educationRouter.urls)),
     url(r'^api/', include(profileRouter.urls)),
-    
+
     url(r'^api/', include(messageRouter.urls)),
     url(r'^api/', include(photoRouter.urls)),
     url(r'^api/', include(videoRouter.urls)),
@@ -78,14 +78,15 @@ urlpatterns = [
     url(r'^api/', include(feedRouter.urls)),
     url(r'^api/', include(pageRouter.urls)),
 
-    path('api/auth/', include('knox.urls')),
+    path('api/auth', include('knox.urls')),
     path('api/auth/register', RegisterAPI.as_view()),
     path('api/auth/login', LoginAPI.as_view()),
-    path('api/auth/users', UserAPI.as_view()),
-    
+    path('api/auth/user', UserAPI.as_view()),
+    path('api/auth/logout', knox_views.LogoutView.as_view(), name='knox_logout')
 
 
-	
+
+
 
 
 

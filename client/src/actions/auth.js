@@ -31,7 +31,7 @@ export const loadUser = () => (dispatch, getState) => {
   if (token) {
     config.headers["Authorization"] = `Token ${token}`;
   }
-  API.get("/api/auth/user", config)
+  API.get("auth/user", config)
     .then(res => {
       dispatch({
         type: USER_LOADED,
@@ -48,7 +48,7 @@ export const loadUser = () => (dispatch, getState) => {
 
 // REGISTER
 export const register = () => dispatch => {
-  API.post("api/auth/register")
+  API.post("auth/register")
     .then(res => {
       dispatch({
         type: REGISTER_SUCCESS,
@@ -75,7 +75,7 @@ export const login = (email, password) => dispatch => {
   // Request Body
   const body = JSON.stringify({ email, password });
 
-  API.post("api/auth/login", body, config)
+  API.post("auth/login", body, config)
     .then(res => {
       dispatch({
         type: LOGIN_SUCCESS,
@@ -91,15 +91,28 @@ export const login = (email, password) => dispatch => {
 };
 
 // LOGOUT USER
+
 export const logout = () => (dispatch, getState) => {
-  API.post("/api/auth/logout/", null)
+  // Get token from state
+  const token = getState().auth.token;
+
+  // Headers
+  const config = {
+    headers: {
+      "Content-Type": "application/json"
+    }
+  };
+
+  if (token) {
+    config.headers["Authorization"] = `Token ${token}`;
+  }
+  API.post("auth/logout", null, config)
     .then(res => {
-      dispatch({ type: "CLEAR_LEADS" });
       dispatch({
         type: LOGOUT_SUCCESS
       });
     })
     .catch(err => {
-      //dispatch(returnErrors(err.response.data, err.response.status));
+      dispatch(returnErrors(err.response.data, err.response.status));
     });
 };

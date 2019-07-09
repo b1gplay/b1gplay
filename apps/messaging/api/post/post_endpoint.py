@@ -16,15 +16,20 @@ class PostSerialiser(serializers.ModelSerializer):
 
 
 class PostViewSet(ModelViewSet):
-    permission_class = [IsAuthenticated]
+    queryset = Post.objects.all()
     serializer_class = PostSerialiser
+    permission_class = [DjangoModelPermissions]
 
-    def get_queryset(self):
-        return self.request.user.posts.all()
+    #permission_class = [IsAuthenticated]
+    #serializer_class = PostSerialiser
 
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+    # def get_queryset(self):
+    #    return self.request.user.posts.all()
+
+    # def perform_create(self, serializer):
+    #    serializer.save(owner=self.request.user)
 
 
 postRouter = DefaultRouter()
-postRouter.register(r'posts', PostViewSet, basename='Post')
+postRouter.register(r'posts', PostViewSet, 'posts')
+# postRouter.register(r'posts', PostViewSet, basename='Post')

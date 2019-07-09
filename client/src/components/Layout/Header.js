@@ -27,6 +27,9 @@ import Tooltip from "@material-ui/core/Tooltip";
 //import NotificationList from "../Notifications/NotificationList";
 import Popover from "../Notifications/popover";
 
+import { connect } from "react-redux";
+import { logout } from "../../actions/auth";
+
 const styles = theme => ({
   root: {
     width: "100%"
@@ -145,6 +148,8 @@ class Header extends React.Component {
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
+    //const { isAuthenticated, user } = this.props.auth;
+
     const renderMenu = (
       <Menu
         anchorEl={anchorEl}
@@ -157,9 +162,7 @@ class Header extends React.Component {
           <MenuItem onClick={this.handleMenuClose}>Settings</MenuItem>
         </Link>
 
-        <Link to="/login" className={classes.link}>
-          <MenuItem onClick={this.handleMenuClose}>Logout</MenuItem>
-        </Link>
+        <MenuItem onClick={this.props.logout}>Logout</MenuItem>
       </Menu>
     );
 
@@ -298,7 +301,16 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  auth: PropTypes.object.isRequired,
+  logout: PropTypes.func.isRequired
 };
 
-export default withStyles(styles)(Header);
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  { logout }
+)(withStyles(styles)(Header));

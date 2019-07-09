@@ -46,7 +46,7 @@ class App extends Component {
   state = {};
 
   componentDidMount() {
-    store.dispatch(loadUser);
+    store.dispatch(loadUser());
   }
 
   render() {
