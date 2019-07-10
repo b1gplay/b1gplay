@@ -15,8 +15,6 @@ import { withStyles } from "@material-ui/core/styles";
 
 //import { DropzoneArea } from "material-ui-dropzone";
 
-import API from "../../utils/APIUtils";
-
 import { connect } from "react-redux";
 import { addPost, getPosts } from "../../actions/posts";
 import { createMessage, returnErrors } from "../../actions/messages";
@@ -69,35 +67,14 @@ class Post extends Component {
   onSubmit = event => {
     event.preventDefault();
 
-    // get our form data out of state
-    const formData = new FormData();
-    formData.append("message", this.state.message);
-    formData.append("photo", this.state.photo);
-    formData.append("owner", this.props.userID);
-
-    //console.log(this.props.userID);
-
-    /* formData.forEach((value, key) => {
-      console.log("key %s: value %s", key, value);
-    }); */
-
-    const config = {
-      headers: {
-        "content-type": "multipart/form-data"
-      }
+    // save post data into object
+    const newPost = {
+      message: this.state.message,
+      photo: this.state.photo,
+      owner: this.props.userID
     };
-    API.post("posts/", formData, config)
-      .then(resp => {
-        this.props.createMessage({ addPost: "Post Added" });
-        this.setState({
-          message: "",
-          photo: null
-        });
-        this.props.getPosts();
-      })
-      .catch(err =>
-        this.props.returnErrors(err.response.data, err.response.status)
-      );
+
+    this.props.addPost(newPost);
   };
 
   handleClickOpen = () => {

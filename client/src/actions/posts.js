@@ -32,13 +32,22 @@ export const deletePost = id => dispatch => {
 };
 
 // ADD POSTS
-export const addPost = post => dispatch => {
+export const addPost = ({ message, photo, owner }) => dispatch => {
+  // Define header for multimedia upload
   const config = {
     headers: {
       "content-type": "multipart/form-data"
     }
   };
-  API.post("posts/", { post }, config)
+
+  // Handle image uploads
+  const body = new FormData();
+  body.append("message", message);
+  body.append("photo", photo);
+  body.append("owner", owner);
+
+  // Add a Post to api
+  API.post("posts/", body, config)
     .then(res => {
       dispatch({
         type: ADD_POST,
