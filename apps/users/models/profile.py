@@ -34,11 +34,11 @@ class Profile(TimeStampedModel):
  
     # Player details
     position = models.CharField(max_length=100, blank=True)
-    height = models.DecimalField(max_digits=3,decimal_places=2, null=True)
-    wingspan = models.DecimalField(max_digits=3,decimal_places=2, null=True)
-    vertical_leap = models.DecimalField(max_digits=3,decimal_places=2, null=True)
-    time_to_run_40m = models.DecimalField(max_digits=4,decimal_places=2, null=True)
-    time_to_run_100m = models.DecimalField(max_digits=4,decimal_places=2, null=True)
+    height = models.DecimalField(max_digits=6,decimal_places=2, null=True)
+    wingspan = models.DecimalField(max_digits=6,decimal_places=2, null=True)
+    vertical_leap = models.DecimalField(max_digits=6,decimal_places=2, null=True)
+    time_to_run_40m = models.DecimalField(max_digits=6,decimal_places=2, null=True)
+    time_to_run_100m = models.DecimalField(max_digits=6,decimal_places=2, null=True)
     
     
     # Media related details for given account 

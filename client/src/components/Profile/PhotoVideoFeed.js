@@ -62,7 +62,7 @@ const styles = theme => ({
 });
 
 class PhotoVideoFeed extends Component {
-  state = { expanded: false };
+  state = {};
 
   componentDidMount() {
     this.props.getPosts();

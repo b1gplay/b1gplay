@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import Paper from "@material-ui/core/Paper";
 import { withStyles } from "@material-ui/core/styles";
@@ -47,7 +47,7 @@ const styles = {
   }
 };
 
-class IconLabelTabs extends React.Component {
+class PersonalRatings extends Component {
   state = {
     value: 0
   };
@@ -61,7 +61,7 @@ class IconLabelTabs extends React.Component {
     const { value } = this.state;
 
     return (
-      <div>
+      <Fragment>
         <Header />
         <Paper square className={classes.root}>
           <br />
@@ -114,13 +114,13 @@ class IconLabelTabs extends React.Component {
             </TabContainer>
           )}
         </Paper>
-      </div>
+      </Fragment>
     );
   }
 }
 
-IconLabelTabs.propTypes = {
+PersonalRatings.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(IconLabelTabs);
+export default withStyles(styles)(PersonalRatings);

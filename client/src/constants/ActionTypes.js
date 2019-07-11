@@ -7,6 +7,20 @@ export const LOGIN_FAIL = "LOGIN_FAIL";
 export const USER_LOADED = "USER_LOADED";
 export const USER_LOADING = "USER_LOADING";
 
+// Profile
+export const CREATE_PROFILE_SUCCESS = "CREATE_PROFILE_SUCCESS";
+export const CREATE_PROFILE_FAIL = "CREATE_PROFILE_FAIL";
+export const GET_PROFILE_SUCCESS = "GET_PROFILE_SUCCESS";
+export const GET_PROFILE_FAIL = "GET_PROFILE_FAIL";
+
+// Individual Ratings
+export const GET_INDIVIDUAL_RATINGS = "GET_INDIVIDUAL_RATINGS";
+
+// Following, Followers & Suggestions
+export const GET_FOLLOWING = "GET_FOLLOWING";
+export const GET_FOLLOWERS = "GET_FOLLOWERS";
+export const GET_SUGGESTIONS = "GET_SUGGESTIONS";
+
 // Posts
 export const GET_POSTS = "GET_POSTS";
 export const ADD_POST = "ADD_POST";

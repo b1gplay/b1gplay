@@ -93,7 +93,7 @@ class FeedActionBar extends Component {
               color="default"
               fullWidth
               style={{
-                border: "1px solid darkblue",
+                border: "2px solid darkblue",
                 textTransform: "capitalize",
                 fontWeight: "bold",
                 fontSize: "18px",
@@ -105,7 +105,7 @@ class FeedActionBar extends Component {
             >
               {/* <ChatBubbleOutlineIcon /> */}
               <img
-                src="static/images/chat.png"
+                src="static/images/comment.png"
                 style={{
                   width: "20px",
                   height: "20px"

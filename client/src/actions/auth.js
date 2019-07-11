@@ -4,6 +4,9 @@ import {
   AUTH_ERROR,
   REGISTER_SUCCESS,
   REGISTER_FAIL,
+  CREATE_PROFILE_SUCCESS,
+  CREATE_PROFILE_FAIL,
+  GET_PROFILE_SUCCESS,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT_SUCCESS
@@ -36,10 +39,18 @@ export const register = ({
   firstname,
   lastname,
   gender,
-  birthday,
-  country,
-  accountType
-}) => dispatch => {
+  birth_date,
+  residence_country,
+  account_type,
+  //media_house,
+  height,
+  position,
+  wingspan,
+  vertical_leap,
+  time_to_run_40m,
+  time_to_run_100m,
+  affiliation
+}) => (dispatch, getState) => {
   // Headers
   const config = {
     headers: {
@@ -53,9 +64,17 @@ export const register = ({
     firstname,
     lastname,
     gender,
-    birthday,
-    country,
-    accountType
+    birth_date,
+    residence_country,
+    account_type,
+    //media_house,
+    height,
+    position,
+    wingspan,
+    vertical_leap,
+    time_to_run_40m,
+    time_to_run_100m,
+    affiliation
   });
 
   API.post("auth/register", body, config)
@@ -64,7 +83,43 @@ export const register = ({
         type: REGISTER_SUCCESS,
         payload: res.data
       });
+
+      // get userID then search against profile API & save to profile API endpoint
       dispatch(loadUser());
+      const user = getState().auth.user.id;
+
+      // Get profile ID using Axios query parameters
+      API.get("profiles", {
+        params: {
+          user
+        }
+      })
+        .then(response =>
+          // Update profile using profile ID
+          API.patch(
+            `profiles/${response.data[0].id}/`,
+            profile,
+            tokenConfig(getState)
+          )
+            .then(res => {
+              dispatch({
+                type: CREATE_PROFILE_SUCCESS,
+                payload: res.data
+              });
+              dispatch({
+                type: GET_PROFILE_SUCCESS,
+                payload: res.data
+              });
+            })
+            .catch(err => {
+              dispatch({
+                type: CREATE_PROFILE_FAIL,
+                payload: err
+              });
+              console.log(err);
+            })
+        )
+        .catch(err => console.warn(err));
     })
     .catch(err =>
       dispatch({
@@ -72,6 +127,23 @@ export const register = ({
         payload: err
       })
     );
+};
+
+// CREATE USER PROFILE
+export const createProfile = (id, profile) => (dispatch, getState) => {
+  API.put(`profiles/${id}/`, profile, tokenConfig(getState))
+    .then(res => {
+      dispatch({
+        type: CREATE_PROFILE_SUCCESS,
+        payload: res.data
+      });
+    })
+    .catch(err => {
+      dispatch({
+        type: CREATE_PROFILE_FAIL,
+        payload: err
+      });
+    });
 };
 
 // LOGIN USER
@@ -90,6 +162,10 @@ export const login = (email, password) => dispatch => {
     .then(res => {
       dispatch({
         type: LOGIN_SUCCESS,
+        payload: res.data
+      });
+      dispatch({
+        type: GET_PROFILE_SUCCESS,
         payload: res.data
       });
     })
@@ -114,7 +190,7 @@ export const logout = () => (dispatch, getState) => {
     });
 };
 
-// Setup config with token - helpr function
+// Setup config with token - helper function
 export const tokenConfig = getState => {
   // Get token from state
   const token = getState().auth.token;

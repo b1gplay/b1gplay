@@ -66,9 +66,19 @@ class SignUpWizard extends Component {
     const firstname = this.props.wizard.firstname;
     const lastname = this.props.wizard.lastname;
     const gender = this.props.wizard.gender;
-    const birthday = this.props.wizard.birthday;
-    const country = this.props.wizard.country.label;
-    const accountType = this.props.wizard.accountType;
+    const birth_date = this.props.wizard.birthday;
+    const residence_country = this.props.wizard.country.label;
+
+    const account_type = this.props.wizard.accountType;
+    //const media_house = this.props.wizard.mediaHouse;
+
+    const height = this.props.wizard.height;
+    const position = this.props.wizard.position;
+    const wingspan = this.props.wizard.wingspan;
+    const vertical_leap = this.props.wizard.verticalLeap;
+    const time_to_run_40m = this.props.wizard.time40m;
+    const time_to_run_100m = this.props.wizard.time100m;
+    const affiliation = this.props.wizard.affiliation;
 
     if (password !== password2) {
       this.props.createMessage({ passwordNotMatch: "Passwords do not match" });
@@ -79,9 +89,17 @@ class SignUpWizard extends Component {
         firstname,
         lastname,
         gender,
-        birthday,
-        country,
-        accountType
+        birth_date,
+        residence_country,
+        account_type,
+        //media_house,
+        height,
+        position,
+        wingspan,
+        vertical_leap,
+        time_to_run_40m,
+        time_to_run_100m,
+        affiliation
       };
       this.props.register(newUser);
     }

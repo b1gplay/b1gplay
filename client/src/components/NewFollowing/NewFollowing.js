@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -11,12 +11,12 @@ import Header from "../Layout/Header";
 
 const styles = theme => ({});
 
-class ClientDetails1 extends React.Component {
+class ClientDetails1 extends Component {
   render() {
     //const { classes } = this.props;
 
     return (
-      <div>
+      <Fragment>
         <Header />
         <Grid container spacing={24}>
           <Grid
@@ -44,7 +44,7 @@ class ClientDetails1 extends React.Component {
             <FollowingList />
           </Grid>
         </Grid>
-      </div>
+      </Fragment>
     );
   }
 }
