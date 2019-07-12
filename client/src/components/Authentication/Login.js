@@ -44,6 +44,12 @@ const styles = theme => ({
   link: {
     textDecoration: "none",
     color: "white"
+  },
+
+  // Overiding css properties on material ui textbox
+  notchedOutline: {
+    borderWidth: "1px",
+    borderColor: "black !important"
   }
 });
 
@@ -125,9 +131,10 @@ class Login extends Component {
                     name="email"
                     onChange={this.onChange}
                     value={email}
-                    style={{
-                      backgroundColor: "white",
-                      color: "black"
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
                     }}
                   />
                 </Grid>
@@ -143,9 +150,10 @@ class Login extends Component {
                     name="password"
                     onChange={this.onChange}
                     value={password}
-                    style={{
-                      backgroundColor: "white",
-                      color: "black"
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
                     }}
                   />
                 </Grid>

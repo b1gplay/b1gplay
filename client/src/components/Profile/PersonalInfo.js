@@ -12,8 +12,24 @@ import PersonAddIcon from "@material-ui/icons/PersonAdd";
 //import EditIcon from "@material-ui/icons/Edit";
 import IconButton from "@material-ui/core/IconButton";
 
+import Dialog from "@material-ui/core/Dialog";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import Button from "@material-ui/core/Button";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControl from "@material-ui/core/FormControl";
+import FormLabel from "@material-ui/core/FormLabel";
+
+import TextField from "@material-ui/core/TextField";
+import Select from "react-select";
+import countryList from "react-select-country-list";
+
 import { connect } from "react-redux";
-import { getProfile } from "../../actions/profile";
+import { getProfile, editProfile } from "../../actions/profile";
 
 const styles = theme => ({
   root: {
@@ -24,20 +40,63 @@ const styles = theme => ({
   avatar: {
     margin: 10
   },
+  selectField: {
+    margin: theme.spacing.unit,
+    width: "100%",
+    textAlign: "left",
+    fontFamily: "Arial",
+    color: "black",
+    marginLeft: 0,
+    lineHeight: "37px"
+  },
   // Overiding CSS with classnames for CardHeader Implementation
   title: {
     fontSize: "24px",
     textAlign: "center"
+  },
+  // Overiding css properties on material ui textbox
+  notchedOutline: {
+    borderWidth: "1px",
+    borderColor: "black !important"
   }
 });
 
 class PersonalInfo extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+
+    this.options = countryList().getData();
+
+    this.state = {
+      options: this.options,
+      open: false
+    };
+  }
 
   componentDidMount() {
     this.props.getProfile();
   }
 
+  handleOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
+  onSubmit = event => {
+    event.preventDefault();
+
+    // get our form data out of state
+    const profile = {
+      id: this.props.profile.id,
+      firstname: this.props.profile.firstname,
+      lastname: this.props.profile.lastname
+    };
+
+    this.props.editProfile(profile);
+  };
   render() {
     const { classes } = this.props;
 
@@ -49,7 +108,7 @@ class PersonalInfo extends Component {
               title: classes.title
             }}
             action={
-              <IconButton>
+              <IconButton onClick={this.handleOpen}>
                 <PersonAddIcon />
               </IconButton>
             }
@@ -193,6 +252,298 @@ class PersonalInfo extends Component {
             </Grid>
           </CardContent>
         </Card>
+
+        <Dialog
+          id="myDialog"
+          maxWidth="md"
+          open={this.state.open}
+          aria-labelledby="form-dialog-title"
+          onClose={this.handleClose}
+        >
+          <DialogTitle
+            id="simple-dialog-title"
+            color="default"
+            style={{ backgroundColor: "#D23E56" }}
+          >
+            <Typography
+              component="h1"
+              variant="display1"
+              align="center"
+              style={{ color: "white" }}
+            >
+              Edit Profile
+            </Typography>
+          </DialogTitle>
+          <DialogContent>
+            <form onSubmit={this.handleSubmit}>
+              <br />
+              <Typography variant="headline" align="left" color="inherit">
+                Autobiography
+              </Typography>
+              <br />
+              <Grid container spacing={8}>
+                <Grid item xs={6} sm={6}>
+                  <TextField
+                    id="firstname"
+                    margin="normal"
+                    variant="outlined"
+                    fullWidth
+                    className={classes.textField}
+                    label="Firstname"
+                    name="firstname"
+                    value={this.props.profile.firstname}
+                    onChange={this.onChange}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={6} sm={6}>
+                  <TextField
+                    id="lastname"
+                    label="Lastname"
+                    className={classes.textField}
+                    margin="normal"
+                    variant="outlined"
+                    fullWidth
+                    name="lastname"
+                    value={this.props.profile.lastname}
+                    onChange={this.onChange}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  />
+                </Grid>
+
+                <Grid item xs={6} sm={6}>
+                  <TextField
+                    id="date"
+                    label="Birthday"
+                    type="date"
+                    fullWidth
+                    variant="outlined"
+                    className={classes.textField}
+                    margin="dense"
+                    name="birthday"
+                    value={this.props.profile.birth_date}
+                    onChange={this.onChange}
+                    InputLabelProps={{
+                      shrink: true
+                    }}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={6} sm={6}>
+                  <Select
+                    className={classes.selectField}
+                    options={this.state.options}
+                    onChange={this.countrySelector}
+                    value={this.props.profile.residence_country}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                  <TextField
+                    id="bio"
+                    label="Bio"
+                    className={classes.textField}
+                    margin="normal"
+                    variant="outlined"
+                    fullWidth
+                    name="bio"
+                    value={this.props.profile.bio}
+                    onChange={this.onChange}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                  <FormControl
+                    component="fieldset"
+                    className={classes.formControl}
+                  >
+                    <FormLabel component="legend" align="left">
+                      Gender
+                    </FormLabel>
+                    <RadioGroup
+                      aria-label="Gender"
+                      className={classes.group}
+                      name="gender"
+                      value={this.props.profile.gender}
+                      onChange={this.onChange}
+                    >
+                      <FormControlLabel
+                        value="Male"
+                        control={<Radio />}
+                        label="Male"
+                      />
+                      <FormControlLabel
+                        value="Female"
+                        control={<Radio />}
+                        label="Female"
+                      />
+                    </RadioGroup>
+                  </FormControl>
+                </Grid>
+                <Grid item xs={6} sm={6}>
+                  <TextField
+                    id="outlined-uncontrolled"
+                    label="Present club/ Affiliation"
+                    className={classes.textField}
+                    margin="normal"
+                    variant="outlined"
+                    fullWidth
+                    name="affiliation"
+                    value={this.props.profile.affiliation}
+                    onChange={this.onChange}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={6} sm={6}>
+                  <TextField
+                    required
+                    id="outlined-uncontrolled"
+                    label="Position"
+                    className={classes.textField}
+                    margin="normal"
+                    variant="outlined"
+                    fullWidth
+                    name="position"
+                    value={this.props.profile.position}
+                    onChange={this.onChange}
+                    InputLabelProps={{
+                      shrink: true
+                    }}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={6} sm={6}>
+                  <TextField
+                    required
+                    id="outlined-uncontrolled"
+                    label="Height"
+                    type="number"
+                    className={classes.textField}
+                    margin="normal"
+                    variant="outlined"
+                    fullWidth
+                    name="height"
+                    value={this.props.profile.height}
+                    onChange={this.onChange}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={6} sm={6}>
+                  <TextField
+                    required
+                    id="outlined-uncontrolled"
+                    label="Wingspan"
+                    type="number"
+                    className={classes.textField}
+                    margin="normal"
+                    variant="outlined"
+                    fullWidth
+                    name="wingspan"
+                    value={this.props.profile.wingspan}
+                    onChange={this.onChange}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={6} sm={6}>
+                  <TextField
+                    required
+                    id="outlined-uncontrolled"
+                    label="Vertical leap"
+                    type="number"
+                    className={classes.textField}
+                    margin="normal"
+                    variant="outlined"
+                    fullWidth
+                    name="verticalLeap"
+                    value={this.props.profile.vertical_leap}
+                    onChange={this.onChange}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    required
+                    id="outlined-uncontrolled"
+                    label="Time to run 40m"
+                    type="number"
+                    className={classes.textField}
+                    margin="normal"
+                    variant="outlined"
+                    fullWidth
+                    name="time40m"
+                    value={this.props.profile.time_to_run_40m}
+                    onChange={this.onChange}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={6} sm={6}>
+                  <TextField
+                    required
+                    id="outlined-uncontrolled"
+                    label="Time to run 100m"
+                    type="number"
+                    className={classes.textField}
+                    margin="normal"
+                    variant="outlined"
+                    fullWidth
+                    name="time100m"
+                    value={this.props.profile.time_to_run_100m}
+                    onChange={this.onChange}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  />
+                </Grid>
+              </Grid>
+            </form>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={this.handleClose} color="primary">
+              Cancel
+            </Button>
+          </DialogActions>
+        </Dialog>
       </Fragment>
     );
   }
@@ -200,7 +551,8 @@ class PersonalInfo extends Component {
 
 PersonalInfo.propTypes = {
   classes: PropTypes.object.isRequired,
-  getProfile: PropTypes.func.isRequired
+  getProfile: PropTypes.func.isRequired,
+  editProfile: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -209,5 +561,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getProfile }
+  { getProfile, editProfile }
 )(withStyles(styles)(PersonalInfo));

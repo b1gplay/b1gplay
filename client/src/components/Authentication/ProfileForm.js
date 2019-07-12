@@ -30,6 +30,11 @@ const styles = theme => ({
     color: "black",
     marginLeft: 0,
     lineHeight: "40px"
+  },
+  // Overiding css properties on material ui textbox
+  notchedOutline: {
+    borderWidth: "1px",
+    borderColor: "black !important"
   }
 });
 
@@ -71,6 +76,11 @@ class ProfileForm extends Component {
                 name="firstname"
                 value={this.props.wizard.firstname}
                 onChange={this.onChange}
+                InputProps={{
+                  classes: {
+                    notchedOutline: classes.notchedOutline
+                  }
+                }}
               />
             </Grid>
             <Grid item xs={12} sm={12}>
@@ -84,6 +94,11 @@ class ProfileForm extends Component {
                 name="lastname"
                 value={this.props.wizard.lastname}
                 onChange={this.onChange}
+                InputProps={{
+                  classes: {
+                    notchedOutline: classes.notchedOutline
+                  }
+                }}
               />
             </Grid>
 
@@ -121,12 +136,17 @@ class ProfileForm extends Component {
                 variant="outlined"
                 className={classes.textField}
                 margin="dense"
-                InputLabelProps={{
-                  shrink: true
-                }}
                 name="birthday"
                 value={this.props.wizard.birthday}
                 onChange={this.onChange}
+                InputLabelProps={{
+                  shrink: true
+                }}
+                InputProps={{
+                  classes: {
+                    notchedOutline: classes.notchedOutline
+                  }
+                }}
               />
             </Grid>
 

@@ -7,8 +7,8 @@ import Grid from "@material-ui/core/Grid";
 //import Avatar from "@material-ui/core/Avatar";
 
 //import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
-import ThumbUpIcon from "@material-ui/icons/ThumbUp";
-import ThumbDownIcon from "@material-ui/icons/ThumbDown";
+//import ThumbUpIcon from "@material-ui/icons/ThumbUp";
+//import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 
 import { Divider } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
@@ -52,13 +52,29 @@ class FeedActionBar extends Component {
   render() {
     const fistBump = (
       <div>
-        <ThumbUpIcon />
+        {/*  <ThumbUpIcon /> */}
+        <img
+          src="/static/images/fistbump.png"
+          alt="Fistbump icon"
+          style={{
+            width: "23px",
+            height: "23px"
+          }}
+        />
       </div>
     );
 
     const unfistBump = (
       <div>
-        <ThumbDownIcon />
+        {/*     <ThumbDownIcon /> */}
+        <img
+          src="/static/images/fistdown.png"
+          alt="Fistbump icon"
+          style={{
+            width: "23px",
+            height: "23px"
+          }}
+        />
       </div>
     );
 

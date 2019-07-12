@@ -21,7 +21,7 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+//import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import Tooltip from "@material-ui/core/Tooltip";
 
 //import NotificationList from "../Notifications/NotificationList";
@@ -48,7 +48,8 @@ const styles = theme => ({
     color: "white"
   },
   avatar: {
-    margin: 10
+    height: 55,
+    width: 55
   },
   title: {
     display: "none",
@@ -223,6 +224,7 @@ class Header extends React.Component {
                 <SearchIcon />
               </div>
               <InputBase
+                style={{ height: 50 }}
                 placeholder="Search…"
                 classes={{
                   root: classes.inputRoot,
@@ -235,41 +237,71 @@ class Header extends React.Component {
             <div className={classes.sectionDesktop}>
               <div>
                 <Grid container justify="center" alignItems="center">
-                  <Avatar
-                    alt="Remy Sharp"
-                    src="/static/images/avatar/1.jpg"
-                    className={classes.avatar}
-                  />
-
-                  <Link to="/" className={classes.link}>
-                    <Tooltip title="Profile">
-                      <IconButton color="inherit">
-                        <PersonIcon />
-                      </IconButton>
-                    </Tooltip>
-                  </Link>
-
-                  <Link to="/data-analytics" className={classes.link}>
-                    <Tooltip title="Data analytics">
-                      <IconButton color="inherit">
-                        <PollIcon />
-                      </IconButton>
-                    </Tooltip>
-                  </Link>
-
-                  <Link to="/messages" className={classes.link}>
-                    <Tooltip title="Messages">
+                  <div style={{ paddingLeft: 20, paddingRight: 20 }}>
+                    <Link to="/" className={classes.link}>
+                      <Tooltip title="Profile">
+                        <IconButton color="inherit">
+                          <PersonIcon />
+                        </IconButton>
+                      </Tooltip>
+                      <Typography
+                        variant="body2"
+                        color="inherit"
+                        noWrap
+                        style={{ fontWeight: "bold" }}
+                      >
+                        Home
+                      </Typography>
+                    </Link>
+                  </div>
+                  <div style={{ paddingRight: 20 }}>
+                    <Link to="/data-analytics" className={classes.link}>
+                      <Tooltip title="Data analytics">
+                        <IconButton color="inherit">
+                          <PollIcon />
+                        </IconButton>
+                      </Tooltip>
+                      <Typography
+                        variant="body2"
+                        color="inherit"
+                        noWrap
+                        style={{ fontWeight: "bold" }}
+                      >
+                        Analytics
+                      </Typography>
+                    </Link>
+                  </div>
+                  <div style={{ paddingRight: 20 }}>
+                    <Link to="/messages" className={classes.link}>
                       <IconButton color="inherit">
                         <Badge badgeContent={4} color="primary">
                           <MailIcon />
                         </Badge>
                       </IconButton>
-                    </Tooltip>
-                  </Link>
 
-                  <Link to="#" className={classes.link}>
-                    <Popover />
-                  </Link>
+                      <Typography
+                        variant="body2"
+                        color="inherit"
+                        noWrap
+                        style={{ fontWeight: "bold" }}
+                      >
+                        Messages
+                      </Typography>
+                    </Link>
+                  </div>
+                  <div style={{ paddingRight: 20 }}>
+                    <Link to="#" className={classes.link}>
+                      <Popover />
+                      <Typography
+                        variant="body2"
+                        color="inherit"
+                        noWrap
+                        style={{ fontWeight: "bold" }}
+                      >
+                        Notifications
+                      </Typography>
+                    </Link>
+                  </div>
                 </Grid>
               </div>
 
@@ -279,7 +311,13 @@ class Header extends React.Component {
                 onClick={this.handleProfileMenuOpen}
                 color="inherit"
               >
-                <ArrowDropDownIcon />
+                <Avatar
+                  alt="Remy Sharp"
+                  src="/static/images/avatar/1.jpg"
+                  className={classes.avatar}
+                />
+                <br />
+                {/*   <ArrowDropDownIcon /> */}
               </IconButton>
             </div>
             <div className={classes.sectionMobile}>

@@ -1,6 +1,8 @@
 import {
   GET_PROFILE_SUCCESS,
-  GET_PROFILE_FAIL
+  GET_PROFILE_FAIL,
+  EDIT_PROFILE_SUCCESS,
+  EDIT_PROFILE_FAIL
 } from "../constants/ActionTypes";
 
 import API from "../utils/APIUtils";
@@ -33,4 +35,23 @@ export const getProfile = () => (dispatch, getState) => {
         });
     })
     .catch(err => err);
+};
+
+// EDIT PROFILE
+export const editProfile = id => dispatch => {
+  console.log(id);
+  API.patch(`profiles/${id}/`)
+    .then(res => {
+      dispatch({
+        type: EDIT_PROFILE_SUCCESS,
+        payload: res.data
+      });
+      //console.log(res.data);
+    })
+    .catch(error => {
+      dispatch({
+        type: EDIT_PROFILE_FAIL,
+        payload: error
+      });
+    });
 };

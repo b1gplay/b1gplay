@@ -22,6 +22,11 @@ const styles = theme => ({
     color: "black",
     marginLeft: 0,
     lineHeight: "40px"
+  },
+  // Overiding css properties on material ui textbox
+  notchedOutline: {
+    borderWidth: "1px",
+    borderColor: "black !important"
   }
 });
 
@@ -74,6 +79,11 @@ class SportsForm extends React.Component {
             name="affiliation"
             value={this.props.wizard.affiliation}
             onChange={this.onChange}
+            InputProps={{
+              classes: {
+                notchedOutline: classes.notchedOutline
+              }
+            }}
           />
         </Grid>
       </Grid>
@@ -95,6 +105,11 @@ class SportsForm extends React.Component {
             /*  InputLabelProps={{
               shrink: true
             }} */
+            InputProps={{
+              classes: {
+                notchedOutline: classes.notchedOutline
+              }
+            }}
           />
         </Grid>
       </Grid>
@@ -115,6 +130,11 @@ class SportsForm extends React.Component {
             name="height"
             value={this.props.wizard.height}
             onChange={this.onChange}
+            InputProps={{
+              classes: {
+                notchedOutline: classes.notchedOutline
+              }
+            }}
           />
         </Grid>
         <Grid item xs={6} sm={6}>
@@ -132,6 +152,11 @@ class SportsForm extends React.Component {
             InputLabelProps={{
               shrink: true
             }}
+            InputProps={{
+              classes: {
+                notchedOutline: classes.notchedOutline
+              }
+            }}
           />
         </Grid>
 
@@ -148,6 +173,11 @@ class SportsForm extends React.Component {
             name="wingspan"
             value={this.props.wizard.wingspan}
             onChange={this.onChange}
+            InputProps={{
+              classes: {
+                notchedOutline: classes.notchedOutline
+              }
+            }}
           />
         </Grid>
         <Grid item xs={6} sm={6}>
@@ -163,6 +193,11 @@ class SportsForm extends React.Component {
             name="verticalLeap"
             value={this.props.wizard.verticalLeap}
             onChange={this.onChange}
+            InputProps={{
+              classes: {
+                notchedOutline: classes.notchedOutline
+              }
+            }}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -178,6 +213,11 @@ class SportsForm extends React.Component {
             name="time40m"
             value={this.props.wizard.time40m}
             onChange={this.onChange}
+            InputProps={{
+              classes: {
+                notchedOutline: classes.notchedOutline
+              }
+            }}
           />
         </Grid>
         <Grid item xs={6} sm={6}>
@@ -193,6 +233,11 @@ class SportsForm extends React.Component {
             name="time100m"
             value={this.props.wizard.time100m}
             onChange={this.onChange}
+            InputProps={{
+              classes: {
+                notchedOutline: classes.notchedOutline
+              }
+            }}
           />
         </Grid>
         <Grid item xs={12} sm={12}>
@@ -206,6 +251,11 @@ class SportsForm extends React.Component {
             name="affiliation"
             value={this.props.wizard.affiliation}
             onChange={this.onChange}
+            InputProps={{
+              classes: {
+                notchedOutline: classes.notchedOutline
+              }
+            }}
           />
         </Grid>
       </Grid>
@@ -229,6 +279,11 @@ class SportsForm extends React.Component {
             helperText="Please select title"
             InputLabelProps={{
               shrink: true
+            }}
+            InputProps={{
+              classes: {
+                notchedOutline: classes.notchedOutline
+              }
             }}
           >
             {accounts.map(option => (
