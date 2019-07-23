@@ -2,7 +2,8 @@ import {
   GET_PROFILE_SUCCESS,
   GET_PROFILE_FAIL,
   EDIT_PROFILE_SUCCESS,
-  EDIT_PROFILE_FAIL
+  EDIT_PROFILE_FAIL,
+  EDIT_FIELD
 } from "../constants/ActionTypes";
 
 import API from "../utils/APIUtils";
@@ -38,15 +39,54 @@ export const getProfile = () => (dispatch, getState) => {
 };
 
 // EDIT PROFILE
-export const editProfile = id => dispatch => {
-  console.log(id);
-  API.patch(`profiles/${id}/`)
+export const editProfile = ({
+  id,
+  firstname,
+  lastname,
+  gender,
+  birth_date,
+  residence_country,
+  bio,
+  account_type,
+  height,
+  position,
+  wingspan,
+  vertical_leap,
+  time_to_run_40m,
+  time_to_run_100m,
+  affiliation
+}) => (dispatch, getState) => {
+  // Headers
+  const config = {
+    headers: {
+      "Content-Type": "application/json"
+    }
+  };
+
+  const profile = JSON.stringify({
+    id,
+    firstname,
+    lastname,
+    gender,
+    birth_date,
+    residence_country,
+    bio,
+    account_type,
+    //media_house,
+    height,
+    position,
+    wingspan,
+    vertical_leap,
+    time_to_run_40m,
+    time_to_run_100m,
+    affiliation
+  });
+  API.patch(`profiles/${id}/`, profile, config)
     .then(res => {
       dispatch({
         type: EDIT_PROFILE_SUCCESS,
         payload: res.data
       });
-      //console.log(res.data);
     })
     .catch(error => {
       dispatch({
@@ -54,4 +94,13 @@ export const editProfile = id => dispatch => {
         payload: error
       });
     });
+};
+
+// EDIT FIELD
+export const editField = (field, value) => dispatch => {
+  dispatch({
+    type: EDIT_FIELD,
+    field,
+    value
+  });
 };

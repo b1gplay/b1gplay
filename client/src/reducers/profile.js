@@ -1,15 +1,15 @@
-import { GET_PROFILE_SUCCESS } from "../constants/ActionTypes";
+import { GET_PROFILE_SUCCESS, EDIT_FIELD } from "../constants/ActionTypes";
 
-const initialState = {
-  profile: {}
-};
+const initialState = {};
 
 export default function(state = initialState, action) {
   switch (action.type) {
     case GET_PROFILE_SUCCESS:
+      return action.payload;
+    case EDIT_FIELD:
       return {
         ...state,
-        profile: action.payload
+        [action.field]: action.value
       };
 
     default:

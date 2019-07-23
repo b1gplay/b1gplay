@@ -10,8 +10,12 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 
-import Select from "react-select";
-import countryList from "react-select-country-list";
+import MenuItem from "@material-ui/core/MenuItem";
+
+import { countries } from "../../utils/CountryList";
+
+//import Select from "react-select";
+//import countryList from "react-select-country-list";
 
 import { connect } from "react-redux";
 import { updateField } from "../../actions/wizard";
@@ -39,19 +43,7 @@ const styles = theme => ({
 });
 
 class ProfileForm extends Component {
-  constructor(props) {
-    super(props);
-
-    this.options = countryList().getData();
-
-    this.state = {
-      options: this.options
-    };
-  }
-
-  countrySelector = country => {
-    this.props.updateField("country", country);
-  };
+  state = {};
 
   onChange = e => {
     this.props.updateField(e.target.name, e.target.value);
@@ -59,7 +51,6 @@ class ProfileForm extends Component {
 
   render() {
     const { classes } = this.props;
-    //const { country } = this.state;
 
     return (
       <Fragment>
@@ -149,14 +140,34 @@ class ProfileForm extends Component {
                 }}
               />
             </Grid>
-
             <Grid item xs={12} sm={12}>
-              <Select
+              <TextField
+                id="residenceCountry"
+                select
                 className={classes.selectField}
-                options={this.state.options}
-                onChange={this.countrySelector}
-                value={this.props.wizard.country}
-              />
+                name="residence_country"
+                value={this.props.wizard.residence_country}
+                onChange={this.onChange}
+                label="Residence Country:"
+                fullWidth
+                margin="normal"
+                variant="outlined"
+                helperText="Please select country"
+                InputLabelProps={{
+                  shrink: true
+                }}
+                InputProps={{
+                  classes: {
+                    notchedOutline: classes.notchedOutline
+                  }
+                }}
+              >
+                {countries.map(option => (
+                  <MenuItem key={option.Code} value={option.Name}>
+                    {option.Name}
+                  </MenuItem>
+                ))}
+              </TextField>
             </Grid>
           </Grid>
         </Grid>

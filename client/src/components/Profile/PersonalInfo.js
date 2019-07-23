@@ -11,6 +11,7 @@ import CardContent from "@material-ui/core/CardContent";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 //import EditIcon from "@material-ui/icons/Edit";
 import IconButton from "@material-ui/core/IconButton";
+import MenuItem from "@material-ui/core/MenuItem";
 
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
@@ -23,13 +24,13 @@ import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
-
 import TextField from "@material-ui/core/TextField";
-import Select from "react-select";
-import countryList from "react-select-country-list";
+
+import { countries } from "../../utils/CountryList";
+import { positions } from "../../utils/PositionList";
 
 import { connect } from "react-redux";
-import { getProfile, editProfile } from "../../actions/profile";
+import { getProfile, editProfile, editField } from "../../actions/profile";
 
 const styles = theme => ({
   root: {
@@ -40,15 +41,7 @@ const styles = theme => ({
   avatar: {
     margin: 10
   },
-  selectField: {
-    margin: theme.spacing.unit,
-    width: "100%",
-    textAlign: "left",
-    fontFamily: "Arial",
-    color: "black",
-    marginLeft: 0,
-    lineHeight: "37px"
-  },
+
   // Overiding CSS with classnames for CardHeader Implementation
   title: {
     fontSize: "24px",
@@ -62,16 +55,9 @@ const styles = theme => ({
 });
 
 class PersonalInfo extends Component {
-  constructor(props) {
-    super(props);
-
-    this.options = countryList().getData();
-
-    this.state = {
-      options: this.options,
-      open: false
-    };
-  }
+  state = {
+    open: false
+  };
 
   componentDidMount() {
     this.props.getProfile();
@@ -85,6 +71,9 @@ class PersonalInfo extends Component {
     this.setState({ open: false });
   };
 
+  onChange = e => {
+    this.props.editField(e.target.name, e.target.value);
+  };
   onSubmit = event => {
     event.preventDefault();
 
@@ -92,10 +81,24 @@ class PersonalInfo extends Component {
     const profile = {
       id: this.props.profile.id,
       firstname: this.props.profile.firstname,
-      lastname: this.props.profile.lastname
+      lastname: this.props.profile.lastname,
+      gender: this.props.profile.gender,
+      residence_country: this.props.profile.residence_country,
+      bio: this.props.profile.bio,
+      birth_date: this.props.profile.birth_date,
+      affiliation: this.props.profile.affiliation,
+      position: this.props.profile.position,
+      height: this.props.profile.height,
+      wingspan: this.props.profile.wingspan,
+      vertical_leap: this.props.profile.vertical_leap,
+      time_to_run_40m: this.props.profile.time_to_run_40m,
+      time_to_run_100m: this.props.profile.time_to_run_100m
     };
 
+    //console.log(profile);
+
     this.props.editProfile(profile);
+    this.setState({ open: false });
   };
   render() {
     const { classes } = this.props;
@@ -255,7 +258,7 @@ class PersonalInfo extends Component {
 
         <Dialog
           id="myDialog"
-          maxWidth="md"
+          maxWidth="sm"
           open={this.state.open}
           aria-labelledby="form-dialog-title"
           onClose={this.handleClose}
@@ -275,7 +278,7 @@ class PersonalInfo extends Component {
             </Typography>
           </DialogTitle>
           <DialogContent>
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.onSubmit}>
               <br />
               <Typography variant="headline" align="left" color="inherit">
                 Autobiography
@@ -293,6 +296,9 @@ class PersonalInfo extends Component {
                     name="firstname"
                     value={this.props.profile.firstname}
                     onChange={this.onChange}
+                    InputLabelProps={{
+                      shrink: true
+                    }}
                     InputProps={{
                       classes: {
                         notchedOutline: classes.notchedOutline
@@ -311,26 +317,6 @@ class PersonalInfo extends Component {
                     name="lastname"
                     value={this.props.profile.lastname}
                     onChange={this.onChange}
-                    InputProps={{
-                      classes: {
-                        notchedOutline: classes.notchedOutline
-                      }
-                    }}
-                  />
-                </Grid>
-
-                <Grid item xs={6} sm={6}>
-                  <TextField
-                    id="date"
-                    label="Birthday"
-                    type="date"
-                    fullWidth
-                    variant="outlined"
-                    className={classes.textField}
-                    margin="dense"
-                    name="birthday"
-                    value={this.props.profile.birth_date}
-                    onChange={this.onChange}
                     InputLabelProps={{
                       shrink: true
                     }}
@@ -342,32 +328,6 @@ class PersonalInfo extends Component {
                   />
                 </Grid>
                 <Grid item xs={6} sm={6}>
-                  <Select
-                    className={classes.selectField}
-                    options={this.state.options}
-                    onChange={this.countrySelector}
-                    value={this.props.profile.residence_country}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={12}>
-                  <TextField
-                    id="bio"
-                    label="Bio"
-                    className={classes.textField}
-                    margin="normal"
-                    variant="outlined"
-                    fullWidth
-                    name="bio"
-                    value={this.props.profile.bio}
-                    onChange={this.onChange}
-                    InputProps={{
-                      classes: {
-                        notchedOutline: classes.notchedOutline
-                      }
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={12}>
                   <FormControl
                     component="fieldset"
                     className={classes.formControl}
@@ -395,35 +355,45 @@ class PersonalInfo extends Component {
                     </RadioGroup>
                   </FormControl>
                 </Grid>
+
                 <Grid item xs={6} sm={6}>
                   <TextField
-                    id="outlined-uncontrolled"
-                    label="Present club/ Affiliation"
-                    className={classes.textField}
+                    id="residenceCountry"
+                    select
+                    name="residence_country"
+                    value={this.props.profile.residence_country}
+                    onChange={this.onChange}
+                    label="Residence Country:"
+                    fullWidth
                     margin="normal"
                     variant="outlined"
-                    fullWidth
-                    name="affiliation"
-                    value={this.props.profile.affiliation}
-                    onChange={this.onChange}
+                    //helperText="Please select filter"
+                    InputLabelProps={{
+                      shrink: true
+                    }}
                     InputProps={{
                       classes: {
                         notchedOutline: classes.notchedOutline
                       }
                     }}
-                  />
+                  >
+                    {countries.map(option => (
+                      <MenuItem key={option.Code} value={option.Name}>
+                        {option.Name}
+                      </MenuItem>
+                    ))}
+                  </TextField>
                 </Grid>
-                <Grid item xs={6} sm={6}>
+                <Grid item xs={12} sm={12}>
                   <TextField
-                    required
-                    id="outlined-uncontrolled"
-                    label="Position"
+                    id="bio"
+                    label="Bio"
                     className={classes.textField}
                     margin="normal"
                     variant="outlined"
                     fullWidth
-                    name="position"
-                    value={this.props.profile.position}
+                    name="bio"
+                    value={this.props.profile.bio}
                     onChange={this.onChange}
                     InputLabelProps={{
                       shrink: true
@@ -434,6 +404,78 @@ class PersonalInfo extends Component {
                       }
                     }}
                   />
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                  <TextField
+                    id="date"
+                    label="Birthday"
+                    type="date"
+                    fullWidth
+                    variant="outlined"
+                    className={classes.textField}
+                    margin="dense"
+                    name="birth_date"
+                    value={this.props.profile.birth_date}
+                    onChange={this.onChange}
+                    InputLabelProps={{
+                      shrink: true
+                    }}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  />
+                </Grid>
+
+                <Grid item xs={12} sm={12}>
+                  <TextField
+                    id="outlined-uncontrolled"
+                    label="Present club/ Affiliation"
+                    className={classes.textField}
+                    margin="normal"
+                    variant="outlined"
+                    fullWidth
+                    name="affiliation"
+                    value={this.props.profile.affiliation}
+                    onChange={this.onChange}
+                    InputLabelProps={{
+                      shrink: true
+                    }}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={6} sm={6}>
+                  <TextField
+                    id="position"
+                    select
+                    name="position"
+                    value={this.props.profile.position}
+                    onChange={this.onChange}
+                    label="Position:"
+                    fullWidth
+                    margin="normal"
+                    variant="outlined"
+                    helperText="Please select position"
+                    InputLabelProps={{
+                      shrink: true
+                    }}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  >
+                    {positions.map(option => (
+                      <MenuItem key={option.value} value={option.value}>
+                        {option.label}
+                      </MenuItem>
+                    ))}
+                  </TextField>
                 </Grid>
                 <Grid item xs={6} sm={6}>
                   <TextField
@@ -535,6 +577,19 @@ class PersonalInfo extends Component {
                     }}
                   />
                 </Grid>
+                <Grid item xs={12} sm={12}>
+                  <br />
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    size="large"
+                    fullWidth
+                    color="primary"
+                    style={{ background: "#D23E56", fontWeight: "bold" }}
+                  >
+                    Edit Profile
+                  </Button>
+                </Grid>
               </Grid>
             </form>
           </DialogContent>
@@ -552,14 +607,15 @@ class PersonalInfo extends Component {
 PersonalInfo.propTypes = {
   classes: PropTypes.object.isRequired,
   getProfile: PropTypes.func.isRequired,
-  editProfile: PropTypes.func.isRequired
+  editProfile: PropTypes.func.isRequired,
+  editField: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  profile: state.profile.profile
+  profile: state.profile
 });
 
 export default connect(
   mapStateToProps,
-  { getProfile, editProfile }
+  { getProfile, editProfile, editField }
 )(withStyles(styles)(PersonalInfo));

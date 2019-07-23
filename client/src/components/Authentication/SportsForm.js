@@ -5,6 +5,8 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 
+import { positions } from "../../utils/PositionList";
+
 import { connect } from "react-redux";
 import { updateField } from "../../actions/wizard";
 
@@ -138,7 +140,7 @@ class SportsForm extends React.Component {
           />
         </Grid>
         <Grid item xs={6} sm={6}>
-          <TextField
+          {/*     <TextField
             required
             id="outlined-uncontrolled"
             label="Position"
@@ -157,7 +159,35 @@ class SportsForm extends React.Component {
                 notchedOutline: classes.notchedOutline
               }
             }}
-          />
+          /> */}
+
+          <TextField
+            id="position"
+            select
+            name="position"
+            value={this.props.wizard.position}
+            onChange={this.onChange}
+            label="Position:"
+            fullWidth
+            margin="normal"
+            variant="outlined"
+            style={{ textAlign: "left" }}
+            helperText="Please select position"
+            InputLabelProps={{
+              shrink: true
+            }}
+            InputProps={{
+              classes: {
+                notchedOutline: classes.notchedOutline
+              }
+            }}
+          >
+            {positions.map(option => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
         </Grid>
 
         <Grid item xs={6} sm={6}>

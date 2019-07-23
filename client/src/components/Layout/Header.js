@@ -298,7 +298,7 @@ class Header extends React.Component {
                         noWrap
                         style={{ fontWeight: "bold" }}
                       >
-                        Notifications
+                        Alerts
                       </Typography>
                     </Link>
                   </div>

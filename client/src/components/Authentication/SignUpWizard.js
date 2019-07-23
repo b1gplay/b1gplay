@@ -67,7 +67,7 @@ class SignUpWizard extends Component {
     const lastname = this.props.wizard.lastname;
     const gender = this.props.wizard.gender;
     const birth_date = this.props.wizard.birthday;
-    const residence_country = this.props.wizard.country.label;
+    const residence_country = this.props.wizard.residence_country;
 
     const account_type = this.props.wizard.accountType;
     //const media_house = this.props.wizard.mediaHouse;

@@ -51,10 +51,11 @@ class MyProfile extends Component {
           >
             {this.props.profile.residence_country}
           </Typography>
-          {/* 
+
           <Typography component="p" align="center" variant="subheading">
-            Am the best Point Guard. I make CP3 look like a clown
-          </Typography> */}
+            {/* Am the best Point Guard. I make CP3 look like a clown */}
+            {this.props.profile.bio}
+          </Typography>
 
           <div>
             <br />
@@ -159,7 +160,7 @@ MyProfile.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  profile: state.profile.profile
+  profile: state.profile
 });
 
 export default connect(

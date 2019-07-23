@@ -113,7 +113,7 @@ REST_FRAMEWORK = {
         'knox.auth.TokenAuthentication',
     ),
     'DEFAULT_FILTER_BACKENDS': (
-	'django_filters.rest_framework.DjangoFilterBackend',
+        'django_filters.rest_framework.DjangoFilterBackend',
     ),
 }
 
