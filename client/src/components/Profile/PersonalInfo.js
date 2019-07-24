@@ -547,7 +547,7 @@ class PersonalInfo extends Component {
                     margin="normal"
                     variant="outlined"
                     fullWidth
-                    name="time40m"
+                    name="time_to_run_40m"
                     value={this.props.profile.time_to_run_40m}
                     onChange={this.onChange}
                     InputProps={{
@@ -567,7 +567,7 @@ class PersonalInfo extends Component {
                     margin="normal"
                     variant="outlined"
                     fullWidth
-                    name="time100m"
+                    name="time_to_run_100m"
                     value={this.props.profile.time_to_run_100m}
                     onChange={this.onChange}
                     InputProps={{
