@@ -43,9 +43,9 @@ class Profile(TimeStampedModel):
     
     # Media related details for given account 
     bio = models.TextField(max_length=500, blank=True)
-    avatar = models.URLField(blank=True, null=True)
-    profile_photo = models.URLField(blank=True, null=True)
-    cover_photo = models.URLField(blank=True, null=True)
+    #avatar = models.URLField(blank=True, null=True)
+    profile_photo = models.ImageField(upload_to='profile_photos')
+    #cover_photo = models.ImageField(upload_to='cover_photos')
 
     
     class Meta:

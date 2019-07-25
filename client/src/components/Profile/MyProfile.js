@@ -39,8 +39,15 @@ class MyProfile extends Component {
       <Fragment>
         <Paper className={classes.root} elevation={1}>
           <Grid container justify="center" alignItems="center" />
-
-          <Typography variant="title" gutterBottom align="center">
+          <Typography
+            variant="title"
+            gutterBottom
+            align="center"
+            style={{
+              color: "#D23E56",
+              fontWeight: "bold"
+            }}
+          >
             {this.props.profile.firstname + " " + this.props.profile.lastname}
           </Typography>
           <Typography

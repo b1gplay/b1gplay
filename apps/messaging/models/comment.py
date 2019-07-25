@@ -2,7 +2,7 @@ from django.db import models
 from django_extensions.db.models import TimeStampedModel
 import uuid
 
-from apps.users.models.profile import Profile
+from apps.users.models.user import User
 from apps.messaging.models.post import Post
 
 
@@ -18,10 +18,11 @@ class Comment(TimeStampedModel):
         null=True
     )
     message = models.TextField()
-    """ source = models.OneToOneField(
-        Profile,
-        on_delete=models.CASCADE
-    ) """
+    source = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        blank=True, null=True
+    )
     #fists = models.PositiveIntegerField(blank=True, null=True)
 
     class Meta:

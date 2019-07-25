@@ -20,6 +20,7 @@ import FeedActionBar from "./FeedActionBar";
 
 import { connect } from "react-redux";
 import { getPosts, deletePost } from "../../actions/posts";
+//import { getProfile } from "../../actions/profile";
 
 import moment from "moment";
 
@@ -54,7 +55,10 @@ const styles = theme => ({
 
   // Overiding CSS with classnames for CardHeader Implementation
   title: {
-    fontSize: "18px"
+    fontSize: "18px",
+    fontWeight: "bold",
+    color: "#D23E56"
+    //color: "darkblue"
   },
   subheader: {
     fontSize: "16px"
@@ -85,7 +89,7 @@ class PhotoVideoFeed extends Component {
                 avatar={
                   <Avatar
                     alt="Remy Sharp"
-                    src="/static/images/avatar/avatar.png"
+                    src={this.props.avatar}
                     className={classes.bigAvatar}
                     style={{ marginLeft: "4px", marginRight: "4px" }}
                   />
@@ -130,7 +134,8 @@ PhotoVideoFeed.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  posts: state.posts.posts
+  posts: state.posts.posts,
+  avatar: state.profile.profile_photo
 });
 
 export default connect(

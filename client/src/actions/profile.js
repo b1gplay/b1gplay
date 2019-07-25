@@ -54,7 +54,8 @@ export const editProfile = ({
   vertical_leap,
   time_to_run_40m,
   time_to_run_100m,
-  affiliation
+  affiliation,
+  profile_photo
 }) => (dispatch, getState) => {
   // Headers
   const config = {
@@ -79,7 +80,8 @@ export const editProfile = ({
     vertical_leap,
     time_to_run_40m,
     time_to_run_100m,
-    affiliation
+    affiliation,
+    profile_photo
   });
   API.patch(`profiles/${id}/`, profile, config)
     .then(res => {

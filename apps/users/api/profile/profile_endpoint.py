@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from rest_framework.routers import DefaultRouter
 from rest_framework.viewsets import ModelViewSet
+
+from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.permissions import DjangoModelPermissions
 
 from apps.users.models.profile import Profile
@@ -10,6 +12,9 @@ class ProfileSerialiser(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = '__all__'
+
+    parser_classes = (MultiPartParser, FormParser)
+
 
 
 class ProfileViewSet(ModelViewSet):

@@ -1,12 +1,16 @@
-import React from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Avatar from "@material-ui/core/Avatar";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
+
 import Post from "./Post";
 import { Link } from "react-router-dom";
+
+import { connect } from "react-redux";
+import { getProfile } from "../../actions/profile";
 
 const styles = theme => ({
   root: {},
@@ -44,61 +48,80 @@ const styles = theme => ({
   }
 });
 
-function CoverProfile(props) {
-  const { classes } = props;
+class CoverProfile extends Component {
+  state = {};
 
-  return (
-    <div className={classes.root}>
-      <Paper className={classes.paperContainer} elevation={1}>
-        <div
-          style={{
-            paddingLeft: "3%",
-            paddingTop: "17%"
-          }}
-        >
-          <Avatar
-            alt="Remy Sharp"
-            src="/static/images/avatar/avatar.png"
-            className={classes.bigProfileAvatar}
-          />
+  componentDidMount() {
+    this.props.getProfile();
+  }
+
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <Fragment>
+        <div className={classes.root}>
+          <Paper className={classes.paperContainer} elevation={1}>
+            <div
+              style={{
+                paddingLeft: "3%",
+                paddingTop: "17%"
+              }}
+            >
+              <Avatar
+                onClick={this.handleOpen}
+                alt="Remy Sharp"
+                src={this.props.profile.profile_photo}
+                className={classes.bigProfileAvatar}
+              />
+            </div>
+          </Paper>
+
+          <Paper className={classes.root}>
+            <Tabs indicatorColor="primary" textColor="secondary" centered>
+              <Link to="/photos" className={classes.link}>
+                <Tab
+                  label="Photos"
+                  //icon={<PhotoCameraIcon />}
+                  style={{
+                    color: "black",
+                    fontWeight: "bold",
+                    borderRight: "1px solid #d4d4d4"
+                  }}
+                />
+              </Link>
+
+              <Link to="/videos" className={classes.link}>
+                <Tab
+                  label="Videos"
+                  //icon={<VideoLibraryIcon />}
+                  style={{
+                    color: "black",
+                    fontWeight: "bold",
+                    borderRight: "1px solid #d4d4d4"
+                  }}
+                />
+              </Link>
+              <Post />
+            </Tabs>
+          </Paper>
+          <br />
         </div>
-      </Paper>
-
-      <Paper className={classes.root}>
-        <Tabs indicatorColor="primary" textColor="secondary" centered>
-          <Link to="/photos" className={classes.link}>
-            <Tab
-              label="Photos"
-              //icon={<PhotoCameraIcon />}
-              style={{
-                color: "black",
-                fontWeight: "bold",
-                borderRight: "1px solid #d4d4d4"
-              }}
-            />
-          </Link>
-
-          <Link to="/videos" className={classes.link}>
-            <Tab
-              label="Videos"
-              //icon={<VideoLibraryIcon />}
-              style={{
-                color: "black",
-                fontWeight: "bold",
-                borderRight: "1px solid #d4d4d4"
-              }}
-            />
-          </Link>
-          <Post />
-        </Tabs>
-      </Paper>
-      <br />
-    </div>
-  );
+      </Fragment>
+    );
+  }
 }
 
 CoverProfile.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  getProfile: PropTypes.func.isRequired
 };
 
-export default withStyles(styles)(CoverProfile);
+const mapStateToProps = state => ({
+  profile: state.profile
+});
+
+export default connect(
+  mapStateToProps,
+  { getProfile }
+)(withStyles(styles)(CoverProfile));

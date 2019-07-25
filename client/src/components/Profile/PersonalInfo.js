@@ -93,6 +93,7 @@ class PersonalInfo extends Component {
       vertical_leap: this.props.profile.vertical_leap,
       time_to_run_40m: this.props.profile.time_to_run_40m,
       time_to_run_100m: this.props.profile.time_to_run_100m
+      //profile_photo: this.props.profile.profile_photo
     };
 
     //console.log(profile);
@@ -577,6 +578,50 @@ class PersonalInfo extends Component {
                     }}
                   />
                 </Grid>
+                <Grid item xs={12} sm={12}>
+                  <TextField
+                    id="profile-photo"
+                    label="Profile Photo"
+                    type="file"
+                    className={classes.textField}
+                    margin="normal"
+                    variant="outlined"
+                    fullWidth
+                    name="profile_photo"
+                    //value={this.props.profile.profile_photo}
+                    onChange={this.onChange}
+                    InputLabelProps={{
+                      shrink: true
+                    }}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  />
+                </Grid>
+                {/* <Grid item xs={12} sm={12}>
+                  <TextField
+                    id="cover-photo"
+                    label="Cover Photo"
+                    type="file"
+                    className={classes.textField}
+                    margin="normal"
+                    variant="outlined"
+                    fullWidth
+                    name="profile_photo"
+                    value={this.props.profile.cover_photo}
+                    onChange={this.onChange}
+                    InputLabelProps={{
+                      shrink: true
+                    }}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  />
+                </Grid> */}
                 <Grid item xs={12} sm={12}>
                   <br />
                   <Button
