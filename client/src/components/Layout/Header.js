@@ -313,7 +313,7 @@ class Header extends React.Component {
               >
                 <Avatar
                   alt="Remy Sharp"
-                  src="/static/images/avatar/1.jpg"
+                  src={this.props.avatar}
                   className={classes.avatar}
                 />
                 <br />
@@ -345,7 +345,8 @@ Header.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  avatar: state.profile.profile_photo
 });
 
 export default connect(

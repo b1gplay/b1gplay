@@ -110,19 +110,15 @@ class Post extends Component {
           <DialogTitle
             id="simple-dialog-title"
             color="default"
-            style={{
-              backgroundColor: "#F5F5F5",
-              height: 20,
-              borderBottom: "1px solid #d4d4d4",
-              padding: "34px"
-            }}
+            style={{ backgroundColor: "#D23E56" }}
           >
             <Typography
-              variant="title"
-              align="left"
-              style={{ color: "black", fontWeight: "bold" }}
+              component="h1"
+              variant="display1"
+              align="center"
+              style={{ color: "white" }}
             >
-              Leave a post
+              Leave a post...
             </Typography>
           </DialogTitle>
           <DialogContent>

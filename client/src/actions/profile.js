@@ -56,7 +56,7 @@ export const editProfile = ({
   time_to_run_100m,
   affiliation,
   profile_photo
-}) => (dispatch, getState) => {
+}) => dispatch => {
   // Headers
   const config = {
     headers: {
@@ -64,31 +64,40 @@ export const editProfile = ({
     }
   };
 
-  const profile = JSON.stringify({
-    id,
-    firstname,
-    lastname,
-    gender,
-    birth_date,
-    residence_country,
-    bio,
-    account_type,
-    //media_house,
-    height,
-    position,
-    wingspan,
-    vertical_leap,
-    time_to_run_40m,
-    time_to_run_100m,
-    affiliation,
-    profile_photo
-  });
-  API.patch(`profiles/${id}/`, profile, config)
+  /*  const config1 = {
+    headers: {
+      "content-type": "multipart/form-data"
+    }
+  }; */
+
+  // Handle form data and image uploads
+  const body = new FormData();
+  body.append("id", id);
+  body.append("firstname", firstname);
+  body.append("lastname", lastname);
+  body.append("gender", gender);
+  body.append("birth_date", birth_date);
+  body.append("residence_country", residence_country);
+  body.append("bio", bio);
+  body.append("account_type", account_type);
+  body.append("height", height);
+  body.append("position", position);
+  body.append("wingspan", wingspan);
+  body.append("vertical_leap", vertical_leap);
+  body.append("time_to_run_40m", time_to_run_40m);
+  body.append("time_to_run_100m", time_to_run_100m);
+  body.append("affiliation", affiliation);
+  body.append("profile_photo", profile_photo);
+
+  console.log(body);
+
+  API.patch(`profiles/${id}/`, body, config)
     .then(res => {
       dispatch({
         type: EDIT_PROFILE_SUCCESS,
         payload: res.data
       });
+      dispatch(getProfile());
     })
     .catch(error => {
       dispatch({

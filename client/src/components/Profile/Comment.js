@@ -8,6 +8,8 @@ import Grid from "@material-ui/core/Grid";
 
 import Avatar from "@material-ui/core/Avatar";
 
+import { connect } from "react-redux";
+
 const styles = theme => ({
   container: {
     display: "flex",
@@ -59,7 +61,7 @@ class Comment extends Component {
             <Grid item xs={1}>
               <Avatar
                 alt="Remy Sharp"
-                src="/static/images/avatar/avatar.png"
+                src={this.props.avatar}
                 className={classes.avatar}
                 style={{ marginLeft: "10px", marginRight: "10px" }}
               />
@@ -96,4 +98,11 @@ Comment.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Comment);
+const mapStateToProps = state => ({
+  avatar: state.profile.profile_photo
+});
+
+export default connect(
+  mapStateToProps,
+  null
+)(withStyles(styles)(Comment));

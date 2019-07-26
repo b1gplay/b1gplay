@@ -56,11 +56,20 @@ const styles = theme => ({
 
 class PersonalInfo extends Component {
   state = {
-    open: false
+    open: false,
+    photo: []
   };
 
   componentDidMount() {
     this.props.getProfile();
+  }
+
+  handleImageChange(e) {
+    e.preventDefault();
+    let file = e.target.files[0];
+    this.setState({
+      photo: file
+    });
   }
 
   handleOpen = () => {
@@ -92,8 +101,8 @@ class PersonalInfo extends Component {
       wingspan: this.props.profile.wingspan,
       vertical_leap: this.props.profile.vertical_leap,
       time_to_run_40m: this.props.profile.time_to_run_40m,
-      time_to_run_100m: this.props.profile.time_to_run_100m
-      //profile_photo: this.props.profile.profile_photo
+      time_to_run_100m: this.props.profile.time_to_run_100m,
+      profile_photo: this.state.photo
     };
 
     //console.log(profile);
@@ -588,8 +597,7 @@ class PersonalInfo extends Component {
                     variant="outlined"
                     fullWidth
                     name="profile_photo"
-                    //value={this.props.profile.profile_photo}
-                    onChange={this.onChange}
+                    onChange={e => this.handleImageChange(e)}
                     InputLabelProps={{
                       shrink: true
                     }}
