@@ -20,7 +20,6 @@ import FeedActionBar from "./FeedActionBar";
 
 import { connect } from "react-redux";
 import { getPosts, deletePost } from "../../actions/posts";
-//import { getProfile } from "../../actions/profile";
 
 import moment from "moment";
 
@@ -66,8 +65,6 @@ const styles = theme => ({
 });
 
 class PhotoVideoFeed extends Component {
-  state = {};
-
   componentDidMount() {
     this.props.getPosts();
   }
@@ -77,7 +74,7 @@ class PhotoVideoFeed extends Component {
 
     return (
       <Fragment>
-        {this.props.posts.reverse().map(post => (
+        {this.props.posts.map(post => (
           <Grid item xs={12}>
             <Card className={classes.card}>
               <CardHeader
@@ -89,7 +86,7 @@ class PhotoVideoFeed extends Component {
                 avatar={
                   <Avatar
                     alt="Remy Sharp"
-                    src={this.props.avatar}
+                    src={post.avatar}
                     className={classes.bigAvatar}
                     style={{ marginLeft: "4px", marginRight: "4px" }}
                   />
@@ -101,7 +98,7 @@ class PhotoVideoFeed extends Component {
                     <DeleteIcon />
                   </IconButton>
                 }
-                title="Otim Tony"
+                title={post.profile_name}
                 subheader={moment(`${post.created}`).fromNow()}
               />
               <CardMedia
@@ -135,6 +132,7 @@ PhotoVideoFeed.propTypes = {
 
 const mapStateToProps = state => ({
   posts: state.posts.posts,
+  fullname: state.profile.firstname + " " + state.profile.lastname,
   avatar: state.profile.profile_photo
 });
 

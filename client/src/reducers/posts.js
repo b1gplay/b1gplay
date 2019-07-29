@@ -9,7 +9,7 @@ export default function(state = initialState, action) {
     case GET_POSTS:
       return {
         ...state,
-        posts: action.payload
+        posts: action.payload.reverse()
       };
     case DELETE_POST:
       return {
@@ -21,6 +21,7 @@ export default function(state = initialState, action) {
         ...state,
         posts: [...state.posts.reverse(), action.payload]
       };
+
     default:
       return state;
   }

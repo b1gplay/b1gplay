@@ -10,7 +10,6 @@ import Post from "./Post";
 import { Link } from "react-router-dom";
 
 import { connect } from "react-redux";
-import { getProfile } from "../../actions/profile";
 
 const styles = theme => ({
   root: {},
@@ -51,9 +50,7 @@ const styles = theme => ({
 class CoverProfile extends Component {
   state = {};
 
-  componentDidMount() {
-    this.props.getProfile();
-  }
+  componentDidMount() {}
 
   render() {
     const { classes } = this.props;
@@ -71,7 +68,7 @@ class CoverProfile extends Component {
               <Avatar
                 onClick={this.handleOpen}
                 alt="Remy Sharp"
-                src={this.props.profile.profile_photo}
+                src={this.props.profile_photo}
                 className={classes.bigProfileAvatar}
               />
             </div>
@@ -95,6 +92,7 @@ class CoverProfile extends Component {
                 <Tab
                   label="Videos"
                   //icon={<VideoLibraryIcon />}
+
                   style={{
                     color: "black",
                     fontWeight: "bold",
@@ -118,10 +116,11 @@ CoverProfile.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  profile: state.profile
+  profile_photo: state.profile.profile_photo,
+  cover_photo: state.profile.cover_photo
 });
 
 export default connect(
   mapStateToProps,
-  { getProfile }
+  null
 )(withStyles(styles)(CoverProfile));

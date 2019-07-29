@@ -5,9 +5,13 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import DjangoModelPermissions, AllowAny, IsAuthenticated
 
 from apps.messaging.models.post import Post
+from apps.users.models.profile import Profile
 
 
 class PostSerialiser(serializers.ModelSerializer):
+    profile_name = serializers.ReadOnlyField()
+    avatar = serializers.ImageField()
+
     class Meta:
         model = Post
         fields = '__all__'
@@ -23,7 +27,7 @@ class PostViewSet(ModelViewSet):
     #permission_class = [IsAuthenticated]
     #serializer_class = PostSerialiser
 
-    #def get_queryset(self):
+    # def get_queryset(self):
     #    return self.request.user.posts.all()
 
     # def perform_create(self, serializer):

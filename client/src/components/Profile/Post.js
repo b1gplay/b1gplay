@@ -71,7 +71,7 @@ class Post extends Component {
     const newPost = {
       message: this.state.message,
       photo: this.state.photo,
-      owner: this.props.userID
+      owner: this.props.profileID
     };
 
     this.props.addPost(newPost);
@@ -183,7 +183,7 @@ Post.propTypes = {
 const mapStateToProps = state => ({
   wizard: state.wizard,
   isAuthenticated: state.auth.isAuthenticated,
-  userID: state.auth.user.id
+  profileID: state.profile.id
 });
 export default connect(
   mapStateToProps,

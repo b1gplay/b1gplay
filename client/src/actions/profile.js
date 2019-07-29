@@ -9,6 +9,7 @@ import {
 import API from "../utils/APIUtils";
 
 import { loadUser } from "./auth";
+import { getPosts } from "./posts";
 
 // GET PROFILE
 export const getProfile = () => (dispatch, getState) => {
@@ -98,6 +99,7 @@ export const editProfile = ({
         payload: res.data
       });
       dispatch(getProfile());
+      dispatch(getPosts());
     })
     .catch(error => {
       dispatch({

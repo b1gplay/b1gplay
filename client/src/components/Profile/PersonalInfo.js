@@ -45,7 +45,9 @@ const styles = theme => ({
   // Overiding CSS with classnames for CardHeader Implementation
   title: {
     fontSize: "24px",
-    textAlign: "center"
+    textAlign: "center",
+    color: "#D23E56",
+    fontWeight: "bold"
   },
   // Overiding css properties on material ui textbox
   notchedOutline: {
@@ -228,7 +230,12 @@ class PersonalInfo extends Component {
                 </Typography>
               </Grid>
               <Grid item xs={12} sm={12}>
-                <Typography variant="title" gutterBottom align="center">
+                <Typography
+                  variant="title"
+                  gutterBottom
+                  align="center"
+                  style={{ color: "#D23E56", fontWeight: "bold" }}
+                >
                   Affiliation
                 </Typography>
               </Grid>

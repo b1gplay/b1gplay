@@ -17,44 +17,47 @@ class Profile(TimeStampedModel):
         User,
         on_delete=models.CASCADE
     )
-    
+
     # Bio data for all account types signing up
-    firstname = models.CharField(max_length=30, blank=True)  
-    lastname = models.CharField(max_length=30, blank=True)  
-    gender = models.CharField(max_length=6, blank=True)  
+    firstname = models.CharField(max_length=30, blank=True)
+    lastname = models.CharField(max_length=30, blank=True)
+    gender = models.CharField(max_length=6, blank=True)
     birth_date = models.DateField(null=True, blank=True)
     residence_country = models.CharField(max_length=100, blank=True)
 
     # type enum{player, team, media, coach, fan, admin, superuser}
     account_type = models.CharField(max_length=20, blank=True)
 
-    # general info concerning either player, team, media, coach or fan... 
+    # general info concerning either player, team, media, coach or fan...
     affiliation = models.CharField(max_length=100, blank=True)
     media_house = models.CharField(max_length=100, blank=True)
- 
+
     # Player details
     position = models.CharField(max_length=100, blank=True)
-    height = models.DecimalField(max_digits=6,decimal_places=2, null=True)
-    wingspan = models.DecimalField(max_digits=6,decimal_places=2, null=True)
-    vertical_leap = models.DecimalField(max_digits=6,decimal_places=2, null=True)
-    time_to_run_40m = models.DecimalField(max_digits=6,decimal_places=2, null=True)
-    time_to_run_100m = models.DecimalField(max_digits=6,decimal_places=2, null=True)
-    
-    
-    # Media related details for given account 
+    height = models.DecimalField(max_digits=6, decimal_places=2, null=True)
+    wingspan = models.DecimalField(max_digits=6, decimal_places=2, null=True)
+    vertical_leap = models.DecimalField(
+        max_digits=6, decimal_places=2, null=True)
+    time_to_run_40m = models.DecimalField(
+        max_digits=6, decimal_places=2, null=True)
+    time_to_run_100m = models.DecimalField(
+        max_digits=6, decimal_places=2, null=True)
+
+    # Media related details for given account
     bio = models.TextField(max_length=500, blank=True)
     #avatar = models.URLField(blank=True, null=True)
-    profile_photo = models.ImageField(upload_to='profile_photos')
-    #cover_photo = models.ImageField(upload_to='cover_photos')
+    profile_photo = models.ImageField(
+        upload_to='profile_photos', default='profile_photos/avatar1.png')
+    cover_photo = models.ImageField(
+        upload_to='cover_photos', default='cover_photos/cover.jpg')
 
-    
     class Meta:
         verbose_name = "Profile"
         verbose_name_plural = "Profiles"
         db_table = 'profile'
 
     def __str__(self):
-        return self.user.get_full_name()
+        return self.firstname + " " + self.lastname
 
 
 @receiver(post_save, sender=User)
