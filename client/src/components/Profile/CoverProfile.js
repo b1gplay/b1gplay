@@ -22,8 +22,7 @@ const styles = theme => ({
   paperContainer: {
     width: "100%",
     height: 330,
-    marginTop: -59,
-    backgroundImage: `url(${"/static/images/cover.jpg"})`
+    marginTop: -59
   },
   link: {
     textDecoration: "none",
@@ -62,7 +61,8 @@ class CoverProfile extends Component {
             <div
               style={{
                 paddingLeft: "3%",
-                paddingTop: "17%"
+                paddingTop: "17%",
+                backgroundImage: `url(${this.props.cover_photo})`
               }}
             >
               <Avatar

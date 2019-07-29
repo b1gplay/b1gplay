@@ -59,7 +59,8 @@ const styles = theme => ({
 class PersonalInfo extends Component {
   state = {
     open: false,
-    photo: []
+    profile_photo: [],
+    cover_photo: []
   };
 
   componentDidMount() {
@@ -70,7 +71,15 @@ class PersonalInfo extends Component {
     e.preventDefault();
     let file = e.target.files[0];
     this.setState({
-      photo: file
+      profile_photo: file
+    });
+  }
+
+  handleCoverImageChange(e) {
+    e.preventDefault();
+    let file = e.target.files[0];
+    this.setState({
+      cover_photo: file
     });
   }
 
@@ -104,7 +113,8 @@ class PersonalInfo extends Component {
       vertical_leap: this.props.profile.vertical_leap,
       time_to_run_40m: this.props.profile.time_to_run_40m,
       time_to_run_100m: this.props.profile.time_to_run_100m,
-      profile_photo: this.state.photo
+      profile_photo: this.state.profile_photo,
+      cover_photo: this.state.cover_photo
     };
 
     //console.log(profile);
@@ -615,7 +625,7 @@ class PersonalInfo extends Component {
                     }}
                   />
                 </Grid>
-                {/* <Grid item xs={12} sm={12}>
+                <Grid item xs={12} sm={12}>
                   <TextField
                     id="cover-photo"
                     label="Cover Photo"
@@ -624,9 +634,8 @@ class PersonalInfo extends Component {
                     margin="normal"
                     variant="outlined"
                     fullWidth
-                    name="profile_photo"
-                    value={this.props.profile.cover_photo}
-                    onChange={this.onChange}
+                    name="cover_photo"
+                    onChange={e => this.handleCoverImageChange(e)}
                     InputLabelProps={{
                       shrink: true
                     }}
@@ -636,7 +645,7 @@ class PersonalInfo extends Component {
                       }
                     }}
                   />
-                </Grid> */}
+                </Grid>
                 <Grid item xs={12} sm={12}>
                   <br />
                   <Button

@@ -56,7 +56,8 @@ export const editProfile = ({
   time_to_run_40m,
   time_to_run_100m,
   affiliation,
-  profile_photo
+  profile_photo,
+  cover_photo
 }) => dispatch => {
   // Headers
   const config = {
@@ -89,6 +90,7 @@ export const editProfile = ({
   body.append("time_to_run_100m", time_to_run_100m);
   body.append("affiliation", affiliation);
   body.append("profile_photo", profile_photo);
+  body.append("cover_photo", cover_photo);
 
   console.log(body);
 
