@@ -1,5 +1,6 @@
 import { GET_POSTS, ADD_POST, DELETE_POST } from "../constants/ActionTypes";
 import { createMessage, returnErrors } from "./messages";
+import { getPhotoGallery } from "./photoGallery";
 
 import API from "../utils/APIUtils";
 
@@ -53,6 +54,7 @@ export const addPost = ({ message, photo, owner }) => dispatch => {
         type: ADD_POST,
         payload: res.data
       });
+      dispatch(getPhotoGallery());
     })
     .catch(err => console.log(err));
 };

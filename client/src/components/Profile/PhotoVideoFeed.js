@@ -74,7 +74,7 @@ class PhotoVideoFeed extends Component {
 
     return (
       <Fragment>
-        {this.props.posts.map(post => (
+        {this.props.posts.reverse().map(post => (
           <Grid item xs={12}>
             <Card className={classes.card}>
               <CardHeader

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 
@@ -164,25 +164,39 @@ function PhotoGallery(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <Fragment className={classes.root}>
       <br />
-      <br />
-      <br />
-
-      <Typography variant="h5" component="h3" color="default" align="center">
+      <Typography
+        variant="h5"
+        component="h3"
+        align="center"
+        style={{ color: "#D23E56", fontWeight: "bold" }}
+      >
         Video gallery
       </Typography>
       <br />
       <br />
-      <br />
-      <GridList cellHeight={160} className={classes.gridList} cols={10}>
-        {tileData.map(tile => (
-          <GridListTile key={tile.img} cols={tile.cols || 1}>
-            <img src={tile.img} alt={tile.title} />
-          </GridListTile>
-        ))}
-      </GridList>
-    </div>
+      <div
+        style={{
+          background: "#FFFFFF",
+          border: "1px solid #d4d4d4"
+        }}
+      >
+        <GridList cellHeight={250} className={classes.gridList} cols={8}>
+          {tileData.map(tile => (
+            <GridListTile key={tile.img} cols={tile.cols || 1}>
+              <img
+                src={tile.img}
+                alt={tile.title}
+                style={{
+                  padding: 4
+                }}
+              />
+            </GridListTile>
+          ))}
+        </GridList>
+      </div>
+    </Fragment>
   );
 }
 

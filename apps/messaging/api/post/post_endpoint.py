@@ -10,7 +10,7 @@ from apps.users.models.profile import Profile
 
 class PostSerialiser(serializers.ModelSerializer):
     profile_name = serializers.ReadOnlyField()
-    avatar = serializers.ImageField()
+    avatar = serializers.ImageField(required=False,)
 
     class Meta:
         model = Post
@@ -23,6 +23,7 @@ class PostViewSet(ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerialiser
     permission_class = [DjangoModelPermissions]
+    filterset_fields = ('owner', )
 
     #permission_class = [IsAuthenticated]
     #serializer_class = PostSerialiser
