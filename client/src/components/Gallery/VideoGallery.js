@@ -1,16 +1,13 @@
-import React, { Fragment } from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 
 import Typography from "@material-ui/core/Typography";
-import GridList from "@material-ui/core/GridList";
-import GridListTile from "@material-ui/core/GridListTile";
 
-import image from "../Gallery/bb.jpg";
-import image1 from "../Gallery/cc.jpg";
-import image2 from "../Gallery/dd.jpg";
-import image3 from "../Gallery/ee.jpg";
-import image4 from "../Gallery/ff.jpg";
+import Grid from "@material-ui/core/Grid";
+
+import { connect } from "react-redux";
+import { getPhotoGallery } from "../../actions/photoGallery";
 
 const styles = theme => ({
   root: {
@@ -25,183 +22,73 @@ const styles = theme => ({
   }
 });
 
-const tileData = [
-  {
-    img: image,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image1,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image2,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image3,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image4,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image1,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image2,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image3,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image4,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image1,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image2,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image3,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image4,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image1,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image2,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image3,
-    title: "Image",
-    author: "author",
-    cols: 2
-  },
-  {
-    img: image4,
-    title: "Image",
-    author: "author",
-    cols: 2
+class PhotoGallery extends Component {
+  state = {
+    open: false
+  };
+
+  componentDidMount() {
+    this.props.getPhotoGallery();
   }
-];
 
-function PhotoGallery(props) {
-  const { classes } = props;
+  handleOpen = () => {
+    this.setState({ open: true });
+  };
 
-  return (
-    <Fragment className={classes.root}>
-      <br />
-      <Typography
-        variant="h5"
-        component="h3"
-        align="center"
-        style={{ color: "#D23E56", fontWeight: "bold" }}
-      >
-        Video gallery
-      </Typography>
-      <br />
-      <br />
-      <div
-        style={{
-          background: "#FFFFFF",
-          border: "1px solid #d4d4d4"
-        }}
-      >
-        <GridList cellHeight={250} className={classes.gridList} cols={8}>
-          {tileData.map(tile => (
-            <GridListTile key={tile.img} cols={tile.cols || 1}>
-              <img
-                src={tile.img}
-                alt={tile.title}
-                style={{
-                  padding: 4
-                }}
-              />
-            </GridListTile>
-          ))}
-        </GridList>
-      </div>
-    </Fragment>
-  );
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <Fragment className={classes.root}>
+        <br />
+        <Typography
+          variant="h5"
+          component="h3"
+          align="center"
+          style={{ color: "#D23E56", fontWeight: "bold" }}
+        >
+          Video gallery
+        </Typography>
+        <br />
+        <br />
+        <div
+          style={{
+            background: "#FFFFFF",
+            border: "1px solid #d4d4d4",
+            padding: 8
+          }}
+        >
+          <Grid container spacing={8}>
+            {this.props.photos.map(pic => (
+              <Grid item lg={3}>
+                <img
+                  src={pic.photo}
+                  alt={pic.profile_name}
+                  style={{ height: "260px", width: "100%" }}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </div>
+      </Fragment>
+    );
+  }
 }
 
 PhotoGallery.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  getPhotoGallery: PropTypes.func.isRequired
 };
 
-export default withStyles(styles)(PhotoGallery);
+const mapStateToProps = state => ({
+  photos: state.photoGallery.photos
+});
+
+export default connect(
+  mapStateToProps,
+  { getPhotoGallery }
+)(withStyles(styles)(PhotoGallery));

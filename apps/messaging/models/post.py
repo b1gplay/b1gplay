@@ -44,4 +44,4 @@ class Post(TimeStampedModel):
         db_table = 'post'
 
     def __str__(self):
-        return self.owner
+        return self.message

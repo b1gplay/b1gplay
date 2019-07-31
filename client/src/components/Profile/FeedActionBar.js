@@ -84,18 +84,18 @@ class FeedActionBar extends Component {
     return (
       <Fragment>
         <Divider />
-        <Grid container spacing={24} style={{ padding: 20 }}>
+        <Grid container spacing={24} style={{ padding: 10 }}>
           <Grid item xs={6} sm={6}>
             <Button
-              variant="contained"
+              variant="flat"
               size="small"
-              color="secondary"
+              color="default"
               fullWidth
               style={{
-                textTransform: "capitalize",
                 fontWeight: "bold",
                 fontSize: "18px",
-                padding: 4
+                backgroundColor: "white",
+                padding: 3
               }}
               onClick={this.handleLike}
             >
@@ -104,18 +104,15 @@ class FeedActionBar extends Component {
           </Grid>
           <Grid item xs={6} sm={6}>
             <Button
-              variant="contained"
+              variant="flat"
               size="small"
               color="default"
               fullWidth
               style={{
-                border: "2px solid darkblue",
-                textTransform: "capitalize",
                 fontWeight: "bold",
                 fontSize: "18px",
-                color: "darkblue",
                 backgroundColor: "white",
-                padding: 8
+                padding: 3
               }}
               onClick={this.handleComment}
             >

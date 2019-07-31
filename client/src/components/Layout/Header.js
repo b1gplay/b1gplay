@@ -203,7 +203,7 @@ class Header extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar position="fixed" style={{ background: "#D23E56" }}>
+        <AppBar position="fixed" style={{ background: "#C12424" }}>
           <Toolbar>
             <Avatar
               alt="Remy Sharp"

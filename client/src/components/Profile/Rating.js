@@ -163,27 +163,27 @@ class Ratings extends Component {
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
@@ -200,7 +200,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    2
+                    8.9
                   </Typography>
                 </Grid>
               </Grid>
@@ -223,35 +223,35 @@ class Ratings extends Component {
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
@@ -264,7 +264,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    8
+                    9.7
                   </Typography>
                 </Grid>
               </Grid>
@@ -287,39 +287,39 @@ class Ratings extends Component {
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                 </Grid>
                 <Grid item xs={1} sm={1}>
@@ -328,7 +328,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    3
+                    10
                   </Typography>
                 </Grid>
               </Grid>
@@ -351,39 +351,39 @@ class Ratings extends Component {
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                 </Grid>
                 <Grid item xs={1} sm={1}>
@@ -392,7 +392,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    6
+                    10
                   </Typography>
                 </Grid>
               </Grid>
@@ -415,35 +415,35 @@ class Ratings extends Component {
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
@@ -456,7 +456,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    2
+                    9.8
                   </Typography>
                 </Grid>
               </Grid>
@@ -479,35 +479,35 @@ class Ratings extends Component {
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
@@ -520,7 +520,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    3
+                    9.9
                   </Typography>
                 </Grid>
               </Grid>
@@ -543,35 +543,35 @@ class Ratings extends Component {
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
@@ -584,7 +584,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    9
+                    9.5
                   </Typography>
                 </Grid>
               </Grid>
@@ -607,35 +607,35 @@ class Ratings extends Component {
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
@@ -648,7 +648,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    7
+                    9.7
                   </Typography>
                 </Grid>
               </Grid>
@@ -671,35 +671,35 @@ class Ratings extends Component {
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
@@ -712,7 +712,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    6
+                    9.2
                   </Typography>
                 </Grid>
               </Grid>
@@ -743,27 +743,27 @@ class Ratings extends Component {
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
+                    style={{ margin: "1px", color: "brown" }}
                   />
                   <span
                     class="fas fa-basketball-ball"
@@ -776,7 +776,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    4
+                    9.6
                   </Typography>
                 </Grid>
               </Grid>
@@ -798,7 +798,7 @@ class Ratings extends Component {
                     gutterBottom
                     style={{ fontWeight: "bold" }}
                   >
-                    45.58
+                    96.3
                   </Typography>
                 </Grid>
               </Grid>
@@ -809,12 +809,13 @@ class Ratings extends Component {
                   <Button
                     variant="contained"
                     size="medium"
-                    color="primary"
+                    color="secondary"
                     fullWidth
                     style={{
                       textTransform: "capitalize",
                       fontWeight: "bold",
-                      fontSize: "18px"
+                      fontSize: "18px",
+                      background: "#C12424"
                     }}
                     onClick={this.ratePlayer}
                   >
@@ -823,16 +824,15 @@ class Ratings extends Component {
                 </Grid>
                 <Grid item xs={6} sm={6}>
                   <Button
-                    variant="outlined"
+                    variant="contained"
                     size="medium"
-                    color="default"
+                    color="secondary"
                     fullWidth
                     style={{
-                      border: "2px solid darkblue",
                       textTransform: "capitalize",
                       fontWeight: "bold",
                       fontSize: "18px",
-                      color: "darkblue"
+                      background: "#C12424"
                     }}
                     onClick={this.handleFollow}
                   >

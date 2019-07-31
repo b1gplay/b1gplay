@@ -26,6 +26,8 @@ import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import TextField from "@material-ui/core/TextField";
 
+import moment from "moment";
+
 import { countries } from "../../utils/CountryList";
 import { positions } from "../../utils/PositionList";
 
@@ -182,6 +184,17 @@ class PersonalInfo extends Component {
                     fontWeight: "bold"
                   }}
                 >
+                  Weight:
+                </Typography>
+
+                <Typography
+                  variant="subheading"
+                  gutterBottom
+                  align="left"
+                  style={{
+                    fontWeight: "bold"
+                  }}
+                >
                   Wingspan:
                 </Typography>
                 <Typography
@@ -217,26 +230,35 @@ class PersonalInfo extends Component {
               </Grid>
               <Grid item xs={7} sm={7}>
                 <Typography variant="subheading" gutterBottom align="left">
-                  {this.props.profile.birth_date}
+                  {moment(`${this.props.profile.birth_date}`).format(
+                    "do MMMM, YYYY"
+                  )}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
                   {this.props.profile.position}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
-                  {this.props.profile.height}
+                  {this.props.profile.height} m
                 </Typography>
 
                 <Typography variant="subheading" gutterBottom align="left">
-                  {this.props.profile.wingspan}
+                  71 Kg
+                </Typography>
+
+                <Typography variant="subheading" gutterBottom align="left">
+                  {this.props.profile.wingspan} m
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
-                  {this.props.profile.vertical_leap}
+                  {/* Truncate decimal part*/}
+                  {Math.trunc(`${this.props.profile.vertical_leap}`)} cm
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
-                  {this.props.profile.time_to_run_40m}
+                  {/* Truncate decimal part*/}
+                  {Math.trunc(`${this.props.profile.time_to_run_40m}`)} sec
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
-                  {this.props.profile.time_to_run_100m}
+                  {/* Truncate decimal part*/}
+                  {Math.trunc(`${this.props.profile.time_to_run_100m}`)} sec
                 </Typography>
               </Grid>
               <Grid item xs={12} sm={12}>
@@ -554,7 +576,7 @@ class PersonalInfo extends Component {
                     margin="normal"
                     variant="outlined"
                     fullWidth
-                    name="verticalLeap"
+                    name="vertical_leap"
                     value={this.props.profile.vertical_leap}
                     onChange={this.onChange}
                     InputProps={{

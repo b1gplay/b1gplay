@@ -48,7 +48,8 @@ class MyProfile extends Component {
               fontWeight: "bold"
             }}
           >
-            {this.props.profile.firstname + " " + this.props.profile.lastname}
+            {this.props.profile.firstname + " " + this.props.profile.lastname},{" "}
+            {this.props.profile.residence_country}
           </Typography>
           <Typography
             variant="subheading"
@@ -56,8 +57,16 @@ class MyProfile extends Component {
             align="center"
             color="primary"
           >
-            {this.props.profile.residence_country}
+            Zampo_6
           </Typography>
+          {/*  <Typography
+            variant="subheading"
+            gutterBottom
+            align="center"
+            color="primary"
+          >
+            {this.props.profile.residence_country}
+          </Typography> */}
 
           <Typography component="p" align="center" variant="subheading">
             {/* Am the best Point Guard. I make CP3 look like a clown */}

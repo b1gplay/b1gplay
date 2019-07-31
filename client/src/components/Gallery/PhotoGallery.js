@@ -1,10 +1,8 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-
 import Typography from "@material-ui/core/Typography";
-import GridList from "@material-ui/core/GridList";
-import GridListTile from "@material-ui/core/GridListTile";
+import Grid from "@material-ui/core/Grid";
 
 import { connect } from "react-redux";
 import { getPhotoGallery } from "../../actions/photoGallery";
@@ -58,22 +56,21 @@ class PhotoGallery extends Component {
         <div
           style={{
             background: "#FFFFFF",
-            border: "1px solid #d4d4d4"
+            border: "1px solid #d4d4d4",
+            padding: 8
           }}
         >
-          <GridList cellHeight={260} className={classes.gridList} cols={8}>
-            {this.props.photos.map(picture => (
-              <GridListTile key={picture.id} cols={picture.cols || 1}>
+          <Grid container spacing={8}>
+            {this.props.photos.map(pic => (
+              <Grid item lg={3}>
                 <img
-                  src={picture.photo}
-                  alt={picture.profile_name}
-                  style={{
-                    padding: 4
-                  }}
+                  src={pic.photo}
+                  alt={pic.profile_name}
+                  style={{ height: "260px", width: "100%" }}
                 />
-              </GridListTile>
+              </Grid>
             ))}
-          </GridList>
+          </Grid>
         </div>
       </Fragment>
     );
