@@ -12,11 +12,14 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 
 import DeleteIcon from "@material-ui/icons/Delete";
+
+import { Divider } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
+
+import Comment from "./Comment";
 //import MoreVertIcon from "@material-ui/icons/MoreVert";
 //import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import Grid from "@material-ui/core/Grid";
-
-import FeedActionBar from "./FeedActionBar";
 
 import { connect } from "react-redux";
 import { getPosts, deletePost } from "../../actions/posts";
@@ -56,7 +59,7 @@ const styles = theme => ({
   title: {
     fontSize: "18px",
     fontWeight: "bold",
-    color: "#D23E56"
+    color: "#C12424"
     //color: "darkblue"
   },
   subheader: {
@@ -65,12 +68,50 @@ const styles = theme => ({
 });
 
 class PhotoVideoFeed extends Component {
+  state = { fist: false, isHidden: false };
+
   componentDidMount() {
     this.props.getPosts();
   }
 
+  handleLike = () => {
+    this.setState({ fist: !this.state.fist });
+  };
+
+  handleComment = () => {
+    this.setState({ isHidden: !this.state.isHidden });
+  };
+
   render() {
     const { classes } = this.props;
+    const { fist, isHidden } = this.state;
+    const fistBump = (
+      <div>
+        {/*  <ThumbUpIcon /> */}
+        <img
+          src="/static/images/fistbump.png"
+          alt="Fistbump icon"
+          style={{
+            width: "23px",
+            height: "23px"
+          }}
+        />
+      </div>
+    );
+
+    const unfistBump = (
+      <div>
+        {/*     <ThumbDownIcon /> */}
+        <img
+          src="/static/images/fistdown.png"
+          alt="Fistbump icon"
+          style={{
+            width: "23px",
+            height: "23px"
+          }}
+        />
+      </div>
+    );
 
     return (
       <Fragment>
@@ -112,8 +153,58 @@ class PhotoVideoFeed extends Component {
                   {post.message}
                 </Typography>
               </CardContent>
-
-              <FeedActionBar />
+              {/* Feed Action bar*/}
+              <Fragment>
+                <Divider />
+                <Grid container spacing={24} style={{ padding: 10 }}>
+                  <Grid item xs={6} sm={6}>
+                    <Button
+                      variant="flat"
+                      size="small"
+                      color="default"
+                      fullWidth
+                      style={{
+                        fontWeight: "bold",
+                        fontSize: "18px",
+                        backgroundColor: "white",
+                        padding: 3
+                      }}
+                      onClick={this.handleLike}
+                    >
+                      {!fist ? fistBump : unfistBump}
+                    </Button>
+                  </Grid>
+                  <Grid item xs={6} sm={6}>
+                    <Button
+                      variant="flat"
+                      size="small"
+                      color="default"
+                      fullWidth
+                      style={{
+                        fontWeight: "bold",
+                        fontSize: "18px",
+                        backgroundColor: "white",
+                        padding: 3
+                      }}
+                      onClick={this.handleComment}
+                    >
+                      {/* <ChatBubbleOutlineIcon /> */}
+                      <img
+                        src="static/images/comment.png"
+                        style={{
+                          width: "20px",
+                          height: "20px"
+                        }}
+                        alt="text"
+                      />
+                    </Button>
+                  </Grid>
+                </Grid>
+                <Divider />
+                {!isHidden ? null : <Comment id={post.id} />}
+                <Divider />
+              </Fragment>
+              {/* Feed Action bar*/}
             </Card>
             <br />
           </Grid>

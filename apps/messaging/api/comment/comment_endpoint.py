@@ -20,7 +20,7 @@ class CommentViewSet(ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerialiser
     permission_class = [DjangoModelPermissions]
-    filterset_fields = ('author', )
+    filterset_fields = ('author', 'post')
 
 
 commentRouter = DefaultRouter()

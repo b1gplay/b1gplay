@@ -8,8 +8,6 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 //import MoreVertIcon from "@material-ui/icons/MoreVert";
 
-import PersonAddIcon from "@material-ui/icons/PersonAdd";
-//import EditIcon from "@material-ui/icons/Edit";
 import IconButton from "@material-ui/core/IconButton";
 import MenuItem from "@material-ui/core/MenuItem";
 
@@ -48,7 +46,7 @@ const styles = theme => ({
   title: {
     fontSize: "24px",
     textAlign: "center",
-    color: "#D23E56",
+    color: "#C12424",
     fontWeight: "bold"
   },
   // Overiding css properties on material ui textbox
@@ -136,7 +134,14 @@ class PersonalInfo extends Component {
             }}
             action={
               <IconButton onClick={this.handleOpen}>
-                <PersonAddIcon />
+                <img
+                  src="/static/images/edit_profile.png"
+                  alt="edit profile icon"
+                  style={{
+                    width: "40px",
+                    height: "40px"
+                  }}
+                />
               </IconButton>
             }
             title="Personal Info"
@@ -163,6 +168,16 @@ class PersonalInfo extends Component {
                     fontWeight: "bold"
                   }}
                 >
+                  Country of Origin:
+                </Typography>
+                <Typography
+                  variant="subheading"
+                  gutterBottom
+                  align="left"
+                  style={{
+                    fontWeight: "bold"
+                  }}
+                >
                   Position:
                 </Typography>
                 <Typography
@@ -173,9 +188,8 @@ class PersonalInfo extends Component {
                     fontWeight: "bold"
                   }}
                 >
-                  Height:
+                  Weight:
                 </Typography>
-
                 <Typography
                   variant="subheading"
                   gutterBottom
@@ -184,7 +198,7 @@ class PersonalInfo extends Component {
                     fontWeight: "bold"
                   }}
                 >
-                  Weight:
+                  Height:
                 </Typography>
 
                 <Typography
@@ -231,22 +245,26 @@ class PersonalInfo extends Component {
               <Grid item xs={7} sm={7}>
                 <Typography variant="subheading" gutterBottom align="left">
                   {moment(`${this.props.profile.birth_date}`).format(
-                    "do MMMM, YYYY"
+                    "DD MMMM, YYYY"
                   )}
+                </Typography>
+                <Typography variant="subheading" gutterBottom align="left">
+                  {this.props.profile.residence_country}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
                   {this.props.profile.position}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
-                  {this.props.profile.height} m
+                  98 Kg
+                </Typography>
+                <Typography variant="subheading" gutterBottom align="left">
+                  {/* Truncate decimal part*/}
+                  {Math.trunc(`${this.props.profile.height}`)} cm
                 </Typography>
 
                 <Typography variant="subheading" gutterBottom align="left">
-                  71 Kg
-                </Typography>
-
-                <Typography variant="subheading" gutterBottom align="left">
-                  {this.props.profile.wingspan} m
+                  {/* Truncate decimal part*/}
+                  {Math.trunc(`${this.props.profile.wingspan}`)} cm
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
                   {/* Truncate decimal part*/}
@@ -254,11 +272,11 @@ class PersonalInfo extends Component {
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
                   {/* Truncate decimal part*/}
-                  {Math.trunc(`${this.props.profile.time_to_run_40m}`)} sec
+                  {this.props.profile.time_to_run_40m} sec
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
                   {/* Truncate decimal part*/}
-                  {Math.trunc(`${this.props.profile.time_to_run_100m}`)} sec
+                  {this.props.profile.time_to_run_100m} sec
                 </Typography>
               </Grid>
               <Grid item xs={12} sm={12}>
@@ -266,7 +284,7 @@ class PersonalInfo extends Component {
                   variant="title"
                   gutterBottom
                   align="center"
-                  style={{ color: "#D23E56", fontWeight: "bold" }}
+                  style={{ color: "#C12424", fontWeight: "bold" }}
                 >
                   Affiliation
                 </Typography>
@@ -290,7 +308,7 @@ class PersonalInfo extends Component {
                     fontWeight: "bold"
                   }}
                 >
-                  Country:
+                  Club location:
                 </Typography>
               </Grid>
               <Grid item xs={7} sm={7}>
@@ -298,7 +316,7 @@ class PersonalInfo extends Component {
                   {this.props.profile.affiliation}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
-                  {this.props.profile.residence_country}
+                  Japan
                 </Typography>
               </Grid>
             </Grid>

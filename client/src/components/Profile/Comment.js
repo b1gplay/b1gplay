@@ -10,6 +10,8 @@ import Avatar from "@material-ui/core/Avatar";
 
 import { connect } from "react-redux";
 
+import { addComment } from "../../actions/comments";
+
 const styles = theme => ({
   container: {
     display: "flex",
@@ -33,9 +35,11 @@ const styles = theme => ({
 });
 
 class Comment extends Component {
-  state = { comment: "" };
+  state = { message: "" };
 
-  componentDidMount() {}
+  componentDidMount() {
+    console.log(this.props.id);
+  }
 
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -45,8 +49,18 @@ class Comment extends Component {
     if (e.key === "Enter") {
       e.preventDefault(); // this should prevent default action
 
-      console.log(this.state.comment);
-      e.target.value = ""; // Clear form input
+      // save comment data into object
+      const newComment = {
+        message: this.state.message,
+        post: this.props.id,
+        author: this.props.profileID
+      };
+
+      // Call action creator for adding comment
+      this.props.addComment(newComment);
+
+      // Clear form input
+      e.target.value = "";
     }
   };
 
@@ -76,7 +90,7 @@ class Comment extends Component {
                 <TextField
                   id="comment-box"
                   label="Leave a comment..."
-                  name="comment"
+                  name="message"
                   className={classNames(classes.textField, classes.dense)}
                   margin="dense"
                   variant="outlined"
@@ -99,10 +113,11 @@ Comment.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  avatar: state.profile.profile_photo
+  avatar: state.profile.profile_photo,
+  profileID: state.profile.id
 });
 
 export default connect(
   mapStateToProps,
-  null
+  { addComment }
 )(withStyles(styles)(Comment));

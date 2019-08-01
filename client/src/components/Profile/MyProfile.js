@@ -44,7 +44,7 @@ class MyProfile extends Component {
             gutterBottom
             align="center"
             style={{
-              color: "#D23E56",
+              color: "#C12424",
               fontWeight: "bold"
             }}
           >
@@ -56,8 +56,12 @@ class MyProfile extends Component {
             gutterBottom
             align="center"
             color="primary"
+            style={{
+              color: "black",
+              fontWeight: "bold"
+            }}
           >
-            Zampo_6
+            @32huss
           </Typography>
           {/*  <Typography
             variant="subheading"
@@ -83,7 +87,7 @@ class MyProfile extends Component {
                     gutterBottom
                     align="center"
                     style={{
-                      color: "#D23E56",
+                      color: "#C12424",
                       textTransform: "uppercase",
                       fontWeight: "bold"
                     }}
@@ -113,7 +117,7 @@ class MyProfile extends Component {
                     gutterBottom
                     align="center"
                     style={{
-                      color: "#D23E56",
+                      color: "#C12424",
                       textTransform: "uppercase",
                       fontWeight: "bold"
                     }}
@@ -141,7 +145,7 @@ class MyProfile extends Component {
                     gutterBottom
                     align="center"
                     style={{
-                      color: "#D23E56",
+                      color: "#C12424",
                       textTransform: "uppercase",
                       fontWeight: "bold"
                     }}

@@ -36,7 +36,8 @@ export const DELETE_POST = "DELETE_POST";
 
 // Comments
 export const GET_COMMENTS = "GET_COMMENTS";
-export const ADD_COMMENT = "ADD_COMMENT";
+export const ADD_COMMENT_SUCCESS = "ADD_COMMENT_SUCCESS";
+export const ADD_COMMENT_FAIL = "ADD_COMMENT_FAIL";
 export const HIDE_COMMENT = "HIDE_COMMENT";
 
 // Wizard
