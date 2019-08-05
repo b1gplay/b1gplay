@@ -7,6 +7,11 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+
 import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
@@ -17,12 +22,14 @@ import { Divider } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 
 import Comment from "./Comment";
+
 //import MoreVertIcon from "@material-ui/icons/MoreVert";
 //import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import Grid from "@material-ui/core/Grid";
 
 import { connect } from "react-redux";
 import { getPosts, deletePost } from "../../actions/posts";
+import { getComments } from "../../actions/comments";
 
 import moment from "moment";
 
@@ -64,6 +71,28 @@ const styles = theme => ({
   },
   subheader: {
     fontSize: "16px"
+  },
+
+  avatar: {
+    margin: 8,
+    width: 50,
+    height: 50
+  },
+  // Overiding CSS with classnames for ListItemText Implementation
+  primary: {
+    fontSize: "18px",
+    fontWeight: "bold",
+    //color: "#C12424",
+    color: "darkblue",
+    paddingTop: 3,
+    paddingLeft: 3,
+    paddingRight: 3
+  },
+  secondary: {
+    fontSize: "16px",
+    color: "#000000",
+    paddingBottom: 5,
+    paddingRight: 3
   }
 });
 
@@ -72,6 +101,7 @@ class PhotoVideoFeed extends Component {
 
   componentDidMount() {
     this.props.getPosts();
+    this.props.getComments();
   }
 
   handleLike = () => {
@@ -149,10 +179,45 @@ class PhotoVideoFeed extends Component {
                 title="Paella dish"
               />
               <CardContent>
-                <Typography variant="subtitle1" gutterBottom align="left">
+                <Typography variant="title" gutterBottom align="left">
                   {post.message}
                 </Typography>
               </CardContent>
+              <Divider />
+
+              {/* Comment List */}
+              {this.props.comments.reverse().map(comment => (
+                <Fragment>
+                  <List className={classes.root}>
+                    <ListItem button className={classes.message}>
+                      <ListItemAvatar>
+                        <Avatar
+                          className={classes.avatar}
+                          alt="Trial"
+                          src={comment.avatar}
+                        />
+                      </ListItemAvatar>
+
+                      <ListItemText
+                        style={{
+                          background: "#F0F0F0",
+                          borderRadius: 25
+                        }}
+                        classes={{
+                          primary: classes.primary,
+                          secondary: classes.secondary
+                        }}
+                        primary={comment.author_name}
+                        secondary={
+                          <React.Fragment>{comment.message}</React.Fragment>
+                        }
+                      />
+                    </ListItem>
+                  </List>
+                </Fragment>
+              ))}
+              {/* Comment List */}
+
               {/* Feed Action bar*/}
               <Fragment>
                 <Divider />
@@ -218,16 +283,18 @@ PhotoVideoFeed.propTypes = {
   classes: PropTypes.object.isRequired,
   posts: PropTypes.array.isRequired,
   getPosts: PropTypes.func.isRequired,
-  deletePost: PropTypes.func.isRequired
+  deletePost: PropTypes.func.isRequired,
+  getComments: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
   posts: state.posts.posts,
+  comments: state.comments.comments,
   fullname: state.profile.firstname + " " + state.profile.lastname,
   avatar: state.profile.profile_photo
 });
 
 export default connect(
   mapStateToProps,
-  { getPosts, deletePost }
+  { getPosts, deletePost, getComments }
 )(withStyles(styles)(PhotoVideoFeed));

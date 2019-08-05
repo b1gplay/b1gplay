@@ -245,7 +245,7 @@ class PersonalInfo extends Component {
               <Grid item xs={7} sm={7}>
                 <Typography variant="subheading" gutterBottom align="left">
                   {moment(`${this.props.profile.birth_date}`).format(
-                    "DD MMMM, YYYY"
+                    "DD MMMM YYYY"
                   )}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
@@ -255,7 +255,7 @@ class PersonalInfo extends Component {
                   {this.props.profile.position}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
-                  98 Kg
+                  71 kg
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
                   {/* Truncate decimal part*/}
@@ -284,7 +284,11 @@ class PersonalInfo extends Component {
                   variant="title"
                   gutterBottom
                   align="center"
-                  style={{ color: "#C12424", fontWeight: "bold" }}
+                  style={{
+                    color: "#C12424",
+                    fontWeight: "bold",
+                    fontSize: "24px"
+                  }}
                 >
                   Affiliation
                 </Typography>
@@ -308,7 +312,7 @@ class PersonalInfo extends Component {
                     fontWeight: "bold"
                   }}
                 >
-                  Club location:
+                  Location:
                 </Typography>
               </Grid>
               <Grid item xs={7} sm={7}>
@@ -316,7 +320,7 @@ class PersonalInfo extends Component {
                   {this.props.profile.affiliation}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
-                  Japan
+                  Italy
                 </Typography>
               </Grid>
             </Grid>

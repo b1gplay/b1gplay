@@ -109,9 +109,13 @@ class Ratings extends Component {
                   <Typography
                     variant="title"
                     gutterBottom
-                    style={{ fontWeight: "bold" }}
+                    style={{
+                      fontWeight: "bold",
+                      color: "#C12424",
+                      fontSize: "24px"
+                    }}
                   >
-                    Metric
+                    Personal Ratings
                   </Typography>
                 </Grid>
                 <Grid item xs={6} sm={6}>
@@ -120,7 +124,6 @@ class Ratings extends Component {
                     id="raters"
                     select
                     name="raters"
-                    //value={this.state.sex}
                     onChange={this.onChange}
                     label="Raters"
                     margin="normal"
@@ -153,46 +156,62 @@ class Ratings extends Component {
                   </Typography>
                 </Grid>
                 <Grid item xs={7} sm={7}>
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
-                  />
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
                 </Grid>
                 <Grid item xs={1} sm={1}>
                   <Typography
@@ -200,7 +219,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    8.9
+                    8.4
                   </Typography>
                 </Grid>
               </Grid>
@@ -217,46 +236,69 @@ class Ratings extends Component {
                   </Typography>
                 </Grid>
                 <Grid item xs={7} sm={7}>
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
-                  />
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
                 </Grid>
                 <Grid item xs={1} sm={1}>
                   <Typography
@@ -264,7 +306,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    9.7
+                    9.3
                   </Typography>
                 </Grid>
               </Grid>
@@ -281,46 +323,69 @@ class Ratings extends Component {
                   </Typography>
                 </Grid>
                 <Grid item xs={7} sm={7}>
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
                 </Grid>
                 <Grid item xs={1} sm={1}>
                   <Typography
@@ -328,7 +393,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    10
+                    9.3
                   </Typography>
                 </Grid>
               </Grid>
@@ -345,46 +410,69 @@ class Ratings extends Component {
                   </Typography>
                 </Grid>
                 <Grid item xs={7} sm={7}>
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
                 </Grid>
                 <Grid item xs={1} sm={1}>
                   <Typography
@@ -392,7 +480,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    10
+                    9.2
                   </Typography>
                 </Grid>
               </Grid>
@@ -409,46 +497,69 @@ class Ratings extends Component {
                   </Typography>
                 </Grid>
                 <Grid item xs={7} sm={7}>
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
-                  />
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
                 </Grid>
                 <Grid item xs={1} sm={1}>
                   <Typography
@@ -473,174 +584,69 @@ class Ratings extends Component {
                   </Typography>
                 </Grid>
                 <Grid item xs={7} sm={7}>
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
-                  />
-                </Grid>
-                <Grid item xs={1} sm={1}>
-                  <Typography
-                    variant="subtitle2"
-                    gutterBottom
-                    //style={{ fontSize: "13px" }}
-                  >
-                    9.9
-                  </Typography>
-                </Grid>
-              </Grid>
-            </div>
-            <div>
-              <Grid container spacing={24}>
-                <Grid item xs={4} sm={4}>
-                  <Typography
-                    variant="subtitle2"
-                    gutterBottom
-                    //style={{ fontSize: "13px" }}
-                  >
-                    Energy
-                  </Typography>
-                </Grid>
-                <Grid item xs={7} sm={7}>
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
-                  />
-                </Grid>
-                <Grid item xs={1} sm={1}>
-                  <Typography
-                    variant="subtitle2"
-                    gutterBottom
-                    //style={{ fontSize: "13px" }}
-                  >
-                    9.5
-                  </Typography>
-                </Grid>
-              </Grid>
-            </div>
-            <div>
-              <Grid container spacing={24}>
-                <Grid item xs={4} sm={4}>
-                  <Typography
-                    variant="subtitle2"
-                    gutterBottom
-                    //style={{ fontSize: "13px" }}
-                  >
-                    Determination
-                  </Typography>
-                </Grid>
-                <Grid item xs={7} sm={7}>
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
-                  />
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
                 </Grid>
                 <Grid item xs={1} sm={1}>
                   <Typography
@@ -661,50 +667,153 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    Clutch
+                    Energy
                   </Typography>
                 </Grid>
                 <Grid item xs={7} sm={7}>
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
-                  />
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                </Grid>
+                <Grid item xs={1} sm={1}>
+                  <Typography
+                    variant="subtitle2"
+                    gutterBottom
+                    //style={{ fontSize: "13px" }}
+                  >
+                    8.9
+                  </Typography>
+                </Grid>
+              </Grid>
+            </div>
+            <div>
+              <Grid container spacing={24}>
+                <Grid item xs={4} sm={4}>
+                  <Typography
+                    variant="subtitle2"
+                    gutterBottom
+                    //style={{ fontSize: "13px" }}
+                  >
+                    Determination
+                  </Typography>
+                </Grid>
+                <Grid item xs={7} sm={7}>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
                 </Grid>
                 <Grid item xs={1} sm={1}>
                   <Typography
@@ -725,50 +834,73 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    Pro-potential
+                    Clutch
                   </Typography>
                 </Grid>
                 <Grid item xs={7} sm={7}>
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px", color: "brown" }}
-                  />
-                  <span
-                    class="fas fa-basketball-ball"
-                    style={{ margin: "1px" }}
-                  />
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
                 </Grid>
                 <Grid item xs={1} sm={1}>
                   <Typography
@@ -776,7 +908,87 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    9.6
+                    9.1
+                  </Typography>
+                </Grid>
+              </Grid>
+            </div>
+            <div>
+              <Grid container spacing={24}>
+                <Grid item xs={4} sm={4}>
+                  <Typography
+                    variant="subtitle2"
+                    gutterBottom
+                    //style={{ fontSize: "13px" }}
+                  >
+                    Pro-potential
+                  </Typography>
+                </Grid>
+                <Grid item xs={7} sm={7}>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                </Grid>
+                <Grid item xs={1} sm={1}>
+                  <Typography
+                    variant="subtitle2"
+                    gutterBottom
+                    //style={{ fontSize: "13px" }}
+                  >
+                    9
                   </Typography>
                 </Grid>
               </Grid>
@@ -796,9 +1008,10 @@ class Ratings extends Component {
                   <Typography
                     variant="title"
                     gutterBottom
+                    align="right"
                     style={{ fontWeight: "bold" }}
                   >
-                    96.3
+                    92.2
                   </Typography>
                 </Grid>
               </Grid>

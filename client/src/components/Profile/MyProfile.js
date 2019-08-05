@@ -45,11 +45,11 @@ class MyProfile extends Component {
             align="center"
             style={{
               color: "#C12424",
-              fontWeight: "bold"
+              fontWeight: "bold",
+              fontSize: "24px"
             }}
           >
-            {this.props.profile.firstname + " " + this.props.profile.lastname},{" "}
-            {this.props.profile.residence_country}
+            {this.props.profile.firstname + " " + this.props.profile.lastname}
           </Typography>
           <Typography
             variant="subheading"
@@ -61,7 +61,7 @@ class MyProfile extends Component {
               fontWeight: "bold"
             }}
           >
-            @32huss
+            @Zampo_6
           </Typography>
           {/*  <Typography
             variant="subheading"
