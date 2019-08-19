@@ -61,7 +61,7 @@ class MyProfile extends Component {
               fontWeight: "bold"
             }}
           >
-            @Zampo_6
+            @32huss
           </Typography>
           {/*  <Typography
             variant="subheading"
@@ -105,7 +105,7 @@ class MyProfile extends Component {
                       fontWeight: "bold"
                     }}
                   >
-                    10
+                    8
                   </Typography>
                 </Link>
               </Grid>
@@ -134,7 +134,7 @@ class MyProfile extends Component {
                       fontWeight: "bold"
                     }}
                   >
-                    3
+                    4
                   </Typography>
                 </Link>
               </Grid>

@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import { Typography } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 
-import Slider from "@material-ui/lab/Slider";
-import Input from "@material-ui/core/Input";
+import { Slider, InputNumber } from "antd";
+import "antd/dist/antd.css";
 
 const styles = theme => ({});
 
@@ -23,86 +23,18 @@ class RatingForm extends Component {
     clutch: 0,
     proPotential: 0,
 
-    total: 0
+    total: 0,
+
+    inputValue: 0
   };
 
-  onSliderChangeRebounding = (event, newValue) => {
-    this.setState({
-      rebounding: Number(newValue * 0.1)
-    });
-  };
-
-  onSliderChangeDefence = (event, newValue) => {
-    this.setState({
-      defence: newValue
-    });
-  };
-
-  onSliderChangeScoring = (event, newValue) => {
-    this.setState({
-      scoring: newValue
-    });
-  };
-
-  onSliderChangeLeadership = (event, newValue) => {
-    this.setState({
-      leadership: newValue
-    });
-  };
-
-  onSliderChangeDiscipline = (event, newValue) => {
-    this.setState({
-      discipline: newValue
-    });
-  };
-
-  onSliderChangeBasketbalIQ = (event, newValue) => {
-    this.setState({
-      basketballIQ: newValue
-    });
-  };
-
-  onSliderChangeEnergy = (event, newValue) => {
-    this.setState({
-      energy: newValue
-    });
-  };
-
-  onSliderChangeDetermination = (event, newValue) => {
-    this.setState({
-      determination: newValue
-    });
-  };
-
-  onSliderChangeClutch = (event, newValue) => {
-    this.setState({
-      clutch: newValue
-    });
-  };
-
-  onSliderChangeProPotential = (event, newValue) => {
-    this.setState({
-      proPotential: newValue
-    });
-  };
-
-  handleInputChange = event => {
-    this.setState({
-      [event.target.name]:
-        event.target.value === "" ? "" : Number(event.target.value)
-    });
-  };
-
-  handleBlur = event => {
-    if (event.target.name < 0) {
-      this.setState({
-        [event.target.name]: 0
-      });
-    } else if (event.target.name > 10) {
-      this.setState({
-        [event.target.name]: 10
-      });
+  onChange = value => {
+    if (isNaN(value)) {
+      return;
     }
+    this.setState({
+      inputValue: value
+    });
   };
 
   onSubmit = event => {
@@ -138,16 +70,18 @@ class RatingForm extends Component {
       proPotential
     } = this.state;
 
+    const { inputValue } = this.state;
+
     return (
       <Fragment>
         <form onSubmit={this.onSubmit}>
-          <Grid container spacing={8}>
+          <Grid container spacing={0}>
             <Grid item xs={3} sm={3}>
               <br />
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold" }}
+                style={{ fontWeight: "bold", paddingTop: 20 }}
               >
                 Rebounding
               </Typography>
@@ -155,35 +89,30 @@ class RatingForm extends Component {
             <Grid item xs={9} sm={9}>
               <br />
               <br />
-              <div style={{ width: 310 }}>
-                <Grid container spacing={8} alignItems="center">
-                  <Grid item xs>
-                    <Slider
-                      value={typeof rebounding === "number" ? rebounding : 0}
-                      onChange={this.onSliderChangeRebounding}
-                      aria-labelledby="input-slider"
-                    />
-                  </Grid>
-                  <Grid item>
-                    <div style={{ marginTop: -30 }}>
-                      <Input
-                        style={{ width: 63 }}
-                        value={rebounding}
-                        name="rebounding"
-                        onChange={this.handleInputChange}
-                        onBlur={this.handleBlur}
-                        inputProps={{
-                          step: 0.1,
-                          min: 0,
-                          max: 10,
-                          type: "number",
-                          "aria-labelledby": "input-slider"
-                        }}
-                      />
-                    </div>
-                  </Grid>
+
+              <Grid container spacing={2} alignItems="center">
+                <Grid item xs>
+                  <Slider
+                    min={0}
+                    max={10}
+                    onChange={this.onChange}
+                    value={typeof inputValue === "number" ? inputValue : 0}
+                    step={0.1}
+                  />
                 </Grid>
-              </div>
+                <Grid item>
+                  <div style={{ marginTop: -30 }}>
+                    <InputNumber
+                      min={0}
+                      max={10}
+                      style={{ marginLeft: 16 }}
+                      step={0.1}
+                      value={inputValue}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                </Grid>
+              </Grid>
             </Grid>
 
             <Grid item xs={3} sm={3}>
@@ -191,43 +120,38 @@ class RatingForm extends Component {
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold" }}
+                style={{ fontWeight: "bold", paddingTop: 20 }}
               >
                 Defence
               </Typography>
             </Grid>
-            <Grid item xs={8} sm={8}>
+            <Grid item xs={9} sm={9}>
               <br />
               <br />
-              <div style={{ width: 310 }}>
-                <Grid container spacing={8} alignItems="center">
-                  <Grid item xs>
-                    <Slider
-                      value={typeof defence === "number" ? defence : 0}
-                      onChange={this.onSliderChangeDefence}
-                      aria-labelledby="input-slider"
-                    />
-                  </Grid>
-                  <Grid item>
-                    <div style={{ marginTop: -30 }}>
-                      <Input
-                        style={{ width: 63 }}
-                        value={defence}
-                        name="defence"
-                        onChange={this.handleInputChange}
-                        onBlur={this.handleBlur}
-                        inputProps={{
-                          step: 0.0001,
-                          min: 0,
-                          max: 100,
-                          type: "number",
-                          "aria-labelledby": "input-slider"
-                        }}
-                      />
-                    </div>
-                  </Grid>
+
+              <Grid container spacing={2} alignItems="center">
+                <Grid item xs>
+                  <Slider
+                    min={0}
+                    max={10}
+                    onChange={this.onChange}
+                    value={typeof inputValue === "number" ? inputValue : 0}
+                    step={0.1}
+                  />
                 </Grid>
-              </div>
+                <Grid item>
+                  <div style={{ marginTop: -30 }}>
+                    <InputNumber
+                      min={0}
+                      max={10}
+                      style={{ marginLeft: 16 }}
+                      step={0.1}
+                      value={inputValue}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                </Grid>
+              </Grid>
             </Grid>
 
             <Grid item xs={3} sm={3}>
@@ -235,43 +159,38 @@ class RatingForm extends Component {
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold" }}
+                style={{ fontWeight: "bold", paddingTop: 20 }}
               >
                 Scoring
               </Typography>
             </Grid>
-            <Grid item xs={8} sm={8}>
+            <Grid item xs={9} sm={9}>
               <br />
               <br />
-              <div style={{ width: 310 }}>
-                <Grid container spacing={8} alignItems="center">
-                  <Grid item xs>
-                    <Slider
-                      value={typeof scoring === "number" ? scoring : 0}
-                      onChange={this.onSliderChangeScoring}
-                      aria-labelledby="input-slider"
-                    />
-                  </Grid>
-                  <Grid item>
-                    <div style={{ marginTop: -30 }}>
-                      <Input
-                        style={{ width: 63 }}
-                        value={scoring}
-                        name="scoring"
-                        onChange={this.handleInputChange}
-                        onBlur={this.handleBlur}
-                        inputProps={{
-                          step: 0.0001,
-                          min: 0,
-                          max: 100,
-                          type: "number",
-                          "aria-labelledby": "input-slider"
-                        }}
-                      />
-                    </div>
-                  </Grid>
+
+              <Grid container spacing={2} alignItems="center">
+                <Grid item xs>
+                  <Slider
+                    min={0}
+                    max={10}
+                    onChange={this.onChange}
+                    value={typeof inputValue === "number" ? inputValue : 0}
+                    step={0.1}
+                  />
                 </Grid>
-              </div>
+                <Grid item>
+                  <div style={{ marginTop: -30 }}>
+                    <InputNumber
+                      min={0}
+                      max={10}
+                      style={{ marginLeft: 16 }}
+                      step={0.1}
+                      value={inputValue}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                </Grid>
+              </Grid>
             </Grid>
 
             <Grid item xs={3} sm={3}>
@@ -279,43 +198,38 @@ class RatingForm extends Component {
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold" }}
+                style={{ fontWeight: "bold", paddingTop: 20 }}
               >
                 Leadership
               </Typography>
             </Grid>
-            <Grid item xs={8} sm={8}>
+            <Grid item xs={9} sm={9}>
               <br />
               <br />
-              <div style={{ width: 310 }}>
-                <Grid container spacing={8} alignItems="center">
-                  <Grid item xs>
-                    <Slider
-                      value={typeof leadership === "number" ? leadership : 0}
-                      onChange={this.onSliderChangeLeadership}
-                      aria-labelledby="input-slider"
-                    />
-                  </Grid>
-                  <Grid item>
-                    <div style={{ marginTop: -30 }}>
-                      <Input
-                        style={{ width: 63 }}
-                        value={leadership}
-                        name="leadership"
-                        onChange={this.handleInputChange}
-                        onBlur={this.handleBlur}
-                        inputProps={{
-                          step: 0.0001,
-                          min: 0,
-                          max: 100,
-                          type: "number",
-                          "aria-labelledby": "input-slider"
-                        }}
-                      />
-                    </div>
-                  </Grid>
+
+              <Grid container spacing={2} alignItems="center">
+                <Grid item xs>
+                  <Slider
+                    min={0}
+                    max={10}
+                    onChange={this.onChange}
+                    value={typeof inputValue === "number" ? inputValue : 0}
+                    step={0.1}
+                  />
                 </Grid>
-              </div>
+                <Grid item>
+                  <div style={{ marginTop: -30 }}>
+                    <InputNumber
+                      min={0}
+                      max={10}
+                      style={{ marginLeft: 16 }}
+                      step={0.1}
+                      value={inputValue}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                </Grid>
+              </Grid>
             </Grid>
 
             <Grid item xs={3} sm={3}>
@@ -323,43 +237,38 @@ class RatingForm extends Component {
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold" }}
+                style={{ fontWeight: "bold", paddingTop: 20 }}
               >
                 Discipline
               </Typography>
             </Grid>
-            <Grid item xs={8} sm={8}>
+            <Grid item xs={9} sm={9}>
               <br />
               <br />
-              <div style={{ width: 310 }}>
-                <Grid container spacing={8} alignItems="center">
-                  <Grid item xs>
-                    <Slider
-                      value={typeof discipline === "number" ? discipline : 0}
-                      onChange={this.onSliderChangeDiscipline}
-                      aria-labelledby="input-slider"
-                    />
-                  </Grid>
-                  <Grid item>
-                    <div style={{ marginTop: -30 }}>
-                      <Input
-                        style={{ width: 63 }}
-                        value={discipline}
-                        name="discipline"
-                        onChange={this.handleInputChange}
-                        onBlur={this.handleBlur}
-                        inputProps={{
-                          step: 0.0001,
-                          min: 0,
-                          max: 100,
-                          type: "number",
-                          "aria-labelledby": "input-slider"
-                        }}
-                      />
-                    </div>
-                  </Grid>
+
+              <Grid container spacing={2} alignItems="center">
+                <Grid item xs>
+                  <Slider
+                    min={0}
+                    max={10}
+                    onChange={this.onChange}
+                    value={typeof inputValue === "number" ? inputValue : 0}
+                    step={0.1}
+                  />
                 </Grid>
-              </div>
+                <Grid item>
+                  <div style={{ marginTop: -30 }}>
+                    <InputNumber
+                      min={0}
+                      max={10}
+                      style={{ marginLeft: 16 }}
+                      step={0.1}
+                      value={inputValue}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                </Grid>
+              </Grid>
             </Grid>
 
             <Grid item xs={3} sm={3}>
@@ -367,45 +276,38 @@ class RatingForm extends Component {
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold" }}
+                style={{ fontWeight: "bold", paddingTop: 20 }}
               >
-                Basketball I.Q
+                Basketball 1.Q
               </Typography>
             </Grid>
-            <Grid item xs={8} sm={8}>
+            <Grid item xs={9} sm={9}>
               <br />
               <br />
-              <div style={{ width: 310 }}>
-                <Grid container spacing={8} alignItems="center">
-                  <Grid item xs>
-                    <Slider
-                      value={
-                        typeof basketballIQ === "number" ? basketballIQ : 0
-                      }
-                      onChange={this.onSliderChangeBasketbalIQ}
-                      aria-labelledby="input-slider"
-                    />
-                  </Grid>
-                  <Grid item>
-                    <div style={{ marginTop: -30 }}>
-                      <Input
-                        style={{ width: 63 }}
-                        value={basketballIQ}
-                        name="basketballIQ"
-                        onChange={this.handleInputChange}
-                        onBlur={this.handleBlur}
-                        inputProps={{
-                          step: 0.0001,
-                          min: 0,
-                          max: 100,
-                          type: "number",
-                          "aria-labelledby": "input-slider"
-                        }}
-                      />
-                    </div>
-                  </Grid>
+
+              <Grid container spacing={2} alignItems="center">
+                <Grid item xs>
+                  <Slider
+                    min={0}
+                    max={10}
+                    onChange={this.onChange}
+                    value={typeof inputValue === "number" ? inputValue : 0}
+                    step={0.1}
+                  />
                 </Grid>
-              </div>
+                <Grid item>
+                  <div style={{ marginTop: -30 }}>
+                    <InputNumber
+                      min={0}
+                      max={10}
+                      style={{ marginLeft: 16 }}
+                      step={0.1}
+                      value={inputValue}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                </Grid>
+              </Grid>
             </Grid>
 
             <Grid item xs={3} sm={3}>
@@ -413,43 +315,38 @@ class RatingForm extends Component {
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold" }}
+                style={{ fontWeight: "bold", paddingTop: 20 }}
               >
                 Energy
               </Typography>
             </Grid>
-            <Grid item xs={8} sm={8}>
+            <Grid item xs={9} sm={9}>
               <br />
               <br />
-              <div style={{ width: 310 }}>
-                <Grid container spacing={8} alignItems="center">
-                  <Grid item xs>
-                    <Slider
-                      value={typeof energy === "number" ? energy : 0}
-                      onChange={this.onSliderChangeEnergy}
-                      aria-labelledby="input-slider"
-                    />
-                  </Grid>
-                  <Grid item>
-                    <div style={{ marginTop: -30 }}>
-                      <Input
-                        style={{ width: 63 }}
-                        value={energy}
-                        name="energy"
-                        onChange={this.handleInputChange}
-                        onBlur={this.handleBlur}
-                        inputProps={{
-                          step: 0.0001,
-                          min: 0,
-                          max: 100,
-                          type: "number",
-                          "aria-labelledby": "input-slider"
-                        }}
-                      />
-                    </div>
-                  </Grid>
+
+              <Grid container spacing={2} alignItems="center">
+                <Grid item xs>
+                  <Slider
+                    min={0}
+                    max={10}
+                    onChange={this.onChange}
+                    value={typeof inputValue === "number" ? inputValue : 0}
+                    step={0.1}
+                  />
                 </Grid>
-              </div>
+                <Grid item>
+                  <div style={{ marginTop: -30 }}>
+                    <InputNumber
+                      min={0}
+                      max={10}
+                      style={{ marginLeft: 16 }}
+                      step={0.1}
+                      value={inputValue}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                </Grid>
+              </Grid>
             </Grid>
 
             <Grid item xs={3} sm={3}>
@@ -457,45 +354,38 @@ class RatingForm extends Component {
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold" }}
+                style={{ fontWeight: "bold", paddingTop: 20 }}
               >
                 Determination
               </Typography>
             </Grid>
-            <Grid item xs={8} sm={8}>
+            <Grid item xs={9} sm={9}>
               <br />
               <br />
-              <div style={{ width: 310 }}>
-                <Grid container spacing={8} alignItems="center">
-                  <Grid item xs>
-                    <Slider
-                      value={
-                        typeof determination === "number" ? determination : 0
-                      }
-                      onChange={this.onSliderChangeDetermination}
-                      aria-labelledby="input-slider"
-                    />
-                  </Grid>
-                  <Grid item>
-                    <div style={{ marginTop: -30 }}>
-                      <Input
-                        style={{ width: 63 }}
-                        value={determination}
-                        name="determination"
-                        onChange={this.handleInputChange}
-                        onBlur={this.handleBlur}
-                        inputProps={{
-                          step: 0.0001,
-                          min: 0,
-                          max: 100,
-                          type: "number",
-                          "aria-labelledby": "input-slider"
-                        }}
-                      />
-                    </div>
-                  </Grid>
+
+              <Grid container spacing={2} alignItems="center">
+                <Grid item xs>
+                  <Slider
+                    min={0}
+                    max={10}
+                    onChange={this.onChange}
+                    value={typeof inputValue === "number" ? inputValue : 0}
+                    step={0.1}
+                  />
                 </Grid>
-              </div>
+                <Grid item>
+                  <div style={{ marginTop: -30 }}>
+                    <InputNumber
+                      min={0}
+                      max={10}
+                      style={{ marginLeft: 16 }}
+                      step={0.1}
+                      value={inputValue}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                </Grid>
+              </Grid>
             </Grid>
 
             <Grid item xs={3} sm={3}>
@@ -503,43 +393,38 @@ class RatingForm extends Component {
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold" }}
+                style={{ fontWeight: "bold", paddingTop: 20 }}
               >
                 Clutch
               </Typography>
             </Grid>
-            <Grid item xs={8} sm={8}>
+            <Grid item xs={9} sm={9}>
               <br />
               <br />
-              <div style={{ width: 310 }}>
-                <Grid container spacing={8} alignItems="center">
-                  <Grid item xs>
-                    <Slider
-                      value={typeof clutch === "number" ? clutch : 0}
-                      onChange={this.onSliderChangeClutch}
-                      aria-labelledby="input-slider"
-                    />
-                  </Grid>
-                  <Grid item>
-                    <div style={{ marginTop: -30 }}>
-                      <Input
-                        style={{ width: 63 }}
-                        value={clutch}
-                        name="clutch"
-                        onChange={this.handleInputChange}
-                        onBlur={this.handleBlur}
-                        inputProps={{
-                          step: 0.0001,
-                          min: 0,
-                          max: 100,
-                          type: "number",
-                          "aria-labelledby": "input-slider"
-                        }}
-                      />
-                    </div>
-                  </Grid>
+
+              <Grid container spacing={2} alignItems="center">
+                <Grid item xs>
+                  <Slider
+                    min={0}
+                    max={10}
+                    onChange={this.onChange}
+                    value={typeof inputValue === "number" ? inputValue : 0}
+                    step={0.1}
+                  />
                 </Grid>
-              </div>
+                <Grid item>
+                  <div style={{ marginTop: -30 }}>
+                    <InputNumber
+                      min={0}
+                      max={10}
+                      style={{ marginLeft: 16 }}
+                      step={0.1}
+                      value={inputValue}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                </Grid>
+              </Grid>
             </Grid>
 
             <Grid item xs={3} sm={3}>
@@ -547,45 +432,38 @@ class RatingForm extends Component {
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold" }}
+                style={{ fontWeight: "bold", paddingTop: 20 }}
               >
                 Pro-potential
               </Typography>
             </Grid>
-            <Grid item xs={8} sm={8}>
+            <Grid item xs={9} sm={9}>
               <br />
               <br />
-              <div style={{ width: 310 }}>
-                <Grid container spacing={8} alignItems="center">
-                  <Grid item xs>
-                    <Slider
-                      value={
-                        typeof proPotential === "number" ? proPotential : 0
-                      }
-                      onChange={this.onSliderChangeProPotential}
-                      aria-labelledby="input-slider"
-                    />
-                  </Grid>
-                  <Grid item>
-                    <div style={{ marginTop: -30 }}>
-                      <Input
-                        style={{ width: 63 }}
-                        value={proPotential}
-                        name="proPotential"
-                        onChange={this.handleInputChange}
-                        onBlur={this.handleBlur}
-                        inputProps={{
-                          step: 0.0001,
-                          min: 0,
-                          max: 100,
-                          type: "number",
-                          "aria-labelledby": "input-slider"
-                        }}
-                      />
-                    </div>
-                  </Grid>
+
+              <Grid container spacing={2} alignItems="center">
+                <Grid item xs>
+                  <Slider
+                    min={0}
+                    max={10}
+                    onChange={this.onChange}
+                    value={typeof inputValue === "number" ? inputValue : 0}
+                    step={0.1}
+                  />
                 </Grid>
-              </div>
+                <Grid item>
+                  <div style={{ marginTop: -30 }}>
+                    <InputNumber
+                      min={0}
+                      max={10}
+                      style={{ marginLeft: 16 }}
+                      step={0.1}
+                      value={inputValue}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                </Grid>
+              </Grid>
             </Grid>
 
             <Grid item xs={3} sm={3}>

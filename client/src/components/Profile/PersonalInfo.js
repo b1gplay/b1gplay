@@ -255,7 +255,7 @@ class PersonalInfo extends Component {
                   {this.props.profile.position}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
-                  71 kg
+                  98 kg
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
                   {/* Truncate decimal part*/}
@@ -320,7 +320,7 @@ class PersonalInfo extends Component {
                   {this.props.profile.affiliation}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
-                  Italy
+                  Japan
                 </Typography>
               </Grid>
             </Grid>

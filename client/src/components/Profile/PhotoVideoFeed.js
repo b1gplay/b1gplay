@@ -7,10 +7,10 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+//import List from "@material-ui/core/List";
+//import ListItem from "@material-ui/core/ListItem";
+//import ListItemText from "@material-ui/core/ListItemText";
+//import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 
 import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
@@ -184,8 +184,8 @@ class PhotoVideoFeed extends Component {
                 </Typography>
               </CardContent>
               <Divider />
-
               {/* Comment List */}
+              {/*
               {this.props.comments.reverse().map(comment => (
                 <Fragment>
                   <List className={classes.root}>
@@ -215,9 +215,9 @@ class PhotoVideoFeed extends Component {
                     </ListItem>
                   </List>
                 </Fragment>
-              ))}
+              ))}{" "}
+                      */}
               {/* Comment List */}
-
               {/* Feed Action bar*/}
               <Fragment>
                 <Divider />
