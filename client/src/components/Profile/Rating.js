@@ -1012,7 +1012,7 @@ class Ratings extends Component {
               component="h1"
               variant="display1"
               align="center"
-              style={{ color: "darkblue" }}
+              style={{ color: "#C12424", fontWeight: "bold" }}
             >
               Rate player
             </Typography>

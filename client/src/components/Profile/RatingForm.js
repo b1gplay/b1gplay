@@ -8,6 +8,8 @@ import Button from "@material-ui/core/Button";
 import { Slider, InputNumber } from "antd";
 import "antd/dist/antd.css";
 
+import { connect } from "react-redux";
+
 const styles = theme => ({});
 
 class RatingForm extends Component {
@@ -23,23 +25,112 @@ class RatingForm extends Component {
     clutch: 0,
     proPotential: 0,
 
-    total: 0,
-
-    inputValue: 0
+    total: 0
   };
 
-  onChange = value => {
+  onChangeRebounding = value => {
     if (isNaN(value)) {
       return;
     }
     this.setState({
-      inputValue: value
+      rebounding: value
+    });
+  };
+
+  onChangeDefence = value => {
+    if (isNaN(value)) {
+      return;
+    }
+    this.setState({
+      defence: value
+    });
+  };
+
+  onChangeScoring = value => {
+    if (isNaN(value)) {
+      return;
+    }
+    this.setState({
+      scoring: value
+    });
+  };
+
+  onChangeLeadership = value => {
+    if (isNaN(value)) {
+      return;
+    }
+    this.setState({
+      leadership: value
+    });
+  };
+
+  onChangeDiscipline = value => {
+    if (isNaN(value)) {
+      return;
+    }
+    this.setState({
+      discipline: value
+    });
+  };
+
+  onChangeBasketballIQ = value => {
+    if (isNaN(value)) {
+      return;
+    }
+    this.setState({
+      basketballIQ: value
+    });
+  };
+
+  onChangeEnergy = value => {
+    if (isNaN(value)) {
+      return;
+    }
+    this.setState({
+      energy: value
+    });
+  };
+
+  onChangeDetermination = value => {
+    if (isNaN(value)) {
+      return;
+    }
+    this.setState({
+      determination: value
+    });
+  };
+
+  onChangeClutch = value => {
+    if (isNaN(value)) {
+      return;
+    }
+    this.setState({
+      clutch: value
+    });
+  };
+
+  onChangeProPotential = value => {
+    if (isNaN(value)) {
+      return;
+    }
+    this.setState({
+      proPotential: value
     });
   };
 
   onSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
+
+    // save post data into object
+    const newRating = {
+      rebounding: this.state.rebounding,
+      defence: this.state.defence,
+      ratedBy: this.props.profileID
+    };
+
+    //this.props.addRating(newRating);
+    console.log(newRating);
+
     this.setState({
       rebounding: 0,
       defence: 0,
@@ -70,8 +161,6 @@ class RatingForm extends Component {
       proPotential
     } = this.state;
 
-    const { inputValue } = this.state;
-
     return (
       <Fragment>
         <form onSubmit={this.onSubmit}>
@@ -95,8 +184,8 @@ class RatingForm extends Component {
                   <Slider
                     min={0}
                     max={10}
-                    onChange={this.onChange}
-                    value={typeof inputValue === "number" ? inputValue : 0}
+                    onChange={this.onChangeRebounding}
+                    value={typeof rebounding === "number" ? rebounding : 0}
                     step={0.1}
                   />
                 </Grid>
@@ -107,8 +196,8 @@ class RatingForm extends Component {
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
-                      value={inputValue}
-                      onChange={this.onChange}
+                      value={rebounding}
+                      onChange={this.onChangeRebounding}
                     />
                   </div>
                 </Grid>
@@ -134,8 +223,8 @@ class RatingForm extends Component {
                   <Slider
                     min={0}
                     max={10}
-                    onChange={this.onChange}
-                    value={typeof inputValue === "number" ? inputValue : 0}
+                    onChange={this.onChangeDefence}
+                    value={typeof defence === "number" ? defence : 0}
                     step={0.1}
                   />
                 </Grid>
@@ -146,8 +235,8 @@ class RatingForm extends Component {
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
-                      value={inputValue}
-                      onChange={this.onChange}
+                      value={defence}
+                      onChange={this.onChangeDefence}
                     />
                   </div>
                 </Grid>
@@ -173,8 +262,8 @@ class RatingForm extends Component {
                   <Slider
                     min={0}
                     max={10}
-                    onChange={this.onChange}
-                    value={typeof inputValue === "number" ? inputValue : 0}
+                    onChange={this.onChangeScoring}
+                    value={typeof scoring === "number" ? scoring : 0}
                     step={0.1}
                   />
                 </Grid>
@@ -185,8 +274,8 @@ class RatingForm extends Component {
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
-                      value={inputValue}
-                      onChange={this.onChange}
+                      value={scoring}
+                      onChange={this.onChangeScoring}
                     />
                   </div>
                 </Grid>
@@ -212,8 +301,8 @@ class RatingForm extends Component {
                   <Slider
                     min={0}
                     max={10}
-                    onChange={this.onChange}
-                    value={typeof inputValue === "number" ? inputValue : 0}
+                    onChange={this.onChangeLeadership}
+                    value={typeof leadership === "number" ? leadership : 0}
                     step={0.1}
                   />
                 </Grid>
@@ -224,8 +313,8 @@ class RatingForm extends Component {
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
-                      value={inputValue}
-                      onChange={this.onChange}
+                      value={leadership}
+                      onChange={this.onChangeLeadership}
                     />
                   </div>
                 </Grid>
@@ -251,8 +340,8 @@ class RatingForm extends Component {
                   <Slider
                     min={0}
                     max={10}
-                    onChange={this.onChange}
-                    value={typeof inputValue === "number" ? inputValue : 0}
+                    onChange={this.onChangeDiscipline}
+                    value={typeof discipline === "number" ? discipline : 0}
                     step={0.1}
                   />
                 </Grid>
@@ -263,8 +352,8 @@ class RatingForm extends Component {
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
-                      value={inputValue}
-                      onChange={this.onChange}
+                      value={discipline}
+                      onChange={this.onChangeDiscipline}
                     />
                   </div>
                 </Grid>
@@ -290,8 +379,8 @@ class RatingForm extends Component {
                   <Slider
                     min={0}
                     max={10}
-                    onChange={this.onChange}
-                    value={typeof inputValue === "number" ? inputValue : 0}
+                    onChange={this.onChangeBasketballIQ}
+                    value={typeof basketballIQ === "number" ? basketballIQ : 0}
                     step={0.1}
                   />
                 </Grid>
@@ -302,8 +391,8 @@ class RatingForm extends Component {
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
-                      value={inputValue}
-                      onChange={this.onChange}
+                      value={basketballIQ}
+                      onChange={this.onChangeBasketballIQ}
                     />
                   </div>
                 </Grid>
@@ -329,8 +418,8 @@ class RatingForm extends Component {
                   <Slider
                     min={0}
                     max={10}
-                    onChange={this.onChange}
-                    value={typeof inputValue === "number" ? inputValue : 0}
+                    onChange={this.onChangeEnergy}
+                    value={typeof energy === "number" ? energy : 0}
                     step={0.1}
                   />
                 </Grid>
@@ -341,8 +430,8 @@ class RatingForm extends Component {
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
-                      value={inputValue}
-                      onChange={this.onChange}
+                      value={energy}
+                      onChange={this.onChangeEnergy}
                     />
                   </div>
                 </Grid>
@@ -368,8 +457,10 @@ class RatingForm extends Component {
                   <Slider
                     min={0}
                     max={10}
-                    onChange={this.onChange}
-                    value={typeof inputValue === "number" ? inputValue : 0}
+                    onChange={this.onChangeDetermination}
+                    value={
+                      typeof determination === "number" ? determination : 0
+                    }
                     step={0.1}
                   />
                 </Grid>
@@ -380,8 +471,8 @@ class RatingForm extends Component {
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
-                      value={inputValue}
-                      onChange={this.onChange}
+                      value={determination}
+                      onChange={this.onChangeDetermination}
                     />
                   </div>
                 </Grid>
@@ -407,8 +498,8 @@ class RatingForm extends Component {
                   <Slider
                     min={0}
                     max={10}
-                    onChange={this.onChange}
-                    value={typeof inputValue === "number" ? inputValue : 0}
+                    onChange={this.onChangeClutch}
+                    value={typeof clutch === "number" ? clutch : 0}
                     step={0.1}
                   />
                 </Grid>
@@ -419,8 +510,8 @@ class RatingForm extends Component {
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
-                      value={inputValue}
-                      onChange={this.onChange}
+                      value={clutch}
+                      onChange={this.onChangeClutch}
                     />
                   </div>
                 </Grid>
@@ -446,8 +537,8 @@ class RatingForm extends Component {
                   <Slider
                     min={0}
                     max={10}
-                    onChange={this.onChange}
-                    value={typeof inputValue === "number" ? inputValue : 0}
+                    onChange={this.onChangeProPotential}
+                    value={typeof proPotential === "number" ? proPotential : 0}
                     step={0.1}
                   />
                 </Grid>
@@ -458,8 +549,8 @@ class RatingForm extends Component {
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
-                      value={inputValue}
-                      onChange={this.onChange}
+                      value={proPotential}
+                      onChange={this.onChangeProPotential}
                     />
                   </div>
                 </Grid>
@@ -484,7 +575,7 @@ class RatingForm extends Component {
                 gutterBottom
                 style={{ fontWeight: "bold" }}
               >
-                {(rebounding +
+                {rebounding +
                   defence +
                   scoring +
                   leadership +
@@ -493,8 +584,7 @@ class RatingForm extends Component {
                   energy +
                   determination +
                   clutch +
-                  proPotential) /
-                  10}
+                  proPotential}
               </Typography>
             </Grid>
 
@@ -508,7 +598,8 @@ class RatingForm extends Component {
                 style={{
                   textTransform: "capitalize",
                   fontWeight: "bold",
-                  fontSize: "18px"
+                  fontSize: "18px",
+                  background: "#C12424"
                 }}
               >
                 Rate Player
@@ -525,4 +616,10 @@ RatingForm.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(RatingForm);
+const mapStateToProps = state => ({
+  profileID: state.profile.id
+});
+export default connect(
+  mapStateToProps,
+  null
+)(withStyles(styles)(RatingForm));
