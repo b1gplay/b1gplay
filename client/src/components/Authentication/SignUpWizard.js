@@ -102,6 +102,7 @@ class SignUpWizard extends Component {
         affiliation
       };
       this.props.register(newUser);
+      console.log(newUser);
     }
   };
 

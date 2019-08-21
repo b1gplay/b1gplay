@@ -9,6 +9,7 @@ import { Slider, InputNumber } from "antd";
 import "antd/dist/antd.css";
 
 import { connect } from "react-redux";
+import { addRating } from "../../actions/individualRatings";
 
 const styles = theme => ({});
 
@@ -121,15 +122,23 @@ class RatingForm extends Component {
   onSubmit = event => {
     event.preventDefault();
 
-    // save post data into object
+    // save newRating data into object
     const newRating = {
       rebounding: this.state.rebounding,
       defence: this.state.defence,
+      scoring: this.state.scoring,
+      leadership: this.state.leadership,
+      discipline: this.state.discipline,
+      basketballIQ: this.state.basketballIQ,
+      energy: this.state.energy,
+      determination: this.state.determination,
+      clutch: this.state.clutch,
+      proPotential: this.state.proPotential,
       ratedBy: this.props.profileID
     };
 
-    //this.props.addRating(newRating);
-    console.log(newRating);
+    this.props.addRating(newRating);
+    //console.log(newRating);
 
     this.setState({
       rebounding: 0,
@@ -621,5 +630,5 @@ const mapStateToProps = state => ({
 });
 export default connect(
   mapStateToProps,
-  null
+  { addRating }
 )(withStyles(styles)(RatingForm));

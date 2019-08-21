@@ -23,6 +23,8 @@ export const GET_PHOTO_GALLERY_FAIL = "GET_PHOTO_GALLERY_FAIL";
 
 // Individual Ratings
 export const GET_INDIVIDUAL_RATINGS = "GET_INDIVIDUAL_RATINGS";
+export const ADD_RATING_SUCCESS = "ADD_RATING_SUCCESS";
+export const ADD_RATING_FAIL = "ADD_RATING_FAIL";
 
 // Following, Followers & Suggestions
 export const GET_FOLLOWING = "GET_FOLLOWING";

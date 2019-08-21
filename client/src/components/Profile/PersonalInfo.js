@@ -337,7 +337,7 @@ class PersonalInfo extends Component {
           <DialogTitle
             id="simple-dialog-title"
             color="default"
-            style={{ backgroundColor: "#D23E56" }}
+            style={{ backgroundColor: "#C12424" }}
           >
             <Typography
               component="h1"
@@ -698,7 +698,7 @@ class PersonalInfo extends Component {
                     size="large"
                     fullWidth
                     color="primary"
-                    style={{ background: "#D23E56", fontWeight: "bold" }}
+                    style={{ background: "#C12424", fontWeight: "bold" }}
                   >
                     Edit Profile
                   </Button>
