@@ -170,6 +170,7 @@ class PersonalInfo extends Component {
                 >
                   Country of Origin:
                 </Typography>
+                <br />
                 <Typography
                   variant="subheading"
                   gutterBottom
@@ -255,7 +256,7 @@ class PersonalInfo extends Component {
                   {this.props.profile.position}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
-                  98 kg
+                  76 kg
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
                   {/* Truncate decimal part*/}
@@ -320,7 +321,7 @@ class PersonalInfo extends Component {
                   {this.props.profile.affiliation}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
-                  Japan
+                  Uganda
                 </Typography>
               </Grid>
             </Grid>

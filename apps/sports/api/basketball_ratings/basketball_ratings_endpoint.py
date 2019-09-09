@@ -7,6 +7,8 @@ from apps.sports.models.basketball_ratings import BasketballRatings
 
 
 class BasketballRatingsSerialiser(serializers.ModelSerializer):
+    account_type = serializers.ReadOnlyField()
+
     class Meta:
         model = BasketballRatings
         fields = '__all__'
@@ -16,6 +18,7 @@ class BasketballRatingsViewSet(ModelViewSet):
     queryset = BasketballRatings.objects.all()
     serializer_class = BasketballRatingsSerialiser
     permission_class = [DjangoModelPermissions]
+    filterset_fields = ('ratedBy', )
 
 
 basketballRatingsRouter = DefaultRouter()
