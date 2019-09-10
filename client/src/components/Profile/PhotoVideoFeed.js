@@ -7,10 +7,10 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 
-//import List from "@material-ui/core/List";
-//import ListItem from "@material-ui/core/ListItem";
-//import ListItemText from "@material-ui/core/ListItemText";
-//import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 
 import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
@@ -185,38 +185,45 @@ class PhotoVideoFeed extends Component {
               </CardContent>
               <Divider />
               {/* Comment List */}
-              {/*
-              {this.props.comments.reverse().map(comment => (
-                <Fragment>
-                  <List className={classes.root}>
-                    <ListItem button className={classes.message}>
-                      <ListItemAvatar>
-                        <Avatar
-                          className={classes.avatar}
-                          alt="Trial"
-                          src={comment.avatar}
-                        />
-                      </ListItemAvatar>
 
-                      <ListItemText
-                        style={{
-                          background: "#F0F0F0",
-                          borderRadius: 25
-                        }}
-                        classes={{
-                          primary: classes.primary,
-                          secondary: classes.secondary
-                        }}
-                        primary={comment.author_name}
-                        secondary={
-                          <React.Fragment>{comment.message}</React.Fragment>
-                        }
-                      />
-                    </ListItem>
-                  </List>
-                </Fragment>
-              ))}{" "}
-                      */}
+              <Fragment>
+                {this.props.comments
+                  .filter(function(comment) {
+                    // filter first for comments
+                    return comment.post === post.id; // returns a new array
+                  })
+                  .map(function(comment) {
+                    // map the new array to list items
+                    return (
+                      <List className={classes.root}>
+                        <ListItem button className={classes.message}>
+                          <ListItemAvatar>
+                            <Avatar
+                              className={classes.avatar}
+                              alt="Trial"
+                              src={comment.avatar}
+                            />
+                          </ListItemAvatar>
+                          <ListItemText
+                            style={{
+                              background: "#F0F0F0",
+                              borderRadius: 25
+                            }}
+                            classes={{
+                              primary: classes.primary,
+                              secondary: classes.secondary
+                            }}
+                            primary={comment.author_name}
+                            secondary={
+                              <React.Fragment>{comment.message}</React.Fragment>
+                            }
+                          />
+                        </ListItem>
+                      </List>
+                    ); // don't forget unique key for each item
+                  })}
+              </Fragment>
+
               {/* Comment List */}
               {/* Feed Action bar*/}
               <Fragment>
