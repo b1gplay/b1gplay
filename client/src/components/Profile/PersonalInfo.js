@@ -109,6 +109,7 @@ class PersonalInfo extends Component {
       affiliation: this.props.profile.affiliation,
       position: this.props.profile.position,
       height: this.props.profile.height,
+      weight: this.props.profile.weight,
       wingspan: this.props.profile.wingspan,
       vertical_leap: this.props.profile.vertical_leap,
       time_to_run_40m: this.props.profile.time_to_run_40m,
@@ -256,28 +257,43 @@ class PersonalInfo extends Component {
                   {this.props.profile.position}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
-                  62 kg
+                  {/* Truncate decimal part*/}
+                  {this.props.profile.weight === ""
+                    ? "0 kg"
+                    : Math.trunc(`${this.props.profile.weight}`) + " kg"}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
                   {/* Truncate decimal part*/}
-                  {Math.trunc(`${this.props.profile.height}`)} cm
+                  {this.props.profile.height === ""
+                    ? "0 cm"
+                    : Math.trunc(`${this.props.profile.height}`) + " cm"}
                 </Typography>
 
                 <Typography variant="subheading" gutterBottom align="left">
                   {/* Truncate decimal part*/}
-                  {Math.trunc(`${this.props.profile.wingspan}`)} cm
+                  {this.props.profile.wingspan === ""
+                    ? "0 cm"
+                    : Math.trunc(`${this.props.profile.wingspan}`) + " cm"}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
                   {/* Truncate decimal part*/}
-                  {Math.trunc(`${this.props.profile.vertical_leap}`)} cm
+                  {this.props.profile.vertical_leap === ""
+                    ? "0 cm"
+                    : Math.trunc(`${this.props.profile.vertical_leap}`) + " cm"}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
                   {/* Truncate decimal part*/}
-                  {this.props.profile.time_to_run_40m} sec
+                  {this.props.profile.vertical_leap === ""
+                    ? "0 sec"
+                    : Math.trunc(`${this.props.profile.time_to_run_40m}`) +
+                      " sec"}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
                   {/* Truncate decimal part*/}
-                  {this.props.profile.time_to_run_100m} sec
+                  {this.props.profile.time_to_run_100m === ""
+                    ? "0 sec"
+                    : Math.trunc(`${this.props.profile.time_to_run_100m}`) +
+                      " sec"}
                 </Typography>
               </Grid>
               <Grid item xs={12} sm={12}>
@@ -456,27 +472,7 @@ class PersonalInfo extends Component {
                     ))}
                   </TextField>
                 </Grid>
-                <Grid item xs={12} sm={12}>
-                  <TextField
-                    id="tag"
-                    label="Tag"
-                    className={classes.textField}
-                    margin="normal"
-                    variant="outlined"
-                    fullWidth
-                    name="tag"
-                    value={this.props.profile.tag}
-                    onChange={this.onChange}
-                    InputLabelProps={{
-                      shrink: true
-                    }}
-                    InputProps={{
-                      classes: {
-                        notchedOutline: classes.notchedOutline
-                      }
-                    }}
-                  />
-                </Grid>
+
                 <Grid item xs={12} sm={12}>
                   <TextField
                     id="date"
@@ -499,7 +495,6 @@ class PersonalInfo extends Component {
                     }}
                   />
                 </Grid>
-
                 <Grid item xs={12} sm={12}>
                   <TextField
                     id="outlined-uncontrolled"
@@ -521,6 +516,28 @@ class PersonalInfo extends Component {
                     }}
                   />
                 </Grid>
+                <Grid item xs={6} sm={6}>
+                  <TextField
+                    id="tag"
+                    label="Tag"
+                    className={classes.textField}
+                    margin="normal"
+                    variant="outlined"
+                    fullWidth
+                    name="tag"
+                    value={this.props.profile.tag}
+                    onChange={this.onChange}
+                    InputLabelProps={{
+                      shrink: true
+                    }}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  />
+                </Grid>
+
                 <Grid item xs={6} sm={6}>
                   <TextField
                     id="position"
@@ -561,6 +578,26 @@ class PersonalInfo extends Component {
                     fullWidth
                     name="height"
                     value={this.props.profile.height}
+                    onChange={this.onChange}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={6} sm={6}>
+                  <TextField
+                    required
+                    id="outlined-uncontrolled"
+                    label="Weight"
+                    type="number"
+                    className={classes.textField}
+                    margin="normal"
+                    variant="outlined"
+                    fullWidth
+                    name="weight"
+                    value={this.props.profile.weight}
                     onChange={this.onChange}
                     InputProps={{
                       classes: {

@@ -31,7 +31,8 @@ class PhotoGallery extends Component {
     this.props.getPhotoGallery();
   }
 
-  handleOpen = () => {
+  handleOpen = video => {
+    console.log(video);
     this.setState({ open: true });
   };
 
@@ -55,25 +56,27 @@ class PhotoGallery extends Component {
         </Typography>
         <br />
         <br />
-        <div
-          style={{
-            background: "#FFFFFF",
-            border: "1px solid #d4d4d4",
-            padding: 8
-          }}
-        >
-          <Grid container spacing={8}>
-            {this.props.photos.map(pic => (
-              <Grid item lg={3}>
-                <img
-                  src={pic.photo}
-                  alt={pic.profile_name}
-                  style={{ height: "260px", width: "100%" }}
-                />
-              </Grid>
-            ))}
-          </Grid>
-        </div>
+
+        <Grid container spacing={8}>
+          {this.props.photos.map(pic => (
+            <Grid
+              item
+              lg={3}
+              style={{
+                background: "#FFFFFF",
+                border: "1px solid #d4d4d4",
+                padding: 8
+              }}
+            >
+              <img
+                src={pic.photo}
+                alt={pic.profile_name}
+                style={{ height: "260px", width: "100%" }}
+                onClick={this.handleOpen.bind(this, pic.id)}
+              />
+            </Grid>
+          ))}
+        </Grid>
       </Fragment>
     );
   }

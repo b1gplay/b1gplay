@@ -61,6 +61,7 @@ class MyProfile extends Component {
               fontWeight: "bold"
             }}
           >
+            {/* only add @ symbol if tag is not empty*/}
             {this.props.profile.tag === "" ? "" : "@" + this.props.profile.tag}
           </Typography>
 

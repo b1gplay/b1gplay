@@ -50,6 +50,7 @@ export const editProfile = ({
   tag,
   account_type,
   height,
+  weight,
   position,
   wingspan,
   vertical_leap,
@@ -83,6 +84,7 @@ export const editProfile = ({
   body.append("tag", tag);
   body.append("account_type", account_type);
   body.append("height", height);
+  body.append("weight", weight);
   body.append("position", position);
   body.append("wingspan", wingspan);
   body.append("vertical_leap", vertical_leap);

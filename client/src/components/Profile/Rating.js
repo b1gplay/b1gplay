@@ -205,13 +205,6 @@ class Ratings extends Component {
                       style={{ width: 24, height: 24 }}
                     />
                   </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
                 </Grid>
                 <Grid item xs={1} sm={1}>
                   <Typography
@@ -219,7 +212,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    8.1
+                    7.6
                   </Typography>
                 </Grid>
               </Grid>
@@ -233,225 +226,6 @@ class Ratings extends Component {
                     //style={{ fontSize: "13px" }}
                   >
                     Defence
-                  </Typography>
-                </Grid>
-                <Grid item xs={7} sm={7}>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                </Grid>
-                <Grid item xs={1} sm={1}>
-                  <Typography
-                    variant="subtitle2"
-                    gutterBottom
-                    //style={{ fontSize: "13px" }}
-                  >
-                    7
-                  </Typography>
-                </Grid>
-              </Grid>
-            </div>
-            <div>
-              <Grid container spacing={24}>
-                <Grid item xs={4} sm={4}>
-                  <Typography
-                    variant="subtitle2"
-                    gutterBottom
-                    //style={{ fontSize: "13px" }}
-                  >
-                    Scoring
-                  </Typography>
-                </Grid>
-                <Grid item xs={7} sm={7}>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                </Grid>
-                <Grid item xs={1} sm={1}>
-                  <Typography
-                    variant="subtitle2"
-                    gutterBottom
-                    //style={{ fontSize: "13px" }}
-                  >
-                    7.2
-                  </Typography>
-                </Grid>
-              </Grid>
-            </div>
-            <div>
-              <Grid container spacing={24}>
-                <Grid item xs={4} sm={4}>
-                  <Typography
-                    variant="subtitle2"
-                    gutterBottom
-                    //style={{ fontSize: "13px" }}
-                  >
-                    Leadership
-                  </Typography>
-                </Grid>
-                <Grid item xs={7} sm={7}>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
-                </Grid>
-                <Grid item xs={1} sm={1}>
-                  <Typography
-                    variant="subtitle2"
-                    gutterBottom
-                    //style={{ fontSize: "13px" }}
-                  >
-                    7.1
-                  </Typography>
-                </Grid>
-              </Grid>
-            </div>
-            <div>
-              <Grid container spacing={24}>
-                <Grid item xs={4} sm={4}>
-                  <Typography
-                    variant="subtitle2"
-                    gutterBottom
-                    //style={{ fontSize: "13px" }}
-                  >
-                    Discipline
                   </Typography>
                 </Grid>
                 <Grid item xs={7} sm={7}>
@@ -531,10 +305,17 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    Basketball IQ
+                    Scoring
                   </Typography>
                 </Grid>
                 <Grid item xs={7} sm={7}>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
                   <span style={{ margin: "1px" }}>
                     <img
                       src="static/images/basketball.jpg"
@@ -591,7 +372,254 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    7.6
+                    8.2
+                  </Typography>
+                </Grid>
+              </Grid>
+            </div>
+            <div>
+              <Grid container spacing={24}>
+                <Grid item xs={4} sm={4}>
+                  <Typography
+                    variant="subtitle2"
+                    gutterBottom
+                    //style={{ fontSize: "13px" }}
+                  >
+                    Leadership
+                  </Typography>
+                </Grid>
+                <Grid item xs={7} sm={7}>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                </Grid>
+                <Grid item xs={1} sm={1}>
+                  <Typography
+                    variant="subtitle2"
+                    gutterBottom
+                    //style={{ fontSize: "13px" }}
+                  >
+                    8.7
+                  </Typography>
+                </Grid>
+              </Grid>
+            </div>
+            <div>
+              <Grid container spacing={24}>
+                <Grid item xs={4} sm={4}>
+                  <Typography
+                    variant="subtitle2"
+                    gutterBottom
+                    //style={{ fontSize: "13px" }}
+                  >
+                    Discipline
+                  </Typography>
+                </Grid>
+                <Grid item xs={7} sm={7}>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                </Grid>
+                <Grid item xs={1} sm={1}>
+                  <Typography
+                    variant="subtitle2"
+                    gutterBottom
+                    //style={{ fontSize: "13px" }}
+                  >
+                    8.8
+                  </Typography>
+                </Grid>
+              </Grid>
+            </div>
+            <div>
+              <Grid container spacing={24}>
+                <Grid item xs={4} sm={4}>
+                  <Typography
+                    variant="subtitle2"
+                    gutterBottom
+                    //style={{ fontSize: "13px" }}
+                  >
+                    Basketball IQ
+                  </Typography>
+                </Grid>
+                <Grid item xs={7} sm={7}>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
+                </Grid>
+                <Grid item xs={1} sm={1}>
+                  <Typography
+                    variant="subtitle2"
+                    gutterBottom
+                    //style={{ fontSize: "13px" }}
+                  >
+                    9.1
                   </Typography>
                 </Grid>
               </Grid>
@@ -664,6 +692,13 @@ class Ratings extends Component {
                       style={{ width: 24, height: 24 }}
                     />
                   </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
                 </Grid>
                 <Grid item xs={1} sm={1}>
                   <Typography
@@ -671,7 +706,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    8.5
+                    9
                   </Typography>
                 </Grid>
               </Grid>
@@ -751,7 +786,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    8.9
+                    8.8
                   </Typography>
                 </Grid>
               </Grid>
@@ -817,6 +852,13 @@ class Ratings extends Component {
                       style={{ width: 24, height: 24 }}
                     />
                   </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
                 </Grid>
                 <Grid item xs={1} sm={1}>
                   <Typography
@@ -824,7 +866,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    7.9
+                    8.5
                   </Typography>
                 </Grid>
               </Grid>
@@ -904,7 +946,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    8
+                    8.1
                   </Typography>
                 </Grid>
               </Grid>
@@ -927,7 +969,7 @@ class Ratings extends Component {
                     align="right"
                     style={{ fontWeight: "bold" }}
                   >
-                    78.9
+                    85.4
                   </Typography>
                 </Grid>
               </Grid>

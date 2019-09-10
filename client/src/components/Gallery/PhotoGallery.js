@@ -4,8 +4,14 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 
+import Dialog from "@material-ui/core/Dialog";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import Button from "@material-ui/core/Button";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+
 import { connect } from "react-redux";
-import { getPhotoGallery } from "../../actions/photoGallery";
+import { getPhotoGallery, getPhoto } from "../../actions/photoGallery";
 
 const styles = theme => ({
   root: {
@@ -29,8 +35,10 @@ class PhotoGallery extends Component {
     this.props.getPhotoGallery();
   }
 
-  handleOpen = () => {
-    this.setState({ open: true });
+  handleOpen = picture => {
+    console.log(picture);
+    this.props.getPhoto(picture);
+    //this.setState({ open: true });
   };
 
   handleClose = () => {
@@ -53,25 +61,56 @@ class PhotoGallery extends Component {
         </Typography>
         <br />
         <br />
-        <div
-          style={{
-            background: "#FFFFFF",
-            border: "1px solid #d4d4d4",
-            padding: 8
-          }}
+
+        <Grid container spacing={8}>
+          {this.props.photos.map(pic => (
+            <Grid
+              item
+              lg={3}
+              style={{
+                background: "#FFFFFF",
+                border: "1px solid #d4d4d4",
+                padding: 8
+              }}
+            >
+              <img
+                src={pic.photo}
+                alt={pic.profile_name}
+                style={{ height: "260px", width: "100%" }}
+                onClick={this.handleOpen.bind(this, pic.id)}
+              />
+            </Grid>
+          ))}
+        </Grid>
+
+        <Dialog
+          id="myDialog"
+          maxWidth="sm"
+          open={this.state.open}
+          aria-labelledby="form-dialog-title"
+          onClose={this.handleClose}
         >
-          <Grid container spacing={8}>
-            {this.props.photos.map(pic => (
-              <Grid item lg={3}>
-                <img
-                  src={pic.photo}
-                  alt={pic.profile_name}
-                  style={{ height: "260px", width: "100%" }}
-                />
-              </Grid>
-            ))}
-          </Grid>
-        </div>
+          <DialogTitle
+            id="simple-dialog-title"
+            color="default"
+            style={{ backgroundColor: "#C12424" }}
+          >
+            <Typography
+              component="h1"
+              variant="display1"
+              align="center"
+              style={{ color: "white" }}
+            >
+              Photo gallery
+            </Typography>
+          </DialogTitle>
+          <DialogContent></DialogContent>
+          <DialogActions>
+            <Button onClick={this.handleClose} color="primary">
+              Cancel
+            </Button>
+          </DialogActions>
+        </Dialog>
       </Fragment>
     );
   }
@@ -88,5 +127,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getPhotoGallery }
+  { getPhotoGallery, getPhoto }
 )(withStyles(styles)(PhotoGallery));

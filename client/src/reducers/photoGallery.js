@@ -1,7 +1,11 @@
-import { GET_PHOTO_GALLERY_SUCCESS } from "../constants/ActionTypes";
+import {
+  GET_PHOTO_GALLERY_SUCCESS,
+  GET_PHOTO_SUCCESS
+} from "../constants/ActionTypes";
 
 const initialState = {
-  photos: []
+  photos: [],
+  liveGallery: []
 };
 
 export default function(state = initialState, action) {
@@ -10,6 +14,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         photos: action.payload.reverse()
+      };
+    case GET_PHOTO_SUCCESS:
+      return {
+        ...state,
+        liveGallery: state.photos.filter(photo => photo.id === action.payload)
       };
 
     default:

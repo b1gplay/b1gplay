@@ -1,6 +1,8 @@
 import {
   GET_PHOTO_GALLERY_SUCCESS,
-  GET_PHOTO_GALLERY_FAIL
+  GET_PHOTO_GALLERY_FAIL,
+  GET_PHOTO_SUCCESS,
+  GET_PHOTO_FAIL
 } from "../constants/ActionTypes";
 
 import API from "../utils/APIUtils";
@@ -22,6 +24,23 @@ export const getPhotoGallery = () => (dispatch, getState) => {
     .catch(error =>
       dispatch({
         type: GET_PHOTO_GALLERY_FAIL,
+        payload: error
+      })
+    );
+};
+
+// Return single Photo
+export const getPhoto = id => dispatch => {
+  API.get(`posts/${id}`)
+    .then(res => {
+      dispatch({
+        type: GET_PHOTO_SUCCESS,
+        payload: id
+      });
+    })
+    .catch(error =>
+      dispatch({
+        type: GET_PHOTO_FAIL,
         payload: error
       })
     );
