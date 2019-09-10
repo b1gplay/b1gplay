@@ -43,8 +43,8 @@ class Profile(TimeStampedModel):
     time_to_run_100m = models.DecimalField(
         max_digits=6, decimal_places=2, null=True)
 
+    tag = models.CharField(max_length=100, blank=True)
     # Media related details for given account
-    bio = models.TextField(max_length=500, blank=True)
     #avatar = models.URLField(blank=True, null=True)
     profile_photo = models.ImageField(
         upload_to='profile_photos', default='profile_photos/avatar1.png')

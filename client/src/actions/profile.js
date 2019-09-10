@@ -47,7 +47,7 @@ export const editProfile = ({
   gender,
   birth_date,
   residence_country,
-  bio,
+  tag,
   account_type,
   height,
   position,
@@ -80,7 +80,7 @@ export const editProfile = ({
   body.append("gender", gender);
   body.append("birth_date", birth_date);
   body.append("residence_country", residence_country);
-  body.append("bio", bio);
+  body.append("tag", tag);
   body.append("account_type", account_type);
   body.append("height", height);
   body.append("position", position);

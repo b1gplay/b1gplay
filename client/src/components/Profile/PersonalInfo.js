@@ -104,7 +104,7 @@ class PersonalInfo extends Component {
       lastname: this.props.profile.lastname,
       gender: this.props.profile.gender,
       residence_country: this.props.profile.residence_country,
-      bio: this.props.profile.bio,
+      tag: this.props.profile.tag,
       birth_date: this.props.profile.birth_date,
       affiliation: this.props.profile.affiliation,
       position: this.props.profile.position,
@@ -170,7 +170,7 @@ class PersonalInfo extends Component {
                 >
                   Country of Origin:
                 </Typography>
-                <br />
+
                 <Typography
                   variant="subheading"
                   gutterBottom
@@ -256,7 +256,7 @@ class PersonalInfo extends Component {
                   {this.props.profile.position}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
-                  76 kg
+                  62 kg
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
                   {/* Truncate decimal part*/}
@@ -458,14 +458,14 @@ class PersonalInfo extends Component {
                 </Grid>
                 <Grid item xs={12} sm={12}>
                   <TextField
-                    id="bio"
-                    label="Bio"
+                    id="tag"
+                    label="Tag"
                     className={classes.textField}
                     margin="normal"
                     variant="outlined"
                     fullWidth
-                    name="bio"
-                    value={this.props.profile.bio}
+                    name="tag"
+                    value={this.props.profile.tag}
                     onChange={this.onChange}
                     InputLabelProps={{
                       shrink: true

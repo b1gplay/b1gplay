@@ -61,20 +61,7 @@ class MyProfile extends Component {
               fontWeight: "bold"
             }}
           >
-            @32huss
-          </Typography>
-          {/*  <Typography
-            variant="subheading"
-            gutterBottom
-            align="center"
-            color="primary"
-          >
-            {this.props.profile.residence_country}
-          </Typography> */}
-
-          <Typography component="p" align="center" variant="subheading">
-            {/* Am the best Point Guard. I make CP3 look like a clown */}
-            {this.props.profile.bio}
+            {this.props.profile.tag === "" ? "" : "@" + this.props.profile.tag}
           </Typography>
 
           <div>
@@ -105,7 +92,7 @@ class MyProfile extends Component {
                       fontWeight: "bold"
                     }}
                   >
-                    8
+                    7
                   </Typography>
                 </Link>
               </Grid>
@@ -134,7 +121,7 @@ class MyProfile extends Component {
                       fontWeight: "bold"
                     }}
                   >
-                    4
+                    3
                   </Typography>
                 </Link>
               </Grid>
