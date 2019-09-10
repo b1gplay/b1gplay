@@ -31,6 +31,7 @@ export const getPhotoGallery = () => (dispatch, getState) => {
 
 // Return single Photo
 export const getPhoto = id => dispatch => {
+  console.log(id);
   API.get(`posts/${id}`)
     .then(res => {
       dispatch({

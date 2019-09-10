@@ -5,10 +5,11 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 
 import Dialog from "@material-ui/core/Dialog";
-import DialogTitle from "@material-ui/core/DialogTitle";
 import Button from "@material-ui/core/Button";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
+
+import LivePhotoGallery from "./LivePhotoGallery";
 
 import { connect } from "react-redux";
 import { getPhotoGallery, getPhoto } from "../../actions/photoGallery";
@@ -36,9 +37,8 @@ class PhotoGallery extends Component {
   }
 
   handleOpen = picture => {
-    console.log(picture);
     this.props.getPhoto(picture);
-    //this.setState({ open: true });
+    this.setState({ open: true });
   };
 
   handleClose = () => {
@@ -90,21 +90,9 @@ class PhotoGallery extends Component {
           aria-labelledby="form-dialog-title"
           onClose={this.handleClose}
         >
-          <DialogTitle
-            id="simple-dialog-title"
-            color="default"
-            style={{ backgroundColor: "#C12424" }}
-          >
-            <Typography
-              component="h1"
-              variant="display1"
-              align="center"
-              style={{ color: "white" }}
-            >
-              Photo gallery
-            </Typography>
-          </DialogTitle>
-          <DialogContent></DialogContent>
+          <DialogContent>
+            <LivePhotoGallery />
+          </DialogContent>
           <DialogActions>
             <Button onClick={this.handleClose} color="primary">
               Cancel
