@@ -188,11 +188,12 @@ class PhotoVideoFeed extends Component {
 
               <Fragment>
                 {this.props.comments
-                  .filter(function(comment) {
+                  .filter(comment => {
                     // filter first for comments
                     return comment.post === post.id; // returns a new array
                   })
-                  .map(function(comment) {
+                  .reverse() // sort according recently posted
+                  .map(comment => {
                     // map the new array to list items
                     return (
                       <List className={classes.root}>

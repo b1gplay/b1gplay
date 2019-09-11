@@ -30,6 +30,7 @@ class Profile(TimeStampedModel):
 
     # general info concerning either player, team, media, coach or fan...
     affiliation = models.CharField(max_length=100, blank=True)
+    club_location = models.CharField(max_length=100, blank=True)
     media_house = models.CharField(max_length=100, blank=True)
 
     # Player details

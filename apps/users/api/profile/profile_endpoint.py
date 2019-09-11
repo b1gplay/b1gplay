@@ -16,7 +16,6 @@ class ProfileSerialiser(serializers.ModelSerializer):
     parser_classes = (MultiPartParser, FormParser)
 
 
-
 class ProfileViewSet(ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerialiser

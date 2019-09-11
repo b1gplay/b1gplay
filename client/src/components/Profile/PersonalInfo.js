@@ -107,6 +107,7 @@ class PersonalInfo extends Component {
       tag: this.props.profile.tag,
       birth_date: this.props.profile.birth_date,
       affiliation: this.props.profile.affiliation,
+      club_location: this.props.profile.club_location,
       position: this.props.profile.position,
       height: this.props.profile.height,
       weight: this.props.profile.weight,
@@ -337,7 +338,7 @@ class PersonalInfo extends Component {
                   {this.props.profile.affiliation}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
-                  Uganda
+                  {this.props.profile.club_location}
                 </Typography>
               </Grid>
             </Grid>
@@ -515,6 +516,35 @@ class PersonalInfo extends Component {
                       }
                     }}
                   />
+                </Grid>
+
+                <Grid item xs={12} sm={12}>
+                  <TextField
+                    id="clubLocation"
+                    select
+                    name="club_location"
+                    value={this.props.profile.club_location}
+                    onChange={this.onChange}
+                    label="Club Location:"
+                    fullWidth
+                    margin="normal"
+                    variant="outlined"
+                    //helperText="Please select filter"
+                    InputLabelProps={{
+                      shrink: true
+                    }}
+                    InputProps={{
+                      classes: {
+                        notchedOutline: classes.notchedOutline
+                      }
+                    }}
+                  >
+                    {countries.map(option => (
+                      <MenuItem key={option.Code} value={option.Name}>
+                        {option.Name}
+                      </MenuItem>
+                    ))}
+                  </TextField>
                 </Grid>
                 <Grid item xs={6} sm={6}>
                   <TextField
