@@ -47,11 +47,17 @@ class Profile(TimeStampedModel):
 
     tag = models.CharField(max_length=100, blank=True)
     # Media related details for given account
-    #avatar = models.URLField(blank=True, null=True)
+    # avatar = models.URLField(blank=True, null=True)
     profile_photo = models.ImageField(
         upload_to='profile_photos', default='profile_photos/avatar1.png')
     cover_photo = models.ImageField(
         upload_to='cover_photos', default='cover_photos/cover.jpg')
+
+    # Followers/ Following details
+    followers = models.ManyToManyField(
+        'self', related_name='enthusiasts', symmetrical=False)
+    following = models.ManyToManyField(
+        'self', related_name='followees', symmetrical=False)
 
     class Meta:
         verbose_name = "Profile"

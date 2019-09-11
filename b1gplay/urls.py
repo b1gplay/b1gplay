@@ -29,6 +29,7 @@ from apps.users.api.education.education_endpoint import educationRouter
 from apps.users.api.address.address_endpoint import addressRouter
 from apps.users.api.profile.profile_endpoint import profileRouter
 
+
 from apps.messaging.api.message.message_endpoint import messageRouter
 from apps.messaging.api.photo.photo_endpoint import photoRouter
 from apps.messaging.api.video.video_endpoint import videoRouter
