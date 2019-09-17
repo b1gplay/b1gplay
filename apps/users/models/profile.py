@@ -8,6 +8,9 @@ from django.dispatch import receiver
 import uuid
 
 
+from apps.users.models.education import Education
+
+
 class Profile(TimeStampedModel):
     """
     Description and summary of a user
@@ -26,7 +29,7 @@ class Profile(TimeStampedModel):
     residence_country = models.CharField(max_length=100, blank=True)
 
     # type enum{player, team, media, coach, fan, admin, superuser}
-    account_type = models.CharField(max_length=20, blank=True)
+    account_type = models.CharField(max_length=20, blank=False)
 
     # general info concerning either player, team, media, coach or fan...
     affiliation = models.CharField(max_length=100, blank=True)
@@ -55,9 +58,9 @@ class Profile(TimeStampedModel):
 
     # Followers/ Following details
     followers = models.ManyToManyField(
-        'self', related_name='enthusiasts', symmetrical=False)
+        'self', related_name='enthusiasts', symmetrical=False, blank=True)
     following = models.ManyToManyField(
-        'self', related_name='followees', symmetrical=False)
+        'self', related_name='followees', symmetrical=False, blank=True)
 
     class Meta:
         verbose_name = "Profile"

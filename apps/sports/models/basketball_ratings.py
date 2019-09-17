@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Avg, Max, Min, Sum
 from django_extensions.db.models import TimeStampedModel
 import uuid
 
@@ -10,7 +11,6 @@ class BasketballRatings(TimeStampedModel):
     Represents a way of measuring a players attributes on a given sport
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    #rebounding = models.PositiveSmallIntegerField()
     rebounding = models.DecimalField(
         max_digits=5,
         decimal_places=2,
@@ -71,15 +71,15 @@ class BasketballRatings(TimeStampedModel):
         blank=True,
         null=True,
     )
-    ratedBy = models.ForeignKey(
-        Profile,
-        related_name='basketball_ratings',
-        on_delete=models.CASCADE,
-        null=True)
+    # ratedBy = models.ForeignKey(
+    #    Profile,
+    #    related_name='basketball_ratings',
+    #    on_delete=models.CASCADE,
+    #    null=True)
 
-    @property
-    def account_type(self):
-        return self.ratedBy.account_type
+    # @property
+    # def account_type(self):
+    #    return self.ratedBy.account_type
 
     class Meta:
         verbose_name = "Basketball Ratings"

@@ -7,6 +7,8 @@ from apps.sports.models.metric import Metric
 
 
 class MetricSerialiser(serializers.ModelSerializer):
+    account_type = serializers.ReadOnlyField()
+
     class Meta:
         model = Metric
         fields = '__all__'
@@ -16,6 +18,7 @@ class MetricViewSet(ModelViewSet):
     queryset = Metric.objects.all()
     serializer_class = MetricSerialiser
     permission_class = [DjangoModelPermissions]
+    filterset_fields = ('player', 'ratedBy')
 
 
 metricRouter = DefaultRouter()
