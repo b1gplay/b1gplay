@@ -33,6 +33,7 @@ class RatingForm extends Component {
     if (isNaN(value)) {
       return;
     }
+
     this.setState({
       rebounding: value
     });
@@ -173,25 +174,22 @@ class RatingForm extends Component {
     return (
       <Fragment>
         <form onSubmit={this.onSubmit}>
-          <Grid container spacing={0}>
+          <br />
+          <Grid container spacing={8}>
             <Grid item xs={3} sm={3}>
-              <br />
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold", paddingTop: 20 }}
+                style={{ fontWeight: "bold", paddingTop: 1 }}
               >
                 Rebounding
               </Typography>
             </Grid>
             <Grid item xs={9} sm={9}>
-              <br />
-              <br />
-
               <Grid container spacing={2} alignItems="center">
                 <Grid item xs>
                   <Slider
-                    min={0}
+                    min={1}
                     max={10}
                     onChange={this.onChangeRebounding}
                     value={typeof rebounding === "number" ? rebounding : 0}
@@ -201,7 +199,7 @@ class RatingForm extends Component {
                 <Grid item>
                   <div style={{ marginTop: -30 }}>
                     <InputNumber
-                      min={0}
+                      min={1}
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
@@ -214,23 +212,19 @@ class RatingForm extends Component {
             </Grid>
 
             <Grid item xs={3} sm={3}>
-              <br />
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold", paddingTop: 20 }}
+                style={{ fontWeight: "bold", paddingTop: 1 }}
               >
                 Defence
               </Typography>
             </Grid>
             <Grid item xs={9} sm={9}>
-              <br />
-              <br />
-
               <Grid container spacing={2} alignItems="center">
                 <Grid item xs>
                   <Slider
-                    min={0}
+                    min={1}
                     max={10}
                     onChange={this.onChangeDefence}
                     value={typeof defence === "number" ? defence : 0}
@@ -240,7 +234,7 @@ class RatingForm extends Component {
                 <Grid item>
                   <div style={{ marginTop: -30 }}>
                     <InputNumber
-                      min={0}
+                      min={1}
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
@@ -253,23 +247,19 @@ class RatingForm extends Component {
             </Grid>
 
             <Grid item xs={3} sm={3}>
-              <br />
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold", paddingTop: 20 }}
+                style={{ fontWeight: "bold", paddingTop: 1 }}
               >
                 Scoring
               </Typography>
             </Grid>
             <Grid item xs={9} sm={9}>
-              <br />
-              <br />
-
               <Grid container spacing={2} alignItems="center">
                 <Grid item xs>
                   <Slider
-                    min={0}
+                    min={1}
                     max={10}
                     onChange={this.onChangeScoring}
                     value={typeof scoring === "number" ? scoring : 0}
@@ -279,7 +269,7 @@ class RatingForm extends Component {
                 <Grid item>
                   <div style={{ marginTop: -30 }}>
                     <InputNumber
-                      min={0}
+                      min={1}
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
@@ -292,23 +282,19 @@ class RatingForm extends Component {
             </Grid>
 
             <Grid item xs={3} sm={3}>
-              <br />
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold", paddingTop: 20 }}
+                style={{ fontWeight: "bold", paddingTop: 1 }}
               >
                 Leadership
               </Typography>
             </Grid>
             <Grid item xs={9} sm={9}>
-              <br />
-              <br />
-
               <Grid container spacing={2} alignItems="center">
                 <Grid item xs>
                   <Slider
-                    min={0}
+                    min={1}
                     max={10}
                     onChange={this.onChangeLeadership}
                     value={typeof leadership === "number" ? leadership : 0}
@@ -318,7 +304,7 @@ class RatingForm extends Component {
                 <Grid item>
                   <div style={{ marginTop: -30 }}>
                     <InputNumber
-                      min={0}
+                      min={1}
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
@@ -331,23 +317,19 @@ class RatingForm extends Component {
             </Grid>
 
             <Grid item xs={3} sm={3}>
-              <br />
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold", paddingTop: 20 }}
+                style={{ fontWeight: "bold", paddingTop: 1 }}
               >
                 Discipline
               </Typography>
             </Grid>
             <Grid item xs={9} sm={9}>
-              <br />
-              <br />
-
               <Grid container spacing={2} alignItems="center">
                 <Grid item xs>
                   <Slider
-                    min={0}
+                    min={1}
                     max={10}
                     onChange={this.onChangeDiscipline}
                     value={typeof discipline === "number" ? discipline : 0}
@@ -357,7 +339,7 @@ class RatingForm extends Component {
                 <Grid item>
                   <div style={{ marginTop: -30 }}>
                     <InputNumber
-                      min={0}
+                      min={1}
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
@@ -370,23 +352,19 @@ class RatingForm extends Component {
             </Grid>
 
             <Grid item xs={3} sm={3}>
-              <br />
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold", paddingTop: 20 }}
+                style={{ fontWeight: "bold", paddingTop: 1 }}
               >
                 Basketball 1.Q
               </Typography>
             </Grid>
             <Grid item xs={9} sm={9}>
-              <br />
-              <br />
-
               <Grid container spacing={2} alignItems="center">
                 <Grid item xs>
                   <Slider
-                    min={0}
+                    min={1}
                     max={10}
                     onChange={this.onChangeBasketballIQ}
                     value={typeof basketballIQ === "number" ? basketballIQ : 0}
@@ -396,7 +374,7 @@ class RatingForm extends Component {
                 <Grid item>
                   <div style={{ marginTop: -30 }}>
                     <InputNumber
-                      min={0}
+                      min={1}
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
@@ -409,23 +387,19 @@ class RatingForm extends Component {
             </Grid>
 
             <Grid item xs={3} sm={3}>
-              <br />
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold", paddingTop: 20 }}
+                style={{ fontWeight: "bold", paddingTop: 1 }}
               >
                 Energy
               </Typography>
             </Grid>
             <Grid item xs={9} sm={9}>
-              <br />
-              <br />
-
               <Grid container spacing={2} alignItems="center">
                 <Grid item xs>
                   <Slider
-                    min={0}
+                    min={1}
                     max={10}
                     onChange={this.onChangeEnergy}
                     value={typeof energy === "number" ? energy : 0}
@@ -435,7 +409,7 @@ class RatingForm extends Component {
                 <Grid item>
                   <div style={{ marginTop: -30 }}>
                     <InputNumber
-                      min={0}
+                      min={1}
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
@@ -448,23 +422,19 @@ class RatingForm extends Component {
             </Grid>
 
             <Grid item xs={3} sm={3}>
-              <br />
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold", paddingTop: 20 }}
+                style={{ fontWeight: "bold", paddingTop: 1 }}
               >
                 Determination
               </Typography>
             </Grid>
             <Grid item xs={9} sm={9}>
-              <br />
-              <br />
-
               <Grid container spacing={2} alignItems="center">
                 <Grid item xs>
                   <Slider
-                    min={0}
+                    min={1}
                     max={10}
                     onChange={this.onChangeDetermination}
                     value={
@@ -476,7 +446,7 @@ class RatingForm extends Component {
                 <Grid item>
                   <div style={{ marginTop: -30 }}>
                     <InputNumber
-                      min={0}
+                      min={1}
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
@@ -489,23 +459,19 @@ class RatingForm extends Component {
             </Grid>
 
             <Grid item xs={3} sm={3}>
-              <br />
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold", paddingTop: 20 }}
+                style={{ fontWeight: "bold", paddingTop: 1 }}
               >
                 Clutch
               </Typography>
             </Grid>
             <Grid item xs={9} sm={9}>
-              <br />
-              <br />
-
               <Grid container spacing={2} alignItems="center">
                 <Grid item xs>
                   <Slider
-                    min={0}
+                    min={1}
                     max={10}
                     onChange={this.onChangeClutch}
                     value={typeof clutch === "number" ? clutch : 0}
@@ -515,7 +481,7 @@ class RatingForm extends Component {
                 <Grid item>
                   <div style={{ marginTop: -30 }}>
                     <InputNumber
-                      min={0}
+                      min={1}
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
@@ -528,23 +494,19 @@ class RatingForm extends Component {
             </Grid>
 
             <Grid item xs={3} sm={3}>
-              <br />
               <Typography
                 variant="subtitle1"
                 gutterBottom
-                style={{ fontWeight: "bold", paddingTop: 20 }}
+                style={{ fontWeight: "bold", paddingTop: 1 }}
               >
                 Pro-potential
               </Typography>
             </Grid>
             <Grid item xs={9} sm={9}>
-              <br />
-              <br />
-
               <Grid container spacing={2} alignItems="center">
                 <Grid item xs>
                   <Slider
-                    min={0}
+                    min={1}
                     max={10}
                     onChange={this.onChangeProPotential}
                     value={typeof proPotential === "number" ? proPotential : 0}
@@ -554,7 +516,7 @@ class RatingForm extends Component {
                 <Grid item>
                   <div style={{ marginTop: -30 }}>
                     <InputNumber
-                      min={0}
+                      min={1}
                       max={10}
                       style={{ marginLeft: 16 }}
                       step={0.1}
@@ -567,7 +529,6 @@ class RatingForm extends Component {
             </Grid>
 
             <Grid item xs={3} sm={3}>
-              <br />
               <Typography
                 variant="headline"
                 gutterBottom
@@ -577,8 +538,6 @@ class RatingForm extends Component {
               </Typography>
             </Grid>
             <Grid item xs={8} sm={8}>
-              <br />
-
               <Typography
                 variant="headline"
                 gutterBottom
