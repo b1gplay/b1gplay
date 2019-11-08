@@ -7,6 +7,7 @@ import { Switch, Route } from "react-router-dom";
 //import Header1 from "./components/Layout/Header1";
 
 import Analytics from "./components/Analytics/Analytics";
+import AnalyticsEngine from "./components/Analytics/AnalyticsEngine";
 
 import MessageList from "./components/Messaging/MessageList";
 import ViewProfile from "./components/Profile/ViewProfile";
@@ -71,6 +72,7 @@ class App extends Component {
               path="/personal-ratings"
               component={PersonalRatings}
             />
+            <PrivateRoute path="/analytics" component={AnalyticsEngine} />
 
             <Route path="/sign-up" component={SignUp} />
             <Route path="/login" component={Login} />

@@ -255,7 +255,7 @@ class Header extends React.Component {
                     </Link>
                   </div>
                   <div style={{ paddingRight: 20 }}>
-                    <Link to="/data-analytics" className={classes.link}>
+                    <Link to="/analytics" className={classes.link}>
                       <Tooltip title="Data analytics">
                         <IconButton color="inherit">
                           <PollIcon />
