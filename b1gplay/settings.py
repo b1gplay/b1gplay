@@ -29,7 +29,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 PREREQUSITE_APPS = [
@@ -40,6 +39,8 @@ PREREQUSITE_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_elasticsearch_dsl',  # Elasticsearch django integration
+    'django_elasticsearch_dsl_drf',  # Elasticsearch DRF integration
     'corsheaders',
     'knox',
     'django_filters',
@@ -101,6 +102,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+}
+
+
+# Elasticsearch configuration
+ELASTICSEARCH_DSL = {
+    'default': {
+        'hosts': 'localhost:9200'
+    },
 }
 
 # Setting globally the permission policy: for production use 'IsAuthenticated'
