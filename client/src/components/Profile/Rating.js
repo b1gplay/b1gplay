@@ -205,13 +205,6 @@ class Ratings extends Component {
                       style={{ width: 24, height: 24 }}
                     />
                   </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
                 </Grid>
                 <Grid item xs={1} sm={1}>
                   <Typography
@@ -219,7 +212,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    8.7
+                    7.6
                   </Typography>
                 </Grid>
               </Grid>
@@ -292,7 +285,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    7.7
+                    7.8
                   </Typography>
                 </Grid>
               </Grid>
@@ -452,7 +445,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    8
+                    8.4
                   </Typography>
                 </Grid>
               </Grid>
@@ -518,13 +511,6 @@ class Ratings extends Component {
                       style={{ width: 24, height: 24 }}
                     />
                   </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
                 </Grid>
                 <Grid item xs={1} sm={1}>
                   <Typography
@@ -532,7 +518,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    8.9
+                    9
                   </Typography>
                 </Grid>
               </Grid>
@@ -612,7 +598,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    8.2
+                    8.9
                   </Typography>
                 </Grid>
               </Grid>
@@ -765,6 +751,13 @@ class Ratings extends Component {
                       style={{ width: 24, height: 24 }}
                     />
                   </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
                 </Grid>
                 <Grid item xs={1} sm={1}>
                   <Typography
@@ -772,7 +765,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    8.7
+                    9
                   </Typography>
                 </Grid>
               </Grid>
@@ -838,6 +831,13 @@ class Ratings extends Component {
                       style={{ width: 24, height: 24 }}
                     />
                   </span>
+                  <span style={{ margin: "1px" }}>
+                    <img
+                      src="static/images/basketball.jpg"
+                      alt="basketball icon"
+                      style={{ width: 24, height: 24 }}
+                    />
+                  </span>
                 </Grid>
                 <Grid item xs={1} sm={1}>
                   <Typography
@@ -845,7 +845,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    7.9
+                    8.6
                   </Typography>
                 </Grid>
               </Grid>
@@ -918,13 +918,6 @@ class Ratings extends Component {
                       style={{ width: 24, height: 24 }}
                     />
                   </span>
-                  <span style={{ margin: "1px" }}>
-                    <img
-                      src="static/images/basketball.jpg"
-                      alt="basketball icon"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </span>
                 </Grid>
                 <Grid item xs={1} sm={1}>
                   <Typography
@@ -932,7 +925,7 @@ class Ratings extends Component {
                     gutterBottom
                     //style={{ fontSize: "13px" }}
                   >
-                    9.2
+                    8.7
                   </Typography>
                 </Grid>
               </Grid>
@@ -955,7 +948,7 @@ class Ratings extends Component {
                     align="right"
                     style={{ fontWeight: "bold" }}
                   >
-                    84.2
+                    84.9
                   </Typography>
                 </Grid>
               </Grid>

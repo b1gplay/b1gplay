@@ -93,7 +93,7 @@ class MyProfile extends Component {
                       fontWeight: "bold"
                     }}
                   >
-                    7
+                    9
                   </Typography>
                 </Link>
               </Grid>
@@ -150,7 +150,7 @@ class MyProfile extends Component {
                       fontWeight: "bold"
                     }}
                   >
-                    2
+                    4
                   </Typography>
                 </Link>
               </Grid>
