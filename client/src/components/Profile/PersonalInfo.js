@@ -286,13 +286,13 @@ class PersonalInfo extends Component {
                   {/* Truncate decimal part*/}
                   {this.props.profile.time_to_run_40m === ""
                     ? "0 sec"
-                    : `${this.props.profile.time_to_run_40m}` + " sec"}
+                    : `${this.props.profile.time_to_run_40m} + " sec"`}
                 </Typography>
                 <Typography variant="subheading" gutterBottom align="left">
                   {/* Truncate decimal part*/}
                   {this.props.profile.time_to_run_100m === ""
                     ? "0 sec"
-                    : `${this.props.profile.time_to_run_100m}` + " sec"}
+                    : `${this.props.profile.time_to_run_100m} + " sec"`}
                 </Typography>
               </Grid>
               <Grid item xs={12} sm={12}>
