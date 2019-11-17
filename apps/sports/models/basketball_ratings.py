@@ -71,15 +71,15 @@ class BasketballRatings(TimeStampedModel):
         blank=True,
         null=True,
     )
-    # ratedBy = models.ForeignKey(
-    #    Profile,
-    #    related_name='basketball_ratings',
-    #    on_delete=models.CASCADE,
-    #    null=True)
+    ratedBy = models.ForeignKey(
+        Profile,
+        related_name='basketball_ratings',
+        on_delete=models.CASCADE,
+        null=True)
 
-    # @property
-    # def account_type(self):
-    #    return self.ratedBy.account_type
+    @property
+    def account_type(self):
+        return self.ratedBy.account_type
 
     class Meta:
         verbose_name = "Basketball Ratings"
