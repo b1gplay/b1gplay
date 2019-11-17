@@ -9,7 +9,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from apps.sports.api.sport.sport_endpoint import sportRouter
-from apps.sports.api.metric.metric_endpoint import metricRouter
 from apps.sports.api.basketball_ratings.basketball_ratings_endpoint import basketballRatingsRouter
 from apps.sports.api.player.player_endpoint import playerRouter
 from apps.sports.api.coach.coach_endpoint import coachRouter
@@ -47,7 +46,6 @@ from apps.messaging.api.page.page_endpoint import pageRouter
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^api/', include(sportRouter.urls)),
-    url(r'^api/', include(metricRouter.urls)),
     url(r'^api/', include(basketballRatingsRouter.urls)),
     url(r'^api/', include(playerRouter.urls)),
     url(r'^api/', include(coachRouter.urls)),

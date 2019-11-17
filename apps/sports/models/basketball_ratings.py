@@ -77,9 +77,28 @@ class BasketballRatings(TimeStampedModel):
         on_delete=models.CASCADE,
         null=True)
 
+    player = models.ForeignKey(
+        Profile,
+        related_name='basketballratings',
+        on_delete=models.CASCADE,
+        null=True)
+
     @property
     def account_type(self):
         return self.ratedBy.account_type
+
+    @property
+    def weight(self):
+        if self.ratedBy.account_type == 'Player':
+            return 0.4
+        elif self.ratedBy.account_type == 'Coach':
+            return 0.3
+        elif self.ratedBy.account_type == 'Media':
+            return 0.1
+        elif self.ratedBy.account_type == 'Agent':
+            return 0.1
+        elif self.ratedBy.account_type == 'Fan':
+            return 0.1
 
     class Meta:
         verbose_name = "Basketball Ratings"

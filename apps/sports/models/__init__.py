@@ -1,5 +1,4 @@
 from apps.sports.models.sport import Sport
-from apps.sports.models.metric import Metric
 from apps.sports.models.basketball_ratings import BasketballRatings
 from apps.sports.models.player import Player
 from apps.sports.models.team import Team
@@ -13,7 +12,6 @@ from apps.sports.models.achievement import Achievement
 
 __all__ = [
     'Sport',
-    'Metric',
     'BasketballRatings',
     'Player',
     'Team',

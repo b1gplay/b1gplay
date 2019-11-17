@@ -8,6 +8,7 @@ from apps.sports.models.basketball_ratings import BasketballRatings
 
 class BasketballRatingsSerialiser(serializers.ModelSerializer):
     account_type = serializers.ReadOnlyField()
+    weight = serializers.ReadOnlyField()
 
     class Meta:
         model = BasketballRatings
